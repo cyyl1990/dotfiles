@@ -1,0 +1,58 @@
+[general]
+framerate = 75
+autosens = 1
+sensitivity = 135
+bars = 0
+bar_width = 1
+bar_spacing = 1
+center_align = 1
+max_height = 90
+lower_cutoff_freq = 40
+higher_cutoff_freq = 10000
+sleep_timer = 3
+
+[input]
+method = pipewire
+source = auto
+sample_rate = 48000
+sample_bits = 16
+channels = 2
+
+[output]
+method = noncurses
+orientation = bottom
+channels = stereo
+reverse = 0
+xaxis = none
+synchronized_sync = 1
+show_idle_bar_heads = 0
+waveform = 0
+
+[color]
+theme = 'omarchy'
+background = '#0b0f1a'
+foreground = '#33ffd6'
+gradient = 1
+gradient_color_1 = '#33ffd6'
+gradient_color_2 = '#21f0ff'
+gradient_color_3 = '#3aa0ff'
+gradient_color_4 = '#7a6bff'
+gradient_color_5 = '#b06bff'
+gradient_color_6 = '#ff6bd6'
+gradient_color_7 = '#ff7a9c'
+gradient_color_8 = '#ffd166'
+
+[smoothing]
+monstercat = 0
+waves = 1
+noise_reduction = 90
+
+[eq]
+1 = 1.30
+2 = 1.22
+3 = 1.12
+4 = 1.05
+5 = 1.0
+6 = 1.0
+7 = 1.0
+8 = 1.0

@@ -2,7 +2,7 @@
 # VERSION: 3.0
 SETUVAR --export ABBR_TIPS_PROMPT:\x5cn\U0001f4a1\x20\x5ce\x5b1m\x7b\x7b\x20\x2eabbr\x20\x7d\x7d\x5ce\x5b0m\x20\x3d\x3e\x20\x7b\x7b\x20\x2ecmd\x20\x7d\x7d
 SETUVAR --export ABBR_TIPS_REGEXES:\x28\x5e\x28\x5cw\x2b\x5cs\x2b\x29\x2b\x28\x2d\x7b1\x2c2\x7d\x29\x5cw\x2b\x29\x28\x5cs\x5cS\x2b\x29\x1e\x28\x5e\x28\x5cs\x3f\x28\x5cw\x2d\x3f\x29\x2b\x29\x7b3\x7d\x29\x2e\x2a\x1e\x28\x5e\x28\x5cs\x3f\x28\x5cw\x2d\x3f\x29\x2b\x29\x7b2\x7d\x29\x2e\x2a\x1e\x28\x5e\x28\x5cs\x3f\x28\x5cw\x2d\x3f\x29\x2b\x29\x7b1\x7d\x29\x2e\x2a
-SETUVAR --export FZF_DEFAULT_OPTS:\x20\x2d\x2dcolor\x3dbg\x2b\x3a\x23121212\x2cbg\x3a\x23121212\x2cspinner\x3a\x239e9e9e\x2chl\x3a\x238a8a8a\x20\x2d\x2dcolor\x3dfg\x3a\x23e0e0e0\x2cheader\x3a\x238a8a8a\x2cinfo\x3a\x23767676\x2cpointer\x3a\x239e9e9e\x20\x2d\x2dcolor\x3dmarker\x3a\x239e9e9e\x2cfg\x2b\x3a\x23767676\x2cprompt\x3a\x23767676\x2chl\x2b\x3a\x238a8a8a
+SETUVAR --export FZF_DEFAULT_OPTS:\x20\x2d\x2dcolor\x3dbg\x2b\x3a\x231c1e26\x2cbg\x3a\x231c1e26\x2cspinner\x3a\x236be4e6\x2chl\x3a\x23f075b5\x20\x2d\x2dcolor\x3dfg\x3a\x23fadad1\x2cheader\x3a\x23f075b5\x2cinfo\x3a\x233fdaa4\x2cpointer\x3a\x236be4e6\x20\x2d\x2dcolor\x3dmarker\x3a\x236be4e6\x2cfg\x2b\x3a\x2359e3e3\x2cprompt\x3a\x233fdaa4\x2chl\x2b\x3a\x23f075b5
 SETUVAR ZO_CMD:zo
 SETUVAR Z_CMD:z
 SETUVAR Z_DATA:/home/bap/\x2elocal/share/z/data
@@ -20,24 +20,24 @@ SETUVAR _fisher_jorgebucaran_2F_nvm_2E_fish_files:\x7e/\x2econfig/fish/functions
 SETUVAR _fisher_patrickf1_2F_fzf_2E_fish_files:\x7e/\x2econfig/fish/functions/_fzf_configure_bindings_help\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_extract_var_info\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_preview_changed_file\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_preview_file\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_report_diff_type\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_report_file_type\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_search_directory\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_search_git_log\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_search_git_status\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_search_history\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_search_processes\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_search_variables\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_wrapper\x2efish\x1e\x7e/\x2econfig/fish/functions/fzf_configure_bindings\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/fzf\x2efish\x1e\x7e/\x2econfig/fish/completions/fzf_configure_bindings\x2efish
 SETUVAR _fisher_plugins:jorgebucaran/fisher\x1ejorgebucaran/nvm\x2efish\x1epatrickf1/fzf\x2efish\x1ejethrokuan/z\x1egazorby/fish\x2dabbreviation\x2dtips
 SETUVAR _fisher_upgraded_to_4_4:\x1d
-SETUVAR background:\x23000000
-SETUVAR color0:\x23121212
-SETUVAR color1:\x238a8a8a
-SETUVAR color10:\x23767676
-SETUVAR color11:\x23b2b2b2
-SETUVAR color12:\x23626262
-SETUVAR color13:\x238a8a8a
-SETUVAR color14:\x239e9e9e
-SETUVAR color15:\x23e7e9ea
-SETUVAR color2:\x23e7e9ea
-SETUVAR color3:\x239e9e9e
-SETUVAR color4:\x23626262
-SETUVAR color5:\x238a8a8a
-SETUVAR color6:\x23767676
-SETUVAR color7:\x23e0e0e0
-SETUVAR color8:\x23626262
-SETUVAR color9:\x239e9e9e
-SETUVAR cursor:\x23e7e9ea
+SETUVAR background:\x231c1e26
+SETUVAR color0:\x231c1e26
+SETUVAR color1:\x23e95678
+SETUVAR color10:\x233fdaa4
+SETUVAR color11:\x23fbc3a7
+SETUVAR color12:\x233fc4de
+SETUVAR color13:\x23f075b5
+SETUVAR color14:\x236be4e6
+SETUVAR color15:\x23fadad1
+SETUVAR color2:\x2329d398
+SETUVAR color3:\x23fab795
+SETUVAR color4:\x2326bbd9
+SETUVAR color5:\x23ee64ac
+SETUVAR color6:\x2359e3e3
+SETUVAR color7:\x23fadad1
+SETUVAR color8:\x236c6f93
+SETUVAR color9:\x23ec6a88
+SETUVAR cursor:\x23fadad1
 SETUVAR fish_color_command:green
 SETUVAR fish_color_history_current:\x2d\x2dbold
 SETUVAR fish_color_normal:normal
@@ -47,7 +47,7 @@ SETUVAR fish_pager_color_completion:\x1d
 SETUVAR fish_pager_color_description:yellow\x1e\x2d\x2dtheme\x3ddefault\x1eyellow
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_user_paths:/home/bap/\x2elocal/bin
-SETUVAR foreground:\x23e7e9ea
+SETUVAR foreground:\x23fadad1
 SETUVAR pure_begin_prompt_with_current_directory:true
 SETUVAR pure_check_for_new_release:false
 SETUVAR pure_color_at_sign:pure_color_mute

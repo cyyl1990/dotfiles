@@ -1,0 +1,41 @@
+2026-03-08 17:07:06.688 [info] Extension host with pid 1910274 started
+2026-03-08 17:07:06.688 [info] Skipping acquiring lock for /home/bap/.config/Code/User/workspaceStorage/f8fa443ed3de5600077a8a32a6b9dc64.
+2026-03-08 17:07:06.776 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2026-03-08 17:07:06.793 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2026-03-08 17:07:06.900 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*'
+2026-03-08 17:07:06.966 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2026-03-08 17:07:07.014 [info] Eager extensions activated
+2026-03-08 17:07:07.060 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2026-03-08 17:07:07.062 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2026-03-08 17:07:07.073 [info] ExtensionService#_doActivateExtension eamodio.gitlens, startup: false, activationEvent: 'onStartupFinished'
+2026-03-08 17:07:07.155 [info] ExtensionService#_doActivateExtension PKief.material-icon-theme, startup: false, activationEvent: 'onStartupFinished'
+2026-03-08 17:07:07.164 [info] ExtensionService#_doActivateExtension streetsidesoftware.code-spell-checker, startup: false, activationEvent: 'onStartupFinished'
+2026-03-08 17:07:07.603 [info] ExtensionService#_doActivateExtension streetsidesoftware.code-spell-checker-vietnamese, startup: false, activationEvent: 'onStartupFinished'
+2026-03-08 17:07:17.855 [info] ExtensionService#_doActivateExtension vscode.git, startup: false, activationEvent: 'api', root cause: vscode.github
+2026-03-08 17:07:17.895 [info] ExtensionService#_doActivateExtension GitHub.copilot-chat, startup: false, activationEvent: 'onChatSession:claude-code'
+2026-03-08 17:07:18.623 [info] ExtensionService#_doActivateExtension emjio.git-auto-commit, startup: false, activationEvent: '*'
+2026-03-08 17:07:18.624 [info] ExtensionService#_doActivateExtension usernamehw.errorlens, startup: false, activationEvent: 'onStartupFinished'
+2026-03-08 17:07:18.725 [info] ExtensionService#_doActivateExtension vscode.microsoft-authentication, startup: false, activationEvent: 'onAuthenticationRequest:microsoft'
+2026-03-08 17:07:18.976 [warning] [Decorations] CAPPING events from decorations provider vscode.git 298
+2026-03-08 17:07:19.080 [warning] [Decorations] CAPPING events from decorations provider vscode.git 298
+2026-03-08 17:07:19.127 [warning] [Decorations] CAPPING events from decorations provider vscode.git 298
+2026-03-08 17:07:20.681 [error] Error: GitHubLoginFailed
+	at lJ._authShowWarnings (/home/bap/.vscode/extensions/github.copilot-chat-0.38.2/dist/extension.js:1811:18558)
+	at async lJ.getCopilotToken (/home/bap/.vscode/extensions/github.copilot-chat-0.38.2/dist/extension.js:1811:16276)
+	at async mce.getCopilotToken (/home/bap/.vscode/extensions/github.copilot-chat-0.38.2/dist/extension.js:1321:6496)
+	at async Dre.updateCachedToken (/home/bap/.vscode/extensions/github.copilot-chat-0.38.2/dist/extension.js:2676:8722)
+2026-03-08 17:07:20.682 [error] Error: GitHubLoginFailed
+	at lJ._authShowWarnings (/home/bap/.vscode/extensions/github.copilot-chat-0.38.2/dist/extension.js:1811:18558)
+	at async lJ.getCopilotToken (/home/bap/.vscode/extensions/github.copilot-chat-0.38.2/dist/extension.js:1811:16276)
+	at async mce.getCopilotToken (/home/bap/.vscode/extensions/github.copilot-chat-0.38.2/dist/extension.js:1321:6496)
+	at async mE._fetchModels (/home/bap/.vscode/extensions/github.copilot-chat-0.38.2/dist/extension.js:6470:4323)
+2026-03-08 17:07:22.344 [warning] [Decorations] CAPPING events from decorations provider vscode.git 303
+2026-03-08 17:07:27.374 [warning] [Decorations] CAPPING events from decorations provider vscode.git 303
+2026-03-08 17:07:32.402 [warning] [Decorations] CAPPING events from decorations provider vscode.git 303
+2026-03-08 17:07:37.432 [warning] [Decorations] CAPPING events from decorations provider vscode.git 304
+2026-03-08 17:07:42.465 [warning] [Decorations] CAPPING events from decorations provider vscode.git 305
+2026-03-08 17:07:47.494 [warning] [Decorations] CAPPING events from decorations provider vscode.git 305
+2026-03-08 17:07:52.528 [warning] [Decorations] CAPPING events from decorations provider vscode.git 305
+2026-03-08 17:07:57.556 [warning] [Decorations] CAPPING events from decorations provider vscode.git 305
+2026-03-08 17:08:02.584 [warning] [Decorations] CAPPING events from decorations provider vscode.git 305
+2026-03-08 17:08:19.851 [warning] [Decorations] CAPPING events from decorations provider vscode.git 305

@@ -1,0 +1,3745 @@
+[keyboard-bqn]
+Description="Bàn phím - BQN"
+Language=en
+Label=bqn
+
+[keyboard-apl]
+Description="Bàn phím - APL"
+Language=en
+Label=apl
+
+[keyboard-apl-dyalog]
+Description="Bàn phím - APL - APL symbols (Dyalog APL)"
+Language=en
+Label="dlg (dyalog)"
+
+[keyboard-apl-sax]
+Description="Bàn phím - APL - APL symbols (SAX, Sharp APL for Unix)"
+Language=en
+Label=sax
+
+[keyboard-apl-unified]
+Description="Bàn phím - APL - APL symbols (unified)"
+Language=en
+Label="ufd (unified)"
+
+[keyboard-apl-apl2]
+Description="Bàn phím - APL - APL symbols (IBM APL2)"
+Language=en
+Label=apl2
+
+[keyboard-apl-aplplusII]
+Description="Bàn phím - APL - APL symbols (Manugistics APL*PLUS II)"
+Language=en
+Label="aplII (aplplusII)"
+
+[keyboard-apl-aplx]
+Description="Bàn phím - APL - APL symbols (APLX unified)"
+Language=en
+Label=aplx
+
+[keyboard-ua]
+Description="Bàn phím - Tiếng Ukraina"
+Language=uk
+Label=uk
+
+[keyboard-ua-phonetic]
+Description="Bàn phím - Tiếng Ukraina - Tiếng U-crai-na (ngữ âm)"
+Language=uk
+Label="ua (phonetic)"
+
+[keyboard-ua-typewriter]
+Description="Bàn phím - Tiếng Ukraina - Tiếng U-crai-na (máy đánh chữ)"
+Language=uk
+Label="ua (typewriter)"
+
+[keyboard-ua-winkeys]
+Description="Bàn phím - Tiếng Ukraina - Ukrainian (Windows)"
+Language=uk
+Label="ua (winkeys)"
+
+[keyboard-ua-winkeysenhanced]
+Description="Bàn phím - Tiếng Ukraina - Ukrainian (Windows Enhanced)"
+Language=uk
+Label="ua (winkeysenhanced)"
+
+[keyboard-ua-macOS]
+Description="Bàn phím - Tiếng Ukraina - Ukrainian (macOS)"
+Language=uk
+Label="ua (macOS)"
+
+[keyboard-ua-legacy]
+Description="Bàn phím - Tiếng Ukraina - Tiếng U-crai-na (cổ)"
+Language=uk
+Label="ua (legacy)"
+
+[keyboard-ua-homophonic]
+Description="Bàn phím - Tiếng Ukraina - Tiếng U-crai-na (phát âm giống nhau)"
+Language=uk
+Label="ua (homophonic)"
+
+[keyboard-ua-crh]
+Description="Bàn phím - Tiếng Ukraina - Tiếng Ta-tă Cợ-ri-mia (Thổ Nhĩ Kỳ Q)"
+Language=crh
+Label=crh
+
+[keyboard-ua-crh_f]
+Description="Bàn phím - Tiếng Ukraina - Tiếng Ta-tă Cợ-ri-mia (Thổ Nhĩ Kỳ F)"
+Language=crh
+Label="crh (crh_f)"
+
+[keyboard-ua-crh_alt]
+Description="Bàn phím - Tiếng Ukraina - Tiếng Ta-tă Cợ-ri-mia (Thổ Nhĩ Kỳ Alt-Q)"
+Language=crh
+Label="crh (crh_alt)"
+
+[keyboard-ua-sun_type6]
+Description="Bàn phím - Tiếng Ukraina - Tiếng U-crai-na (Kiểu Sun 6/7)"
+Language=uk
+Label="ua (sun_type6)"
+
+[keyboard-th]
+Description="Bàn phím - Tiếng Thái Lan"
+Language=th
+Label=th
+
+[keyboard-th-tis]
+Description="Bàn phím - Tiếng Thái Lan - Tiếng Thái (TIS-820.2538)"
+Language=th
+Label="th (tis)"
+
+[keyboard-th-pat]
+Description="Bàn phím - Tiếng Thái Lan - Tiếng Thái Lan (Pattachote)"
+Language=th
+Label="th (pat)"
+
+[keyboard-th-mnc]
+Description="Bàn phím - Tiếng Thái Lan - Thai (Manoonchai)"
+Language=th
+Label="th (mnc)"
+
+[keyboard-tz]
+Description="Bàn phím - Tiếng Bantu (Tanzania)"
+Language=sw
+Label=sw
+
+[keyboard-latam]
+Description="Bàn phím - Tiếng Tây Ban Nha (Mỹ La-tinh)"
+Language=es
+Label=es
+
+[keyboard-latam-nodeadkeys]
+Description="Bàn phím - Tiếng Tây Ban Nha (Mỹ La-tinh) - Spanish (Latin American, no dead keys)"
+Language=es
+Label="latam (nodeadkeys)"
+
+[keyboard-latam-deadtilde]
+Description="Bàn phím - Tiếng Tây Ban Nha (Mỹ La-tinh) - Spanish (Latin American, dead tilde)"
+Language=es
+Label="latam (deadtilde)"
+
+[keyboard-latam-dvorak]
+Description="Bàn phím - Tiếng Tây Ban Nha (Mỹ La-tinh) - Tiếng Tây Ban Nha (Mỹ La-tinh, Dvorak)"
+Language=es
+Label="latam (dvorak)"
+
+[keyboard-latam-colemak]
+Description="Bàn phím - Tiếng Tây Ban Nha (Mỹ La-tinh) - Spanish (Latin American, Colemak)"
+Language=es
+Label="latam (colemak)"
+
+[keyboard-sk]
+Description="Bàn phím - Tiếng Xlô-vác"
+Language=sk
+Label=sk
+
+[keyboard-sk-bksl]
+Description="Bàn phím - Tiếng Xlô-vác - Slovak (extra backslash)"
+Language=sk
+Label="sk (bksl)"
+
+[keyboard-sk-qwerty]
+Description="Bàn phím - Tiếng Xlô-vác - Slovak (QWERTY)"
+Language=sk
+Label="sk (qwerty)"
+
+[keyboard-sk-qwerty_bksl]
+Description="Bàn phím - Tiếng Xlô-vác - Slovak (QWERTY, extra backslash)"
+Language=sk
+Label="sk (qwerty_bksl)"
+
+[keyboard-sk-acc]
+Description="Bàn phím - Tiếng Xlô-vác - Slovak (ACC layout, only accented letters)"
+Language=sk
+Label="sk (acc)"
+
+[keyboard-sk-sun_type6]
+Description="Bàn phím - Tiếng Xlô-vác - Tiếng X-lô-vác (Kiểu Sun 6/7)"
+Language=sk
+Label="sk (sun_type6)"
+
+[keyboard-ru]
+Description="Bàn phím - Tiếng Nga"
+Language=ru
+Label=ru
+
+[keyboard-ru-phonetic]
+Description="Bàn phím - Tiếng Nga - Tiếng Nga (ngữ âm)"
+Language=ru
+Label="ru (phonetic)"
+
+[keyboard-ru-phonetic_winkeys]
+Description="Bàn phím - Tiếng Nga - Russian (phonetic, Windows)"
+Language=ru
+Label="ru (phonetic_winkeys)"
+
+[keyboard-ru-phonetic_YAZHERTY]
+Description="Bàn phím - Tiếng Nga - Russian (phonetic, YAZHERTY)"
+Language=ru
+Label="ru (phonetic_YAZHERTY)"
+
+[keyboard-ru-phonetic_azerty]
+Description="Bàn phím - Tiếng Nga - Russian (phonetic, AZERTY)"
+Language=ru
+Label="ru (phonetic_azerty)"
+
+[keyboard-ru-phonetic_dvorak]
+Description="Bàn phím - Tiếng Nga - Russian (phonetic, Dvorak)"
+Language=ru
+Label="ru (phonetic_dvorak)"
+
+[keyboard-ru-typewriter]
+Description="Bàn phím - Tiếng Nga - Tiếng Nga (máy chữ)"
+Language=ru
+Label="ru (typewriter)"
+
+[keyboard-ru-ruchey_ru]
+Description="Bàn phím - Tiếng Nga - Russian (engineering, RU)"
+Language=ru
+Label="ru (ruchey_ru)"
+
+[keyboard-ru-ruchey_en]
+Description="Bàn phím - Tiếng Nga - Russian (engineering, EN)"
+Language=ru
+Label="en (ruchey_en)"
+
+[keyboard-ru-legacy]
+Description="Bàn phím - Tiếng Nga - Tiếng Nga (cổ)"
+Language=ru
+Label="ru (legacy)"
+
+[keyboard-ru-typewriter-legacy]
+Description="Bàn phím - Tiếng Nga - Tiếng Nga (máy chữ, kiểu cũ)"
+Language=ru
+Label="ru (typewriter-legacy)"
+
+[keyboard-ru-dos]
+Description="Bàn phím - Tiếng Nga - Tiếng Nga (DOS)"
+Language=ru
+Label="ru (dos)"
+
+[keyboard-ru-mac]
+Description="Bàn phím - Tiếng Nga - Tiếng Nga (Macintosh)"
+Language=ru
+Label="ru (mac)"
+
+[keyboard-ru-ab]
+Description="Bàn phím - Tiếng Nga - Abkhazian (Russia)"
+Language=ab
+Label="ru (ab)"
+
+[keyboard-ru-bak]
+Description="Bàn phím - Tiếng Nga - Tiếng Ba-s-khi-ri"
+Language=ba
+Label="ru (bak)"
+
+[keyboard-ru-cv]
+Description="Bàn phím - Tiếng Nga - Tiếng Chu-vasợ"
+Language=cv
+Label="ru (cv)"
+
+[keyboard-ru-cv_latin]
+Description="Bàn phím - Tiếng Nga - Tiếng Chuvash (La-tinh)"
+Language=cv
+Label="ru (cv_latin)"
+
+[keyboard-ru-xal]
+Description="Bàn phím - Tiếng Nga - Tiếng Kalmyk"
+Language=xal
+Label="ru (xal)"
+
+[keyboard-ru-kom]
+Description="Bàn phím - Tiếng Nga - Tiếng Komi"
+Language=kv
+Label="ru (kom)"
+
+[keyboard-ru-chm]
+Description="Bàn phím - Tiếng Nga - Tiếng Ma-ri"
+Language=chm
+Label="ru (chm)"
+
+[keyboard-ru-os_legacy]
+Description="Bàn phím - Tiếng Nga - Tiếng O-set (cổ)"
+Language=os
+Label="ru (os_legacy)"
+
+[keyboard-ru-os_winkeys]
+Description="Bàn phím - Tiếng Nga - Ossetian (Windows)"
+Language=os
+Label="ru (os_winkeys)"
+
+[keyboard-ru-srp]
+Description="Bàn phím - Tiếng Nga - Tiếng Xéc-bi (Nga)"
+Language=ru
+Label="ru (srp)"
+
+[keyboard-ru-tt]
+Description="Bàn phím - Tiếng Nga - Ta-tă"
+Language=tt
+Label="ru (tt)"
+
+[keyboard-ru-udm]
+Description="Bàn phím - Tiếng Nga - Tiếng U-đ-muổt"
+Language=udm
+Label="ru (udm)"
+
+[keyboard-ru-sah]
+Description="Bàn phím - Tiếng Nga - Tiếng Ya-khú-th"
+Language=sah
+Label="ru (sah)"
+
+[keyboard-ru-chu]
+Description="Bàn phím - Tiếng Nga - Tiếng Xla-vơ nhà thơ"
+Language=cu
+Label="ru (chu)"
+
+[keyboard-ru-ruu]
+Description="Bàn phím - Tiếng Nga - Russian (plus Ukrainian and Belarusian letters)"
+Language=ru
+Label="ru (ruu)"
+
+[keyboard-ru-rulemak]
+Description="Bàn phím - Tiếng Nga - Tiếng Nga (Rulemak, ngữ âm Colemak)"
+Language=ru
+Label="ru (rulemak)"
+
+[keyboard-ru-phonetic_mac]
+Description="Bàn phím - Tiếng Nga - Russian (phonetic, Macintosh)"
+Language=ru
+Label="ru (phonetic_mac)"
+
+[keyboard-ru-sun_type6]
+Description="Bàn phím - Tiếng Nga - Tiếng Nga (Kiểu Sun 6/7)"
+Language=ru
+Label="ru (sun_type6)"
+
+[keyboard-ru-unipunct]
+Description="Bàn phím - Tiếng Nga - Russian (with US punctuation)"
+Language=ru
+Label="ru (unipunct)"
+
+[keyboard-ru-gost-6431-75-48]
+Description="Bàn phím - Tiếng Nga - Russian (GOST 6431-75)"
+Language=ru
+Label="ru (gost-6431-75-48)"
+
+[keyboard-ru-gost-14289-88]
+Description="Bàn phím - Tiếng Nga - Russian (GOST 14289-88)"
+Language=ru
+Label="ru (gost-14289-88)"
+
+[keyboard-ru-prxn]
+Description="Bàn phím - Tiếng Nga - Russian (Polyglot and Reactionary)"
+Language=ru
+Label="ru (prxn)"
+
+[keyboard-ru-winkeys-p]
+Description="Bàn phím - Tiếng Nga - Russian (Programmer)"
+Language=ru
+Label=winkeys-p
+
+[keyboard-ru-typo]
+Description="Bàn phím - Tiếng Nga - Russian (plus typographic symbols)"
+Language=ru
+Label="ru (typo)"
+
+[keyboard-ru-rtu]
+Description="Bàn phím - Tiếng Nga - Russian (plus Tatar letters)"
+Language=ru
+Label="ru (rtu)"
+
+[keyboard-ru-diktor]
+Description="Bàn phím - Tiếng Nga - Russian (Diktor)"
+Language=ru
+Label=diktor
+
+[keyboard-ru-ruintl_ru]
+Description="Bàn phím - Tiếng Nga - Russian (international, RU)"
+Language=ru
+Label="ru (ruintl_ru)"
+
+[keyboard-ru-ruintl_en]
+Description="Bàn phím - Tiếng Nga - Russian (international, EN)"
+Language=en
+Label="en (ruintl_en)"
+
+[keyboard-br]
+Description="Bàn phím - Bồ Đào Nha (Bra-xin)"
+Language=pt
+Label=pt
+
+[keyboard-br-nodeadkeys]
+Description="Bàn phím - Bồ Đào Nha (Bra-xin) - Portuguese (Brazil, no dead keys)"
+Language=pt
+Label="br (nodeadkeys)"
+
+[keyboard-br-dvorak]
+Description="Bàn phím - Bồ Đào Nha (Bra-xin) - Bồ Đào Nha (Bra-xin, Dvorak)"
+Language=pt
+Label="br (dvorak)"
+
+[keyboard-br-nativo]
+Description="Bàn phím - Bồ Đào Nha (Bra-xin) - Bồ Đào Nha (Brazil, Nativo)"
+Language=pt
+Label="br (nativo)"
+
+[keyboard-br-nativo-us]
+Description="Bàn phím - Bồ Đào Nha (Bra-xin) - Bồ Đào Nha (Bra-xin, Nativo cho bàn phím Mỹ)"
+Language=pt
+Label="br (nativo-us)"
+
+[keyboard-br-thinkpad]
+Description="Bàn phím - Bồ Đào Nha (Bra-xin) - Bồ Đào Nha (Bra-xin, IBM/Lenovo ThinkPad)"
+Language=pt
+Label="br (thinkpad)"
+
+[keyboard-br-nativo-epo]
+Description="Bàn phím - Bồ Đào Nha (Bra-xin) - Quốc tế ngữ (Bra-xin, Nativo)"
+Language=eo
+Label="br (nativo-epo)"
+
+[keyboard-br-rus]
+Description="Bàn phím - Bồ Đào Nha (Bra-xin) - Russian (Brazil, phonetic)"
+Language=ru
+Label="ru (rus)"
+
+[keyboard-br-sun_type6]
+Description="Bàn phím - Bồ Đào Nha (Bra-xin) - Tiếng Bồ Đào Nha (Bra-xin, Kiểu Sun 6/7)"
+Language=pt
+Label="br (sun_type6)"
+
+[keyboard-ro]
+Description="Bàn phím - Tiếng Ru-ma-ni"
+Language=ro
+Label=ro
+
+[keyboard-ro-std]
+Description="Bàn phím - Tiếng Ru-ma-ni - Tiếng Ru-man-ni (tiêu chuẩn)"
+Language=ro
+Label="ro (std)"
+
+[keyboard-ro-winkeys]
+Description="Bàn phím - Tiếng Ru-ma-ni - Romanian (Windows)"
+Language=ro
+Label="ro (winkeys)"
+
+[keyboard-ro-crh_dobruja]
+Description="Bàn phím - Tiếng Ru-ma-ni - Tiếng Tác-ta (Dobruja Q)"
+Language=crh
+Label="crh (crh_dobruja)"
+
+[keyboard-ro-ergonomic]
+Description="Bàn phím - Tiếng Ru-ma-ni - Tiếng Ru-ma-ni (Touchtype sinh thái công)"
+Language=ro
+Label="ro (ergonomic)"
+
+[keyboard-ro-sun_type6]
+Description="Bàn phím - Tiếng Ru-ma-ni - Tiếng Ru-ma-ni (Kiểu Sun 6/7)"
+Language=ro
+Label="ro (sun_type6)"
+
+[keyboard-pl]
+Description="Bàn phím - Tiếng Ba Lan"
+Language=pl
+Label=pl
+
+[keyboard-pl-legacy]
+Description="Bàn phím - Tiếng Ba Lan - Tiếng Ba Lan (cổ)"
+Language=pl
+Label="pl (legacy)"
+
+[keyboard-pl-qwertz]
+Description="Bàn phím - Tiếng Ba Lan - Polish (QWERTZ)"
+Language=pl
+Label="pl (qwertz)"
+
+[keyboard-pl-dvorak]
+Description="Bàn phím - Tiếng Ba Lan - Tiếng Ba Lan (Dvorak)"
+Language=pl
+Label="pl (dvorak)"
+
+[keyboard-pl-dvorak_quotes]
+Description="Bàn phím - Tiếng Ba Lan - Polish (Dvorak, with Polish quotes on quotemark key)"
+Language=pl
+Label="pl (dvorak_quotes)"
+
+[keyboard-pl-dvorak_altquotes]
+Description="Bàn phím - Tiếng Ba Lan - Polish (Dvorak, with Polish quotes on key 1)"
+Language=pl
+Label="pl (dvorak_altquotes)"
+
+[keyboard-pl-dvp]
+Description="Bàn phím - Tiếng Ba Lan - Tiếng Ba Lan (dành cho người lập trình)"
+Language=pl
+Label="pl (dvp)"
+
+[keyboard-pl-csb]
+Description="Bàn phím - Tiếng Ba Lan - Tiếng Kha-su-bi"
+Language=csb
+Label="pl (csb)"
+
+[keyboard-pl-szl]
+Description="Bàn phím - Tiếng Ba Lan - Tiếng Silesian"
+Language=szl
+Label="pl (szl)"
+
+[keyboard-pl-ru_phonetic_dvorak]
+Description="Bàn phím - Tiếng Ba Lan - Tiếng Ru-man-ni (Ba Lan, ngữ âm Dvorak)"
+Language=ru
+Label="ru (ru_phonetic_dvorak)"
+
+[keyboard-pl-intl]
+Description="Bàn phím - Tiếng Ba Lan - Polish (intl., with dead keys)"
+Language=pl
+Label="pl (intl)"
+
+[keyboard-pl-colemak]
+Description="Bàn phím - Tiếng Ba Lan - Tiếng Ba Lan (Colemak)"
+Language=pl
+Label="pl (colemak)"
+
+[keyboard-pl-colemak_dh_ansi]
+Description="Bàn phím - Tiếng Ba Lan - Polish (Colemak-DH)"
+Language=pl
+Label="pl (colemak_dh_ansi)"
+
+[keyboard-pl-colemak_dh]
+Description="Bàn phím - Tiếng Ba Lan - Polish (Colemak-DH ISO)"
+Language=pl
+Label="pl (colemak_dh)"
+
+[keyboard-pl-sun_type6]
+Description="Bàn phím - Tiếng Ba Lan - Tiếng Ba Lan (Kiểu Sun 6/7)"
+Language=pl
+Label="pl (sun_type6)"
+
+[keyboard-pl-glagolica]
+Description="Bàn phím - Tiếng Ba Lan - Polish (Glagolica)"
+Language=pl
+Label="pl (glagolica)"
+
+[keyboard-pl-lefty]
+Description="Bàn phím - Tiếng Ba Lan - Polish (lefty)"
+Language=pl
+Label="pl (lefty)"
+
+[keyboard-pl-slaviature]
+Description="Bàn phím - Tiếng Ba Lan - Polish (Slavistic Phonetic Alphabet)"
+Language=pl
+Label="pl (slaviature)"
+
+[keyboard-trans]
+Description="Bàn phím - International Phonetic Alphabet"
+Language=
+Label=ipa
+
+[keyboard-trans-qwerty]
+Description="Bàn phím - International Phonetic Alphabet - International Phonetic Alphabet (QWERTY)"
+Language=
+Label="trans (qwerty)"
+
+[keyboard-ir]
+Description="Bàn phím - Tiếng Ba Tư"
+Language=fa
+Label=fa
+
+[keyboard-ir-pes_keypad]
+Description="Bàn phím - Tiếng Ba Tư - Tiếng Ba Tư (có vùng phím Ba Tư)"
+Language=fa
+Label="ir (pes_keypad)"
+
+[keyboard-ir-winkeys]
+Description="Bàn phím - Tiếng Ba Tư - Persian (Windows)"
+Language=fa
+Label="ir (winkeys)"
+
+[keyboard-ir-azb]
+Description="Bàn phím - Tiếng Ba Tư - Azerbaijani (Iran)"
+Language=azb
+Label=azb
+
+[keyboard-ir-ku]
+Description="Bàn phím - Tiếng Ba Tư - Tiếng Kuổ-đít (I ran, La-tinh Q)"
+Language=ku
+Label=ku
+
+[keyboard-ir-ku_alt]
+Description="Bàn phím - Tiếng Ba Tư - Tiếng Kuổ-đít (I ran, La-tinh Alt-Q)"
+Language=ku
+Label="ku (ku_alt)"
+
+[keyboard-ir-ku_f]
+Description="Bàn phím - Tiếng Ba Tư - Tiếng Kuổ-đít (I ran, F)"
+Language=ku
+Label="ku (ku_f)"
+
+[keyboard-ir-ku_ara]
+Description="Bàn phím - Tiếng Ba Tư - Tiếng Kuổ-đít (Iran, A Rập La-tinh)"
+Language=ku
+Label="ku (ku_ara)"
+
+[keyboard-custom]
+Description="Bàn phím - A user-defined custom Layout"
+Language=und
+Label=custom
+
+[keyboard-no]
+Description="Bàn phím - Tiếng Na-uy"
+Language=no
+Label=no
+
+[keyboard-no-nodeadkeys]
+Description="Bàn phím - Tiếng Na-uy - Norwegian (no dead keys)"
+Language=no
+Label="no (nodeadkeys)"
+
+[keyboard-no-winkeys]
+Description="Bàn phím - Tiếng Na-uy - Norwegian (Windows)"
+Language=no
+Label="no (winkeys)"
+
+[keyboard-no-mac]
+Description="Bàn phím - Tiếng Na-uy - Tiếng Na Uy (Macintosh)"
+Language=no
+Label="no (mac)"
+
+[keyboard-no-mac_nodeadkeys]
+Description="Bàn phím - Tiếng Na-uy - Norwegian (Macintosh, no dead keys)"
+Language=no
+Label="no (mac_nodeadkeys)"
+
+[keyboard-no-colemak]
+Description="Bàn phím - Tiếng Na-uy - Tiếng Na-uy (Colemak)"
+Language=no
+Label="no (colemak)"
+
+[keyboard-no-colemak_dh]
+Description="Bàn phím - Tiếng Na-uy - Norwegian (Colemak-DH)"
+Language=no
+Label="no (colemak_dh)"
+
+[keyboard-no-colemak_dh_wide]
+Description="Bàn phím - Tiếng Na-uy - Norwegian (Colemak-DH Wide)"
+Language=no
+Label="no (colemak_dh_wide)"
+
+[keyboard-no-dvorak]
+Description="Bàn phím - Tiếng Na-uy - Tiếng Na Uy (Dvorak)"
+Language=no
+Label="no (dvorak)"
+
+[keyboard-no-smi]
+Description="Bàn phím - Tiếng Na-uy - Tiếng Bắc Xa-mi (Na Uy)"
+Language=se
+Label="no (smi)"
+
+[keyboard-no-smi_nodeadkeys]
+Description="Bàn phím - Tiếng Na-uy - Northern Saami (Norway, no dead keys)"
+Language=se
+Label="no (smi_nodeadkeys)"
+
+[keyboard-no-sun_type6]
+Description="Bàn phím - Tiếng Na-uy - Tiếng Na Uy (Kiểu Sun 6/7)"
+Language=no
+Label="no (sun_type6)"
+
+[keyboard-gn]
+Description="Bàn phím - N'Ko (AZERTY)"
+Language=nqo
+Label=nqo
+
+[keyboard-tm]
+Description="Bàn phím - Tiếng Tuôcmen"
+Language=tk
+Label=tk
+
+[keyboard-tm-alt]
+Description="Bàn phím - Tiếng Tuôcmen - Tiếng Tuôcmen (Alt-Q)"
+Language=tk
+Label="tm (alt)"
+
+[keyboard-np]
+Description="Bàn phím - Tiếng Nê-pan"
+Language=ne
+Label=ne
+
+[keyboard-ancient]
+Description="Bàn phím - Ancient"
+Language=got
+Label=xx
+
+[keyboard-ancient-got]
+Description="Bàn phím - Ancient - Gothic"
+Language=got
+Label="ancient (got)"
+
+[keyboard-ancient-uga]
+Description="Bàn phím - Ancient - Ugaritic"
+Language=uga
+Label="ancient (uga)"
+
+[keyboard-ancient-ave]
+Description="Bàn phím - Ancient - Tiếng A-ve-x-tanh"
+Language=ae
+Label="ancient (ave)"
+
+[keyboard-ancient-got-alt]
+Description="Bàn phím - Ancient - Gothic (Alternative)"
+Language=got
+Label="ancient (got-alt)"
+
+[keyboard-mt]
+Description="Bàn phím - Tiếng Mantơ"
+Language=mt
+Label=mt
+
+[keyboard-mt-us]
+Description="Bàn phím - Tiếng Mantơ - Maltese (US)"
+Language=mt
+Label="mt (us)"
+
+[keyboard-mt-alt-us]
+Description="Bàn phím - Tiếng Mantơ - Maltese (US, with AltGr overrides)"
+Language=mt
+Label="mt (alt-us)"
+
+[keyboard-mt-alt-gb]
+Description="Bàn phím - Tiếng Mantơ - Maltese (UK, with AltGr overrides)"
+Language=mt
+Label="mt (alt-gb)"
+
+[keyboard-pt]
+Description="Bàn phím - Tiếng Bồ Đào Nha"
+Language=pt
+Label=pt
+
+[keyboard-pt-nodeadkeys]
+Description="Bàn phím - Tiếng Bồ Đào Nha - Portuguese (no dead keys)"
+Language=pt
+Label="pt (nodeadkeys)"
+
+[keyboard-pt-mac]
+Description="Bàn phím - Tiếng Bồ Đào Nha - Tiếng Bồ Đào Nha (Macintosh)"
+Language=pt
+Label="pt (mac)"
+
+[keyboard-pt-mac_nodeadkeys]
+Description="Bàn phím - Tiếng Bồ Đào Nha - Portuguese (Macintosh, no dead keys)"
+Language=pt
+Label="pt (mac_nodeadkeys)"
+
+[keyboard-pt-nativo]
+Description="Bàn phím - Tiếng Bồ Đào Nha - Tiếng Bồ Đào Nha (Nativo)"
+Language=pt
+Label="pt (nativo)"
+
+[keyboard-pt-nativo-us]
+Description="Bàn phím - Tiếng Bồ Đào Nha - Tiếng Bồ Đào Nha (Nativo cho bàn phím Mỹ)"
+Language=pt
+Label="pt (nativo-us)"
+
+[keyboard-pt-nativo-epo]
+Description="Bàn phím - Tiếng Bồ Đào Nha - Tiếng Ét-pê-ran-to (Bồ Đào Nha, Nguyên gốc)"
+Language=eo
+Label="pt (nativo-epo)"
+
+[keyboard-pt-sun_type6]
+Description="Bàn phím - Tiếng Bồ Đào Nha - Tiếng Bồ Đào Nha (Kiểu Sun 6/7)"
+Language=pt
+Label="pt (sun_type6)"
+
+[keyboard-pt-colemak]
+Description="Bàn phím - Tiếng Bồ Đào Nha - Portuguese (Colemak)"
+Language=pt
+Label="pt (colemak)"
+
+[keyboard-my]
+Description="Bàn phím - Malay (Jawi, Arabic Keyboard)"
+Language=id
+Label=ms
+
+[keyboard-my-phonetic]
+Description="Bàn phím - Malay (Jawi, Arabic Keyboard) - Malay (Jawi, phonetic)"
+Language=id
+Label="my (phonetic)"
+
+[keyboard-mk]
+Description="Bàn phím - Tiếng Maxêđôni"
+Language=mk
+Label=mk
+
+[keyboard-mk-nodeadkeys]
+Description="Bàn phím - Tiếng Maxêđôni - Macedonian (no dead keys)"
+Language=mk
+Label="mk (nodeadkeys)"
+
+[keyboard-kg]
+Description="Bàn phím - Tiếng Khư-rơ-gư-xtanh"
+Language=ky
+Label=ki
+
+[keyboard-kg-phonetic]
+Description="Bàn phím - Tiếng Khư-rơ-gư-xtanh - Tiếng Khư-rơ-gư-xtanh (ngữ âm)"
+Language=ky
+Label="kg (phonetic)"
+
+[keyboard-tj]
+Description="Bàn phím - Tiếng Ta-gic"
+Language=tg
+Label=tg
+
+[keyboard-tj-legacy]
+Description="Bàn phím - Tiếng Ta-gic - Tiếng Ta-gíc (cổ)"
+Language=tg
+Label="tj (legacy)"
+
+[keyboard-mv]
+Description="Bàn phím - Tiếng Đi-ve-hi"
+Language=dv
+Label=dv
+
+[keyboard-lk]
+Description="Bàn phím - Tiếng Sinhala (ngữ âm)"
+Language=si
+Label=si
+
+[keyboard-lk-us]
+Description="Bàn phím - Tiếng Sinhala (ngữ âm) - Sinhala (US)"
+Language=si
+Label="si (us)"
+
+[keyboard-lk-tam_unicode]
+Description="Bàn phím - Tiếng Sinhala (ngữ âm) - Tamil (Sri Lanka, TamilNet '99)"
+Language=ta
+Label="ta (tam_unicode)"
+
+[keyboard-lk-tam_TAB]
+Description="Bàn phím - Tiếng Sinhala (ngữ âm) - Tamil (Sri Lanka, TamilNet '99, TAB encoding)"
+Language=ta
+Label="lk (tam_TAB)"
+
+[keyboard-al]
+Description="Bàn phím - Tiếng An-ba-ni"
+Language=sq
+Label=sq
+
+[keyboard-al-plisi]
+Description="Bàn phím - Tiếng An-ba-ni - Tiếng An-ba-ni (Plisi)"
+Language=sq
+Label="al (plisi)"
+
+[keyboard-al-veqilharxhi]
+Description="Bàn phím - Tiếng An-ba-ni - Albanian (Veqilharxhi)"
+Language=sq
+Label="al (veqilharxhi)"
+
+[keyboard-cz]
+Description="Bàn phím - Tiếng Séc"
+Language=cs
+Label=cs
+
+[keyboard-cz-bksl]
+Description="Bàn phím - Tiếng Séc - Czech (extra backslash)"
+Language=cs
+Label="cz (bksl)"
+
+[keyboard-cz-qwerty]
+Description="Bàn phím - Tiếng Séc - Czech (QWERTY)"
+Language=cs
+Label="cz (qwerty)"
+
+[keyboard-cz-qwerty_bksl]
+Description="Bàn phím - Tiếng Séc - Czech (QWERTY, extra backslash)"
+Language=cs
+Label="cz (qwerty_bksl)"
+
+[keyboard-cz-winkeys]
+Description="Bàn phím - Tiếng Séc - Czech (QWERTZ, Windows)"
+Language=cs
+Label="cz (winkeys)"
+
+[keyboard-cz-winkeys-qwerty]
+Description="Bàn phím - Tiếng Séc - Czech (QWERTY, Windows)"
+Language=cs
+Label="cz (winkeys-qwerty)"
+
+[keyboard-cz-qwerty-mac]
+Description="Bàn phím - Tiếng Séc - Czech (QWERTY, Macintosh)"
+Language=cs
+Label="cz (qwerty-mac)"
+
+[keyboard-cz-ucw]
+Description="Bàn phím - Tiếng Séc - Czech (UCW, only accented letters)"
+Language=cs
+Label="cz (ucw)"
+
+[keyboard-cz-dvorak-ucw]
+Description="Bàn phím - Tiếng Séc - Czech (US, Dvorak, UCW support)"
+Language=cs
+Label="cz (dvorak-ucw)"
+
+[keyboard-cz-rus]
+Description="Bàn phím - Tiếng Séc - Russian (Czechia, phonetic)"
+Language=ru
+Label="ru (rus)"
+
+[keyboard-cz-sun_type6]
+Description="Bàn phím - Tiếng Séc - Tiếng Séc (Kiểu Sun 6/7)"
+Language=cs
+Label="cz (sun_type6)"
+
+[keyboard-cz-prog]
+Description="Bàn phím - Tiếng Séc - Czech (programming)"
+Language=cs
+Label="cz (prog)"
+
+[keyboard-cz-prog_typo]
+Description="Bàn phím - Tiếng Séc - Czech (programming, typographic)"
+Language=cs
+Label="cz (prog_typo)"
+
+[keyboard-cz-coder]
+Description="Bàn phím - Tiếng Séc - Czech (coder)"
+Language=cs
+Label="cz (coder)"
+
+[keyboard-cz-colemak-ucw]
+Description="Bàn phím - Tiếng Séc - Czech (US, Colemak, UCW support)"
+Language=cs
+Label="cz (colemak-ucw)"
+
+[keyboard-brai]
+Description="Bàn phím - Chữ nổi"
+Language=
+Label=brl
+
+[keyboard-brai-left_hand]
+Description="Bàn phím - Chữ nổi - Braille (one-handed, left)"
+Language=
+Label="brai (left_hand)"
+
+[keyboard-brai-left_hand_invert]
+Description="Bàn phím - Chữ nổi - Braille (one-handed, left, inverted thumb)"
+Language=
+Label="brai (left_hand_invert)"
+
+[keyboard-brai-right_hand]
+Description="Bàn phím - Chữ nổi - Braille (one-handed, right)"
+Language=
+Label="brai (right_hand)"
+
+[keyboard-brai-right_hand_invert]
+Description="Bàn phím - Chữ nổi - Braille (one-handed, right, inverted thumb)"
+Language=
+Label="brai (right_hand_invert)"
+
+[keyboard-se]
+Description="Bàn phím - Tiếng Thụy Điển"
+Language=sv
+Label=sv
+
+[keyboard-se-nodeadkeys]
+Description="Bàn phím - Tiếng Thụy Điển - Swedish (no dead keys)"
+Language=sv
+Label="se (nodeadkeys)"
+
+[keyboard-se-dvorak]
+Description="Bàn phím - Tiếng Thụy Điển - Tiếng Thụy Điển (Dvorak)"
+Language=sv
+Label="se (dvorak)"
+
+[keyboard-se-us_dvorak]
+Description="Bàn phím - Tiếng Thụy Điển - Swedish (Dvorak, intl.)"
+Language=sv
+Label="se (us_dvorak)"
+
+[keyboard-se-svdvorak]
+Description="Bàn phím - Tiếng Thụy Điển - Thụy Điển (Svdvorak)"
+Language=sv
+Label="se (svdvorak)"
+
+[keyboard-se-colemak]
+Description="Bàn phím - Tiếng Thụy Điển - Swedish (Colemak)"
+Language=sv
+Label="se (colemak)"
+
+[keyboard-se-mac]
+Description="Bàn phím - Tiếng Thụy Điển - Tiếng Thụy Điển (Macintosh)"
+Language=sv
+Label="se (mac)"
+
+[keyboard-se-us]
+Description="Bàn phím - Tiếng Thụy Điển - Swedish (US)"
+Language=sv
+Label="se (us)"
+
+[keyboard-se-swl]
+Description="Bàn phím - Tiếng Thụy Điển - Thụy Điển ngôn ngữ ký hiệu"
+Language=swl
+Label="se (swl)"
+
+[keyboard-se-smi]
+Description="Bàn phím - Tiếng Thụy Điển - Tiếng Bắc Xa-mi (Thụy Điển)"
+Language=se
+Label="se (smi)"
+
+[keyboard-se-rus]
+Description="Bàn phím - Tiếng Thụy Điển - Tiếng Nga (Thụy Điển, ngữ âm)"
+Language=ru
+Label="ru (rus)"
+
+[keyboard-se-dvorak_a5]
+Description="Bàn phím - Tiếng Thụy Điển - Tiếng Thụy Điển (Dvorak A5)"
+Language=sv
+Label="se (dvorak_a5)"
+
+[keyboard-se-sun_type6]
+Description="Bàn phím - Tiếng Thụy Điển - Tiếng Thụy Điển (Kiểu Sun 6/7)"
+Language=sv
+Label="se (sun_type6)"
+
+[keyboard-se-ovd]
+Description="Bàn phím - Tiếng Thụy Điển - Elfdalian (Sweden, with combining ogonek)"
+Language=ovd
+Label="se (ovd)"
+
+[keyboard-bg]
+Description="Bàn phím - Tiếng Bun-ga-ri"
+Language=bg
+Label=bg
+
+[keyboard-bg-phonetic]
+Description="Bàn phím - Tiếng Bun-ga-ri - Tiếng Bun-ga-ri (ngữ âm truyền thống)"
+Language=bg
+Label="bg (phonetic)"
+
+[keyboard-bg-bas_phonetic]
+Description="Bàn phím - Tiếng Bun-ga-ri - Tiếng Bun-ga-ri (ngữ âm mới)"
+Language=bg
+Label="bg (bas_phonetic)"
+
+[keyboard-bg-bekl]
+Description="Bàn phím - Tiếng Bun-ga-ri - Bulgarian (enhanced)"
+Language=bg
+Label="bg (bekl)"
+
+[keyboard-pk]
+Description="Bàn phím - Tiếng Ua-đu (Pa-ki-x-thănh)"
+Language=ur
+Label=ur
+
+[keyboard-pk-urd-crulp]
+Description="Bàn phím - Tiếng Ua-đu (Pa-ki-x-thănh) - Tiếng Ua-đu (Pa-ki-x-thănh, CRULP)"
+Language=ur
+Label="pk (urd-crulp)"
+
+[keyboard-pk-urd-nla]
+Description="Bàn phím - Tiếng Ua-đu (Pa-ki-x-thănh) - Tiếng Ua-đu (Pa-ki-x-thănh, NLA)"
+Language=ur
+Label="pk (urd-nla)"
+
+[keyboard-pk-pak_urdu_phonetic]
+Description="Bàn phím - Tiếng Ua-đu (Pa-ki-x-thănh) - Urdu (Pak Urdu Phonetic)"
+Language=ur
+Label="pk (pak_urdu_phonetic)"
+
+[keyboard-pk-ara]
+Description="Bàn phím - Tiếng Ua-đu (Pa-ki-x-thănh) - Ả Rập (Pa-ki-x-thănh)"
+Language=ar
+Label="ar (ara)"
+
+[keyboard-pk-snd]
+Description="Bàn phím - Tiếng Ua-đu (Pa-ki-x-thănh) - Tiếng Xin-đi"
+Language=sd
+Label="sd (snd)"
+
+[keyboard-pk-urd-navees]
+Description="Bàn phím - Tiếng Ua-đu (Pa-ki-x-thănh) - Urdu (Pakistan, Navees)"
+Language=ur
+Label="pk (urd-navees)"
+
+[keyboard-au]
+Description="Bàn phím - English (Australia)"
+Language=en
+Label=en
+
+[keyboard-mn]
+Description="Bàn phím - Tiếng Mông Cổ"
+Language=mn
+Label=mn
+
+[keyboard-dz]
+Description="Bàn phím - Berber (Algeria, Latin)"
+Language=tzm
+Label=kab
+
+[keyboard-dz-ber]
+Description="Bàn phím - Berber (Algeria, Latin) - Berber (Algeria, Tifinagh)"
+Language=kab
+Label="kab (ber)"
+
+[keyboard-dz-azerty-deadkeys]
+Description="Bàn phím - Berber (Algeria, Latin) - Kabyle (AZERTY, with dead keys)"
+Language=kab
+Label="kab (azerty-deadkeys)"
+
+[keyboard-dz-qwerty-gb-deadkeys]
+Description="Bàn phím - Berber (Algeria, Latin) - Kabyle (QWERTY, UK, with dead keys)"
+Language=kab
+Label="kab (qwerty-gb-deadkeys)"
+
+[keyboard-dz-qwerty-us-deadkeys]
+Description="Bàn phím - Berber (Algeria, Latin) - Kabyle (QWERTY, US, with dead keys)"
+Language=kab
+Label="kab (qwerty-us-deadkeys)"
+
+[keyboard-dz-ar]
+Description="Bàn phím - Berber (Algeria, Latin) - Tiếng Ả Rập (An-gê-ri)"
+Language=ar
+Label=ar
+
+[keyboard-me]
+Description="Bàn phím - Tiếng Montenegrin"
+Language=sr
+Label=sr
+
+[keyboard-me-cyrillic]
+Description="Bàn phím - Tiếng Montenegrin - Tiếng Montenegrin (Ki-rin)"
+Language=sr
+Label="me (cyrillic)"
+
+[keyboard-me-cyrillicyz]
+Description="Bàn phím - Tiếng Montenegrin - Tiếng Montenegrin (Ki-rin, đổi chỗ Z và ZHE)"
+Language=sr
+Label="me (cyrillicyz)"
+
+[keyboard-me-cyrillicalternatequotes]
+Description="Bàn phím - Tiếng Montenegrin - Montenegrin (Cyrillic, with guillemets)"
+Language=sr
+Label="me (cyrillicalternatequotes)"
+
+[keyboard-me-latinunicode]
+Description="Bàn phím - Tiếng Montenegrin - Montenegrin (Latin, Unicode)"
+Language=sr
+Label="me (latinunicode)"
+
+[keyboard-me-latinyz]
+Description="Bàn phím - Tiếng Montenegrin - Montenegrin (Latin, QWERTY)"
+Language=sr
+Label="me (latinyz)"
+
+[keyboard-me-latinunicodeyz]
+Description="Bàn phím - Tiếng Montenegrin - Montenegrin (Latin, Unicode, QWERTY)"
+Language=sr
+Label="me (latinunicodeyz)"
+
+[keyboard-me-latinalternatequotes]
+Description="Bàn phím - Tiếng Montenegrin - Montenegrin (Latin, with guillemets)"
+Language=sr
+Label="me (latinalternatequotes)"
+
+[keyboard-lv]
+Description="Bàn phím - Tiếng Lát-vi-a"
+Language=lv
+Label=lv
+
+[keyboard-lv-apostrophe]
+Description="Bàn phím - Tiếng Lát-vi-a - Latvian (apostrophe)"
+Language=lv
+Label="lv (apostrophe)"
+
+[keyboard-lv-tilde]
+Description="Bàn phím - Tiếng Lát-vi-a - Latvian (tilde)"
+Language=lv
+Label="lv (tilde)"
+
+[keyboard-lv-fkey]
+Description="Bàn phím - Tiếng Lát-vi-a - Latvian (F)"
+Language=lv
+Label="lv (fkey)"
+
+[keyboard-lv-modern]
+Description="Bàn phím - Tiếng Lát-vi-a - Latvian (Modern Latin)"
+Language=lv
+Label="lv (modern)"
+
+[keyboard-lv-modern-cyr]
+Description="Bàn phím - Tiếng Lát-vi-a - Latvian (Modern Cyrillic)"
+Language=lv
+Label="lv (modern-cyr)"
+
+[keyboard-lv-ergonomic]
+Description="Bàn phím - Tiếng Lát-vi-a - Tiếng Lát-vi-a  (công thái học, ŪGJRMV)"
+Language=lv
+Label="lv (ergonomic)"
+
+[keyboard-lv-adapted]
+Description="Bàn phím - Tiếng Lát-vi-a - Tiếng Lát-vi-a (vay mượn)"
+Language=lv
+Label="lv (adapted)"
+
+[keyboard-lv-dvorak]
+Description="Bàn phím - Tiếng Lát-vi-a - Latvian (Dvorak)"
+Language=lv
+Label="lv (dvorak)"
+
+[keyboard-lv-ykeydvorak]
+Description="Bàn phím - Tiếng Lát-vi-a - Latvian (Dvorak, with Y)"
+Language=lv
+Label="lv (ykeydvorak)"
+
+[keyboard-lv-minuskeydvorak]
+Description="Bàn phím - Tiếng Lát-vi-a - Latvian (Dvorak, with minus)"
+Language=lv
+Label="lv (minuskeydvorak)"
+
+[keyboard-lv-dvorakprogr]
+Description="Bàn phím - Tiếng Lát-vi-a - Latvian (programmer Dvorak)"
+Language=lv
+Label="lv (dvorakprogr)"
+
+[keyboard-lv-ykeydvorakprogr]
+Description="Bàn phím - Tiếng Lát-vi-a - Latvian (programmer Dvorak, with Y)"
+Language=lv
+Label="lv (ykeydvorakprogr)"
+
+[keyboard-lv-minuskeydvorakprogr]
+Description="Bàn phím - Tiếng Lát-vi-a - Latvian (programmer Dvorak, with minus)"
+Language=lv
+Label="lv (minuskeydvorakprogr)"
+
+[keyboard-lv-colemak]
+Description="Bàn phím - Tiếng Lát-vi-a - Latvian (Colemak)"
+Language=lv
+Label="lv (colemak)"
+
+[keyboard-lv-apostrophecolemak]
+Description="Bàn phím - Tiếng Lát-vi-a - Latvian (Colemak, with apostrophe)"
+Language=lv
+Label="lv (apostrophecolemak)"
+
+[keyboard-lv-sun_type6]
+Description="Bàn phím - Tiếng Lát-vi-a - Tiếng Lát-vi-a (Kiểu Sun 6/7)"
+Language=lv
+Label="lv (sun_type6)"
+
+[keyboard-lv-apostrophe-deadquotes]
+Description="Bàn phím - Tiếng Lát-vi-a - Latvian (apostrophe, dead quotes)"
+Language=lv
+Label="lv (apostrophe-deadquotes)"
+
+[keyboard-ba]
+Description="Bàn phím - Tiếng Bô-xni-a"
+Language=bs
+Label=bs
+
+[keyboard-ba-alternatequotes]
+Description="Bàn phím - Tiếng Bô-xni-a - Bosnian (with guillemets)"
+Language=bs
+Label="ba (alternatequotes)"
+
+[keyboard-ba-unicode]
+Description="Bàn phím - Tiếng Bô-xni-a - Tiếng Bo-x-ni-a (Dùng chữ ghép Bo-x-ni-a"
+Language=bs
+Label="ba (unicode)"
+
+[keyboard-ba-unicodeus]
+Description="Bàn phím - Tiếng Bô-xni-a - Bosnian (US, with Bosnian digraphs)"
+Language=bs
+Label="ba (unicodeus)"
+
+[keyboard-ba-us]
+Description="Bàn phím - Tiếng Bô-xni-a - Bosnian (US)"
+Language=bs
+Label="ba (us)"
+
+[keyboard-tw]
+Description="Bàn phím - Tiếng Đài Loan"
+Language=fox
+Label=zh
+
+[keyboard-tw-indigenous]
+Description="Bàn phím - Tiếng Đài Loan - Tiếng Đài Loan (bản địa)"
+Language=ami
+Label="tw (indigenous)"
+
+[keyboard-tw-saisiyat]
+Description="Bàn phím - Tiếng Đài Loan - Tiếng Saisiyat (Đài-loan)"
+Language=xsy
+Label="xsy (saisiyat)"
+
+[keyboard-rs]
+Description="Bàn phím - Tiếng Xéc-bi"
+Language=sr
+Label=sr
+
+[keyboard-rs-alternatequotes]
+Description="Bàn phím - Tiếng Xéc-bi - Serbian (Cyrillic, with guillemets)"
+Language=sr
+Label="rs (alternatequotes)"
+
+[keyboard-rs-yz]
+Description="Bàn phím - Tiếng Xéc-bi - Tiếng Xéc-bi (Ki-rin, đổi chỗ Z và ZHE)"
+Language=sr
+Label="rs (yz)"
+
+[keyboard-rs-latin]
+Description="Bàn phím - Tiếng Xéc-bi - Tiếng Xéc-bi (La-tinh)"
+Language=sr
+Label="rs (latin)"
+
+[keyboard-rs-latinalternatequotes]
+Description="Bàn phím - Tiếng Xéc-bi - Serbian (Latin, with guillemets)"
+Language=sr
+Label="rs (latinalternatequotes)"
+
+[keyboard-rs-latinunicode]
+Description="Bàn phím - Tiếng Xéc-bi - Serbian (Latin, Unicode)"
+Language=sr
+Label="rs (latinunicode)"
+
+[keyboard-rs-latinyz]
+Description="Bàn phím - Tiếng Xéc-bi - Serbian (Latin, QWERTY)"
+Language=sr
+Label="rs (latinyz)"
+
+[keyboard-rs-latinunicodeyz]
+Description="Bàn phím - Tiếng Xéc-bi - Serbian (Latin, Unicode, QWERTY)"
+Language=sr
+Label="rs (latinunicodeyz)"
+
+[keyboard-rs-rue]
+Description="Bàn phím - Tiếng Xéc-bi - Tiếng Đồng điệu Ru-xin Pa-non"
+Language=rue
+Label="rs (rue)"
+
+[keyboard-rs-combiningkeys]
+Description="Bàn phím - Tiếng Xéc-bi - Tiếng Xéc-bi (tổ hợp dấu phụ thay cho phím chết)"
+Language=sr
+Label="rs (combiningkeys)"
+
+[keyboard-dk]
+Description="Bàn phím - Tiếng Đan Mạch"
+Language=da
+Label=da
+
+[keyboard-dk-nodeadkeys]
+Description="Bàn phím - Tiếng Đan Mạch - Danish (no dead keys)"
+Language=da
+Label="dk (nodeadkeys)"
+
+[keyboard-dk-winkeys]
+Description="Bàn phím - Tiếng Đan Mạch - Danish (Windows)"
+Language=da
+Label="dk (winkeys)"
+
+[keyboard-dk-mac]
+Description="Bàn phím - Tiếng Đan Mạch - Tiếng Đan Mạch (Macintosh)"
+Language=da
+Label="dk (mac)"
+
+[keyboard-dk-mac_nodeadkeys]
+Description="Bàn phím - Tiếng Đan Mạch - Danish (Macintosh, no dead keys)"
+Language=da
+Label="dk (mac_nodeadkeys)"
+
+[keyboard-dk-dvorak]
+Description="Bàn phím - Tiếng Đan Mạch - Tiếng Đan Mạch (Dvorak)"
+Language=da
+Label="dk (dvorak)"
+
+[keyboard-dk-sun_type6]
+Description="Bàn phím - Tiếng Đan Mạch - Tiếng Đan-mạch (Kiểu Sun 6/7)"
+Language=da
+Label="dk (sun_type6)"
+
+[keyboard-bw]
+Description="Bàn phím - Tiếng T-xoua-na"
+Language=tn
+Label=tn
+
+[keyboard-kr]
+Description="Bàn phím - Tiếng Hàn Quốc"
+Language=ko
+Label=ko
+
+[keyboard-kr-kr104]
+Description="Bàn phím - Tiếng Hàn Quốc - Korean (101/104-key compatible)"
+Language=ko
+Label="kr (kr104)"
+
+[keyboard-kr-sun_type6]
+Description="Bàn phím - Tiếng Hàn Quốc - Tiếng Hàn (Kiểu Sun 6/7)"
+Language=ko
+Label="kr (sun_type6)"
+
+[keyboard-nl]
+Description="Bàn phím - Tiếng Hà Lan"
+Language=nl
+Label=nl
+
+[keyboard-nl-us]
+Description="Bàn phím - Tiếng Hà Lan - Dutch (US)"
+Language=nl
+Label="nl (us)"
+
+[keyboard-nl-mac]
+Description="Bàn phím - Tiếng Hà Lan - Tiếng Hà Lan (Macintosh)"
+Language=nl
+Label="nl (mac)"
+
+[keyboard-nl-std]
+Description="Bàn phím - Tiếng Hà Lan - Tiếng Hà Lan (tiêu chuẩn)"
+Language=nl
+Label="nl (std)"
+
+[keyboard-nl-sun_type6]
+Description="Bàn phím - Tiếng Hà Lan - Tiếng Hà-lan (Kiểu Sun 6/7)"
+Language=nl
+Label="nl (sun_type6)"
+
+[keyboard-et]
+Description="Bàn phím - Tiếng Am-ha-ri"
+Language=am
+Label=am
+
+[keyboard-be]
+Description="Bàn phím - Tiếng Bỉ"
+Language=de
+Label=be
+
+[keyboard-be-oss]
+Description="Bàn phím - Tiếng Bỉ - Belgian (alt.)"
+Language=de
+Label="be (oss)"
+
+[keyboard-be-oss_latin9]
+Description="Bàn phím - Tiếng Bỉ - Belgian (Latin-9 only, alt.)"
+Language=de
+Label="be (oss_latin9)"
+
+[keyboard-be-iso-alternate]
+Description="Bàn phím - Tiếng Bỉ - Belgian (ISO, alt.)"
+Language=de
+Label="be (iso-alternate)"
+
+[keyboard-be-nodeadkeys]
+Description="Bàn phím - Tiếng Bỉ - Belgian (no dead keys)"
+Language=de
+Label="be (nodeadkeys)"
+
+[keyboard-be-wang]
+Description="Bàn phím - Tiếng Bỉ - Belgian (Wang 724 AZERTY)"
+Language=de
+Label="be (wang)"
+
+[keyboard-be-sun_type6]
+Description="Bàn phím - Tiếng Bỉ - Tiếng Bỉ (Kiểu Sun 6/7)"
+Language=de
+Label="be (sun_type6)"
+
+[keyboard-la]
+Description="Bàn phím - Lào"
+Language=lo
+Label=lo
+
+[keyboard-la-stea]
+Description="Bàn phím - Lào - Lao (STEA)"
+Language=lo
+Label="la (stea)"
+
+[keyboard-bt]
+Description="Bàn phím - Tiếng Dzongkha"
+Language=dz
+Label=dz
+
+[keyboard-mm]
+Description="Bàn phím - Tiếng Mi-an-ma"
+Language=my
+Label=my
+
+[keyboard-mm-zawgyi]
+Description="Bàn phím - Tiếng Mi-an-ma - Burmese (Zawgyi)"
+Language=my
+Label="my-zwg (zawgyi)"
+
+[keyboard-mm-mnw]
+Description="Bàn phím - Tiếng Mi-an-ma - Mon"
+Language=mnw
+Label=mnw
+
+[keyboard-mm-mnw-a1]
+Description="Bàn phím - Tiếng Mi-an-ma - Mon (A1)"
+Language=mnw
+Label="mnw (mnw-a1)"
+
+[keyboard-mm-shn]
+Description="Bàn phím - Tiếng Mi-an-ma - Shan"
+Language=shn
+Label=shn
+
+[keyboard-mm-zgt]
+Description="Bàn phím - Tiếng Mi-an-ma - Shan (Zawgyi)"
+Language=shn
+Label="shn-zwg (zgt)"
+
+[keyboard-si]
+Description="Bàn phím - Tiếng Xlô-ven"
+Language=sl
+Label=sl
+
+[keyboard-si-alternatequotes]
+Description="Bàn phím - Tiếng Xlô-ven - Slovenian (with guillemets)"
+Language=sl
+Label="si (alternatequotes)"
+
+[keyboard-si-us]
+Description="Bàn phím - Tiếng Xlô-ven - Slovenian (US)"
+Language=sl
+Label="si (us)"
+
+[keyboard-am]
+Description="Bàn phím - Tiếng Ác-mê-ni"
+Language=hy
+Label=hy
+
+[keyboard-am-phonetic]
+Description="Bàn phím - Tiếng Ác-mê-ni - Tiếng Ác-mê-ni (ngữ âm)"
+Language=hy
+Label="am (phonetic)"
+
+[keyboard-am-phonetic-alt]
+Description="Bàn phím - Tiếng Ác-mê-ni - Armenian (alt. phonetic)"
+Language=hy
+Label="am (phonetic-alt)"
+
+[keyboard-am-eastern]
+Description="Bàn phím - Tiếng Ác-mê-ni - Tiếng Ác-mê-ni (miền đông)"
+Language=hy
+Label="am (eastern)"
+
+[keyboard-am-eastern-alt]
+Description="Bàn phím - Tiếng Ác-mê-ni - Armenian (alt. eastern)"
+Language=hy
+Label="am (eastern-alt)"
+
+[keyboard-am-western]
+Description="Bàn phím - Tiếng Ác-mê-ni - Tiếng Ác-mê-ni (miền tây)"
+Language=hy
+Label="am (western)"
+
+[keyboard-am-olpc-phonetic]
+Description="Bàn phím - Tiếng Ác-mê-ni - Armenian (OLPC, phonetic)"
+Language=hy
+Label="am (olpc-phonetic)"
+
+[keyboard-by]
+Description="Bàn phím - Tiếng Be-la-ruxợ"
+Language=be
+Label=by
+
+[keyboard-by-legacy]
+Description="Bàn phím - Tiếng Be-la-ruxợ - Tiếng Be-la-ru (cổ)"
+Language=be
+Label="by (legacy)"
+
+[keyboard-by-latin]
+Description="Bàn phím - Tiếng Be-la-ruxợ - Tiếng Be-la-ru (La-tinh)"
+Language=be
+Label="by (latin)"
+
+[keyboard-by-intl]
+Description="Bàn phím - Tiếng Be-la-ruxợ - Belarusian (intl.)"
+Language=be
+Label="by (intl)"
+
+[keyboard-by-phonetic]
+Description="Bàn phím - Tiếng Be-la-ruxợ - Belarusian (phonetic)"
+Language=be
+Label="by (phonetic)"
+
+[keyboard-by-ru]
+Description="Bàn phím - Tiếng Be-la-ruxợ - Russian (Belarus)"
+Language=ru
+Label="by (ru)"
+
+[keyboard-vn]
+Description="Bàn phím - Tiếng Việt"
+Language=vi
+Label=vi
+
+[keyboard-vn-us]
+Description="Bàn phím - Tiếng Việt - Vietnamese (US)"
+Language=vi
+Label="vn (us)"
+
+[keyboard-vn-fr]
+Description="Bàn phím - Tiếng Việt - Vietnamese (France)"
+Language=vi
+Label="vn (fr)"
+
+[keyboard-vn-aderty]
+Description="Bàn phím - Tiếng Việt - Vietnamese (AÐERTY)"
+Language=vi
+Label="vn (aderty)"
+
+[keyboard-vn-qderty]
+Description="Bàn phím - Tiếng Việt - Vietnamese (QĐERTY)"
+Language=vi
+Label="vn (qderty)"
+
+[keyboard-ml]
+Description="Bàn phím - Tiếng Bam-ba-ra"
+Language=bm
+Label=bm
+
+[keyboard-ml-fr-oss]
+Description="Bàn phím - Tiếng Bam-ba-ra - French (Mali, alt.)"
+Language=fr
+Label="fr (fr-oss)"
+
+[keyboard-ml-us-mac]
+Description="Bàn phím - Tiếng Bam-ba-ra - English (Mali, US, Macintosh)"
+Language=en
+Label="en (us-mac)"
+
+[keyboard-ml-us-intl]
+Description="Bàn phím - Tiếng Bam-ba-ra - English (Mali, US, intl.)"
+Language=en
+Label="en (us-intl)"
+
+[keyboard-ara]
+Description="Bàn phím - Tiếng Ả Rập"
+Language=ar
+Label=ar
+
+[keyboard-ara-digits]
+Description="Bàn phím - Tiếng Ả Rập - Arabic (Eastern Arabic numerals)"
+Language=ar
+Label="ara (digits)"
+
+[keyboard-ara-azerty]
+Description="Bàn phím - Tiếng Ả Rập - Arabic (AZERTY)"
+Language=ar
+Label="ara (azerty)"
+
+[keyboard-ara-azerty_digits]
+Description="Bàn phím - Tiếng Ả Rập - Arabic (AZERTY, Eastern Arabic numerals)"
+Language=ar
+Label="ara (azerty_digits)"
+
+[keyboard-ara-buckwalter]
+Description="Bàn phím - Tiếng Ả Rập - Tiếng Ả Rập (Buckwalter)"
+Language=ar
+Label="ara (buckwalter)"
+
+[keyboard-ara-mac]
+Description="Bàn phím - Tiếng Ả Rập - Tiếng Ả Rập (Macintosh)"
+Language=ar
+Label="ara (mac)"
+
+[keyboard-ara-mac-phonetic]
+Description="Bàn phím - Tiếng Ả Rập - Arabic (Macintosh, phonetic)"
+Language=ar
+Label="ara (mac-phonetic)"
+
+[keyboard-ara-olpc]
+Description="Bàn phím - Tiếng Ả Rập - Arabic (OLPC)"
+Language=ar
+Label="ara (olpc)"
+
+[keyboard-ara-sun_type6]
+Description="Bàn phím - Tiếng Ả Rập - Tiếng Ả rập (Kiểu Sun 6/7)"
+Language=ar
+Label="ara (sun_type6)"
+
+[keyboard-ara-basic_ext]
+Description="Bàn phím - Tiếng Ả Rập - Arabic (Arabic numerals, extensions in the 4th level)"
+Language=ar
+Label="ara (basic_ext)"
+
+[keyboard-ara-basic_ext_digits]
+Description="Bàn phím - Tiếng Ả Rập - Arabic (Eastern Arabic numerals, extensions in the 4th level)"
+Language=ar
+Label="ara (basic_ext_digits)"
+
+[keyboard-ara-ergoarabic]
+Description="Bàn phím - Tiếng Ả Rập - Arabic (ErgoArabic)"
+Language=ar
+Label="ara (ergoarabic)"
+
+[keyboard-ie]
+Description="Bàn phím - Tiếng Ai-len"
+Language=en
+Label=ie
+
+[keyboard-ie-UnicodeExpert]
+Description="Bàn phím - Tiếng Ai-len - Ai-len (UnicodeExpert)"
+Language=en
+Label="ie (UnicodeExpert)"
+
+[keyboard-ie-CloGaelach]
+Description="Bàn phím - Tiếng Ai-len - CloGaelach"
+Language=ga
+Label="ie (CloGaelach)"
+
+[keyboard-ie-ogam]
+Description="Bàn phím - Tiếng Ai-len - Og-âm"
+Language=sga
+Label="ie (ogam)"
+
+[keyboard-ie-ogam_is434]
+Description="Bàn phím - Tiếng Ai-len - Tiếng Ogam (IS434)"
+Language=sga
+Label="ie (ogam_is434)"
+
+[keyboard-cm]
+Description="Bàn phím - Tiếng Anh (Ca-mơ-run)"
+Language=en
+Label=cm
+
+[keyboard-cm-french]
+Description="Bàn phím - Tiếng Anh (Ca-mơ-run) - Tiếng Pháp (Ca-mơ-run)"
+Language=fr
+Label="fr (french)"
+
+[keyboard-cm-qwerty]
+Description="Bàn phím - Tiếng Anh (Ca-mơ-run) - Cameroon Multilingual (QWERTY, intl.)"
+Language=en
+Label="cm (qwerty)"
+
+[keyboard-cm-azerty]
+Description="Bàn phím - Tiếng Anh (Ca-mơ-run) - Cameroon (AZERTY, intl.)"
+Language=fr
+Label="cm (azerty)"
+
+[keyboard-cm-dvorak]
+Description="Bàn phím - Tiếng Anh (Ca-mơ-run) - Cameroon (Dvorak, intl.)"
+Language=en
+Label="cm (dvorak)"
+
+[keyboard-cm-mmuock]
+Description="Bàn phím - Tiếng Anh (Ca-mơ-run) - Mmuock"
+Language=en
+Label="cm (mmuock)"
+
+[keyboard-iq]
+Description="Bàn phím - Arabic (Iraq)"
+Language=ar
+Label=ar
+
+[keyboard-iq-ku]
+Description="Bàn phím - Arabic (Iraq) - Tiếng Iran (Irắc, La-tinh Q)"
+Language=ku
+Label=ku
+
+[keyboard-iq-ku_alt]
+Description="Bàn phím - Arabic (Iraq) - Tiếng Iran (I-rắc, La-tinh Alt-Q)"
+Language=ku
+Label="ku (ku_alt)"
+
+[keyboard-iq-ku_f]
+Description="Bàn phím - Arabic (Iraq) - Tiếng Iran (I-rắc, F)"
+Language=ku
+Label="ku (ku_f)"
+
+[keyboard-iq-ku_ara]
+Description="Bàn phím - Arabic (Iraq) - Tiếng Iran (I-rắc, Ả Rập La-tinh)"
+Language=ku
+Label="ku (ku_ara)"
+
+[keyboard-af]
+Description="Bàn phím - Dari"
+Language=prs
+Label=fa
+
+[keyboard-af-ps]
+Description="Bàn phím - Dari - Tiếng Pas-tô"
+Language=ps
+Label=ps
+
+[keyboard-af-uz]
+Description="Bàn phím - Dari - Tiếng U-x-béc (Áp-ga-nít-xtan)"
+Language=uz
+Label=uz
+
+[keyboard-af-fa-olpc]
+Description="Bàn phím - Dari - Dari (Afghanistan, OLPC)"
+Language=prs
+Label="fa (fa-olpc)"
+
+[keyboard-af-ps-olpc]
+Description="Bàn phím - Dari - Tiếng Pas-tô (Áp-ga-nít-xtan, OLPC)"
+Language=ps
+Label="ps (ps-olpc)"
+
+[keyboard-af-uz-olpc]
+Description="Bàn phím - Dari - Tiếng U-x-béc (Áp-ga-nít-xtan, OLPC)"
+Language=uz
+Label="uz (uz-olpc)"
+
+[keyboard-hr]
+Description="Bàn phím - Tiếng Croát-chi-a"
+Language=hr
+Label=hr
+
+[keyboard-hr-alternatequotes]
+Description="Bàn phím - Tiếng Croát-chi-a - Croatian (with guillemets)"
+Language=hr
+Label="hr (alternatequotes)"
+
+[keyboard-hr-unicode]
+Description="Bàn phím - Tiếng Croát-chi-a - Tiếng Croát-chi-a (với chữ ghép Croát-chi-a)"
+Language=hr
+Label="hr (unicode)"
+
+[keyboard-hr-unicodeus]
+Description="Bàn phím - Tiếng Croát-chi-a - Croatian (US, with Croatian digraphs)"
+Language=hr
+Label="hr (unicodeus)"
+
+[keyboard-hr-us]
+Description="Bàn phím - Tiếng Croát-chi-a - Croatian (US)"
+Language=hr
+Label="hr (us)"
+
+[keyboard-ma]
+Description="Bàn phím - Tiếng Ả Rập (Ma-rốc)"
+Language=ary
+Label=ar
+
+[keyboard-ma-tifinagh]
+Description="Bàn phím - Tiếng Ả Rập (Ma-rốc) - Tiếng Berber (Ma Rốc, Ti-phi-nac)"
+Language=ber
+Label="ber (tifinagh)"
+
+[keyboard-ma-tifinagh-alt]
+Description="Bàn phím - Tiếng Ả Rập (Ma-rốc) - Berber (Morocco, Tifinagh alt.)"
+Language=ber
+Label="ber (tifinagh-alt)"
+
+[keyboard-ma-tifinagh-alt-phonetic]
+Description="Bàn phím - Tiếng Ả Rập (Ma-rốc) - Berber (Morocco, Tifinagh phonetic, alt.)"
+Language=ber
+Label="ber (tifinagh-alt-phonetic)"
+
+[keyboard-ma-tifinagh-extended]
+Description="Bàn phím - Tiếng Ả Rập (Ma-rốc) - Tiếng Berber (Ma Rốc, Ti-phi-nac mở rộng)"
+Language=ber
+Label="ber (tifinagh-extended)"
+
+[keyboard-ma-tifinagh-phonetic]
+Description="Bàn phím - Tiếng Ả Rập (Ma-rốc) - Berber (Ma Rốc, Ti-phi-nac ngữ âm)"
+Language=ber
+Label="ber (tifinagh-phonetic)"
+
+[keyboard-ma-tifinagh-extended-phonetic]
+Description="Bàn phím - Tiếng Ả Rập (Ma-rốc) - Tiếng Berber (Ma Rốc, Ti-phi-nac mở rộng ngữ âm)"
+Language=ber
+Label="ber (tifinagh-extended-phonetic)"
+
+[keyboard-ma-french]
+Description="Bàn phím - Tiếng Ả Rập (Ma-rốc) - Tiếng Pháp (Ma Rốc)"
+Language=fr
+Label="fr (french)"
+
+[keyboard-ma-rif]
+Description="Bàn phím - Tiếng Ả Rập (Ma-rốc) - Tarifit"
+Language=rif
+Label=rif
+
+[keyboard-sy]
+Description="Bàn phím - Tiếng A Rập (Xy-ri)"
+Language=syr
+Label=ar
+
+[keyboard-sy-syc]
+Description="Bàn phím - Tiếng A Rập (Xy-ri) - Tiếng Xi-ri"
+Language=syr
+Label=syc
+
+[keyboard-sy-syc_phonetic]
+Description="Bàn phím - Tiếng A Rập (Xy-ri) - Tiếng Syriac (ngữ âm)"
+Language=syr
+Label="syc (syc_phonetic)"
+
+[keyboard-sy-ku]
+Description="Bàn phím - Tiếng A Rập (Xy-ri) - Tiếng Kuổ-đít (Iran, A Rập La-tinh)"
+Language=ku
+Label=ku
+
+[keyboard-sy-ku_alt]
+Description="Bàn phím - Tiếng A Rập (Xy-ri) - Tiếng Iran (I-rắc, La-tinh Alt-Q)"
+Language=ku
+Label="ku (ku_alt)"
+
+[keyboard-sy-ku_f]
+Description="Bàn phím - Tiếng A Rập (Xy-ri) - Tiếng A Rập (Xy-ri)"
+Language=ku
+Label="ku (ku_f)"
+
+[keyboard-at]
+Description="Bàn phím - Tiếng Đức (Áo)"
+Language=de
+Label=de
+
+[keyboard-at-nodeadkeys]
+Description="Bàn phím - Tiếng Đức (Áo) - German (Austria, no dead keys)"
+Language=de
+Label="at (nodeadkeys)"
+
+[keyboard-at-mac]
+Description="Bàn phím - Tiếng Đức (Áo) - Tiếng Đức (Áo, Macintosh)"
+Language=de
+Label="at (mac)"
+
+[keyboard-nz]
+Description="Bàn phím - English (New Zealand)"
+Language=en
+Label=en
+
+[keyboard-nz-mao]
+Description="Bàn phím - English (New Zealand) - Tiếng Mao-ri"
+Language=mi
+Label="mi (mao)"
+
+[keyboard-epo]
+Description="Bàn phím - Tiếng Ét-pe-ran-tô"
+Language=eo
+Label=eo
+
+[keyboard-epo-legacy]
+Description="Bàn phím - Tiếng Ét-pe-ran-tô - Esperanto (legacy)"
+Language=eo
+Label="epo (legacy)"
+
+[keyboard-eu]
+Description="Bàn phím - EurKEY (US)"
+Language=ca
+Label=eu
+
+[keyboard-za]
+Description="Bàn phím - Tiếng Anh (Nam Phi)"
+Language=en
+Label=en
+
+[keyboard-fo]
+Description="Bàn phím - Tiếng Pha-rô"
+Language=fo
+Label=fo
+
+[keyboard-fo-nodeadkeys]
+Description="Bàn phím - Tiếng Pha-rô - Faroese (no dead keys)"
+Language=fo
+Label="fo (nodeadkeys)"
+
+[keyboard-gb]
+Description="Bàn phím - Tiếng Anh (UK)"
+Language=en
+Label=en
+
+[keyboard-gb-extd]
+Description="Bàn phím - Tiếng Anh (UK) - English (UK, extended, Windows)"
+Language=en
+Label="gb (extd)"
+
+[keyboard-gb-intl]
+Description="Bàn phím - Tiếng Anh (UK) - English (UK, intl., with dead keys)"
+Language=en
+Label="gb (intl)"
+
+[keyboard-gb-dvorak]
+Description="Bàn phím - Tiếng Anh (UK) - Tiếng Anh (UK, Dvorak)"
+Language=en
+Label="gb (dvorak)"
+
+[keyboard-gb-dvorakukp]
+Description="Bàn phím - Tiếng Anh (UK) - English (UK, Dvorak, with UK punctuation)"
+Language=en
+Label="gb (dvorakukp)"
+
+[keyboard-gb-mac]
+Description="Bàn phím - Tiếng Anh (UK) - Tiếng Anh (UK, Macintosh)"
+Language=en
+Label="gb (mac)"
+
+[keyboard-gb-mac_intl]
+Description="Bàn phím - Tiếng Anh (UK) - English (UK, Macintosh, intl.)"
+Language=en
+Label="gb (mac_intl)"
+
+[keyboard-gb-colemak]
+Description="Bàn phím - Tiếng Anh (UK) - Tiếng Anh (UK, Colemak)"
+Language=en
+Label="gb (colemak)"
+
+[keyboard-gb-colemak_dh]
+Description="Bàn phím - Tiếng Anh (UK) - English (UK, Colemak-DH)"
+Language=en
+Label="gb (colemak_dh)"
+
+[keyboard-gb-gla]
+Description="Bàn phím - Tiếng Anh (UK) - Scottish Gaelic"
+Language=en
+Label="gd (gla)"
+
+[keyboard-gb-pl]
+Description="Bàn phím - Tiếng Anh (UK) - Polish (British keyboard)"
+Language=pl
+Label=pl
+
+[keyboard-gb-sun_type6]
+Description="Bàn phím - Tiếng Anh (UK) - Tiếng Anh (UK, Kiểu Sun 6/7)"
+Language=en
+Label="gb (sun_type6)"
+
+[keyboard-ke]
+Description="Bàn phím - Tiếng Bantu (Kenya)"
+Language=sw
+Label=sw
+
+[keyboard-ke-kik]
+Description="Bàn phím - Tiếng Bantu (Kenya) - Tiếng Ki-ku-yu"
+Language=ki
+Label="ki (kik)"
+
+[keyboard-md]
+Description="Bàn phím - Tiếng Moa-đô-va"
+Language=ro
+Label=ro
+
+[keyboard-md-gag]
+Description="Bàn phím - Tiếng Moa-đô-va - Gagauz (Moldova)"
+Language=gag
+Label=gag
+
+[keyboard-us]
+Description="Bàn phím - Tiếng Anh (Mỹ)"
+Language=en
+Label=en
+
+[keyboard-us-euro]
+Description="Bàn phím - Tiếng Anh (Mỹ) - English (US, euro on 5)"
+Language=en
+Label="us (euro)"
+
+[keyboard-us-intl]
+Description="Bàn phím - Tiếng Anh (Mỹ) - English (US, intl., with dead keys)"
+Language=en
+Label="us (intl)"
+
+[keyboard-us-alt-intl]
+Description="Bàn phím - Tiếng Anh (Mỹ) - English (US, alt. intl.)"
+Language=en
+Label="us (alt-intl)"
+
+[keyboard-us-altgr-intl]
+Description="Bàn phím - Tiếng Anh (Mỹ) - English (intl., with AltGr dead keys)"
+Language=en
+Label="us (altgr-intl)"
+
+[keyboard-us-mac]
+Description="Bàn phím - Tiếng Anh (Mỹ) - English (Macintosh, ABC, ANSI)"
+Language=en
+Label="us (mac)"
+
+[keyboard-us-mac-iso]
+Description="Bàn phím - Tiếng Anh (Mỹ) - English (Macintosh, ABC, ISO)"
+Language=en
+Label="us (mac-iso)"
+
+[keyboard-us-colemak]
+Description="Bàn phím - Tiếng Anh (Mỹ) - Tiếng Anh (Colemak)"
+Language=en
+Label="us (colemak)"
+
+[keyboard-us-colemak_dh]
+Description="Bàn phím - Tiếng Anh (Mỹ) - English (Colemak-DH)"
+Language=en
+Label="us (colemak_dh)"
+
+[keyboard-us-colemak_dh_wide]
+Description="Bàn phím - Tiếng Anh (Mỹ) - English (Colemak-DH Wide)"
+Language=en
+Label="us (colemak_dh_wide)"
+
+[keyboard-us-colemak_dh_ortho]
+Description="Bàn phím - Tiếng Anh (Mỹ) - English (Colemak-DH Ortholinear)"
+Language=en
+Label="us (colemak_dh_ortho)"
+
+[keyboard-us-colemak_dh_iso]
+Description="Bàn phím - Tiếng Anh (Mỹ) - English (Colemak-DH ISO)"
+Language=en
+Label="us (colemak_dh_iso)"
+
+[keyboard-us-colemak_dh_wide_iso]
+Description="Bàn phím - Tiếng Anh (Mỹ) - English (Colemak-DH Wide ISO)"
+Language=en
+Label="us (colemak_dh_wide_iso)"
+
+[keyboard-us-dvorak]
+Description="Bàn phím - Tiếng Anh (Mỹ) - Tiếng Anh (Dvorak)"
+Language=en
+Label="us (dvorak)"
+
+[keyboard-us-dvorak-intl]
+Description="Bàn phím - Tiếng Anh (Mỹ) - English (Dvorak, intl., with dead keys)"
+Language=en
+Label="us (dvorak-intl)"
+
+[keyboard-us-dvorak-alt-intl]
+Description="Bàn phím - Tiếng Anh (Mỹ) - English (Dvorak, alt. intl.)"
+Language=en
+Label="us (dvorak-alt-intl)"
+
+[keyboard-us-dvorak-l]
+Description="Bàn phím - Tiếng Anh (Mỹ) - English (Dvorak, one-handed, left)"
+Language=en
+Label="us (dvorak-l)"
+
+[keyboard-us-dvorak-r]
+Description="Bàn phím - Tiếng Anh (Mỹ) - English (Dvorak, one-handed, right)"
+Language=en
+Label="us (dvorak-r)"
+
+[keyboard-us-dvorak-classic]
+Description="Bàn phím - Tiếng Anh (Mỹ) - Tiếng Anh (Dvorak cổ điển)"
+Language=en
+Label="us (dvorak-classic)"
+
+[keyboard-us-dvp]
+Description="Bàn phím - Tiếng Anh (Mỹ) - English (programmer Dvorak)"
+Language=en
+Label="us (dvp)"
+
+[keyboard-us-dvorak-mac]
+Description="Bàn phím - Tiếng Anh (Mỹ) - English (Dvorak, Macintosh, ANSI)"
+Language=en
+Label="us (dvorak-mac)"
+
+[keyboard-us-dvorak-mac-iso]
+Description="Bàn phím - Tiếng Anh (Mỹ) - English (Dvorak, Macintosh, ISO)"
+Language=en
+Label="us (dvorak-mac-iso)"
+
+[keyboard-us-norman]
+Description="Bàn phím - Tiếng Anh (Mỹ) - Tiếng Anh (Nóoc-măng)"
+Language=en
+Label="us (norman)"
+
+[keyboard-us-symbolic]
+Description="Bàn phím - Tiếng Anh (Mỹ) - English (US, Symbolic)"
+Language=en
+Label="us (symbolic)"
+
+[keyboard-us-workman]
+Description="Bàn phím - Tiếng Anh (Mỹ) - Tiếng Anh (Workman)"
+Language=en
+Label="us (workman)"
+
+[keyboard-us-workman-intl]
+Description="Bàn phím - Tiếng Anh (Mỹ) - English (Workman, intl., with dead keys)"
+Language=en
+Label="us (workman-intl)"
+
+[keyboard-us-olpc2]
+Description="Bàn phím - Tiếng Anh (Mỹ) - English (the divide/multiply toggle the layout)"
+Language=en
+Label="us (olpc2)"
+
+[keyboard-us-chr]
+Description="Bàn phím - Tiếng Anh (Mỹ) - Tiếng Che-rô-ki"
+Language=chr
+Label=chr
+
+[keyboard-us-haw]
+Description="Bàn phím - Tiếng Anh (Mỹ) - Hawaiian"
+Language=haw
+Label=haw
+
+[keyboard-us-rus]
+Description="Bàn phím - Tiếng Anh (Mỹ) - Tiếng Nga (Mỹ, ngữ âm)"
+Language=ru
+Label="ru (rus)"
+
+[keyboard-us-hbs]
+Description="Bàn phím - Tiếng Anh (Mỹ) - Tiếng Serbo-Crô-oát (Mỹ)"
+Language=en
+Label="us (hbs)"
+
+[keyboard-us-intl-unicode]
+Description="Bàn phím - Tiếng Anh (Mỹ) - English (US, intl., AltGr Unicode combining)"
+Language=en
+Label="us (intl-unicode)"
+
+[keyboard-us-alt-intl-unicode]
+Description="Bàn phím - Tiếng Anh (Mỹ) - English (US, intl., AltGr Unicode combining, alt.)"
+Language=en
+Label="us (alt-intl-unicode)"
+
+[keyboard-us-ats]
+Description="Bàn phím - Tiếng Anh (Mỹ) - Át-xi-na"
+Language=en
+Label="us (ats)"
+
+[keyboard-us-crd]
+Description="Bàn phím - Tiếng Anh (Mỹ) - Coeur d'Alene Salish"
+Language=crd
+Label="us (crd)"
+
+[keyboard-us-cz_sk_de]
+Description="Bàn phím - Tiếng Anh (Mỹ) - Czech, Slovak and German (US)"
+Language=en
+Label="us (cz_sk_de)"
+
+[keyboard-us-cz_sk_pl_de_es_fi_sv]
+Description="Bàn phím - Tiếng Anh (Mỹ) - Czech, Slovak, Polish, Spanish, Finnish, Swedish and German (US)"
+Language=en
+Label="us (cz_sk_pl_de_es_fi_sv)"
+
+[keyboard-us-drix]
+Description="Bàn phím - Tiếng Anh (Mỹ) - English (Drix)"
+Language=en
+Label="us (drix)"
+
+[keyboard-us-de_se_fi]
+Description="Bàn phím - Tiếng Anh (Mỹ) - German, Swedish and Finnish (US)"
+Language=en
+Label="us (de_se_fi)"
+
+[keyboard-us-ibm238l]
+Description="Bàn phím - Tiếng Anh (Mỹ) - Tiếng Anh (Mỹ, IBM Ả-rập 238_L)"
+Language=en
+Label="us (ibm238l)"
+
+[keyboard-us-sun_type6]
+Description="Bàn phím - Tiếng Anh (Mỹ) - Tiếng Anh (Mỹ, Kiểu Sun 6/7)"
+Language=en
+Label="us (sun_type6)"
+
+[keyboard-us-carpalx]
+Description="Bàn phím - Tiếng Anh (Mỹ) - Tiếng Anh (Carpalx)"
+Language=en
+Label="us (carpalx)"
+
+[keyboard-us-carpalx-intl]
+Description="Bàn phím - Tiếng Anh (Mỹ) - English (Carpalx, intl., with dead keys)"
+Language=en
+Label="us (carpalx-intl)"
+
+[keyboard-us-carpalx-altgr-intl]
+Description="Bàn phím - Tiếng Anh (Mỹ) - English (Carpalx, intl., with AltGr dead keys)"
+Language=en
+Label="us (carpalx-altgr-intl)"
+
+[keyboard-us-carpalx-full]
+Description="Bàn phím - Tiếng Anh (Mỹ) - Tiếng Anh (Carpalx, tối ưu hóa toàn diện)"
+Language=en
+Label="us (carpalx-full)"
+
+[keyboard-us-carpalx-full-intl]
+Description="Bàn phím - Tiếng Anh (Mỹ) - English (Carpalx, full optimization, intl., with dead keys)"
+Language=en
+Label="us (carpalx-full-intl)"
+
+[keyboard-us-carpalx-full-altgr-intl]
+Description="Bàn phím - Tiếng Anh (Mỹ) - English (Carpalx, full optimization, intl., with AltGr dead keys)"
+Language=en
+Label="us (carpalx-full-altgr-intl)"
+
+[keyboard-us-3l]
+Description="Bàn phím - Tiếng Anh (Mỹ) - English (3l)"
+Language=en
+Label="us (3l)"
+
+[keyboard-us-3l-cros]
+Description="Bàn phím - Tiếng Anh (Mỹ) - English (3l, Chromebook)"
+Language=en
+Label="us (3l-cros)"
+
+[keyboard-us-3l-emacs]
+Description="Bàn phím - Tiếng Anh (Mỹ) - English (3l, emacs)"
+Language=en
+Label="us (3l-emacs)"
+
+[keyboard-us-workman-p]
+Description="Bàn phím - Tiếng Anh (Mỹ) - English (Workman-P)"
+Language=en
+Label=workman-p
+
+[keyboard-us-scn]
+Description="Bàn phím - Tiếng Anh (Mỹ) - Sicilian (US keyboard)"
+Language=en
+Label="us (scn)"
+
+[keyboard-us-altgr-weur]
+Description="Bàn phím - Tiếng Anh (Mỹ) - English (Western European AltGr dead keys)"
+Language=en
+Label="us (altgr-weur)"
+
+[keyboard-ge]
+Description="Bàn phím - Gi-oa-gi-a"
+Language=ka
+Label=ka
+
+[keyboard-ge-ergonomic]
+Description="Bàn phím - Gi-oa-gi-a - Tiếng Gi-oa-gi-a (ergonomic)"
+Language=ka
+Label="ge (ergonomic)"
+
+[keyboard-ge-mess]
+Description="Bàn phím - Gi-oa-gi-a - Tiếng Gi-oa-gi-a (MESS)"
+Language=ka
+Label="ge (mess)"
+
+[keyboard-ge-os]
+Description="Bàn phím - Gi-oa-gi-a - Tiếng Ossetian (Georgia)"
+Language=os
+Label="ge (os)"
+
+[keyboard-ge-ru]
+Description="Bàn phím - Gi-oa-gi-a - Tiếng Nga (Georgia)"
+Language=ru
+Label=ru
+
+[keyboard-es]
+Description="Bàn phím - Tiếng Tây Ban Nha"
+Language=es
+Label=es
+
+[keyboard-es-nodeadkeys]
+Description="Bàn phím - Tiếng Tây Ban Nha - Spanish (no dead keys)"
+Language=es
+Label="es (nodeadkeys)"
+
+[keyboard-es-deadtilde]
+Description="Bàn phím - Tiếng Tây Ban Nha - Spanish (dead tilde)"
+Language=es
+Label="es (deadtilde)"
+
+[keyboard-es-winkeys]
+Description="Bàn phím - Tiếng Tây Ban Nha - Spanish (Windows)"
+Language=es
+Label="es (winkeys)"
+
+[keyboard-es-dvorak]
+Description="Bàn phím - Tiếng Tây Ban Nha - Tiếng Tây Ban Nha (Dvorak)"
+Language=es
+Label="es (dvorak)"
+
+[keyboard-es-ast]
+Description="Bàn phím - Tiếng Tây Ban Nha - Asturian (Spain, with bottom-dot H and L)"
+Language=ast
+Label=ast
+
+[keyboard-es-cat]
+Description="Bàn phím - Tiếng Tây Ban Nha - Tiếng Ca-ta-lăng (Tây Ban Nha, có chữ L chấm giữa)"
+Language=ca
+Label="ca (cat)"
+
+[keyboard-es-sun_type6]
+Description="Bàn phím - Tiếng Tây Ban Nha - Tiếng Tây Ban Nha (Kiểu Sun 6/7)"
+Language=es
+Label="es (sun_type6)"
+
+[keyboard-ee]
+Description="Bàn phím - Tiếng Et-tô-ni-a"
+Language=et
+Label=et
+
+[keyboard-ee-nodeadkeys]
+Description="Bàn phím - Tiếng Et-tô-ni-a - Estonian (no dead keys)"
+Language=et
+Label="ee (nodeadkeys)"
+
+[keyboard-ee-dvorak]
+Description="Bàn phím - Tiếng Et-tô-ni-a - Tiếng Et-tô-ni-a (Dvorak)"
+Language=et
+Label="ee (dvorak)"
+
+[keyboard-ee-us]
+Description="Bàn phím - Tiếng Et-tô-ni-a - Estonian (US)"
+Language=et
+Label="ee (us)"
+
+[keyboard-ee-sun_type6]
+Description="Bàn phím - Tiếng Et-tô-ni-a - Tiếng Ét-tôn-nia (Kiểu Sun 6/7)"
+Language=et
+Label="ee (sun_type6)"
+
+[keyboard-bd]
+Description="Bàn phím - Tiếng Băng-la-đét"
+Language=bn
+Label=bn
+
+[keyboard-bd-probhat]
+Description="Bàn phím - Tiếng Băng-la-đét - Tiếng Băng-la-đét (Probhat)"
+Language=bn
+Label="bd (probhat)"
+
+[keyboard-ph]
+Description="Bàn phím - Tiếng Phi-li-pin"
+Language=en
+Label=ph
+
+[keyboard-ph-qwerty-bay]
+Description="Bàn phím - Tiếng Phi-li-pin - Filipino (QWERTY, Baybayin)"
+Language=bik
+Label="ph (qwerty-bay)"
+
+[keyboard-ph-capewell-dvorak]
+Description="Bàn phím - Tiếng Phi-li-pin - Filipino (Capewell-Dvorak, Latin)"
+Language=en
+Label="ph (capewell-dvorak)"
+
+[keyboard-ph-capewell-dvorak-bay]
+Description="Bàn phím - Tiếng Phi-li-pin - Filipino (Capewell-Dvorak, Baybayin)"
+Language=bik
+Label="ph (capewell-dvorak-bay)"
+
+[keyboard-ph-capewell-qwerf2k6]
+Description="Bàn phím - Tiếng Phi-li-pin - Filipino (Capewell-QWERF 2006, Latin)"
+Language=en
+Label="ph (capewell-qwerf2k6)"
+
+[keyboard-ph-capewell-qwerf2k6-bay]
+Description="Bàn phím - Tiếng Phi-li-pin - Filipino (Capewell-QWERF 2006, Baybayin)"
+Language=bik
+Label="ph (capewell-qwerf2k6-bay)"
+
+[keyboard-ph-colemak]
+Description="Bàn phím - Tiếng Phi-li-pin - Filipino (Colemak, Latin)"
+Language=en
+Label="ph (colemak)"
+
+[keyboard-ph-colemak-bay]
+Description="Bàn phím - Tiếng Phi-li-pin - Filipino (Colemak, Baybayin)"
+Language=bik
+Label="ph (colemak-bay)"
+
+[keyboard-ph-dvorak]
+Description="Bàn phím - Tiếng Phi-li-pin - Filipino (Dvorak, Latin)"
+Language=en
+Label="ph (dvorak)"
+
+[keyboard-ph-dvorak-bay]
+Description="Bàn phím - Tiếng Phi-li-pin - Filipino (Dvorak, Baybayin)"
+Language=bik
+Label="ph (dvorak-bay)"
+
+[keyboard-uz]
+Description="Bàn phím - Tiếng U-dơ-bếch"
+Language=uz
+Label=uz
+
+[keyboard-uz-latin]
+Description="Bàn phím - Tiếng U-dơ-bếch - Tiếng U-x-béc (La-tinh)"
+Language=uz
+Label="uz (latin)"
+
+[keyboard-lt]
+Description="Bàn phím - Tiếng Li-tu-a-ni"
+Language=lt
+Label=lt
+
+[keyboard-lt-std]
+Description="Bàn phím - Tiếng Li-tu-a-ni - Tiếng Li-tu-a-ni (tiêu chuẩn)"
+Language=lt
+Label="lt (std)"
+
+[keyboard-lt-us]
+Description="Bàn phím - Tiếng Li-tu-a-ni - Lithuanian (US)"
+Language=lt
+Label="lt (us)"
+
+[keyboard-lt-ibm]
+Description="Bàn phím - Tiếng Li-tu-a-ni - Lithuanian (IBM)"
+Language=lt
+Label="lt (ibm)"
+
+[keyboard-lt-lekp]
+Description="Bàn phím - Tiếng Li-tu-a-ni - Tiếng Li-tu-a-ni (LEKP)"
+Language=lt
+Label="lt (lekp)"
+
+[keyboard-lt-lekpa]
+Description="Bàn phím - Tiếng Li-tu-a-ni - Tiếng Li-tu-a-ni (LEKPa)"
+Language=lt
+Label="lt (lekpa)"
+
+[keyboard-lt-ratise]
+Description="Bàn phím - Tiếng Li-tu-a-ni - Lithuanian (Ratise)"
+Language=lt
+Label="lt (ratise)"
+
+[keyboard-lt-sgs]
+Description="Bàn phím - Tiếng Li-tu-a-ni - Samogitian"
+Language=sgs
+Label="lt (sgs)"
+
+[keyboard-lt-us_dvorak]
+Description="Bàn phím - Tiếng Li-tu-a-ni - Lithuanian (Dvorak)"
+Language=lt
+Label="lt (us_dvorak)"
+
+[keyboard-lt-sun_type6]
+Description="Bàn phím - Tiếng Li-tu-a-ni - Tiếng Lát-vi (Kiểu Sun 6/7)"
+Language=lt
+Label="lt (sun_type6)"
+
+[keyboard-fi]
+Description="Bàn phím - Tiếng Phần Lan"
+Language=fi
+Label=fi
+
+[keyboard-fi-winkeys]
+Description="Bàn phím - Tiếng Phần Lan - Finnish (Windows)"
+Language=fi
+Label="fi (winkeys)"
+
+[keyboard-fi-classic]
+Description="Bàn phím - Tiếng Phần Lan - Tiếng Phần Lan (cổ điển)"
+Language=fi
+Label="fi (classic)"
+
+[keyboard-fi-nodeadkeys]
+Description="Bàn phím - Tiếng Phần Lan - Finnish (classic, no dead keys)"
+Language=fi
+Label="fi (nodeadkeys)"
+
+[keyboard-fi-mac]
+Description="Bàn phím - Tiếng Phần Lan - Tiếng Phần Lan (Macintosh)"
+Language=fi
+Label="fi (mac)"
+
+[keyboard-fi-smi]
+Description="Bàn phím - Tiếng Phần Lan - Tiếng Bắc Xa-mi (Phần Lan)"
+Language=se
+Label="fi (smi)"
+
+[keyboard-fi-sun_type6]
+Description="Bàn phím - Tiếng Phần Lan - Tiếng Phần Lan (Kiểu Sun 6/7)"
+Language=fi
+Label="fi (sun_type6)"
+
+[keyboard-fi-das]
+Description="Bàn phím - Tiếng Phần Lan - Tiếng Phần Lan (DAS)"
+Language=fi
+Label="fi (das)"
+
+[keyboard-fi-fidvorak]
+Description="Bàn phím - Tiếng Phần Lan - Finnish (Dvorak)"
+Language=fi
+Label="fi (fidvorak)"
+
+[keyboard-cn]
+Description="Bàn phím - Tiếng Trung Quốc"
+Language=zh
+Label=zh
+
+[keyboard-cn-altgr-pinyin]
+Description="Bàn phím - Tiếng Trung Quốc - Hanyu Pinyin Letters (with AltGr dead keys)"
+Language=zh
+Label="cn (altgr-pinyin)"
+
+[keyboard-cn-mon_trad]
+Description="Bàn phím - Tiếng Trung Quốc - Mongolian (Bichig)"
+Language=mvf
+Label="cn (mon_trad)"
+
+[keyboard-cn-mon_trad_todo]
+Description="Bàn phím - Tiếng Trung Quốc - Mongolian (Todo)"
+Language=mvf
+Label="cn (mon_trad_todo)"
+
+[keyboard-cn-mon_trad_xibe]
+Description="Bàn phím - Tiếng Trung Quốc - Mongolian (Xibe)"
+Language=sjo
+Label="cn (mon_trad_xibe)"
+
+[keyboard-cn-mon_trad_manchu]
+Description="Bàn phím - Tiếng Trung Quốc - Mongolian (Manchu)"
+Language=mnc
+Label="cn (mon_trad_manchu)"
+
+[keyboard-cn-mon_trad_galik]
+Description="Bàn phím - Tiếng Trung Quốc - Mongolian (Galik)"
+Language=mvf
+Label="cn (mon_trad_galik)"
+
+[keyboard-cn-mon_todo_galik]
+Description="Bàn phím - Tiếng Trung Quốc - Mongolian (Todo Galik)"
+Language=mvf
+Label="cn (mon_todo_galik)"
+
+[keyboard-cn-mon_manchu_galik]
+Description="Bàn phím - Tiếng Trung Quốc - Mongolian (Manchu Galik)"
+Language=mnc
+Label="cn (mon_manchu_galik)"
+
+[keyboard-cn-tib]
+Description="Bàn phím - Tiếng Trung Quốc - Tiếng Tây Tạng"
+Language=bo
+Label="cn (tib)"
+
+[keyboard-cn-tib_asciinum]
+Description="Bàn phím - Tiếng Trung Quốc - Tiếng Tây Tạng (có chữ số ASCII)"
+Language=bo
+Label="cn (tib_asciinum)"
+
+[keyboard-cn-ug]
+Description="Bàn phím - Tiếng Trung Quốc - Tiếng Uyghur"
+Language=ug
+Label=ug
+
+[keyboard-ca]
+Description="Bàn phím - Tiếng Pháp (Ca-na-đa)"
+Language=fr
+Label=fr
+
+[keyboard-ca-fr-dvorak]
+Description="Bàn phím - Tiếng Pháp (Ca-na-đa) - Tiếng Pháp (Ca-na-đa, Dvorak)"
+Language=fr
+Label="fr (fr-dvorak)"
+
+[keyboard-ca-fr-legacy]
+Description="Bàn phím - Tiếng Pháp (Ca-na-đa) - Tiếng Pháp (Ca-na-đa, cổ)"
+Language=fr
+Label="fr (fr-legacy)"
+
+[keyboard-ca-multix]
+Description="Bàn phím - Tiếng Pháp (Ca-na-đa) - Canadian (CSA)"
+Language=fr
+Label="ca (multix)"
+
+[keyboard-ca-eng]
+Description="Bàn phím - Tiếng Pháp (Ca-na-đa) - Tiếng Anh (Ca-na-đa)"
+Language=en
+Label="en (eng)"
+
+[keyboard-ca-ike]
+Description="Bàn phím - Tiếng Pháp (Ca-na-đa) - I-nukh-ti-tu-th"
+Language=iu
+Label=ike
+
+[keyboard-ca-kut]
+Description="Bàn phím - Tiếng Pháp (Ca-na-đa) - Tiếng Cu-ten-ai"
+Language=fr
+Label=kut
+
+[keyboard-ca-shs]
+Description="Bàn phím - Tiếng Pháp (Ca-na-đa) - Secwepemctsin"
+Language=fr
+Label=shs
+
+[keyboard-ca-sun_type6]
+Description="Bàn phím - Tiếng Pháp (Ca-na-đa) - Đa ngữ (Canada, Kiểu Sun 6/7)"
+Language=fr
+Label="ca (sun_type6)"
+
+[keyboard-gh]
+Description="Bàn phím - Tiếng Anh (Cộng hòa Ga-na)"
+Language=en
+Label=en
+
+[keyboard-gh-generic]
+Description="Bàn phím - Tiếng Anh (Cộng hòa Ga-na) - Tiếng Anh (Ga-na, đa ngữ)"
+Language=en
+Label="gh (generic)"
+
+[keyboard-gh-gillbt]
+Description="Bàn phím - Tiếng Anh (Cộng hòa Ga-na) - Tiếng Anh (Ghana, GILLBT)"
+Language=en
+Label="gh (gillbt)"
+
+[keyboard-gh-akan]
+Description="Bàn phím - Tiếng Anh (Cộng hòa Ga-na) - Akan"
+Language=ak
+Label="ak (akan)"
+
+[keyboard-gh-avn]
+Description="Bàn phím - Tiếng Anh (Cộng hòa Ga-na) - Avatime"
+Language=avn
+Label=avn
+
+[keyboard-gh-ewe]
+Description="Bàn phím - Tiếng Anh (Cộng hòa Ga-na) - Ewe"
+Language=ee
+Label="ee (ewe)"
+
+[keyboard-gh-fula]
+Description="Bàn phím - Tiếng Anh (Cộng hòa Ga-na) - Fula"
+Language=ff
+Label="ff (fula)"
+
+[keyboard-gh-ga]
+Description="Bàn phím - Tiếng Anh (Cộng hòa Ga-na) - Ga"
+Language=gaa
+Label="gaa (ga)"
+
+[keyboard-gh-hausa]
+Description="Bàn phím - Tiếng Anh (Cộng hòa Ga-na) - Hausa (Ghana)"
+Language=ha
+Label="ha (hausa)"
+
+[keyboard-fr]
+Description="Bàn phím - Pháp"
+Language=fr
+Label=fr
+
+[keyboard-fr-nodeadkeys]
+Description="Bàn phím - Pháp - French (no dead keys)"
+Language=fr
+Label="fr (nodeadkeys)"
+
+[keyboard-fr-oss]
+Description="Bàn phím - Pháp - French (alt.)"
+Language=fr
+Label="fr (oss)"
+
+[keyboard-fr-oss_nodeadkeys]
+Description="Bàn phím - Pháp - French (alt., no dead keys)"
+Language=fr
+Label="fr (oss_nodeadkeys)"
+
+[keyboard-fr-oss_latin9]
+Description="Bàn phím - Pháp - French (alt., Latin-9 only)"
+Language=fr
+Label="fr (oss_latin9)"
+
+[keyboard-fr-latin9]
+Description="Bàn phím - Pháp - French (legacy, alt.)"
+Language=fr
+Label="fr (latin9)"
+
+[keyboard-fr-latin9_nodeadkeys]
+Description="Bàn phím - Pháp - French (legacy, alt., no dead keys)"
+Language=fr
+Label="fr (latin9_nodeadkeys)"
+
+[keyboard-fr-azerty]
+Description="Bàn phím - Pháp - French (AZERTY)"
+Language=fr
+Label="fr (azerty)"
+
+[keyboard-fr-afnor]
+Description="Bàn phím - Pháp - French (AZERTY, AFNOR)"
+Language=fr
+Label="fr (afnor)"
+
+[keyboard-fr-bepo]
+Description="Bàn phím - Pháp - French (BEPO)"
+Language=fr
+Label="fr (bepo)"
+
+[keyboard-fr-bepo_latin9]
+Description="Bàn phím - Pháp - French (BEPO, Latin-9 only)"
+Language=fr
+Label="fr (bepo_latin9)"
+
+[keyboard-fr-bepo_afnor]
+Description="Bàn phím - Pháp - French (BEPO, AFNOR)"
+Language=fr
+Label="fr (bepo_afnor)"
+
+[keyboard-fr-dvorak]
+Description="Bàn phím - Pháp - Tiếng Pháp (Dvorak)"
+Language=fr
+Label="fr (dvorak)"
+
+[keyboard-fr-ergol]
+Description="Bàn phím - Pháp - French (Ergo‑L)"
+Language=fr
+Label="fr (ergol)"
+
+[keyboard-fr-ergol_iso]
+Description="Bàn phím - Pháp - French (Ergo‑L, ISO variant)"
+Language=fr
+Label="fr (ergol_iso)"
+
+[keyboard-fr-mac]
+Description="Bàn phím - Pháp - Tiếng Pháp (Macintosh)"
+Language=fr
+Label="fr (mac)"
+
+[keyboard-fr-us]
+Description="Bàn phím - Pháp - French (US)"
+Language=fr
+Label="fr (us)"
+
+[keyboard-fr-bre]
+Description="Bàn phím - Pháp - Breton (France)"
+Language=br
+Label="fr (bre)"
+
+[keyboard-fr-oci]
+Description="Bàn phím - Pháp - Tiếng Óc-khi-tanh"
+Language=oc
+Label="fr (oci)"
+
+[keyboard-fr-geo]
+Description="Bàn phím - Pháp - Tiếng Óc-khi-tanh (Pháp, AZERTY Tskapo)"
+Language=ka
+Label="fr (geo)"
+
+[keyboard-fr-sun_type6]
+Description="Bàn phím - Pháp - Tiếng Pháp (Kiểu Sun 6/7)"
+Language=fr
+Label="fr (sun_type6)"
+
+[keyboard-fr-us-alt]
+Description="Bàn phím - Pháp - French (US with dead keys, alt.)"
+Language=fr
+Label="fr (us-alt)"
+
+[keyboard-fr-us-azerty]
+Description="Bàn phím - Pháp - French (US, AZERTY)"
+Language=fr
+Label="fr (us-azerty)"
+
+[keyboard-eg]
+Description="Bàn phím - Arabic (Egypt)"
+Language=ar
+Label=ar
+
+[keyboard-eg-cop]
+Description="Bàn phím - Arabic (Egypt) - Coptic"
+Language=cop
+Label=cop
+
+[keyboard-cd]
+Description="Bàn phím - Tiếng Pháp (Cộng Hòa Dân Chủ Công-gô)"
+Language=fr
+Label=fr
+
+[keyboard-tg]
+Description="Bàn phím - Tiếng Pháp (Tô gô)"
+Language=fr
+Label=fr
+
+[keyboard-kz]
+Description="Bàn phím - Tiếng Ca-dakh"
+Language=kk
+Label=kk
+
+[keyboard-kz-kazrus]
+Description="Bàn phím - Tiếng Ca-dakh - Tiếng Kha-xắc (với tiếng Nga)"
+Language=kk
+Label="kz (kazrus)"
+
+[keyboard-kz-ext]
+Description="Bàn phím - Tiếng Ca-dakh - Tiếng Kha-xắc (mở rộng)"
+Language=kk
+Label="kz (ext)"
+
+[keyboard-kz-latin]
+Description="Bàn phím - Tiếng Ca-dakh - Kazakh (Latin)"
+Language=kk
+Label="kz (latin)"
+
+[keyboard-kz-ruskaz]
+Description="Bàn phím - Tiếng Ca-dakh - Tiếng Nga (Ka-zắc-tan, có Kha-xắc)"
+Language=kk
+Label="ru (ruskaz)"
+
+[keyboard-ch]
+Description="Bàn phím - Tiếng Đức (Thụy sỹ)"
+Language=de
+Label=de
+
+[keyboard-ch-de_nodeadkeys]
+Description="Bàn phím - Tiếng Đức (Thụy sỹ) - German (Switzerland, no dead keys)"
+Language=de
+Label="de (de_nodeadkeys)"
+
+[keyboard-ch-de_mac]
+Description="Bàn phím - Tiếng Đức (Thụy sỹ) - Tiếng Đức (Thụy Sỹ, Macintosh)"
+Language=de
+Label="de (de_mac)"
+
+[keyboard-ch-legacy]
+Description="Bàn phím - Tiếng Đức (Thụy sỹ) - Tiếng Đức (Thụy Sỹ, cũ)"
+Language=de
+Label="ch (legacy)"
+
+[keyboard-ch-fr]
+Description="Bàn phím - Tiếng Đức (Thụy sỹ) - Tiếng Pháp (Thụy sỹ)"
+Language=fr
+Label=fr
+
+[keyboard-ch-fr_nodeadkeys]
+Description="Bàn phím - Tiếng Đức (Thụy sỹ) - French (Switzerland, no dead keys)"
+Language=fr
+Label="fr (fr_nodeadkeys)"
+
+[keyboard-ch-fr_mac]
+Description="Bàn phím - Tiếng Đức (Thụy sỹ) - Tiếng Pháp (Thụy Sỹ, Macintosh)"
+Language=fr
+Label="fr (fr_mac)"
+
+[keyboard-ch-sun_type6_de]
+Description="Bàn phím - Tiếng Đức (Thụy sỹ) - Tiếng Đức (Thụy Sỹ, Kiểu Sun 6/7)"
+Language=de
+Label="ch (sun_type6_de)"
+
+[keyboard-ch-sun_type6_fr]
+Description="Bàn phím - Tiếng Đức (Thụy sỹ) - Tiếng Pháp (Thụy Sỹ, Kiểu Sun 6/7)"
+Language=de
+Label="ch (sun_type6_fr)"
+
+[keyboard-gr]
+Description="Bàn phím - Tiếng Hy Lạp"
+Language=el
+Label=gr
+
+[keyboard-gr-simple]
+Description="Bàn phím - Tiếng Hy Lạp - Tiếng Huy Lạp (đơn giản)"
+Language=el
+Label="gr (simple)"
+
+[keyboard-gr-nodeadkeys]
+Description="Bàn phím - Tiếng Hy Lạp - Greek (no dead keys)"
+Language=el
+Label="gr (nodeadkeys)"
+
+[keyboard-gr-polytonic]
+Description="Bàn phím - Tiếng Hy Lạp - Tiếng Hy Lạp (đa giọng)"
+Language=el
+Label="gr (polytonic)"
+
+[keyboard-gr-sun_type6]
+Description="Bàn phím - Tiếng Hy Lạp - Tiếng Hy Lạp (Kiểu Sun 6/7)"
+Language=el
+Label="gr (sun_type6)"
+
+[keyboard-gr-colemak]
+Description="Bàn phím - Tiếng Hy Lạp - Greek (Colemak)"
+Language=el
+Label="gr (colemak)"
+
+[keyboard-tr]
+Description="Bàn phím - Tiếng Thổ Nhĩ Kỳ"
+Language=tr
+Label=tr
+
+[keyboard-tr-f]
+Description="Bàn phím - Tiếng Thổ Nhĩ Kỳ - Tiếng Thổ Nhĩ Kỳ (F)"
+Language=tr
+Label="tr (f)"
+
+[keyboard-tr-e]
+Description="Bàn phím - Tiếng Thổ Nhĩ Kỳ - Turkish (E)"
+Language=tr
+Label="tr (e)"
+
+[keyboard-tr-alt]
+Description="Bàn phím - Tiếng Thổ Nhĩ Kỳ - Tiếng Thổ nhĩ kỳ (Alt-Q)"
+Language=tr
+Label="tr (alt)"
+
+[keyboard-tr-intl]
+Description="Bàn phím - Tiếng Thổ Nhĩ Kỳ - Turkish (intl., with dead keys)"
+Language=tr
+Label="tr (intl)"
+
+[keyboard-tr-ku]
+Description="Bàn phím - Tiếng Thổ Nhĩ Kỳ - Tiếng Kuổ-đít (Iran, A Rập La-tinh)"
+Language=ku
+Label=ku
+
+[keyboard-tr-ku_f]
+Description="Bàn phím - Tiếng Thổ Nhĩ Kỳ - Tiếng Kuổ-đít (Thổ Nhĩ Kỳ, F)"
+Language=ku
+Label="ku (ku_f)"
+
+[keyboard-tr-ku_alt]
+Description="Bàn phím - Tiếng Thổ Nhĩ Kỳ - Tiếng Iran (I-rắc, La-tinh Alt-Q)"
+Language=ku
+Label="ku (ku_alt)"
+
+[keyboard-tr-sun_type6]
+Description="Bàn phím - Tiếng Thổ Nhĩ Kỳ - Tiếng Thổ Nhĩ Kỳ (Kiểu Sun 6/7)"
+Language=tr
+Label="tr (sun_type6)"
+
+[keyboard-tr-us]
+Description="Bàn phím - Tiếng Thổ Nhĩ Kỳ - Turkish (i and ı swapped)"
+Language=tr
+Label="tr (us)"
+
+[keyboard-tr-otk]
+Description="Bàn phím - Tiếng Thổ Nhĩ Kỳ - Old Turkic"
+Language=tr
+Label="tr (otk)"
+
+[keyboard-tr-otkf]
+Description="Bàn phím - Tiếng Thổ Nhĩ Kỳ - Old Turkic (F)"
+Language=tr
+Label="tr (otkf)"
+
+[keyboard-tr-ot]
+Description="Bàn phím - Tiếng Thổ Nhĩ Kỳ - Ottoman (Q)"
+Language=tr
+Label="tr (ot)"
+
+[keyboard-tr-otf]
+Description="Bàn phím - Tiếng Thổ Nhĩ Kỳ - Ottoman (F)"
+Language=tr
+Label="tr (otf)"
+
+[keyboard-il]
+Description="Bàn phím - Tiếng Do Thái"
+Language=he
+Label=he
+
+[keyboard-il-si2]
+Description="Bàn phím - Tiếng Do Thái - Hebrew (SI-1452-2)"
+Language=he
+Label="il (si2)"
+
+[keyboard-il-lyx]
+Description="Bàn phím - Tiếng Do Thái - Tiếng Do Thái (lyx)"
+Language=he
+Label="il (lyx)"
+
+[keyboard-il-phonetic]
+Description="Bàn phím - Tiếng Do Thái - Tiếng Do Thái (ngữ âm)"
+Language=he
+Label="il (phonetic)"
+
+[keyboard-il-biblical]
+Description="Bàn phím - Tiếng Do Thái - Tiếng Do Thái (Kinh thánh, Tiro)"
+Language=he
+Label="il (biblical)"
+
+[keyboard-il-biblicalSIL]
+Description="Bàn phím - Tiếng Do Thái - Tiếng Hê-brơ (Do thái) (Kinh thánh, ngữ âm SIL)"
+Language=he
+Label="il (biblicalSIL)"
+
+[keyboard-de]
+Description="Bàn phím - Tiếng Đức"
+Language=de
+Label=de
+
+[keyboard-de-deadacute]
+Description="Bàn phím - Tiếng Đức - Tiếng Đức (dấu sắc chết)"
+Language=de
+Label="de (deadacute)"
+
+[keyboard-de-deadgraveacute]
+Description="Bàn phím - Tiếng Đức - Tiếng Đức (dấu huyền chết)"
+Language=de
+Label="de (deadgraveacute)"
+
+[keyboard-de-deadtilde]
+Description="Bàn phím - Tiếng Đức - Tiếng Đức (dấu sóng chết)"
+Language=de
+Label="de (deadtilde)"
+
+[keyboard-de-nodeadkeys]
+Description="Bàn phím - Tiếng Đức - German (no dead keys)"
+Language=de
+Label="de (nodeadkeys)"
+
+[keyboard-de-e1]
+Description="Bàn phím - Tiếng Đức - German (E1)"
+Language=de
+Label="de (e1)"
+
+[keyboard-de-e2]
+Description="Bàn phím - Tiếng Đức - German (E2)"
+Language=de
+Label="de (e2)"
+
+[keyboard-de-T3]
+Description="Bàn phím - Tiếng Đức - Tiếng Đức (T3)"
+Language=de
+Label="de (T3)"
+
+[keyboard-de-us]
+Description="Bàn phím - Tiếng Đức - German (US)"
+Language=de
+Label="de (us)"
+
+[keyboard-de-dvorak]
+Description="Bàn phím - Tiếng Đức - Tiếng Đức (Dvorak)"
+Language=de
+Label="de (dvorak)"
+
+[keyboard-de-mac]
+Description="Bàn phím - Tiếng Đức - Tiếng Đức (Macintosh)"
+Language=de
+Label="de (mac)"
+
+[keyboard-de-mac_nodeadkeys]
+Description="Bàn phím - Tiếng Đức - German (Macintosh, no dead keys)"
+Language=de
+Label="de (mac_nodeadkeys)"
+
+[keyboard-de-neo]
+Description="Bàn phím - Tiếng Đức - Tiếng Đức (Neo 2)"
+Language=de
+Label="de (neo)"
+
+[keyboard-de-qwerty]
+Description="Bàn phím - Tiếng Đức - German (QWERTY)"
+Language=de
+Label="de (qwerty)"
+
+[keyboard-de-dsb]
+Description="Bàn phím - Tiếng Đức - Tiếng Xoa-bi Thấp"
+Language=dsb
+Label="de (dsb)"
+
+[keyboard-de-dsb_qwertz]
+Description="Bàn phím - Tiếng Đức - Lower Sorbian (QWERTZ)"
+Language=dsb
+Label="de (dsb_qwertz)"
+
+[keyboard-de-ro]
+Description="Bàn phím - Tiếng Đức - Tiếng Ru-ma-ny (Đức)"
+Language=ro
+Label="de (ro)"
+
+[keyboard-de-ro_nodeadkeys]
+Description="Bàn phím - Tiếng Đức - Romanian (Germany, no dead keys)"
+Language=ro
+Label="de (ro_nodeadkeys)"
+
+[keyboard-de-ru]
+Description="Bàn phím - Tiếng Đức - Tiếng Nga (Đức, ngữ âm)"
+Language=ru
+Label=ru
+
+[keyboard-de-tr]
+Description="Bàn phím - Tiếng Đức - Thổ Nhĩ Kỳ (Đức)"
+Language=tr
+Label="de (tr)"
+
+[keyboard-de-hu]
+Description="Bàn phím - Tiếng Đức - German (with Hungarian letters, no dead keys)"
+Language=de
+Label="de (hu)"
+
+[keyboard-de-pl]
+Description="Bàn phím - Tiếng Đức - Polish (Germany, no dead keys)"
+Language=de
+Label="de (pl)"
+
+[keyboard-de-sun_type6]
+Description="Bàn phím - Tiếng Đức - Tiếng Đức (Kiểu Sun 6/7)"
+Language=de
+Label="de (sun_type6)"
+
+[keyboard-de-adnw]
+Description="Bàn phím - Tiếng Đức - Tiếng Đức (Aus der Neo-Welt)"
+Language=de
+Label="de (adnw)"
+
+[keyboard-de-koy]
+Description="Bàn phím - Tiếng Đức - Tiếng Đức (KOYT)"
+Language=de
+Label="de (koy)"
+
+[keyboard-de-bone]
+Description="Bàn phím - Tiếng Đức - Tiếng Đức (Bone)"
+Language=de
+Label="de (bone)"
+
+[keyboard-de-bone_eszett_home]
+Description="Bàn phím - Tiếng Đức - German (Bone, eszett in the home row)"
+Language=de
+Label="de (bone_eszett_home)"
+
+[keyboard-de-neo_qwertz]
+Description="Bàn phím - Tiếng Đức - German (Neo, QWERTZ)"
+Language=de
+Label="de (neo_qwertz)"
+
+[keyboard-de-neo_qwerty]
+Description="Bàn phím - Tiếng Đức - German (Neo, QWERTY)"
+Language=de
+Label="de (neo_qwerty)"
+
+[keyboard-de-noted]
+Description="Bàn phím - Tiếng Đức - German (Noted)"
+Language=de
+Label="de (noted)"
+
+[keyboard-de-ru-recom]
+Description="Bàn phím - Tiếng Đức - Russian (Germany, recommended)"
+Language=ru
+Label="ru (ru-recom)"
+
+[keyboard-de-ru-translit]
+Description="Bàn phím - Tiếng Đức - Russian (Germany, transliteration)"
+Language=ru
+Label="ru (ru-translit)"
+
+[keyboard-id]
+Description="Bàn phím - Indonesian (Latin)"
+Language=id
+Label=id
+
+[keyboard-id-melayu-phonetic]
+Description="Bàn phím - Indonesian (Latin) - Indonesian (Arab Melayu, phonetic)"
+Language=id
+Label="id (melayu-phonetic)"
+
+[keyboard-id-melayu-phoneticx]
+Description="Bàn phím - Indonesian (Latin) - Indonesian (Arab Melayu, extended phonetic)"
+Language=id
+Label="id (melayu-phoneticx)"
+
+[keyboard-id-pegon-phonetic]
+Description="Bàn phím - Indonesian (Latin) - Indonesian (Arab Pegon, phonetic)"
+Language=id
+Label="id (pegon-phonetic)"
+
+[keyboard-id-javanese]
+Description="Bàn phím - Indonesian (Latin) - Javanese"
+Language=id
+Label="id (javanese)"
+
+[keyboard-sn]
+Description="Bàn phím - Wolof"
+Language=wo
+Label=wo
+
+[keyboard-az]
+Description="Bàn phím - Tiếng Agiecbaigiăng"
+Language=az
+Label=az
+
+[keyboard-az-cyrillic]
+Description="Bàn phím - Tiếng Agiecbaigiăng - Tiếng Agiecbaigiăng (Ki-rin)"
+Language=az
+Label="az (cyrillic)"
+
+[keyboard-kh]
+Description="Bàn phím - Tiếng Khơ-me (Cam Pu Chia)"
+Language=km
+Label=km
+
+[keyboard-hu]
+Description="Bàn phím - Tiếng Hung Ga ri"
+Language=hu
+Label=hu
+
+[keyboard-hu-standard]
+Description="Bàn phím - Tiếng Hung Ga ri - Tiếng Hung Ga ri (tiêu chuẩn)"
+Language=hu
+Label="hu (standard)"
+
+[keyboard-hu-nodeadkeys]
+Description="Bàn phím - Tiếng Hung Ga ri - Hungarian (no dead keys)"
+Language=hu
+Label="hu (nodeadkeys)"
+
+[keyboard-hu-qwerty]
+Description="Bàn phím - Tiếng Hung Ga ri - Hungarian (QWERTY)"
+Language=hu
+Label="hu (qwerty)"
+
+[keyboard-hu-101_qwertz_comma_dead]
+Description="Bàn phím - Tiếng Hung Ga ri - Hungarian (QWERTZ, 101-key, comma, dead keys)"
+Language=hu
+Label="hu (101_qwertz_comma_dead)"
+
+[keyboard-hu-101_qwertz_comma_nodead]
+Description="Bàn phím - Tiếng Hung Ga ri - Hungarian (QWERTZ, 101-key, comma, no dead keys)"
+Language=hu
+Label="hu (101_qwertz_comma_nodead)"
+
+[keyboard-hu-101_qwertz_dot_dead]
+Description="Bàn phím - Tiếng Hung Ga ri - Hungarian (QWERTZ, 101-key, dot, dead keys)"
+Language=hu
+Label="hu (101_qwertz_dot_dead)"
+
+[keyboard-hu-101_qwertz_dot_nodead]
+Description="Bàn phím - Tiếng Hung Ga ri - Hungarian (QWERTZ, 101-key, dot, no dead keys)"
+Language=hu
+Label="hu (101_qwertz_dot_nodead)"
+
+[keyboard-hu-101_qwerty_comma_dead]
+Description="Bàn phím - Tiếng Hung Ga ri - Hungarian (QWERTY, 101-key, comma, dead keys)"
+Language=hu
+Label="hu (101_qwerty_comma_dead)"
+
+[keyboard-hu-101_qwerty_comma_nodead]
+Description="Bàn phím - Tiếng Hung Ga ri - Hungarian (QWERTY, 101-key, comma, no dead keys)"
+Language=hu
+Label="hu (101_qwerty_comma_nodead)"
+
+[keyboard-hu-101_qwerty_dot_dead]
+Description="Bàn phím - Tiếng Hung Ga ri - Hungarian (QWERTY, 101-key, dot, dead keys)"
+Language=hu
+Label="hu (101_qwerty_dot_dead)"
+
+[keyboard-hu-101_qwerty_dot_nodead]
+Description="Bàn phím - Tiếng Hung Ga ri - Hungarian (QWERTY, 101-key, dot, no dead keys)"
+Language=hu
+Label="hu (101_qwerty_dot_nodead)"
+
+[keyboard-hu-102_qwertz_comma_dead]
+Description="Bàn phím - Tiếng Hung Ga ri - Hungarian (QWERTZ, 102-key, comma, dead keys)"
+Language=hu
+Label="hu (102_qwertz_comma_dead)"
+
+[keyboard-hu-102_qwertz_comma_nodead]
+Description="Bàn phím - Tiếng Hung Ga ri - Hungarian (QWERTZ, 102-key, comma, no dead keys)"
+Language=hu
+Label="hu (102_qwertz_comma_nodead)"
+
+[keyboard-hu-102_qwertz_dot_dead]
+Description="Bàn phím - Tiếng Hung Ga ri - Hungarian (QWERTZ, 102-key, dot, dead keys)"
+Language=hu
+Label="hu (102_qwertz_dot_dead)"
+
+[keyboard-hu-102_qwertz_dot_nodead]
+Description="Bàn phím - Tiếng Hung Ga ri - Hungarian (QWERTZ, 102-key, dot, no dead keys)"
+Language=hu
+Label="hu (102_qwertz_dot_nodead)"
+
+[keyboard-hu-102_qwerty_comma_dead]
+Description="Bàn phím - Tiếng Hung Ga ri - Hungarian (QWERTY, 102-key, comma, dead keys)"
+Language=hu
+Label="hu (102_qwerty_comma_dead)"
+
+[keyboard-hu-102_qwerty_comma_nodead]
+Description="Bàn phím - Tiếng Hung Ga ri - Hungarian (QWERTY, 102-key, comma, no dead keys)"
+Language=hu
+Label="hu (102_qwerty_comma_nodead)"
+
+[keyboard-hu-102_qwerty_dot_dead]
+Description="Bàn phím - Tiếng Hung Ga ri - Hungarian (QWERTY, 102-key, dot, dead keys)"
+Language=hu
+Label="hu (102_qwerty_dot_dead)"
+
+[keyboard-hu-102_qwerty_dot_nodead]
+Description="Bàn phím - Tiếng Hung Ga ri - Hungarian (QWERTY, 102-key, dot, no dead keys)"
+Language=hu
+Label="hu (102_qwerty_dot_nodead)"
+
+[keyboard-hu-oldhunlig]
+Description="Bàn phím - Tiếng Hung Ga ri - Old Hungarian (for ligatures)"
+Language=hu
+Label="oldhun(lig) (oldhunlig)"
+
+[keyboard-hu-oldhun_sk_sh]
+Description="Bàn phím - Tiếng Hung Ga ri - Old Hungarian (Carpathian Highlands, S as Sh)"
+Language=hu
+Label="oldhun(SK,Sh) (oldhun_sk_sh)"
+
+[keyboard-hu-oldhun_sk_sz]
+Description="Bàn phím - Tiếng Hung Ga ri - Old Hungarian (Carpathian Highlands, S as Sz)"
+Language=hu
+Label="oldhun(SK,Sz) (oldhun_sk_sz)"
+
+[keyboard-hu-us]
+Description="Bàn phím - Tiếng Hung Ga ri - Hungarian (US)"
+Language=hu
+Label=us
+
+[keyboard-ng]
+Description="Bàn phím - Tiếng Anh (Nigeria)"
+Language=en
+Label=en
+
+[keyboard-ng-hausa]
+Description="Bàn phím - Tiếng Anh (Nigeria) - Hausa (Nigeria)"
+Language=ha
+Label="ha (hausa)"
+
+[keyboard-ng-igbo]
+Description="Bàn phím - Tiếng Anh (Nigeria) - Tiếng Ig-bô"
+Language=ig
+Label="ig (igbo)"
+
+[keyboard-ng-yoruba]
+Description="Bàn phím - Tiếng Anh (Nigeria) - Tiếng Yoa-ru-ba"
+Language=yo
+Label="yo (yoruba)"
+
+[keyboard-is]
+Description="Bàn phím - Tiếng Aixơlen"
+Language=is
+Label=is
+
+[keyboard-is-mac_legacy]
+Description="Bàn phím - Tiếng Aixơlen - Tiếng Ai-len (Macintosh, cũ)"
+Language=is
+Label="is (mac_legacy)"
+
+[keyboard-is-mac]
+Description="Bàn phím - Tiếng Aixơlen - Tiếng Ai-len (Macintosh)"
+Language=is
+Label="is (mac)"
+
+[keyboard-is-dvorak]
+Description="Bàn phím - Tiếng Aixơlen - Tiếng Ai-xơ-len (Dvorak)"
+Language=is
+Label="is (dvorak)"
+
+[keyboard-in]
+Description="Bàn phím - Tiếng Ấn Độ"
+Language=hi
+Label=in
+
+[keyboard-in-asm-kagapa]
+Description="Bàn phím - Tiếng Ấn Độ - Assamese (KaGaPa, phonetic)"
+Language=as
+Label="as (asm-kagapa)"
+
+[keyboard-in-ben]
+Description="Bàn phím - Tiếng Ấn Độ - Tiếng Băng-la-đét (Ấn-độ)"
+Language=bn
+Label="bn (ben)"
+
+[keyboard-in-ben_probhat]
+Description="Bàn phím - Tiếng Ấn Độ - Tiếng Băng-la-đét (Ấn-độ, Probhat)"
+Language=bn
+Label="bn (ben_probhat)"
+
+[keyboard-in-ben_baishakhi]
+Description="Bàn phím - Tiếng Ấn Độ - Tiếng Băng-la-đét (Ấn-độ, Baishakhi)"
+Language=bn
+Label="in (ben_baishakhi)"
+
+[keyboard-in-ben_bornona]
+Description="Bàn phím - Tiếng Ấn Độ - Tiếng Băng-la-đét (Ấn-độ, Bornona)"
+Language=bn
+Label="in (ben_bornona)"
+
+[keyboard-in-ben-kagapa]
+Description="Bàn phím - Tiếng Ấn Độ - Bangla (India, KaGaPa, phonetic)"
+Language=bn
+Label="in (ben-kagapa)"
+
+[keyboard-in-ben_gitanjali]
+Description="Bàn phím - Tiếng Ấn Độ - Bangla (India, Gitanjali)"
+Language=bn
+Label="in (ben_gitanjali)"
+
+[keyboard-in-ben_inscript]
+Description="Bàn phím - Tiếng Ấn Độ - Bangla (India, Baishakhi InScript)"
+Language=bn
+Label="in (ben_inscript)"
+
+[keyboard-in-eng]
+Description="Bàn phím - Tiếng Ấn Độ - English (India, with rupee)"
+Language=en
+Label="en (eng)"
+
+[keyboard-in-guj]
+Description="Bàn phím - Tiếng Ấn Độ - Tiếng Gu-gia-ra-ti"
+Language=gu
+Label="gu (guj)"
+
+[keyboard-in-guj-kagapa]
+Description="Bàn phím - Tiếng Ấn Độ - Gujarati (KaGaPa, phonetic)"
+Language=gu
+Label="gu (guj-kagapa)"
+
+[keyboard-in-bolnagri]
+Description="Bàn phím - Tiếng Ấn Độ - Tiếng Hin-đi (Bolnagri)"
+Language=hi
+Label="hi (bolnagri)"
+
+[keyboard-in-hin-wx]
+Description="Bàn phím - Tiếng Ấn Độ - Tiếng Hin-đi (Wx)"
+Language=hi
+Label="hi (hin-wx)"
+
+[keyboard-in-hin-kagapa]
+Description="Bàn phím - Tiếng Ấn Độ - Hindi (KaGaPa, phonetic)"
+Language=hi
+Label="hi (hin-kagapa)"
+
+[keyboard-in-kan]
+Description="Bàn phím - Tiếng Ấn Độ - Kannada"
+Language=kn
+Label="kn (kan)"
+
+[keyboard-in-kan-kagapa]
+Description="Bàn phím - Tiếng Ấn Độ - Kannada (KaGaPa, phonetic)"
+Language=kn
+Label="kn (kan-kagapa)"
+
+[keyboard-in-mal]
+Description="Bàn phím - Tiếng Ấn Độ - Tiếng Mã-lai"
+Language=ml
+Label="ml (mal)"
+
+[keyboard-in-mal_lalitha]
+Description="Bàn phím - Tiếng Ấn Độ - Tiếng Mã-lai (Lalitha)"
+Language=ml
+Label="ml (mal_lalitha)"
+
+[keyboard-in-mal_enhanced]
+Description="Bàn phím - Tiếng Ấn Độ - Malayalam (enhanced InScript, with rupee)"
+Language=ml
+Label="ml (mal_enhanced)"
+
+[keyboard-in-mal_poorna]
+Description="Bàn phím - Tiếng Ấn Độ - Malayalam (Poorna, extended InScript)"
+Language=ml
+Label="ml (mal_poorna)"
+
+[keyboard-in-mni]
+Description="Bàn phím - Tiếng Ấn Độ - Manipuri (Meitei)"
+Language=mni
+Label="in (mni)"
+
+[keyboard-in-mar-kagapa]
+Description="Bàn phím - Tiếng Ấn Độ - Marathi (KaGaPa, phonetic)"
+Language=mr
+Label="mr (mar-kagapa)"
+
+[keyboard-in-marathi]
+Description="Bàn phím - Tiếng Ấn Độ - Marathi (enhanced InScript)"
+Language=mr
+Label="in (marathi)"
+
+[keyboard-in-ori]
+Description="Bàn phím - Tiếng Ấn Độ - Ô-ri-a"
+Language=or
+Label="or (ori)"
+
+[keyboard-in-ori-bolnagri]
+Description="Bàn phím - Tiếng Ấn Độ - Oriya (Bolnagri)"
+Language=or
+Label="or (ori-bolnagri)"
+
+[keyboard-in-ori-wx]
+Description="Bàn phím - Tiếng Ấn Độ - Oriya (Wx)"
+Language=or
+Label="or (ori-wx)"
+
+[keyboard-in-guru]
+Description="Bàn phím - Tiếng Ấn Độ - Tiếng Punjabi (Gổ-mu-khi)"
+Language=pa
+Label="pa (guru)"
+
+[keyboard-in-jhelum]
+Description="Bàn phím - Tiếng Ấn Độ - Tiếng Punjabi (Gổ-mu-khi Jhelum)"
+Language=pa
+Label="pa (jhelum)"
+
+[keyboard-in-san-kagapa]
+Description="Bàn phím - Tiếng Ấn Độ - Sanskrit (KaGaPa, phonetic)"
+Language=sa
+Label="sa (san-kagapa)"
+
+[keyboard-in-sat]
+Description="Bàn phím - Tiếng Ấn Độ - Santali (Ol Chiki)"
+Language=sat
+Label=sat
+
+[keyboard-in-tamilnet]
+Description="Bàn phím - Tiếng Ấn Độ - Tamil (TamilNet '99)"
+Language=ta
+Label="ta (tamilnet)"
+
+[keyboard-in-tamilnet_tamilnumbers]
+Description="Bàn phím - Tiếng Ấn Độ - Tamil (TamilNet '99 with Tamil numerals)"
+Language=ta
+Label="ta (tamilnet_tamilnumbers)"
+
+[keyboard-in-tamilnet_TAB]
+Description="Bàn phím - Tiếng Ấn Độ - Tamil (TamilNet '99, TAB encoding)"
+Language=ta
+Label="ta (tamilnet_TAB)"
+
+[keyboard-in-tamilnet_TSCII]
+Description="Bàn phím - Tiếng Ấn Độ - Tamil (TamilNet '99, TSCII encoding)"
+Language=ta
+Label="ta (tamilnet_TSCII)"
+
+[keyboard-in-tam]
+Description="Bàn phím - Tiếng Ấn Độ - Tamil (InScript, with Arabic numerals)"
+Language=ta
+Label="ta (tam)"
+
+[keyboard-in-tam_tamilnumbers]
+Description="Bàn phím - Tiếng Ấn Độ - Tamil (InScript, with Tamil numerals)"
+Language=ta
+Label="ta (tam_tamilnumbers)"
+
+[keyboard-in-tel]
+Description="Bàn phím - Tiếng Ấn Độ - Tiếng Te-lu-gu"
+Language=te
+Label="te (tel)"
+
+[keyboard-in-tel-kagapa]
+Description="Bàn phím - Tiếng Ấn Độ - Telugu (KaGaPa, phonetic)"
+Language=te
+Label="te (tel-kagapa)"
+
+[keyboard-in-tel-sarala]
+Description="Bàn phím - Tiếng Ấn Độ - Telugu (Sarala)"
+Language=te
+Label="te (tel-sarala)"
+
+[keyboard-in-urd-phonetic]
+Description="Bàn phím - Tiếng Ấn Độ - Tiếng Urdu (ngữ âm)"
+Language=ur
+Label="ur (urd-phonetic)"
+
+[keyboard-in-urd-phonetic3]
+Description="Bàn phím - Tiếng Ấn Độ - Urdu (alt. phonetic)"
+Language=ur
+Label="ur (urd-phonetic3)"
+
+[keyboard-in-urd-winkeys]
+Description="Bàn phím - Tiếng Ấn Độ - Urdu (Windows)"
+Language=ur
+Label="ur (urd-winkeys)"
+
+[keyboard-in-iipa]
+Description="Bàn phím - Tiếng Ấn Độ - Indic IPA"
+Language=en
+Label="in (iipa)"
+
+[keyboard-in-modi-kagapa]
+Description="Bàn phím - Tiếng Ấn Độ - Modi (KaGaPa, phonetic)"
+Language=mr
+Label="mr (modi-kagapa)"
+
+[keyboard-in-san-misc]
+Description="Bàn phím - Tiếng Ấn Độ - Sanskrit symbols"
+Language=sa
+Label="sas (san-misc)"
+
+[keyboard-in-urd-navees]
+Description="Bàn phím - Tiếng Ấn Độ - Urdu (Navees)"
+Language=ur
+Label="ur (urd-navees)"
+
+[keyboard-it]
+Description="Bàn phím - Tiếng Ý"
+Language=it
+Label=it
+
+[keyboard-it-nodeadkeys]
+Description="Bàn phím - Tiếng Ý - Italian (no dead keys)"
+Language=it
+Label="it (nodeadkeys)"
+
+[keyboard-it-winkeys]
+Description="Bàn phím - Tiếng Ý - Italian (Windows)"
+Language=it
+Label="it (winkeys)"
+
+[keyboard-it-mac]
+Description="Bàn phím - Tiếng Ý - Tiếng Ý (Macintosh)"
+Language=it
+Label="it (mac)"
+
+[keyboard-it-us]
+Description="Bàn phím - Tiếng Ý - Italian (US)"
+Language=it
+Label="it (us)"
+
+[keyboard-it-ibm]
+Description="Bàn phím - Tiếng Ý - Tiếng Ý (IBM 142)"
+Language=it
+Label="it (ibm)"
+
+[keyboard-it-fur]
+Description="Bàn phím - Tiếng Ý - Friulian (Italy)"
+Language=fur
+Label="it (fur)"
+
+[keyboard-it-scn]
+Description="Bàn phím - Tiếng Ý - Sicilian"
+Language=it
+Label="it (scn)"
+
+[keyboard-it-geo]
+Description="Bàn phím - Tiếng Ý - Tiếng Gi-oa-gi-a (Ý)"
+Language=ka
+Label="it (geo)"
+
+[keyboard-it-sun_type6]
+Description="Bàn phím - Tiếng Ý - Tiếng Ý (Kiểu Sun 6/7)"
+Language=it
+Label="it (sun_type6)"
+
+[keyboard-it-lld]
+Description="Bàn phím - Tiếng Ý - Ladin (Italian keyboard)"
+Language=it
+Label="it_lld (lld)"
+
+[keyboard-it-lldde]
+Description="Bàn phím - Tiếng Ý - Ladin (German keyboard)"
+Language=de
+Label="de_lld (lldde)"
+
+[keyboard-it-dvorak]
+Description="Bàn phím - Tiếng Ý - Italian (Dvorak)"
+Language=it
+Label="it (dvorak)"
+
+[keyboard-jp]
+Description="Bàn phím - Tiếng Nhật"
+Language=ja
+Label=ja
+
+[keyboard-jp-kana]
+Description="Bàn phím - Tiếng Nhật - Tiếng Nhật (Kana)"
+Language=ja
+Label="jp (kana)"
+
+[keyboard-jp-OADG109A]
+Description="Bàn phím - Tiếng Nhật - Tiếng Nhật (OADG 109A)"
+Language=ja
+Label="jp (OADG109A)"
+
+[keyboard-jp-mac]
+Description="Bàn phím - Tiếng Nhật - Tiếng Nhật (Macintosh)"
+Language=ja
+Label="jp (mac)"
+
+[keyboard-jp-dvorak]
+Description="Bàn phím - Tiếng Nhật - Tiếng Nhật (Dvorak)"
+Language=ja
+Label="jp (dvorak)"
+
+[keyboard-jp-sun_type6]
+Description="Bàn phím - Tiếng Nhật - Tiếng Nhật (Kiểu Sun 6/7)"
+Language=ja
+Label="jp (sun_type6)"
+
+[keyboard-jp-sun_type7]
+Description="Bàn phím - Tiếng Nhật - Japanese (Sun Type 7, PC-compatible)"
+Language=ja
+Label="jp (sun_type7)"
+
+[keyboard-jp-sun_type7_suncompat]
+Description="Bàn phím - Tiếng Nhật - Japanese (Sun Type 7, Sun-compatible)"
+Language=ja
+Label="jp (sun_type7_suncompat)"
+

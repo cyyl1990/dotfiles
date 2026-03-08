@@ -1,0 +1,57 @@
+2026-03-08 17:07:07.465 [info] To enable debug logging, run "GitLens: Enable Debug Logging" or "Developer: Set Log Level..." from the Command Palette
+2026-03-08 17:07:07.465 [error]   [            1] GitLens v17.11.0  activating in Visual Studio Code (1.110.0) on the desktop; mode=production,language='en', logLevel='info', defaultDateLocale='null' (vscode|b8a0f6098de564a7d728e7ecb44696db6a6e28507636e5d994828477f8a28546|ee6d5be5-4249-4b95-a2f8-21a8a3eeea091772964425945)
+2026-03-08 17:07:07.465 [info]    GitLens first-time install; window.focused=true
+2026-03-08 17:07:07.465 [error]   [            1] GitLens v17.11.0 activated [108ms]
+2026-03-08 17:07:07.465 [info]    [   81 →    89] GkCliIntegrationProvider.installCLI Starting CLI installation (attempt 1/5)
+2026-03-08 17:07:07.465 [info]    [IPC          ] Server started on http://127.0.0.1:36253
+2026-03-08 17:07:07.465 [info]    [   71 →    72] LocalGitProvider.findGit Git (2.53.0) found in /usr/bin/git [156ms]
+2026-03-08 17:07:07.467 [info]    [   71 →    9b] LocalGitProvider.repositorySearch(/home/bap/dotfiles) searching (depth=1)...
+2026-03-08 17:07:07.750 [error] Error: Authentication required   [   e9 →    ea] ServerConnection.gkFetch — failed [0ms]
+2026-03-08 17:07:07.750 [error] Error: Authentication required   [   e8 →    e9] ServerConnection.fetchGkApi — failed [0ms]
+2026-03-08 17:07:07.960 [warning] [  10b →   10c] GkMcpProvider.getMcpConfigurationFromCLICore CLI not ready — install.status=attempted
+2026-03-08 17:07:10.565 [info]    [   81 →    89] GkCliIntegrationProvider.installCLI CLI installed (version: 3.1.53, path: /home/bap/.config/Code/User/globalStorage/eamodio.gitlens)
+2026-03-08 17:07:10.570 [warning] [   81 →    89] GkCliIntegrationProvider.installCLI(e=true, t=gk-cli-integration, i=false) returned {"cliVersion":"3.1.53","cliPath":"/home/bap/.config/Code/User/globalStorage/eamodio.gitlens","status":"completed"} [*3237ms] (slow)
+2026-03-08 17:07:10.570 [warning] [   77 →    81] GkCliIntegrationProvider.setupMCPCore(e=gk-cli-integration, t=false, i=true) returned {"cliVersion":"3.1.53","usingExtensionRegistration":true} • supports provider-based MCP registration [*3249ms] (slow)
+2026-03-08 17:07:12.634 [warning] [  11c →   11d] GkMcpProvider.getMcpConfigurationFromCLICore completed [*2063ms] (slow)
+2026-03-08 17:07:12.634 [warning] [  11b →   11c] GkMcpProvider.getMcpConfigurationFromCLI completed [*2063ms] (slow)
+2026-03-08 17:07:12.634 [warning] [  120 →   121] GkMcpProvider.getMcpConfigurationFromCLI completed [*1566ms] (slow)
+2026-03-08 17:07:12.634 [warning] [   81 →   11b] GkMcpProvider.provideMcpServerDefinitions({"isCancellationRequested":false}) returned [{"label":"GitKraken","command":"/home/bap/dotfiles/Code/.config/Code/User/globalStorage/eamodio.gitlens/gk","args":["mcp","--host=vscode","--source=gitlens","--scheme=vscode"],"env":{"GK_GL_PATH":"/tmp/gitkraken/gitlens/gitlens-ipc-server-1909711-36253.json"},"version":"3.1.53"}] [*2063ms] (slow)
+2026-03-08 17:07:12.634 [warning] [  115 →   120] GkMcpProvider.provideMcpServerDefinitions({"isCancellationRequested":false}) returned [{"label":"GitKraken","command":"/home/bap/dotfiles/Code/.config/Code/User/globalStorage/eamodio.gitlens/gk","args":["mcp","--host=vscode","--source=gitlens","--scheme=vscode"],"env":{"GK_GL_PATH":"/tmp/gitkraken/gitlens/gitlens-ipc-server-1909711-36253.json"},"version":"3.1.53"}] [*1566ms] (slow)
+2026-03-08 17:07:17.589 [info]    [  14b →   14d] LocalGitProvider.repositorySearch(/home/bap/dotfiles) searching (depth=1)...
+2026-03-08 17:07:17.597 [info]    [GIT       8ms] [/home/bap/dotfiles] git rev-parse --show-toplevel --git-dir --git-common-dir --show-superproject-working-tree [8ms]
+2026-03-08 17:07:17.602 [info]    [  14b →   14d] LocalGitProvider.repositorySearch(/home/bap/dotfiles) found root repository in '/home/bap/dotfiles'
+2026-03-08 17:07:18.605 [warning] [  168 →   171] Storage.storeWorkspace(key=assumeRepositoriesOnStartup) completed [*757ms] (slow)
+2026-03-08 17:07:18.721 [info]    [GIT      54ms] [/home/bap/dotfiles] git remote -v [54ms]
+2026-03-08 17:07:18.722 [warning] [  149 →   16a] RemotesGitSubProvider.getRemotes(repoPath=/home/bap/dotfiles) completed [*1112ms] (slow)
+2026-03-08 17:07:18.724 [info]    [GIT      64ms] [/home/bap/dotfiles] git for-each-ref --format=%1E%(HEAD)%1D%(refname)%1D%(upstream)%1D%(upstream:track)%1D%(objectname)%1D%(committerdate:iso8601)%1D%(worktreepath)%1D refs/heads/ refs/remotes/ [64ms]
+2026-03-08 17:07:18.724 [info]    [GIT      65ms] [/home/bap/dotfiles] git worktree list --porcelain [65ms]
+2026-03-08 17:07:18.724 [info]    [GIT      70ms] [/home/bap/dotfiles] git config --get core.excludesFile [70ms]
+2026-03-08 17:07:18.898 [info]    [GIT      36ms] [/home/bap/dotfiles] git config --get-regex -f /home/bap/dotfiles/.git/gk/config ^branch\..*\.gk-last-(accessed|modified)$ [36ms]
+2026-03-08 17:07:18.915 [info]    [GIT      13ms] [/home/bap/dotfiles] git status --porcelain=v2 --branch -u --find-renames -- [13ms]
+2026-03-08 17:07:19.759 [warning] [  17b →   198] LocalGitProvider.getRemoteVisibility(remote=https://github.com/cyyl1990/dotfiles.git) returned public [*1036ms] (slow)
+2026-03-08 17:07:19.759 [warning] [  180 →   199] LocalGitProvider.getRemoteVisibility(remote=https://github.com/cyyl1990/dotfiles.git) returned public [*1036ms] (slow)
+2026-03-08 17:07:19.759 [warning] [  179 →   17b] LocalGitProvider.visibility(e=/home/bap/dotfiles) returned public [*1158ms] (slow)
+2026-03-08 17:07:19.759 [warning] [  17e →   180] LocalGitProvider.visibility(e=/home/bap/dotfiles) returned public [*1158ms] (slow)
+2026-03-08 17:07:19.759 [warning] [  176 →   179] GitProviderService.visibilityCore(e=/home/bap/dotfiles) returned public [*1158ms] (slow)
+2026-03-08 17:07:19.759 [warning] [  17d →   17e] GitProviderService.visibilityCore returned public [*1158ms] (slow)
+2026-03-08 17:07:19.759 [warning] [  174 →   176] GitProviderService.visibility(e=/home/bap/dotfiles) returned public [*1158ms] (slow)
+2026-03-08 17:07:19.759 [warning] [  174 →   17d] GitProviderService.visibility returned public [*1158ms] (slow)
+2026-03-08 17:07:19.759 [warning] [  173 →   174] GitProviderService.accessCore(e=undefined) returned {"allowed":true,"subscription":{"current":{"plan":{"actual":{"id":"community","name":"GitLens Community","bundle":false,"cancelled":false,"trialReactivationCount":0,"startedOn":"2026-03-08T10:07:07.225Z"},"effective":{"id":"community","name":"GitLens Community","bundle":false,"cancelled":false,"trialReactivationCount":0,"startedOn":"2026-03-08T10:07:07.225Z"}},"state":0}},"visibility":"public"} [*1159ms] (slow)
+2026-03-08 17:07:19.759 [warning] [  16d →   173] GitProviderService.access returned {"allowed":true,"subscription":{"current":{"plan":{"actual":{"id":"community","name":"GitLens Community","bundle":false,"cancelled":false,"trialReactivationCount":0,"startedOn":"2026-03-08T10:07:07.225Z"},"effective":{"id":"community","name":"GitLens Community","bundle":false,"cancelled":false,"trialReactivationCount":0,"startedOn":"2026-03-08T10:07:07.225Z"}},"state":0}},"visibility":"public"} [*1159ms] (slow)
+2026-03-08 17:07:20.199 [info]    [GIT      11ms] [/home/bap/dotfiles] git for-each-ref --format=%1E%(HEAD)%1D%(refname)%1D%(upstream)%1D%(upstream:track)%1D%(objectname)%1D%(committerdate:iso8601)%1D%(worktreepath)%1D refs/heads/ refs/remotes/ [11ms]
+2026-03-08 17:07:20.199 [info]    [GIT      11ms] [/home/bap/dotfiles] git worktree list --porcelain [11ms]
+2026-03-08 17:07:20.200 [info]    [GIT      12ms] [/home/bap/dotfiles] git rev-parse --show-toplevel --git-dir --git-common-dir --show-superproject-working-tree [12ms]
+2026-03-08 17:07:20.205 [info]    [GIT       4ms] [/home/bap/dotfiles] git remote -v [4ms]
+2026-03-08 17:07:20.213 [info]    [GIT       6ms] [/home/bap/dotfiles] git status --porcelain=v2 --branch -u --find-renames -- [6ms]
+2026-03-08 17:07:22.328 [info]    [GIT      15ms] [/home/bap/dotfiles] git status --porcelain=v2 --branch -u --find-renames -- [15ms]
+2026-03-08 17:07:23.408 [info]    [GIT       8ms] [/home/bap/dotfiles] git status --porcelain=v2 --branch -u --find-renames -- [8ms]
+2026-03-08 17:07:24.496 [info]    [GIT       8ms] [/home/bap/dotfiles] git status --porcelain=v2 --branch -u --find-renames -- [8ms]
+2026-03-08 17:07:25.584 [info]    [GIT       8ms] [/home/bap/dotfiles] git status --porcelain=v2 --branch -u --find-renames -- [8ms]
+2026-03-08 17:07:28.723 [info]    [GIT       8ms] [/home/bap/dotfiles] git status --porcelain=v2 --branch -u --find-renames -- [8ms]
+2026-03-08 17:07:29.812 [info]    [GIT       8ms] [/home/bap/dotfiles] git status --porcelain=v2 --branch -u --find-renames -- [8ms]
+2026-03-08 17:07:31.208 [info]    [GIT       8ms] [/home/bap/dotfiles] git status --porcelain=v2 --branch -u --find-renames -- [8ms]
+2026-03-08 17:07:33.540 [info]    [GIT       8ms] [/home/bap/dotfiles] git status --porcelain=v2 --branch -u --find-renames -- [8ms]
+2026-03-08 17:07:34.628 [info]    [GIT       8ms] [/home/bap/dotfiles] git status --porcelain=v2 --branch -u --find-renames -- [8ms]
+2026-03-08 17:07:52.623 [info]    [GIT      12ms] [/home/bap/dotfiles] git rev-list --max-parents=0 HEAD -- [12ms]
+2026-03-08 17:07:52.625 [info]    [GIT      12ms] [/home/bap/dotfiles] git shortlog -s --all --no-min-parents --since=1.year.ago [12ms]
+2026-03-08 17:07:52.652 [info]    [  317 →   318] LocalSharedGkStorageLocationProvider.load Using shared GK path: /home/bap/.local/share/gk

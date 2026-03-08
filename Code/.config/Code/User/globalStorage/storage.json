@@ -1,0 +1,92 @@
+{
+    "telemetry.sqmId": "",
+    "telemetry.machineId": "b8a0f6098de564a7d728e7ecb44696db6a6e28507636e5d994828477f8a28546",
+    "telemetry.devDeviceId": "5edff050-807f-472c-8bb2-02156e3d08bb",
+    "backupWorkspaces": {
+        "workspaces": [],
+        "folders": [
+            {
+                "folderUri": "file:///home/bap/dotfiles"
+            }
+        ],
+        "emptyWindows": []
+    },
+    "windowControlHeight": 35,
+    "profileAssociations": {
+        "workspaces": {
+            "file:///home/bap/dusky/dusky": "__default__profile__",
+            "file:///home/bap/dotfiles/Hyprland-Dots": "__default__profile__",
+            "file:///home/bap/.config/hypr": "__default__profile__",
+            "file:///home/bap/dotfiles": "__default__profile__"
+        },
+        "emptyWindows": {}
+    },
+    "theme": "vs-dark",
+    "themeBackground": "#1f1f1f",
+    "windowSplash": {
+        "zoomLevel": 0,
+        "baseTheme": "vs-dark",
+        "colorInfo": {
+            "foreground": "#cccccc",
+            "background": "#1f1f1f",
+            "editorBackground": "#1f1f1f",
+            "titleBarBackground": "#181818",
+            "titleBarBorder": "#2b2b2b",
+            "activityBarBackground": "#181818",
+            "activityBarBorder": "#2b2b2b",
+            "sideBarBackground": "#181818",
+            "sideBarBorder": "#2b2b2b",
+            "statusBarBackground": "#181818",
+            "statusBarBorder": "#2b2b2b",
+            "statusBarNoFolderBackground": "#1f1f1f"
+        },
+        "layoutInfo": {
+            "sideBarSide": "left",
+            "editorPartMinWidth": 220,
+            "titleBarHeight": 35,
+            "activityBarWidth": 48,
+            "sideBarWidth": 300,
+            "auxiliaryBarWidth": 300,
+            "statusBarHeight": 22,
+            "windowBorder": false
+        }
+    },
+    "windowsState": {
+        "lastActiveWindow": {
+            "folder": "file:///home/bap/dotfiles",
+            "backupPath": "/home/bap/.config/Code/Backups/61423c81d2f40a9b0df5754a7c378198",
+            "uiState": {
+                "mode": 0,
+                "x": 0,
+                "y": 0,
+                "width": 1274,
+                "height": 701
+            }
+        },
+        "openedWindows": []
+    },
+    "windowSplashWorkspaceOverride": {
+        "layoutInfo": {
+            "sideBarWidth": 300,
+            "auxiliaryBarWidth": 300,
+            "workspaces": {
+                "f29ff5a7f5e01ef80eb3c0d193a44bfe": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": true
+                },
+                "f17ffc50a1593fec197337afbbf03710": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "43867b569f9b38800a462d239bc41ff6": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": true
+                },
+                "f8fa443ed3de5600077a8a32a6b9dc64": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": true
+                }
+            }
+        }
+    }
+}

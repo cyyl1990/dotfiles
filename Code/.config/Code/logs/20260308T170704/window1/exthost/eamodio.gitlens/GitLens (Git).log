@@ -1,0 +1,23 @@
+2026-03-08 17:07:17.605 [info] [          8ms] [/home/bap/dotfiles] git rev-parse --show-toplevel --git-dir --git-common-dir --show-superproject-working-tree
+2026-03-08 17:07:18.721 [info] [         54ms] [/home/bap/dotfiles] git remote -v
+2026-03-08 17:07:18.724 [info] [         64ms] [/home/bap/dotfiles] git for-each-ref --format=%1E%(HEAD)%1D%(refname)%1D%(upstream)%1D%(upstream:track)%1D%(objectname)%1D%(committerdate:iso8601)%1D%(worktreepath)%1D refs/heads/ refs/remotes/
+2026-03-08 17:07:18.724 [info] [         65ms] [/home/bap/dotfiles] git worktree list --porcelain
+2026-03-08 17:07:18.724 [info] [         70ms] [/home/bap/dotfiles] git config --get core.excludesFile
+2026-03-08 17:07:18.898 [info] [         36ms] [/home/bap/dotfiles] git config --get-regex -f /home/bap/dotfiles/.git/gk/config ^branch\..*\.gk-last-(accessed|modified)$
+2026-03-08 17:07:18.915 [info] [         13ms] [/home/bap/dotfiles] git status --porcelain=v2 --branch -u --find-renames --
+2026-03-08 17:07:20.199 [info] [         11ms] [/home/bap/dotfiles] git for-each-ref --format=%1E%(HEAD)%1D%(refname)%1D%(upstream)%1D%(upstream:track)%1D%(objectname)%1D%(committerdate:iso8601)%1D%(worktreepath)%1D refs/heads/ refs/remotes/
+2026-03-08 17:07:20.199 [info] [         11ms] [/home/bap/dotfiles] git worktree list --porcelain
+2026-03-08 17:07:20.200 [info] [         12ms] [/home/bap/dotfiles] git rev-parse --show-toplevel --git-dir --git-common-dir --show-superproject-working-tree
+2026-03-08 17:07:20.205 [info] [          4ms] [/home/bap/dotfiles] git remote -v
+2026-03-08 17:07:20.213 [info] [          6ms] [/home/bap/dotfiles] git status --porcelain=v2 --branch -u --find-renames --
+2026-03-08 17:07:22.328 [info] [         15ms] [/home/bap/dotfiles] git status --porcelain=v2 --branch -u --find-renames --
+2026-03-08 17:07:23.408 [info] [          8ms] [/home/bap/dotfiles] git status --porcelain=v2 --branch -u --find-renames --
+2026-03-08 17:07:24.496 [info] [          8ms] [/home/bap/dotfiles] git status --porcelain=v2 --branch -u --find-renames --
+2026-03-08 17:07:25.584 [info] [          8ms] [/home/bap/dotfiles] git status --porcelain=v2 --branch -u --find-renames --
+2026-03-08 17:07:28.723 [info] [          8ms] [/home/bap/dotfiles] git status --porcelain=v2 --branch -u --find-renames --
+2026-03-08 17:07:29.812 [info] [          8ms] [/home/bap/dotfiles] git status --porcelain=v2 --branch -u --find-renames --
+2026-03-08 17:07:31.209 [info] [          8ms] [/home/bap/dotfiles] git status --porcelain=v2 --branch -u --find-renames --
+2026-03-08 17:07:33.540 [info] [          8ms] [/home/bap/dotfiles] git status --porcelain=v2 --branch -u --find-renames --
+2026-03-08 17:07:34.628 [info] [          8ms] [/home/bap/dotfiles] git status --porcelain=v2 --branch -u --find-renames --
+2026-03-08 17:07:52.623 [info] [         12ms] [/home/bap/dotfiles] git rev-list --max-parents=0 HEAD --
+2026-03-08 17:07:52.625 [info] [         12ms] [/home/bap/dotfiles] git shortlog -s --all --no-min-parents --since=1.year.ago

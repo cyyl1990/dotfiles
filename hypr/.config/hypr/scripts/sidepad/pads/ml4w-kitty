@@ -1,0 +1,3 @@
+SIDEPAD_APP="kitty --class dotfiles-sidepad"
+SIDEPAD_CLASS="dotfiles-sidepad"
+SIDEPAD_OPTIONS="--width 700"

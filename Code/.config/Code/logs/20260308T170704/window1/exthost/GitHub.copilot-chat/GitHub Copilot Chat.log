@@ -58,3 +58,23 @@
 	at async bd.$provideChatSessionProviderOptions (file:///opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:521:66780)
 2026-03-08 17:07:19.707 [error] Error fetching partner agents: PermissiveAuthRequiredError: Permissive authentication is required
 2026-03-08 17:07:21.090 [info] Using the Electron fetcher.
+2026-03-08 17:09:44.599 [error] PermissiveAuthRequiredError: Permissive authentication is required
+	at MM.getAllSessions (/home/bap/.vscode/extensions/github.copilot-chat-0.38.2/dist/extension.js:1594:4866)
+	at async Promise.all (index 0)
+	at async _ (/home/bap/.vscode/extensions/github.copilot-chat-0.38.2/dist/extension.js:2394:3056)
+2026-03-08 17:12:18.988 [error] Canceled (FileSystemError): Canceled
+	at zo._handleError (file:///opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:494:22145)
+	at Object.readDirectory (file:///opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:494:19290)
+	at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+	at async KV._tryReadDirectory (/home/bap/.vscode/extensions/github.copilot-chat-0.38.2/dist/extension.js:1613:2925)
+	at async KV._getCachedMetadataIfValid (/home/bap/.vscode/extensions/github.copilot-chat-0.38.2/dist/extension.js:1613:3326)
+	at async KV.getAllSessions (/home/bap/.vscode/extensions/github.copilot-chat-0.38.2/dist/extension.js:1613:2011)
+	at async g0e._refreshItems (/home/bap/.vscode/extensions/github.copilot-chat-0.38.2/dist/extension.js:2136:14638): [ClaudeCodeSessionService] Failed to read directory: file:///home/bap/.claude/projects/-home-bap-dotfiles
+2026-03-08 17:12:18.989 [error] Canceled (FileSystemError): Canceled
+	at zo._handleError (file:///opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:494:22145)
+	at Object.readDirectory (file:///opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:494:19290)
+	at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+	at async KV._tryReadDirectory (/home/bap/.vscode/extensions/github.copilot-chat-0.38.2/dist/extension.js:1613:2925)
+	at async KV._loadSessionMetadataFromDisk (/home/bap/.vscode/extensions/github.copilot-chat-0.38.2/dist/extension.js:1613:3918)
+	at async KV.getAllSessions (/home/bap/.vscode/extensions/github.copilot-chat-0.38.2/dist/extension.js:1613:2094)
+	at async g0e._refreshItems (/home/bap/.vscode/extensions/github.copilot-chat-0.38.2/dist/extension.js:2136:14638): [ClaudeCodeSessionService] Failed to read directory: file:///home/bap/.claude/projects/-home-bap-dotfiles

@@ -1,0 +1,17 @@
+2026-03-08 17:12:29.049 [info] Started local extension host with pid 1970705.
+2026-03-08 17:12:30.232 [info] MCP Registry configured: https://api.mcp.github.com
+2026-03-08 17:12:30.332 [info] Settings Sync: Account status changed from uninitialized to unavailable
+2026-03-08 17:12:30.659 [error] [Extension Host] (node:1970705) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `exe --trace-deprecation ...` to show where the warning was created)
+2026-03-08 17:12:30.660 [error] [Extension Host] (node:1970705) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+2026-03-08 17:12:31.933 [info] [perf] Render performance baseline is 15ms
+2026-03-08 17:12:32.180 [error] CodeExpectedError: No default agent registered
+    at qNe.activateDefaultAgent (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2891:28270)
+2026-03-08 17:12:33.178 [error] Đã xảy ra lỗi không xác định. Xem nhật ký để biết thêm chi tiết.
+2026-03-08 17:14:40.412 [error] Đã xảy ra lỗi không xác định. Xem nhật ký để biết thêm chi tiết.
+2026-03-08 17:15:05.126 [error] Đã xảy ra lỗi không xác định. Xem nhật ký để biết thêm chi tiết.
+2026-03-08 17:15:10.935 [error] command '_aiEdits.clearAiContributions' not found
+2026-03-08 17:15:46.534 [error] [Extension Host] Failed to fetch remote embeddings cache from https://embeddings.vscode-cdn.net/text-3-small/v1.110/tools/latest.txt
+2026-03-08 17:15:46.537 [error] [Extension Host] Response status: 404, status text: 
+2026-03-08 17:15:46.762 [error] [Extension Host] Failed to fetch remote embeddings cache from https://embeddings.vscode-cdn.net/text-3-small/v1.110/tools/core.json
+2026-03-08 17:15:46.762 [error] [Extension Host] Response status: 404, status text: 

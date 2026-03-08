@@ -1,0 +1,19 @@
+2026-03-08 17:12:32.219 [info] [        104ms] [/home/bap/dotfiles] git rev-parse --show-toplevel --git-dir --git-common-dir --show-superproject-working-tree
+2026-03-08 17:12:32.445 [info] [         16ms] [/home/bap/dotfiles] git rev-parse --show-toplevel --git-dir --git-common-dir --show-superproject-working-tree
+2026-03-08 17:12:32.488 [info] [         14ms] [/home/bap/dotfiles] git remote -v
+2026-03-08 17:12:53.345 [info] [         11ms] [/home/bap/dotfiles] git ls-files -- .git/COMMIT_EDITMSG
+2026-03-08 17:12:53.369 [info] [         23ms] [/home/bap/dotfiles/.git] git ls-files -- COMMIT_EDITMSG
+2026-03-08 17:12:53.527 [error] [         13ms] [/home/bap/dotfiles/.git] git rev-parse --show-toplevel --git-dir --git-common-dir --show-superproject-working-tree • FAILED
+Error: fatal: this operation must be run in a work tree
+2026-03-08 17:12:53.535 [info] [          8ms] [/home/bap/dotfiles/.git] git rev-parse --is-bare-repository
+2026-03-08 17:12:53.542 [info] [          6ms] [/home/bap/dotfiles] git rev-parse --show-toplevel --git-dir --git-common-dir --show-superproject-working-tree
+2026-03-08 17:13:07.406 [info] [         15ms] [/home/bap/dotfiles] git rev-list --max-parents=0 HEAD --
+2026-03-08 17:13:07.407 [info] [         14ms] [/home/bap/dotfiles] git shortlog -s --all --no-min-parents --since=1.year.ago
+2026-03-08 17:14:18.466 [info] [          9ms] [/home/bap/dotfiles] git ls-files -- .git/COMMIT_EDITMSG
+2026-03-08 17:14:18.474 [info] [          7ms] [/home/bap/dotfiles/.git] git ls-files -- COMMIT_EDITMSG
+2026-03-08 17:15:01.857 [info] [         12ms] [/home/bap/dotfiles] git for-each-ref --format=%1E%(HEAD)%1D%(refname)%1D%(upstream)%1D%(upstream:track)%1D%(objectname)%1D%(committerdate:iso8601)%1D%(worktreepath)%1D refs/heads/ refs/remotes/
+2026-03-08 17:15:01.858 [info] [         13ms] [/home/bap/dotfiles] git rev-parse --show-toplevel --git-dir --git-common-dir --show-superproject-working-tree
+2026-03-08 17:15:01.866 [info] [          6ms] [/home/bap/dotfiles] git config --get-regex -f /home/bap/dotfiles/.git/gk/config ^branch\..*\.gk-last-(accessed|modified)$
+2026-03-08 17:15:01.874 [info] [          6ms] [/home/bap/dotfiles] git config --get -f /home/bap/dotfiles/.git/gk/config branch.master.gk-last-accessed
+2026-03-08 17:15:01.882 [info] [          6ms] [/home/bap/dotfiles] git config -f /home/bap/dotfiles/.git/gk/config branch.master.gk-last-accessed 2026-03-08T10:15:01.868Z
+2026-03-08 17:15:10.252 [info] [          4ms] [/home/bap/dotfiles] git remote -v

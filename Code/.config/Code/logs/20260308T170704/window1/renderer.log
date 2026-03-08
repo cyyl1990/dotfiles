@@ -6,3 +6,10 @@
 (Use `exe --trace-deprecation ...` to show where the warning was created)
 2026-03-08 17:07:18.596 [error] [Extension Host] (node:1910274) ExperimentalWarning: SQLite is an experimental feature and might change at any time
 2026-03-08 17:07:20.682 [error] An unknown error occurred. Please consult the log for more details.
+2026-03-08 17:12:19.018 [warning] [backup tracker] suspended, ignoring unregister event file:///home/bap/dotfiles/.git/COMMIT_EDITMSG 
+2026-03-08 17:12:19.019 [warning] Failed to update in-progress status for chat session type 'claude-code': Canceled
+2026-03-08 17:12:19.019 [warning] Failed to update in-progress status for chat session type 'claude-code': Canceled
+2026-03-08 17:12:19.019 [warning] Failed to update in-progress status for chat session type 'claude-code': Canceled
+2026-03-08 17:12:19.019 [warning] Failed to update in-progress status for chat session type 'copilotcli': Canceled
+2026-03-08 17:12:19.019 [warning] Failed to update in-progress status for chat session type 'copilotcli': Canceled
+2026-03-08 17:12:19.019 [warning] Failed to update in-progress status for chat session type 'copilot-cloud-agent': Canceled

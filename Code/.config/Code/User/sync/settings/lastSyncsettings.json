@@ -1,1 +1,1 @@
-{"ref":"147491c2-5ea8-4543-9d4e-133de8770a46","syncData":{"version":2,"machineId":"d0bca351-22e7-4bf5-813a-1250ff68df64","content":"{\"settings\":\"{}\"}"}}
+{"ref":"b2d16c61-a5fd-4fee-ae7e-101d8ac0ff9d","syncData":{"version":2,"machineId":"5841fcf8-05f2-4c6a-8a79-577222473602","content":"{\"settings\":\"{\\n    \\\"editor.largeFileOptimizations\\\": false,\\n    \\\"chat.planAgent.defaultModel\\\": \\\"Auto (copilot)\\\",\\n    \\\"chat.useNestedAgentsMdFiles\\\": true,\\n    \\\"inlineChat.defaultModel\\\": \\\"Auto (copilot)\\\"\\n}\"}"}}

@@ -588,3 +588,24 @@ Read Pylance's license [here](https://marketplace.visualstudio.com/items/ms-pyth
 2026-03-08 17:15:46.804 [warning] DiagnosticCollection with name 'Pylance' does already exist.
 2026-03-08 17:15:47.414 [info] ExtensionService#_doActivateExtension vscode.markdown-language-features, startup: false, activationEvent: 'onLanguage:prompt'
 2026-03-08 17:16:13.559 [info] ExtensionService#_doActivateExtension vscode.extension-editing, startup: false, activationEvent: 'onLanguage:markdown'
+2026-03-08 17:19:03.562 [info] ExtensionService#_doActivateExtension vscode.configuration-editing, startup: false, activationEvent: 'onLanguage:jsonc'
+2026-03-08 17:19:31.213 [error] Error: 'github' authentication is required for this operation
+	at GitHubGitProvider.r (/home/bap/.vscode/extensions/eamodio.gitlens-17.11.0/dist/integrations.js:668:5424)
+2026-03-08 17:21:34.693 [warning] Using default string since no string found in i18n bundle that has the key: Copilot Models
+2026-03-08 17:21:34.693 [warning] Using default string since no string found in i18n bundle that has the key: Rate is counted at {0}x.
+2026-03-08 17:21:34.693 [warning] Using default string since no string found in i18n bundle that has the key: Copilot Models
+2026-03-08 17:21:34.693 [warning] Using default string since no string found in i18n bundle that has the key: Rate is counted at {0}x.
+2026-03-08 17:21:34.693 [warning] Using default string since no string found in i18n bundle that has the key: Optimized GPT-4 model with faster responses and multimodal capabilities.
+2026-03-08 17:21:34.693 [warning] Using default string since no string found in i18n bundle that has the key: Copilot Models
+2026-03-08 17:21:34.693 [warning] Using default string since no string found in i18n bundle that has the key: {0} Rate is counted at {1}x.
+2026-03-08 17:21:34.693 [warning] Using default string since no string found in i18n bundle that has the key: Optimized GPT-4 model with faster responses and multimodal capabilities.
+2026-03-08 17:21:34.693 [warning] Using default string since no string found in i18n bundle that has the key: Copilot Models
+2026-03-08 17:21:34.693 [warning] Using default string since no string found in i18n bundle that has the key: {0} Rate is counted at {1}x.
+2026-03-08 17:21:34.693 [warning] Using default string since no string found in i18n bundle that has the key: Fastest and most compact Claude model. Ideal for quick responses and simple tasks.
+2026-03-08 17:21:34.693 [warning] Using default string since no string found in i18n bundle that has the key: Copilot Models
+2026-03-08 17:21:34.693 [warning] Using default string since no string found in i18n bundle that has the key: {0} Rate is counted at {1}x.
+2026-03-08 17:21:34.693 [warning] Using default string since no string found in i18n bundle that has the key: Enhanced GPT-4 model with improved instruction following and coding performance.
+2026-03-08 17:21:34.693 [warning] Using default string since no string found in i18n bundle that has the key: Copilot Models
+2026-03-08 17:21:34.693 [warning] Using default string since no string found in i18n bundle that has the key: {0} Rate is counted at {1}x.
+2026-03-08 17:21:34.693 [warning] Using default string since no string found in i18n bundle that has the key: Auto selects the best model for your request based on capacity and performance.
+2026-03-08 17:21:34.699 [warning] Using default string since no string found in i18n bundle that has the key: The extension has been temporarily blocked due to making too many requests. Please try again later.

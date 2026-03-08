@@ -14,3 +14,7 @@
 2026-03-08 17:15:04.122 [info] [getSessions] [499b84ac-1321-427f-aa17-267ca6975798/.default offline_access] returned 0 session(s)
 2026-03-08 17:15:04.834 [info] [getSessions] [499b84ac-1321-427f-aa17-267ca6975798/.default offline_access] starting
 2026-03-08 17:15:04.834 [info] [getSessions] [499b84ac-1321-427f-aa17-267ca6975798/.default offline_access] returned 0 session(s)
+2026-03-08 17:19:18.423 [info] [getSessions] [email offline_access openid profile] starting
+2026-03-08 17:19:18.423 [info] [getSessions] [email offline_access openid profile] returned 0 session(s)
+2026-03-08 17:19:30.158 [info] [getSessions] [499b84ac-1321-427f-aa17-267ca6975798/.default offline_access] starting
+2026-03-08 17:19:30.158 [info] [getSessions] [499b84ac-1321-427f-aa17-267ca6975798/.default offline_access] returned 0 session(s)

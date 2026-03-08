@@ -1,0 +1,6 @@
+{
+    "editor.largeFileOptimizations": false,
+    "chat.planAgent.defaultModel": "Auto (copilot)",
+    "chat.useNestedAgentsMdFiles": true,
+    "inlineChat.defaultModel": "Auto (copilot)"
+}

@@ -231,3 +231,23 @@
 2026-03-08 17:21:36.394 [info] request done: requestId: [c6b97892-2310-40bf-807f-a1024032a868] model deployment ID: []
 2026-03-08 17:21:36.395 [info] ccreq:69ab8408.copilotmd | success | grok-code-fast-1 | 3703ms | [panel/editAgent]
 2026-03-08 17:21:36.400 [info] [ToolCallingLoop] Stop hook result: shouldContinue=false, reasons=undefined
+2026-03-08 17:22:41.351 [info] message 0 returned. finish reason: [stop]
+2026-03-08 17:22:41.353 [info] request done: requestId: [4d593c9e-e076-4276-a6c6-e3346ad9db7b] model deployment ID: []
+2026-03-08 17:22:41.355 [info] ccreq:86a34f29.copilotmd | success | gpt-4o-mini-2024-07-18 | 3895ms | [summarizeVirtualTools]
+2026-03-08 17:22:41.429 [warning] Tool mcp_gitkraken_gitkraken_workspace_list failed validation: schema must have a properties object
+2026-03-08 17:22:48.491 [info] message 0 returned. finish reason: [tool_calls]
+2026-03-08 17:22:48.493 [info] request done: requestId: [a4d60668-d8ae-45ab-a926-42469b2f3350] model deployment ID: []
+2026-03-08 17:22:48.494 [info] ccreq:7fe13d5d.copilotmd | success | grok-code-fast-1 | 7064ms | [panel/editAgent]
+2026-03-08 17:22:53.328 [warning] Tool mcp_gitkraken_gitkraken_workspace_list failed validation: schema must have a properties object
+2026-03-08 17:22:56.422 [info] message 0 returned. finish reason: [tool_calls]
+2026-03-08 17:22:56.424 [info] request done: requestId: [a4d60668-d8ae-45ab-a926-42469b2f3350] model deployment ID: []
+2026-03-08 17:22:56.426 [info] ccreq:0d32a045.copilotmd | success | grok-code-fast-1 | 3096ms | [panel/editAgent]
+2026-03-08 17:22:59.936 [warning] Tool mcp_gitkraken_gitkraken_workspace_list failed validation: schema must have a properties object
+2026-03-08 17:23:04.218 [info] message 0 returned. finish reason: [tool_calls]
+2026-03-08 17:23:04.220 [info] request done: requestId: [a4d60668-d8ae-45ab-a926-42469b2f3350] model deployment ID: []
+2026-03-08 17:23:04.221 [info] ccreq:9139eb44.copilotmd | success | grok-code-fast-1 | 4284ms | [panel/editAgent]
+2026-03-08 17:23:14.669 [warning] Tool mcp_gitkraken_gitkraken_workspace_list failed validation: schema must have a properties object
+2026-03-08 17:23:18.186 [info] message 0 returned. finish reason: [stop]
+2026-03-08 17:23:18.187 [info] request done: requestId: [a4d60668-d8ae-45ab-a926-42469b2f3350] model deployment ID: []
+2026-03-08 17:23:18.188 [info] ccreq:c3f25b01.copilotmd | success | grok-code-fast-1 | 3518ms | [panel/editAgent]
+2026-03-08 17:23:18.193 [info] [ToolCallingLoop] Stop hook result: shouldContinue=false, reasons=undefined

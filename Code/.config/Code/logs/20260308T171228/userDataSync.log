@@ -108,3 +108,27 @@
 2026-03-08 17:21:20.967 [info] Prompts: No changes found during synchronizing prompts.
 2026-03-08 17:21:20.968 [info] Profiles: No changes found during synchronizing profiles.
 2026-03-08 17:21:20.969 [info] Sync done. Took 126ms
+2026-03-08 17:21:57.068 [info] [AutoSync] Triggered by Activity
+2026-03-08 17:21:57.068 [info] Sync started.
+2026-03-08 17:21:57.147 [info] Settings: No changes found during synchronizing settings.
+2026-03-08 17:21:57.148 [info] Keybindings: No changes found during synchronizing keybindings.
+2026-03-08 17:21:57.149 [info] Snippets: No changes found during synchronizing snippets.
+2026-03-08 17:21:57.150 [info] Tasks: No changes found during synchronizing tasks.
+2026-03-08 17:21:57.150 [info] Mcp: No changes found during synchronizing mcp.
+2026-03-08 17:21:57.152 [info] GlobalState: No changes found during synchronizing ui state.
+2026-03-08 17:21:57.188 [info] Extensions: No changes found during synchronizing extensions.
+2026-03-08 17:21:57.189 [info] Prompts: No changes found during synchronizing prompts.
+2026-03-08 17:21:57.190 [info] Profiles: No changes found during synchronizing profiles.
+2026-03-08 17:21:57.190 [info] Sync done. Took 123ms
+2026-03-08 17:23:26.875 [info] [AutoSync] Triggered by Activity
+2026-03-08 17:23:26.875 [info] Sync started.
+2026-03-08 17:23:26.947 [info] Settings: No changes found during synchronizing settings.
+2026-03-08 17:23:26.949 [info] Keybindings: No changes found during synchronizing keybindings.
+2026-03-08 17:23:26.951 [info] Snippets: No changes found during synchronizing snippets.
+2026-03-08 17:23:26.952 [info] Tasks: No changes found during synchronizing tasks.
+2026-03-08 17:23:26.953 [info] Mcp: No changes found during synchronizing mcp.
+2026-03-08 17:23:26.955 [info] GlobalState: No changes found during synchronizing ui state.
+2026-03-08 17:23:27.002 [info] Extensions: No changes found during synchronizing extensions.
+2026-03-08 17:23:27.003 [info] Prompts: No changes found during synchronizing prompts.
+2026-03-08 17:23:27.004 [info] Profiles: No changes found during synchronizing profiles.
+2026-03-08 17:23:27.005 [info] Sync done. Took 131ms

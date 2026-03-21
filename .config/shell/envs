@@ -1,0 +1,2 @@
+export EDITOR="zed"
+export PATH="$PATH:$HOME/.local/bin"

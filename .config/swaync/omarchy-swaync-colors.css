@@ -1,0 +1,20 @@
+@define-color background #1c1e26;
+@define-color background-alt #6c6f93;
+@define-color background-faded alpha(#1c1e26,0.6);
+
+@define-color crust #1c1e26;
+@define-color foreground #fadad1;
+
+@define-color red #e95678
+#3fdaa4
+#fbc3a7
+#3fc4de
+#f075b5
+#6be4e6
+#fadad1;
+@define-color green #29d398;
+@define-color yellow #fab795;
+@define-color blue #26bbd9;
+
+@define-color gray #6c6f93;
+@define-color select #26bbd9;

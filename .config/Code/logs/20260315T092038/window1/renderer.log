@@ -1,0 +1,14 @@
+2026-03-15 09:20:39.501 [info] Started local extension host with pid 613871.
+2026-03-15 09:20:40.025 [info] [ChatSessionsService] registerContribution called for type='claude-code', canDelegate=true, when='config.github.copilot.chat.claudeAgent.enabled', extension='GitHub.copilot-chat'
+2026-03-15 09:20:40.025 [info] [ChatSessionsService] _enableContribution: type='claude-code', canDelegate=true
+2026-03-15 09:20:40.026 [info] [ChatSessionsService] registerContribution called for type='copilotcli', canDelegate=true, when='config.github.copilot.chat.backgroundAgent.enabled', extension='GitHub.copilot-chat'
+2026-03-15 09:20:40.027 [info] [ChatSessionsService] _enableContribution: type='copilotcli', canDelegate=true
+2026-03-15 09:20:40.027 [info] [ChatSessionsService] registerContribution called for type='copilot-cloud-agent', canDelegate=true, when='config.github.copilot.chat.cloudAgent.enabled', extension='GitHub.copilot-chat'
+2026-03-15 09:20:40.027 [info] [ChatSessionsService] _enableContribution: type='copilot-cloud-agent', canDelegate=true
+2026-03-15 09:20:40.984 [info] MCP Registry configured: https://api.mcp.github.com
+2026-03-15 09:20:41.470 [error] [Extension Host] (node:613871) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `exe --trace-deprecation ...` to show where the warning was created)
+2026-03-15 09:20:41.470 [error] [Extension Host] (node:613871) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+2026-03-15 09:20:41.570 [info] Settings Sync: Account status changed from uninitialized to available
+2026-03-15 09:20:42.529 [info] [perf] Render performance baseline is 14ms
+2026-03-15 09:20:42.697 [info] Auto updating outdated extensions. github.copilot-chat

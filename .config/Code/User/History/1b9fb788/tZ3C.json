@@ -1,0 +1,10 @@
+{ "workbench.colorTheme": "Dark Horizon",
+"update.mode": "none",
+"security.workspace.trust.untrustedFiles": "open",
+"editor.minimap.renderCharacters": false,
+"editor.minimap.enabled": false,
+"workbench.layoutControl.enabled": false,
+"gitlens.ai.model": "vscode",
+"gitlens.ai.vscode.model": "copilot:gpt-4.1",
+"workbench.iconTheme": "material-icon-theme"
+}

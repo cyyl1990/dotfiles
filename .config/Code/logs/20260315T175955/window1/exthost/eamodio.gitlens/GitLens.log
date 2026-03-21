@@ -1,0 +1,7 @@
+2026-03-15 17:59:58.244 [info] To enable debug logging, run "GitLens: Enable Debug Logging" or "Developer: Set Log Level..." from the Command Palette
+2026-03-15 17:59:58.244 [error]   [            1] GitLens v17.11.1  activating in Visual Studio Code (1.111.0) on the desktop; mode=production,language='en', logLevel='info', defaultDateLocale='null' (vscode|b8a0f6098de564a7d728e7ecb44696db6a6e28507636e5d994828477f8a28546|d819c8a9-e1a1-47ab-b04a-709e31ef3e8d1773572396842)
+2026-03-15 17:59:58.244 [error]   [            1] GitLens v17.11.1 activated, mode: Zen [68ms]
+2026-03-15 17:59:58.596 [warning] [    b →     c] ServerConnection.fetch(url=https://configs.gitkraken.dev/gitlens/product.json, options=undefined) completed [*546ms] (slow)
+2026-03-15 17:59:58.596 [warning] [    a →     b] ServerConnection.fetchGkConfig(path=product.json, options=undefined) completed [*546ms] (slow)
+2026-03-15 17:59:59.616 [warning] [   71 →    93] GkCliIntegrationProvider.checkCliUpdateRequired completed [*1399ms] (slow)
+2026-03-15 17:59:59.616 [info]    [CLI          ] CLI core version is 3.1.54

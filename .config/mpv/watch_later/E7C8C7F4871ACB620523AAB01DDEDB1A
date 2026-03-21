@@ -1,0 +1,2 @@
+start=1999.331000
+vf=@autocrop-cropdetect:cropdetect=limit=%6%24/255:round=2:reset=0

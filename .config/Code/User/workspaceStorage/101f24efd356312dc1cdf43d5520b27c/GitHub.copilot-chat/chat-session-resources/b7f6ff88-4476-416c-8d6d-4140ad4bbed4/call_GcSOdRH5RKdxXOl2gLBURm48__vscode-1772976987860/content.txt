@@ -1,0 +1,203 @@
+❯ timestamp=$(date +%Y%m%d_%H%M%S); backup_dir=$HOME/backups; selected_for_backu
+p=("$HOME/.bashrc" "$HOME/.config"); source "$HOME/.local/bin/lib/helpers.sh"; s
+et -e;
+~/.config/fish/functions/__abbr_tips_bind_newline.fish (line 1): Unsupported use
+ of '='. In fish, please use 'set timestamp $(date +%Y%m%d_%H%M%S)'.
+in function '__abbr_tips_bind_newline'
+
+~/.local/bin [🐍 v3.14.3][⏱ 12s]
+❯ timestamp=$(date +%Y%m%d_%H%M%S); backup_dir=$HOME/backups; selected_for_backu
+p=("$HOME/.bashrc" "$HOME/.config"); source "$HOME/.local/bin/lib/helpers.sh"; s
+et -e;valid_items=();
+~/.config/fish/functions/__abbr_tips_bind_newline.fish (line 1): Unsupported use
+ of '='. In fish, please use 'set timestamp $(date +%Y%m%d_%H%M%S)'.
+in function '__abbr_tips_bind_newline'
+
+~/.local/bin [🐍 v3.14.3][⏱ 12s]
+❯ timestamp=$(date +%Y%m%d_%H%M%S); backup_dir=$HOME/backups; selected_for_backu
+p=("$HOME/.bashrc" "$HOME/.config"); source "$HOME/.local/bin/lib/helpers.sh"; s
+et -e;valid_items=();for p in "${selected_for_backup[@]}"; do
+~/.config/fish/functions/__abbr_tips_bind_newline.fish (line 1): Unsupported use
+ of '='. In fish, please use 'set timestamp $(date +%Y%m%d_%H%M%S)'.
+in function '__abbr_tips_bind_newline'
+
+~/.local/bin [🐍 v3.14.3][⏱ 12s]
+❯ timestamp=$(date +%Y%m%d_%H%M%S); backup_dir=$HOME/backups; selected_for_backu
+p=("$HOME/.bashrc" "$HOME/.config"); source "$HOME/.local/bin/lib/helpers.sh"; s
+et -e;valid_items=();for p in "${selected_for_backup[@]}"; do  if [ -e "$p" ]; t
+hen valid_items+=("$p"); else echo skip "$p"; fi
+~/.config/fish/functions/__abbr_tips_bind_newline.fish (line 1): Unsupported use
+ of '='. In fish, please use 'set timestamp $(date +%Y%m%d_%H%M%S)'.
+in function '__abbr_tips_bind_newline'
+
+~/.local/bin [🐍 v3.14.3][⏱ 12s]
+❯ timestamp=$(date +%Y%m%d_%H%M%S); backup_dir=$HOME/backups; selected_for_backu
+p=("$HOME/.bashrc" "$HOME/.config"); source "$HOME/.local/bin/lib/helpers.sh"; s
+et -e;valid_items=();for p in "${selected_for_backup[@]}"; do  if [ -e "$p" ]; t
+hen valid_items+=("$p"); else echo skip "$p"; fidone
+~/.config/fish/functions/__abbr_tips_bind_newline.fish (line 1): Unsupported use
+ of '='. In fish, please use 'set timestamp $(date +%Y%m%d_%H%M%S)'.
+in function '__abbr_tips_bind_newline'
+
+~/.local/bin [🐍 v3.14.3][⏱ 12s]
+❯ timestamp=$(date +%Y%m%d_%H%M%S); backup_dir=$HOME/backups; selected_for_backu
+p=("$HOME/.bashrc" "$HOME/.config"); source "$HOME/.local/bin/lib/helpers.sh"; s
+et -e;valid_items=();for p in "${selected_for_backup[@]}"; do  if [ -e "$p" ]; t
+hen valid_items+=("$p"); else echo skip "$p"; fidoneif [ ${#valid_items[@]} -eq 
+0 ]; then echo no valid; fi
+~/.config/fish/functions/__abbr_tips_bind_newline.fish (line 1): Unsupported use
+ of '='. In fish, please use 'set timestamp $(date +%Y%m%d_%H%M%S)'.
+in function '__abbr_tips_bind_newline'
+
+~/.local/bin [🐍 v3.14.3][⏱ 12s]
+❯ timestamp=$(date +%Y%m%d_%H%M%S); backup_dir=$HOME/backups; selected_for_backu
+p=("$HOME/.bashrc" "$HOME/.config"); source "$HOME/.local/bin/lib/helpers.sh"; s
+et -e;valid_items=();for p in "${selected_for_backup[@]}"; do  if [ -e "$p" ]; t
+hen valid_items+=("$p"); else echo skip "$p"; fidoneif [ ${#valid_items[@]} -eq 
+0 ]; then echo no valid; fi
+~/.config/fish/functions/__abbr_tips_bind_newline.fish (line 1): Unsupported use
+ of '='. In fish, please use 'set timestamp $(date +%Y%m%d_%H%M%S)'.
+in function '__abbr_tips_bind_newline'
+
+~/.local/bin [🐍 v3.14.3][⏱ 12s]
+❯ timestamp=$(date +%Y%m%d_%H%M%S); backup_dir=$HOME/backups; selected_for_backu
+p=("$HOME/.bashrc" "$HOME/.config"); source "$HOME/.local/bin/lib/helpers.sh"; s
+et -e;valid_items=();for p in "${selected_for_backup[@]}"; do  if [ -e "$p" ]; t
+hen valid_items+=("$p"); else echo skip "$p"; fidoneif [ ${#valid_items[@]} -eq 
+0 ]; then echo no valid; fitotal_size=0; rel_items=();
+~/.config/fish/functions/__abbr_tips_bind_newline.fish (line 1): Unsupported use
+ of '='. In fish, please use 'set timestamp $(date +%Y%m%d_%H%M%S)'.
+in function '__abbr_tips_bind_newline'
+
+~/.local/bin [🐍 v3.14.3][⏱ 12s]
+❯ timestamp=$(date +%Y%m%d_%H%M%S); backup_dir=$HOME/backups; selected_for_backu
+p=("$HOME/.bashrc" "$HOME/.config"); source "$HOME/.local/bin/lib/helpers.sh"; s
+et -e;valid_items=();for p in "${selected_for_backup[@]}"; do  if [ -e "$p" ]; t
+hen valid_items+=("$p"); else echo skip "$p"; fidoneif [ ${#valid_items[@]} -eq 
+0 ]; then echo no valid; fitotal_size=0; rel_items=();for p in "${valid_items[@]
+}"; do size=$(du -sb "$p" 2>/dev/null | awk '{print $1}' || echo 0); total_size=
+$((total_size+size)); rel_items+=("${p#/}"); done
+~/.config/fish/functions/__abbr_tips_bind_newline.fish (line 1): Unsupported use
+ of '='. In fish, please use 'set timestamp $(date +%Y%m%d_%H%M%S)'.
+in function '__abbr_tips_bind_newline'
+
+~/.local/bin [🐍 v3.14.3][⏱ 12s]
+❯ timestamp=$(date +%Y%m%d_%H%M%S); backup_dir=$HOME/backups; selected_for_backu
+p=("$HOME/.bashrc" "$HOME/.config"); source "$HOME/.local/bin/lib/helpers.sh"; s
+et -e;valid_items=();for p in "${selected_for_backup[@]}"; do  if [ -e "$p" ]; t
+hen valid_items+=("$p"); else echo skip "$p"; fidoneif [ ${#valid_items[@]} -eq 
+0 ]; then echo no valid; fitotal_size=0; rel_items=();for p in "${valid_items[@]
+}"; do size=$(du -sb "$p" 2>/dev/null | awk '{print $1}' || echo 0); total_size=
+$((total_size+size)); rel_items+=("${p#/}"); done
+~/.config/fish/functions/__abbr_tips_bind_newline.fish (line 1): Unsupported use
+ of '='. In fish, please use 'set timestamp $(date +%Y%m%d_%H%M%S)'.
+in function '__abbr_tips_bind_newline'
+
+~/.local/bin [🐍 v3.14.3][⏱ 12s]
+❯ timestamp=$(date +%Y%m%d_%H%M%S); backup_dir=$HOME/backups; selected_for_backu
+p=("$HOME/.bashrc" "$HOME/.config"); source "$HOME/.local/bin/lib/helpers.sh"; s
+et -e;valid_items=();for p in "${selected_for_backup[@]}"; do  if [ -e "$p" ]; t
+hen valid_items+=("$p"); else echo skip "$p"; fidoneif [ ${#valid_items[@]} -eq 
+0 ]; then echo no valid; fitotal_size=0; rel_items=();for p in "${valid_items[@]
+}"; do size=$(du -sb "$p" 2>/dev/null | awk '{print $1}' || echo 0); total_size=
+$((total_size+size)); rel_items+=("${p#/}"); doneecho sizesum=$total_size
+~/.config/fish/functions/__abbr_tips_bind_newline.fish (line 1): Unsupported use
+ of '='. In fish, please use 'set timestamp $(date +%Y%m%d_%H%M%S)'.
+in function '__abbr_tips_bind_newline'
+
+~/.local/bin [🐍 v3.14.3][⏱ 12s]
+❯ timestamp=$(date +%Y%m%d_%H%M%S); backup_dir=$HOME/backups; selected_for_backu
+p=("$HOME/.bashrc" "$HOME/.config"); source "$HOME/.local/bin/lib/helpers.sh"; s
+et -e;valid_items=();for p in "${selected_for_backup[@]}"; do  if [ -e "$p" ]; t
+hen valid_items+=("$p"); else echo skip "$p"; fidoneif [ ${#valid_items[@]} -eq 
+0 ]; then echo no valid; fitotal_size=0; rel_items=();for p in "${valid_items[@]
+}"; do size=$(du -sb "$p" 2>/dev/null | awk '{print $1}' || echo 0); total_size=
+$((total_size+size)); rel_items+=("${p#/}"); doneecho sizesum=$total_size echo r
+el_items="${rel_items[@]}"
+~/.config/fish/functions/__abbr_tips_bind_newline.fish (line 1): Unsupported use
+ of '='. In fish, please use 'set timestamp $(date +%Y%m%d_%H%M%S)'.
+in function '__abbr_tips_bind_newline'
+
+~/.local/bin [🐍 v3.14.3][⏱ 12s]
+❯ timestamp=$(date +%Y%m%d_%H%M%S); backup_dir=$HOME/backups; selected_for_backu
+p=("$HOME/.bashrc" "$HOME/.config"); source "$HOME/.local/bin/lib/helpers.sh"; s
+et -e;valid_items=();for p in "${selected_for_backup[@]}"; do  if [ -e "$p" ]; t
+hen valid_items+=("$p"); else echo skip "$p"; fidoneif [ ${#valid_items[@]} -eq 
+0 ]; then echo no valid; fitotal_size=0; rel_items=();for p in "${valid_items[@]
+}"; do size=$(du -sb "$p" 2>/dev/null | awk '{print $1}' || echo 0); total_size=
+$((total_size+size)); rel_items+=("${p#/}"); doneecho sizesum=$total_size echo r
+el_items="${rel_items[@]}"
+~/.config/fish/functions/__abbr_tips_bind_newline.fish (line 1): Unsupported use
+ of '='. In fish, please use 'set timestamp $(date +%Y%m%d_%H%M%S)'.
+in function '__abbr_tips_bind_newline'
+
+~/.local/bin [🐍 v3.14.3][⏱ 12s]
+❯ timestamp=$(date +%Y%m%d_%H%M%S); backup_dir=$HOME/backups; selected_for_backu
+p=("$HOME/.bashrc" "$HOME/.config"); source "$HOME/.local/bin/lib/helpers.sh"; s
+et -e;valid_items=();for p in "${selected_for_backup[@]}"; do  if [ -e "$p" ]; t
+hen valid_items+=("$p"); else echo skip "$p"; fidoneif [ ${#valid_items[@]} -eq 
+0 ]; then echo no valid; fitotal_size=0; rel_items=();for p in "${valid_items[@]
+}"; do size=$(du -sb "$p" 2>/dev/null | awk '{print $1}' || echo 0); total_size=
+$((total_size+size)); rel_items+=("${p#/}"); doneecho sizesum=$total_size echo r
+el_items="${rel_items[@]}"backup_file="$backup_dir/test_${timestamp}.tar.gz"; mk
+dir -p "$backup_dir";
+~/.config/fish/functions/__abbr_tips_bind_newline.fish (line 1): Unsupported use
+ of '='. In fish, please use 'set timestamp $(date +%Y%m%d_%H%M%S)'.
+in function '__abbr_tips_bind_newline'
+
+~/.local/bin [🐍 v3.14.3][⏱ 12s]
+❯ timestamp=$(date +%Y%m%d_%H%M%S); backup_dir=$HOME/backups; selected_for_backu
+p=("$HOME/.bashrc" "$HOME/.config"); source "$HOME/.local/bin/lib/helpers.sh"; s
+et -e;valid_items=();for p in "${selected_for_backup[@]}"; do  if [ -e "$p" ]; t
+hen valid_items+=("$p"); else echo skip "$p"; fidoneif [ ${#valid_items[@]} -eq 
+0 ]; then echo no valid; fitotal_size=0; rel_items=();for p in "${valid_items[@]
+}"; do size=$(du -sb "$p" 2>/dev/null | awk '{print $1}' || echo 0); total_size=
+$((total_size+size)); rel_items+=("${p#/}"); doneecho sizesum=$total_size echo r
+el_items="${rel_items[@]}"backup_file="$backup_dir/test_${timestamp}.tar.gz"; mk
+dir -p "$backup_dir";( cd / && tar -cf - "${rel_items[@]}" ) | gzip >"$backup_fi
+le"
+~/.config/fish/functions/__abbr_tips_bind_newline.fish (line 1): Unsupported use
+ of '='. In fish, please use 'set timestamp $(date +%Y%m%d_%H%M%S)'.
+in function '__abbr_tips_bind_newline'
+
+~/.local/bin [🐍 v3.14.3][⏱ 12s]
+❯ timestamp=$(date +%Y%m%d_%H%M%S); backup_dir=$HOME/backups; selected_for_backu
+p=("$HOME/.bashrc" "$HOME/.config"); source "$HOME/.local/bin/lib/helpers.sh"; s
+et -e;valid_items=();for p in "${selected_for_backup[@]}"; do  if [ -e "$p" ]; t
+hen valid_items+=("$p"); else echo skip "$p"; fidoneif [ ${#valid_items[@]} -eq 
+0 ]; then echo no valid; fitotal_size=0; rel_items=();for p in "${valid_items[@]
+}"; do size=$(du -sb "$p" 2>/dev/null | awk '{print $1}' || echo 0); total_size=
+$((total_size+size)); rel_items+=("${p#/}"); doneecho sizesum=$total_size echo r
+el_items="${rel_items[@]}"backup_file="$backup_dir/test_${timestamp}.tar.gz"; mk
+dir -p "$backup_dir";( cd / && tar -cf - "${rel_items[@]}" ) | gzip >"$backup_fi
+le"echo created $backup_file
+~/.config/fish/functions/__abbr_tips_bind_newline.fish (line 1): Unsupported use
+ of '='. In fish, please use 'set timestamp $(date +%Y%m%d_%H%M%S)'.
+in function '__abbr_tips_bind_newline'
+
+~/.local/bin [🐍 v3.14.3][⏱ 12s]
+❯ timestamp=$(date +%Y%m%d_%H%M%S); backup_dir=$HOME/backups; selected_for_backu
+p=("$HOME/.bashrc" "$HOME/.config"); source "$HOME/.local/bin/lib/helpers.sh"; s
+et -e;valid_items=();for p in "${selected_for_backup[@]}"; do  if [ -e "$p" ]; t
+hen valid_items+=("$p"); else echo skip "$p"; fidoneif [ ${#valid_items[@]} -eq 
+0 ]; then echo no valid; fitotal_size=0; rel_items=();for p in "${valid_items[@]
+}"; do size=$(du -sb "$p" 2>/dev/null | awk '{print $1}' || echo 0); total_size=
+$((total_size+size)); rel_items+=("${p#/}"); doneecho sizesum=$total_size echo r
+el_items="${rel_items[@]}"backup_file="$backup_dir/test_${timestamp}.tar.gz"; mk
+dir -p "$backup_dir";( cd / && tar -cf - "${rel_items[@]}" ) | gzip >"$backup_fi
+le"echo created $backup_filels -l "$backup_file"
+~/.config/fish/functions/__abbr_tips_bind_newline.fish (line 1): Unsupported use
+ of '='. In fish, please use 'set timestamp $(date +%Y%m%d_%H%M%S)'.
+in function '__abbr_tips_bind_newline'
+
+~/.local/bin [🐍 v3.14.3][⏱ 12s]
+❯ timestamp=$(date +%Y%m%d_%H%M%S); backup_dir=$HOME/backups; selected_for_backu
+p=("$HOME/.bashrc" "$HOME/.config"); source "$HOME/.local/bin/lib/helpers.sh"; s
+et -e;valid_items=();for p in "${selected_for_backup[@]}"; do  if [ -e "$p" ]; t
+hen valid_items+=("$p"); else echo skip "$p"; fidoneif [ ${#valid_items[@]} -eq 
+0 ]; then echo no valid; fitotal_size=0; rel_items=();for p in "${valid_items[@]
+}"; do size=$(du -sb "$p" 2>/dev/null | awk '{print $1}' || echo 0); total_size=
+$((total_size+size)); rel_items+=("${p#/}"); doneecho sizesum=$total_size echo r
+el_items="${rel_items[@]}"backup_file="$backup_dir/test_${timestamp}.tar.gz"; mk
+dir -p "$backup_dir";( cd / && tar -cf - "${rel_items[@]}" ) | gzip >"$backup_fi
+le"echo created $backup_filels -l "$backup_file"

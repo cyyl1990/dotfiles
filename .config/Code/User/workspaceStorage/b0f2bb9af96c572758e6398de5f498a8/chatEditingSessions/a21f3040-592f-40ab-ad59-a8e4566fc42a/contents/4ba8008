@@ -1,0 +1,55 @@
+#!/bin/bash
+
+output_css="$HOME/.config/omarchy/current/theme/hypr-dock.css"
+theme_dir="$HOME/.config/hypr-dock/themes/lotos/"
+style_file="$theme_dir/style.css"
+theme_conf="$theme_dir/theme.conf"
+
+if ! command -v hypr-dock >/dev/null 2>&1; then
+  skipped "Hypr Dock"
+fi
+
+mkdir -p "$theme_dir"
+
+# Generate style.css if not exists
+if [[ ! -f "$output_css" ]]; then
+  mkdir -p "$(dirname "$output_css")"
+
+  cat >"$output_css" <<EOF
+window {
+  background: #${primary_background};
+  border: 2px solid #${bright_black};
+  border-radius: 12px;
+}
+
+button {
+  color: #${normal_white};
+  padding: 4px;
+}
+
+button:hover {
+  background: rgba($rgb_bright_black,0.5);
+}
+
+icon {
+  color: #${bright_white};
+}
+EOF
+fi
+
+# Create theme.conf if missing
+if [[ ! -f "$theme_conf" ]]; then
+  cat >"$theme_conf" <<EOF
+[theme]
+name=omarchy
+style=style.css
+EOF
+fi
+
+cp "$output_css" "$style_file"
+
+# reload dock
+killall hypr-dock 2>/dev/null
+hypr-dock &
+
+success "Hypr Dock theme updated!"

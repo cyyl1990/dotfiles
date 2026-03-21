@@ -1,0 +1,45 @@
+2026-03-15 17:59:57.551 [info] Extension host with pid 4087927 started
+2026-03-15 17:59:57.663 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2026-03-15 17:59:57.685 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2026-03-15 17:59:57.714 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*'
+2026-03-15 17:59:57.716 [info] ExtensionService#_doActivateExtension christian-kohler.path-intellisense, startup: true, activationEvent: '*'
+2026-03-15 17:59:57.722 [info] ExtensionService#_doActivateExtension formulahendry.auto-rename-tag, startup: true, activationEvent: '*'
+2026-03-15 17:59:57.763 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2026-03-15 17:59:57.861 [info] Eager extensions activated
+2026-03-15 17:59:57.868 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2026-03-15 17:59:57.870 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2026-03-15 17:59:57.882 [info] ExtensionService#_doActivateExtension Catppuccin.catppuccin-vsc, startup: false, activationEvent: 'onStartupFinished'
+2026-03-15 17:59:57.886 [info] ExtensionService#_doActivateExtension eamodio.gitlens, startup: false, activationEvent: 'onStartupFinished'
+2026-03-15 17:59:57.967 [info] ExtensionService#_doActivateExtension esbenp.prettier-vscode, startup: false, activationEvent: 'onStartupFinished'
+2026-03-15 17:59:57.967 [info] ExtensionService#_doActivateExtension PKief.material-icon-theme, startup: false, activationEvent: 'onStartupFinished'
+2026-03-15 17:59:57.977 [info] ExtensionService#_doActivateExtension sainnhe.everforest, startup: false, activationEvent: 'onStartupFinished'
+2026-03-15 17:59:57.984 [info] ExtensionService#_doActivateExtension streetsidesoftware.code-spell-checker, startup: false, activationEvent: 'onStartupFinished'
+2026-03-15 17:59:58.440 [info] ExtensionService#_doActivateExtension streetsidesoftware.code-spell-checker-vietnamese, startup: false, activationEvent: 'onStartupFinished'
+2026-03-15 17:59:58.749 [info] ExtensionService#_doActivateExtension vscode.configuration-editing, startup: false, activationEvent: 'onLanguage:jsonc'
+2026-03-15 17:59:58.756 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2026-03-15 17:59:58.815 [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2026-03-15 18:01:00.430 [info] Extension host terminating: renderer closed the MessagePort
+2026-03-15 18:01:00.439 [error] An error occurred when disposing the subscriptions for extension 'eamodio.gitlens':
+2026-03-15 18:01:00.451 [error] TypeError: Cannot read properties of undefined (reading 'dispose')
+    at Object.dispose (file:///opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:521:147202)
+    at be.<anonymous> (file:///opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:490:34327)
+    at be.dispose (file:///opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:490:34404)
+    at Object.dispose (/home/bap/.vscode/extensions/eamodio.gitlens-17.11.1/dist/gitlens.js:1641:17210)
+    at /home/bap/.vscode/extensions/eamodio.gitlens-17.11.1/dist/gitlens.js:2430:58982
+    at Array.forEach (<anonymous>)
+    at Object.dispose (/home/bap/.vscode/extensions/eamodio.gitlens-17.11.1/dist/gitlens.js:2430:58963)
+    at yn (file:///opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:401:736)
+    at Wk._fn (file:///opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:498:18387)
+    at Wk.dispose (file:///opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:401:1248)
+    at ck._deactivate (file:///opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:498:14704)
+    at file:///opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:498:12006
+    at Array.map (<anonymous>)
+    at ck._deactivateAll (file:///opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:498:11994)
+    at ck.terminate (file:///opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:498:12345)
+    at r.terminate (file:///opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:500:1072)
+    at Fs (file:///opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:800:11700)
+    at MessagePortMain.<anonymous> (file:///opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:800:8122)
+    at MessagePortMain.emit (node:events:519:28)
+    at Object.MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:2959)
+    at Object.callbackTrampoline (node:internal/async_hooks:130:17)
+2026-03-15 18:01:00.457 [info] Extension host with pid 4087927 exiting with code 0

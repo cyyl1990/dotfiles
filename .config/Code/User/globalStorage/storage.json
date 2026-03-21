@@ -1,0 +1,106 @@
+{
+    "telemetry.sqmId": "",
+    "telemetry.machineId": "b8a0f6098de564a7d728e7ecb44696db6a6e28507636e5d994828477f8a28546",
+    "telemetry.devDeviceId": "5edff050-807f-472c-8bb2-02156e3d08bb",
+    "backupWorkspaces": {
+        "workspaces": [],
+        "folders": [],
+        "emptyWindows": [
+            {
+                "backupFolder": "1773572396100"
+            }
+        ]
+    },
+    "windowControlHeight": 35,
+    "profileAssociations": {
+        "workspaces": {
+            "file:///home/bap/dusky/dusky": "__default__profile__",
+            "file:///home/bap/dotfiles/Hyprland-Dots": "__default__profile__",
+            "file:///home/bap/.config/hypr": "__default__profile__",
+            "file:///home/bap/.config": "__default__profile__",
+            "file:///home/bap/.local/bin": "__default__profile__"
+        },
+        "emptyWindows": {
+            "1773572396100": "__default__profile__"
+        }
+    },
+    "theme": "hc-black",
+    "themeBackground": "#121212",
+    "windowSplash": {
+        "zoomLevel": 0,
+        "baseTheme": "hc-black",
+        "colorInfo": {
+            "foreground": "#eaeaea",
+            "background": "#121212",
+            "editorBackground": "#121212",
+            "titleBarBackground": "#121212",
+            "titleBarBorder": "#333333",
+            "activityBarBackground": "#121212",
+            "activityBarBorder": "#333333",
+            "sideBarBackground": "#121212",
+            "sideBarBorder": "#333333",
+            "statusBarBackground": "#121212",
+            "statusBarBorder": "#333333",
+            "windowBorder": "#333333"
+        },
+        "layoutInfo": {
+            "sideBarSide": "left",
+            "editorPartMinWidth": 220,
+            "titleBarHeight": 35,
+            "activityBarWidth": 0,
+            "sideBarWidth": 0,
+            "auxiliaryBarWidth": 0,
+            "statusBarHeight": 0,
+            "windowBorder": false
+        }
+    },
+    "windowsState": {
+        "lastActiveWindow": {
+            "backupPath": "/home/bap/.config/Code/Backups/1773572396100",
+            "uiState": {
+                "mode": 0,
+                "x": 0,
+                "y": 0,
+                "width": 1275,
+                "height": 1397
+            }
+        },
+        "openedWindows": []
+    },
+    "windowSplashWorkspaceOverride": {
+        "layoutInfo": {
+            "sideBarWidth": 170,
+            "auxiliaryBarWidth": 200,
+            "workspaces": {
+                "f29ff5a7f5e01ef80eb3c0d193a44bfe": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": true
+                },
+                "f17ffc50a1593fec197337afbbf03710": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "43867b569f9b38800a462d239bc41ff6": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": true
+                },
+                "dc30480a0a8caec9eea0b0c17a4eeef3": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": true
+                },
+                "2c728f78a54e4b52877b6ef98d33f163": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": true
+                },
+                "b0f2bb9af96c572758e6398de5f498a8": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": true
+                },
+                "101f24efd356312dc1cdf43d5520b27c": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": true
+                }
+            }
+        }
+    }
+}

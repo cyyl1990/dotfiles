@@ -1,0 +1,43 @@
+# Changes require a restart to take effect.
+
+# Ensure Omarchy bins are in the path
+export OMARCHY_PATH=$HOME/.local/share/omarchy
+export PATH=$OMARCHY_PATH/bin:$PATH
+export PATH="$HOME/.local/bin:$PATH"
+
+# Set default terminal and editor
+source ~/.config/uwsm/default
+
+# Activate mise if present on the system
+if [ "$SHELL" = "/bin/bash" ] && command -v mise &> /dev/null; then
+  eval "$(mise activate bash)"
+elif [ "$SHELL" = "/bin/fish" ] && command -v mise &> /dev/null; then
+  mise activate fish | source
+fi
+
+# NVIDIA
+export LIBVA_DRIVER_NAME=nvidia
+export GBM_BACKEND=nvidia-drm
+export __GLX_VENDOR_LIBRARY_NAME=nvidia
+export NVD_BACKEND=direct
+export MOZ_DISABLE_RDD_SANDBOX=1
+export CUDA_DISABLE_PERF_BOOST=1
+export QT_QPA_PLATFORM=wayland;xcb
+export GDK_BACKEND=wayland,x11,*
+
+# Wayland and Hyprland specific
+export QT_STYLE_OVERRIDE=kvantum
+export SDL_VIDEODRIVER=wayland,x11
+export MOZ_ENABLE_WAYLAND=1
+export ELECTRON_OZONE_PLATFORM_HINT=wayland
+export OZONE_PLATFORM=wayland
+export XDG_SESSION_TYPE=wayland
+export XDG_CURRENT_DESKTOP=Hyprland
+export XDG_SESSION_DESKTOP=Hyprland
+export XCURSOR_SIZE=24
+export HYPRCURSOR_SIZE=24
+export XCOMPOSEFILE=~/.XCompose
+
+# Locale
+export LANG=vi_VN.UTF-8
+export LC_ALL=vi_VN.UTF-8

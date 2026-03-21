@@ -1,0 +1,49 @@
+{
+  "$schema": "/etc/xdg/swaync/configSchema.json",
+  "positionX": "right",
+  "positionY": "top",
+	"cssPriority": "user",
+
+  "control-center-width": 380,
+  "control-center-height": 8    "dnd": {
+      "text": "Do not disturb"
+    },
+    "label": {
+      "max-lines": 1,
+      "text": " "
+    },
+    "mpris": {
+      "image-size": 96,
+      "image-radius": 12
+    },
+    "volume": {
+      "label": "󰕾",
+        "show-per-app": true
+    },
+    "buttons-grid": {
+      "actions": [
+        {
+          "label": " ",
+          "command": "amixer set Master toggle"
+        },
+        {
+          "label": "",
+          "command": "amixer set Capture toggle"
+        },
+        {
+          "label": " ",
+          "command": "nm-connection-editor"
+        },
+        {
+          "label": "󰂯",
+          "command": "blueman-manager"
+        },
+        {
+          "label": "󰏘",
+          "command": "nwg-look"
+        }
+        
+      ]
+    }
+  }
+}

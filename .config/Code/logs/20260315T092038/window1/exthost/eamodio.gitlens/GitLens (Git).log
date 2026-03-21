@@ -1,3 +1,0 @@
-2026-03-15 09:20:43.038 [error] [        149ms] [/home/bap/.config/omarchy/current/theme] git rev-parse --show-toplevel --git-dir --git-common-dir --show-superproject-working-tree • FAILED
-Error: fatal: not a git repository (or any parent up to mount point /)
-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).

@@ -1,0 +1,27 @@
+# Cache & Logs
+**/Cache/**
+**/cache/**
+**/*.log
+**/*.tmp
+**/GPUCache/**
+**/CachedData/**
+**/sessionData/**
+
+# VS Code specific
+.config/Code/User/History/
+.config/Code/User/workspaceStorage/
+.config/Code/logs/
+
+# Vesktop / Discord specific
+.config/vesktop/Cache/
+.config/vesktop/Code\ Cache/
+.config/vesktop/sessionData/
+
+# History files
+.bash_history
+.zsh_history
+.python_history
+.node_repl_history
+
+# Submodules (avoid tracking .git folders inside)
+**/.git/

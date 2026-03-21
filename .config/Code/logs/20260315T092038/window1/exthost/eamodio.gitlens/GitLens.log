@@ -1,7 +1,0 @@
-2026-03-15 09:20:42.953 [info] To enable debug logging, run "GitLens: Enable Debug Logging" or "Developer: Set Log Level..." from the Command Palette
-2026-03-15 09:20:42.953 [error]   [            1] GitLens v17.11.1  activating in Visual Studio Code (1.111.0) on the desktop; mode=production,language='en', logLevel='info', defaultDateLocale='null' (vscode|b8a0f6098de564a7d728e7ecb44696db6a6e28507636e5d994828477f8a28546|a79782f9-0c37-403e-9220-1db25744fd8e1773541239067)
-2026-03-15 09:20:42.953 [error]   [            1] GitLens v17.11.1 activated, mode: Zen [84ms]
-2026-03-15 09:20:43.005 [info]    [   76 →    93] LocalGitProvider.findGit Git (2.53.0) found in /usr/bin/git [124ms]
-2026-03-15 09:20:43.029 [error]   [GIT          ] [/home/bap/.config/omarchy/current/theme] git rev-parse --show-toplevel --git-dir --git-common-dir --show-superproject-working-tree • not a git repository (or any parent up to mount point /) • Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set). [149ms]
-2026-03-15 09:20:45.251 [warning] [   81 →    96] GkCliIntegrationProvider.checkCliUpdateRequired completed [*2362ms] (slow)
-2026-03-15 09:20:45.251 [info]    [CLI          ] CLI core version is 3.1.54

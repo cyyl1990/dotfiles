@@ -1,6 +1,0 @@
-2026-03-21 21:16:30.476 [info] Started local extension host with pid 950107.
-2026-03-21 21:16:30.697 [error] [/home/bap/.vscode/extensions/github.copilot-chat-0.39.1]: This extension is using the API proposal 'chatDebug' that is not compatible with the current version of VS Code.
-2026-03-21 21:16:31.314 [info] MCP Registry configured: https://api.mcp.github.com
-2026-03-21 21:16:31.800 [info] Settings Sync: Account status changed from uninitialized to available
-2026-03-21 21:16:33.512 [info] [perf] Render performance baseline is 14ms
-2026-03-21 21:16:34.144 [info] Auto updating outdated extensions. esbenp.prettier-vscode, github.copilot-chat

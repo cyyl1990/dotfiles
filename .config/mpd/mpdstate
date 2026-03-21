@@ -1,0 +1,113 @@
+sw_volume: 100
+audio_device_state:1:pulse audio
+audio_device_state:1:my_fifo
+state: play
+current: 81
+time: 77.126
+random: 0
+repeat: 0
+single: 0
+consume: 0
+crossfade: 0
+mixrampdb: 0
+mixrampdelay: -1
+lastloadedplaylist: 
+playlist_begin
+0:Spotify/GRAILED_spotdown.org.mp3
+1:Spotify/Teeth_spotdown.org.mp3
+2:Spotify/Vô Tư_spotdown.org.mp3
+3:Spotify/love nwantiti (ah ah ah)_spotdown.org.mp3
+4:Spotify/Astronaut In The Ocean_spotdown.org.mp3
+5:Spotify/MIRRORS_spotdown.org.mp3
+6:Spotify/VOICES_spotdown.org.mp3
+7:Spotify/Don't Break My Heart_spotdown.org.mp3
+8:Spotify/Up_spotdown.org.mp3
+9:Spotify/Can't lose more_spotdown.org.mp3
+10:Spotify/Feel so cold_spotdown.org.mp3
+11:Spotify/Feel So Cold_spotdown.org.mp3
+12:Spotify/Make It Lower_spotdown.org.mp3
+13:Spotify/You Will Never Know It_spotdown.org.mp3
+14:Spotify/Nên Chờ Hay Nên Quên_spotdown.org.mp3
+15:Spotify/Đâu Còn Quan Trọng_spotdown.org.mp3
+16:Spotify/Red Flag_spotdown.org.mp3
+17:Spotify/Still Into You_spotdown.org.mp3
+18:Spotify/hello em có khỏe không_spotdown.org.mp3
+19:Spotify/The Sound of Silence - CYRIL Remix_spotdown.org.mp3
+20:Spotify/Jar Of Love - DJ降调版_spotdown.org.mp3
+21:Spotify/Paint The Town Red_spotdown.org.mp3
+22:Spotify/MONEY ON THE DASH_spotdown.org.mp3
+23:Spotify/Xin Anh Đừng_spotdown.org.mp3
+24:Spotify/Houdini_spotdown.org.mp3
+25:Spotify/Call It Love_spotdown.org.mp3
+26:Spotify/Call my name_spotdown.org.mp3
+27:Spotify/Da Key_spotdown.org.mp3
+28:Spotify/Head In The Clouds_spotdown.org.mp3
+29:Spotify/ngủ một mình (tình rất tình)_spotdown.org.mp3
+30:Spotify/Too Sweet_spotdown.org.mp3
+31:Spotify/Gieo Quẻ (feat. Đen)_spotdown.org.mp3
+32:Spotify/See Tình_spotdown.org.mp3
+33:Spotify/Tháng Mấy Em Nhớ Anh__spotdown.org.mp3
+34:Spotify/Trót Tin Vào Lời Hứa_spotdown.org.mp3
+35:Spotify/Bones_spotdown.org.mp3
+36:Spotify/Sharks_spotdown.org.mp3
+37:Spotify/Bury Me With Bourbon_spotdown.org.mp3
+38:Spotify/Sài Gòn Hôm Nay Mưa_spotdown.org.mp3
+39:Spotify/Call Me The Liar_spotdown.org.mp3
+40:Spotify/Không Tin Một Sớm Mai Bình Yên (LadyKillah Remix)_spotdown.org.mp3
+41:Spotify/K Pt. 2_spotdown.org.mp3
+42:Spotify/Imma-heartbreaker (feat. LK & Emily)_spotdown.org.mp3
+43:Spotify/Ngọn Nến Trước Gió_spotdown.org.mp3
+44:Spotify/Cay_spotdown.org.mp3
+45:Spotify/People (feat. Cian Ducrot)_spotdown.org.mp3
+46:Spotify/People (feat. Ayra Starr & Omah Lay)_spotdown.org.mp3
+47:Spotify/People - Sped Up_spotdown.org.mp3
+48:Spotify/Glad U Came (feat. ZieZie)_spotdown.org.mp3
+49:Spotify/Lip_spotdown.org.mp3
+50:Spotify/Người Lạ Nơi Cuối Con Đường_spotdown.org.mp3
+51:Spotify/Frozen_spotdown.org.mp3
+52:Spotify/Cheri Cheri Lady_spotdown.org.mp3
+53:Spotify/I Want More_spotdown.org.mp3
+54:Spotify/Sucker (from the series Arcane League of Legends)_spotdown.org.mp3
+55:Spotify/Devil in Disguise_spotdown.org.mp3
+56:Spotify/Phong Dạ Hành - Remix_spotdown.org.mp3
+57:Spotify/haunt me_spotdown.org.mp3
+58:Spotify/Vì Em Tất Cả_spotdown.org.mp3
+59:Spotify/Still Hot_spotdown.org.mp3
+60:Spotify/HIPNOZA_spotdown.org.mp3
+61:Spotify/Đông Mang_spotdown.org.mp3
+62:Spotify/SHO MEN_spotdown.org.mp3
+63:Spotify/Kiss It Better - R3hab Remix_spotdown.org.mp3
+64:Spotify/World Gone Wild (feat. Sam Martin)_spotdown.org.mp3
+65:Spotify/Versace_spotdown.org.mp3
+66:Spotify/Espresso_spotdown.org.mp3
+67:Spotify/giá như_spotdown.org.mp3
+68:Spotify/El Dorado_spotdown.org.mp3
+69:Spotify/No Angels_spotdown.org.mp3
+70:Spotify/Ma Meilleure Ennemie (from the series Arcane League of Legends)_spotdown.org.mp3
+71:Spotify/Following the Sun_spotdown.org.mp3
+72:Spotify/Chúng Ta Của Tương Lai_spotdown.org.mp3
+73:Spotify/Bad Dreams_spotdown.org.mp3
+74:Spotify/Devil in a Dress_spotdown.org.mp3
+75:Spotify/Lao Tâm Khổ Tứ_spotdown.org.mp3
+76:Spotify/Infinity_spotdown.org.mp3
+77:Spotify/Hạt Mưa Vương Vấn_spotdown.org.mp3
+78:Spotify/The Business_spotdown.org.mp3
+79:Spotify/MILLION DOLLAR BABY_spotdown.org.mp3
+80:Spotify/Roses x Children - Remix_spotdown.org.mp3
+81:Spotify/Vừa Hận Vừa Yêu_spotdown.org.mp3
+82:Spotify/Thuyền Không Bến Đợi (feat. Czee)_spotdown.org.mp3
+83:Spotify/The Line (from the series Arcane League of Legends)_spotdown.org.mp3
+84:Spotify/Phải Lòng (feat. Phong Max)_spotdown.org.mp3
+85:Spotify/Skeletons & Ghosts_spotdown.org.mp3
+86:Spotify/Therapy_spotdown.org.mp3
+87:Spotify/Bước Qua Mùa Cô Đơn_spotdown.org.mp3
+88:Spotify/Wannabe_spotdown.org.mp3
+89:Spotify/Wait a Minute!_spotdown.org.mp3
+90:Spotify/Trốn Tìm_spotdown.org.mp3
+91:Spotify/Tonight - 女生版_spotdown.org.mp3
+92:Spotify/土坡上的狗尾巴草 - DJ沈念纯享版_spotdown.org.mp3
+93:Spotify/土坡上的狗尾草_spotdown.org.mp3
+94:Spotify/难解_spotdown.org.mp3
+95:Spotify/댓글은 칼 Comments Are Swords_spotdown.org.mp3
+96:Spotify/봄의 알고리즘 (Spring Algorithm)_spotdown.org.mp3
+playlist_end

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+<action>
+	<icon>utilities-terminal</icon>
+	<name>Open Terminal Here</name>
+	<submenu></submenu>
+	<unique-id>1771580942008001-1</unique-id>
+	<command>kitty %f</command>
+	<description>Example for a custom action</description>
+	<range></range>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+</action>
+<action>
+	<icon>searching</icon>
+	<name>Search files in folder</name>
+	<submenu></submenu>
+	<unique-id>1771700041827363-1</unique-id>
+	<command>catfish %f</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>alienarena</icon>
+	<name>Open as Admin here</name>
+	<submenu></submenu>
+	<unique-id>1771700412182914-2</unique-id>
+	<command>thunar admin:///%f</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>emblem-symbolic-link</icon>
+	<name>Create symlink</name>
+	<submenu></submenu>
+	<unique-id>1771700482815788-3</unique-id>
+	<command>ln -Ts %f %n&quot; (symlink)&quot;</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+	<other-files/>
+</action>
+<action>
+	<icon>connector-orthogonal</icon>
+	<name>So Sánh File</name>
+	<submenu></submenu>
+	<unique-id>1771700623654629-4</unique-id>
+	<command>meld %F</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+	<text-files/>
+</action>
+<action>
+	<icon>document-revert</icon>
+	<name>Download subtitles</name>
+	<submenu></submenu>
+	<unique-id>1771701170913261-5</unique-id>
+	<command>~/.local/bin/OpenSubtitlesDownload.py --gui=gnome %F</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<video-files/>
+</action>
+</actions>

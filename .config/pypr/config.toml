@@ -1,0 +1,14 @@
+[pyprland]
+plugins = ["scratchpads"]
+
+[scratchpads.kitty]
+command = "kitty --class dropdown -e tmux new-session -A -s scratchpad"
+class = "dropdown"
+
+animation = "fromTop"
+
+size = "55% 55%"
+margin = 90
+
+lazy = true
+unfocus = "hide"

@@ -1,0 +1,19 @@
+window {
+    background: #1B1B1B; /* base01 */
+    border-color: #929292; /* base02 */
+    border: 2px solid #929292;
+}
+
+button,
+image {
+    color: #efebdc; /* base07 */
+}
+
+button {
+    color: #E1CE98; /* base05 */
+    padding: 3px;
+}
+
+button:hover {
+    background-color: rgba(146, 146, 146, 0.5); /* base02 */
+}

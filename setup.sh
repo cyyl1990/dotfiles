@@ -63,6 +63,15 @@ for dir in $(ls -A "$DOT_DIR/.config/"); do
     echo -e "${GREEN}Đã áp dụng config cho: $dir${NC}"
 done
 
+# 6. Khôi phục các script cá nhân (~/.local/bin)
+echo -e "${YELLOW}Đang khôi phục các script cá nhân (~/.local/bin)...${NC}"
+mkdir -p "$HOME/.local/bin"
+if [ -d "$DOT_DIR/.local/bin" ]; then
+    cp -r "$DOT_DIR/.local/bin/"* "$HOME/.local/bin/"
+    chmod +x "$HOME/.local/bin/"* 2>/dev/null
+    echo -e "${GREEN}Đã khôi phục và cấp quyền thực thi cho các script trong ~/.local/bin${NC}"
+fi
+
 # Copy các file ở Home (.zshrc, .bashrc, .profile)
 for file in .bashrc .zshrc .profile; do
     if [ -f "$DOT_DIR/$file" ]; then

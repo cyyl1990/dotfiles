@@ -1,0 +1,46 @@
+#!/bin/bash
+# omarchy-tmux-theme-set — syncs tmux-powerkit theme with Omarchy
+set -euo pipefail
+
+readonly THEME_NAME_FILE="$HOME/.config/omarchy/current/theme.name"
+readonly POWERKIT_THEME_CONF="$HOME/.config/tmux/powerkit-theme.conf"
+readonly TMUX_CONF="$HOME/.config/tmux/tmux.conf"
+
+[[ -f "$THEME_NAME_FILE" ]] || exit 0
+
+theme=$(cat "$THEME_NAME_FILE" | tr -d '[:space:]')
+
+map_theme() {
+  local theme="$1"
+  case "$theme" in
+    catppuccin-latte)  echo "catppuccin|latte" ;;
+    catppuccin)        echo "catppuccin|mocha" ;;
+    ethereal)          echo "ethereal|default" ;;
+    everforest)        echo "everforest|dark" ;;
+    flexoki-light)     echo "flexoki|light" ;;
+    gruvbox)           echo "gruvbox|dark" ;;
+    hackerman)         echo "hackerman|default" ;;
+    kanagawa)          echo "kanagawa|dragon" ;;
+    matte-black)       echo "matte-black|default" ;;
+    miasma)            echo "miasma|default" ;;
+    nord)              echo "nord|dark" ;;
+    osaka-jade)        echo "osaka-jade|default" ;;
+    ristretto)         echo "ristretto|default" ;;
+    rose-pine)         echo "rose-pine|main" ;;
+    tokyo-night)       echo "tokyo-night|night" ;;
+    vantablack)        echo "vantablack|default" ;;
+    white)             echo "white|default" ;;
+    *)                 echo "tokyo-night|night" ;;
+  esac
+}
+
+IFS='|' read -r base variant <<<"$(map_theme "$theme")"
+
+cat >"$POWERKIT_THEME_CONF" <<EOF
+set -g @powerkit_theme "$base"
+set -g @powerkit_theme_variant "$variant"
+EOF
+
+if tmux ls >/dev/null 2>&1; then
+  tmux source-file "$TMUX_CONF"
+fi

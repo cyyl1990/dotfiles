@@ -1,0 +1,13 @@
+#!/bin/bash
+
+ws=$(hyprctl activeworkspace -j | jq -r '.id')
+
+count=$(hyprctl clients -j |
+  jq "[.[] | select(.class==\"Geany\" and .workspace.id==$ws)] | length")
+
+# Nếu workspace chưa có Geany → mở instance mới
+if [ "$count" -eq 0 ]; then
+  exec geany --new-instance "$@"
+else
+  exec geany "$@"
+fi

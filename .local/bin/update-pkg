@@ -1,0 +1,102 @@
+#!/bin/bash
+
+clear
+
+gum style \
+  --border normal \
+  --margin "1 2" \
+  --padding "1 2" \
+  --border-foreground 212 \
+  "🔄 Trình Cập Nhật Hệ Thống"
+
+# Lấy danh sách update repo chính
+REPO_UPDATES=$(checkupdates 2>/dev/null)
+
+# Lấy danh sách update AUR
+AUR_UPDATES=$(paru -Qua 2>/dev/null)
+
+TOTAL_REPO=$(echo "$REPO_UPDATES" | grep -c "^[a-zA-Z0-9]")
+TOTAL_AUR=$(echo "$AUR_UPDATES" | grep -c "^[a-zA-Z0-9]")
+
+TOTAL=$((TOTAL_REPO + TOTAL_AUR))
+
+if [ "$TOTAL" -eq 0 ]; then
+    gum style --foreground 10 --bold "✅ Hệ thống đã ở phiên bản mới nhất!"
+    exit 0
+fi
+
+gum style --foreground 3 --bold "📦 Có $TOTAL gói cần cập nhật"
+echo
+
+if [ "$TOTAL_REPO" -gt 0 ]; then
+    gum style --foreground 6 --bold "🔹 Gói từ Repository chính:"
+    echo "$REPO_UPDATES"
+    echo
+fi
+
+if [ "$TOTAL_AUR" -gt 0 ]; then
+    gum style --foreground 5 --bold "🔸 Gói từ AUR:"
+    echo "$AUR_UPDATES"
+    echo
+fi
+
+CHOICE=$(gum choose \
+  "✅ Có, cập nhật ngay" \
+  "❌ Không, để sau" \
+  --header "Bạn có muốn tiếp tục cập nhật không?"
+)
+
+if [[ "$CHOICE" == "✅ Có, cập nhật ngay" ]]; then
+
+    gum style --foreground 11 "🔐 Vui lòng nhập mật khẩu để tiếp tục..."
+    sudo -v || exit 1
+
+    gum style --foreground 12 "🚀 Đang tiến hành cập nhật..."
+
+    gum spin \
+      --spinner dot \
+      --title "⏳ Đang tải và cài đặt gói..." \
+      -- paru -Syu
+
+    STATUS=$?
+
+    if [ "$STATUS" -ne 0 ]; then
+        gum style --foreground 9 --bold "❌ Có lỗi xảy ra trong quá trình cập nhật."
+        exit 1
+    fi
+
+    gum style --foreground 10 --bold "🎉 Cập nhật hoàn tất!"
+
+    # Kiểm tra cần reboot (kernel / systemd / nvidia)
+    NEED_REBOOT=0
+
+    UPDATED_KERNEL=$(echo "$REPO_UPDATES" | grep -E "linux|kernel")
+    UPDATED_SYSTEMD=$(echo "$REPO_UPDATES" | grep -E "systemd")
+    UPDATED_NVIDIA=$(echo "$REPO_UPDATES" | grep -E "nvidia")
+
+    if [ -n "$UPDATED_KERNEL" ] || [ -n "$UPDATED_SYSTEMD" ] || [ -n "$UPDATED_NVIDIA" ]; then
+        NEED_REBOOT=1
+    fi
+
+    if [ "$NEED_REBOOT" -eq 1 ]; then
+        gum style \
+          --foreground 11 \
+          --bold \
+          "⚠️ Một số gói quan trọng đã được cập nhật (kernel/systemd/driver)."
+
+        REBOOT_CHOICE=$(gum choose \
+          "🔁 Khởi động lại ngay" \
+          "⏳ Để sau" \
+          --header "Bạn có muốn khởi động lại hệ thống không?"
+        )
+
+        if [[ "$REBOOT_CHOICE" == "🔁 Khởi động lại ngay" ]]; then
+            sudo reboot
+        fi
+    else
+        gum style --foreground 10 "✅ Không cần khởi động lại."
+    fi
+
+else
+    gum style --foreground 9 "⏭️ Đã huỷ cập nhật."
+fi

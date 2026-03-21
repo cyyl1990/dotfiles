@@ -1,0 +1,16 @@
+#!/bin/bash
+
+APP="$1"
+shift
+
+ws=$(hyprctl activeworkspace -j | jq -r '.id')
+
+count=$(hyprctl clients -j |
+  jq "[.[] | select(.class|test(\"$APP\";\"i\") and .workspace.id==$ws)] | length")
+
+# Nếu workspace chưa có app → mở instance mới
+if [ "$count" -eq 0 ]; then
+  exec "$APP" --new-instance "$@"
+else
+  exec "$APP" "$@"
+fi

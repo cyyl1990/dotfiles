@@ -1,0 +1,207 @@
+# Custom Color-Coded Starship Theme
+
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+${custom.git_upstream}\
+${custom.git_conflict}\
+$git_status\
+$cmd_duration\
+$time\
+$line_break\
+$character"""
+
+[username]
+style_user = "bold cyan"
+style_root = "bold red"
+format = '[$user]($style)'
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = false
+format = '[@](white)[$hostname](bold cyan) '
+disabled = false
+
+[directory]
+style = "bold blue"
+format = "[$path]($style) "
+truncation_length = 3
+truncation_symbol = "…/"
+home_symbol = "~"
+read_only = " 🔒"
+read_only_style = "bold red"
+
+[git_branch]
+symbol = "🎋 "
+style = "bold fg:205"
+format = 'on [$symbol$branch](bold fg:205) '
+
+[git_status]
+format = '([$all_status]($style)) '
+conflicted = ""
+ahead = ""
+behind = ""
+diverged = ""
+untracked = ""
+stashed = ""
+modified = ""
+staged = ""
+renamed = ""
+deleted = ""
+up_to_date = ""
+
+# Custom module to show conflict status with branch names
+# Format: branch-A -> branch-C (⚠️ conflicts)
+[custom.git_conflict]
+command = '''
+git_dir=$(git rev-parse --git-dir 2>/dev/null) || exit 0
+current=$(git branch --show-current 2>/dev/null)
+
+# Check if we're in a merge conflict
+if [ -f "$git_dir/MERGE_HEAD" ]; then
+  # Get the branch being merged from MERGE_MSG
+  if [ -f "$git_dir/MERGE_MSG" ]; then
+    merge_branch=$(head -1 "$git_dir/MERGE_MSG" | sed -n "s/^Merge branch '\([^']*\)'.*/\1/p")
+    if [ -z "$merge_branch" ]; then
+      merge_branch=$(head -1 "$git_dir/MERGE_MSG" | sed -n "s/^Merge remote-tracking branch '\([^']*\)'.*/\1/p")
+    fi
+  fi
+  if [ -n "$merge_branch" ] && [ -n "$current" ]; then
+    printf "| %s -> %s (⚠️ conflicts) " "$current" "$merge_branch"
+  elif [ -n "$current" ]; then
+    printf "| %s (⚠️ merge conflicts) " "$current"
+  else
+    printf "| ⚠️ merge conflicts "
+  fi
+  exit 0
+fi
+
+# Check if we're in a rebase conflict
+if [ -d "$git_dir/rebase-merge" ]; then
+  if [ -f "$git_dir/rebase-merge/onto" ]; then
+    onto_commit=$(cat "$git_dir/rebase-merge/onto")
+    onto_branch=$(git name-rev --name-only "$onto_commit" 2>/dev/null | sed 's/~.*//')
+    if [ -n "$onto_branch" ] && [ -n "$current" ]; then
+      printf "| %s -> %s (⚠️ rebase conflicts) " "$current" "$onto_branch"
+    elif [ -n "$current" ]; then
+      printf "| %s (⚠️ rebase conflicts) " "$current"
+    else
+      printf "| ⚠️ rebase conflicts "
+    fi
+  else
+    printf "| ⚠️ rebase conflicts "
+  fi
+  exit 0
+fi
+
+if [ -d "$git_dir/rebase-apply" ]; then
+  printf "| ⚠️ rebase conflicts "
+  exit 0
+fi
+'''
+when = 'git rev-parse --git-dir 2>/dev/null'
+shell = ["sh"]
+style = "bold red"
+format = "[$output]($style)"
+
+# Custom module to show git upstream branch with mismatch detection
+[custom.git_upstream]
+command = '''
+current=$(git branch --show-current 2>/dev/null)
+upstream=$(git rev-parse --abbrev-ref @{upstream} 2>/dev/null)
+
+if [ -z "$upstream" ]; then
+  exit 0
+fi
+
+# Calculate ahead/behind for tracked upstream
+up_ahead=$(git rev-list --count @{upstream}..HEAD 2>/dev/null || echo 0)
+up_behind=$(git rev-list --count HEAD..@{upstream} 2>/dev/null || echo 0)
+
+# Show upstream with its status
+printf "%s" "-> $upstream "
+if [ "$up_ahead" -gt 0 ] || [ "$up_behind" -gt 0 ]; then
+  [ "$up_ahead" -gt 0 ] && printf "%s" "⬆ $up_ahead"
+  [ "$up_behind" -gt 0 ] && printf "%s" "⬇ $up_behind"
+  printf "%s" " "
+else
+  # Only claim "synced" if fetch cache is fresh (<5min)
+  repo_root=$(git rev-parse --show-toplevel 2>/dev/null)
+  if [ -n "$repo_root" ]; then
+    hash=""
+    if command -v shasum >/dev/null 2>&1; then
+      hash=$(printf "%s" "$repo_root" | shasum -a 256 2>/dev/null | cut -d' ' -f1)
+    elif command -v sha256sum >/dev/null 2>&1; then
+      hash=$(printf "%s" "$repo_root" | sha256sum 2>/dev/null | cut -d' ' -f1)
+    else
+      hash=$(printf "%s" "$repo_root" | sed 's/\//_/g')
+    fi
+
+    cache_file="$HOME/.git-fetch-cache/$hash"
+    last_fetch=0
+    [ -f "$cache_file" ] && last_fetch=$(cat "$cache_file" 2>/dev/null || echo 0)
+    now=$(date +%s)
+    age=$((now - last_fetch))
+
+    if [ $age -lt 900 ]; then
+      printf "%s" "(#synced)  "
+    fi
+  fi
+fi
+
+# Check if origin/<current> exists and is different from upstream
+if [ -n "$current" ]; then
+  remote_branch="origin/$current"
+
+  # Check if remote branch exists
+  if git show-ref --verify --quiet "refs/remotes/$remote_branch" 2>/dev/null; then
+    # If tracking different branch, show origin/<current> status
+    if [ "$upstream" != "$remote_branch" ]; then
+      # Calculate ahead/behind for origin/<current>
+      ahead=$(git rev-list --count $remote_branch..HEAD 2>/dev/null || echo 0)
+      behind=$(git rev-list --count HEAD..$remote_branch 2>/dev/null || echo 0)
+
+      # Always show when there's a mismatch
+      printf "%s" "| $remote_branch "
+      if [ "$ahead" -gt 0 ] || [ "$behind" -gt 0 ]; then
+        [ "$ahead" -gt 0 ] && printf "%s" "⬆ $ahead"
+        [ "$behind" -gt 0 ] && printf "%s" "⬇ $behind"
+      else
+        printf "%s" "(#synced)"
+      fi
+      printf "%s" " "
+    fi
+  fi
+fi
+'''
+when = "git rev-parse --git-dir 2>/dev/null"
+shell = ["sh"]
+style = "bold fg:150"
+format = "[$output]($style)"
+
+[nodejs]
+symbol = " "
+style = "bold green"
+format = 'via [$symbol($version)]($style) '
+
+[python]
+symbol = "🐍 "
+style = "bold yellow"
+format = 'via [$symbol($version)(\($virtualenv\))]($style) '
+
+[character]
+success_symbol = '[❯](bold green)'
+error_symbol = '[✖](bold red)'
+vimcmd_symbol = '[❮](bold green)'
+
+[line_break]
+disabled = false
+
+[time]
+disabled = false
+format = ' [$time](bold fg:241)'
+time_format = '%d %b %Y %H:%M'  # Format: 8 Nov 2024 22:45
+utc_time_offset = 'local'

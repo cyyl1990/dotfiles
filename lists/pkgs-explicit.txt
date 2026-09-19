@@ -70,6 +70,7 @@ cliphist
 cloudflare-warp-bin
 cmake
 cmatrix
+codebase-memory-mcp-bin
 cool-retro-term
 cosmic-icon-theme
 cpio

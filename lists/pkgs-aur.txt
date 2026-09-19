@@ -7,6 +7,7 @@ canon-lbp2900-capt
 cathode-phosphor-icon-theme-git
 cava-git
 cheat
+codebase-memory-mcp-bin
 dualsensectl-git
 editt-bin
 fcitx5-lotus-bin

@@ -284,7 +284,16 @@ Item {
   // override per-bar via shell.json islands.outlineWidth.
   property int hyprlandBorderSize: 1
   property int islandOutlineWidth: hyprlandBorderSize
-  property real islandOutlineOpacity: 0.25
+  // Configured override from shell.json (set by applyBarConfig).
+  property real configuredOutlineOpacity: -1
+  // Reactive: reads bar.islands-outline-opacity from shell.toml via Color singleton.
+  // Falls back to 0.25 so default matches the previous hardcoded value.
+  property real themeOutlineOpacity: {
+    var v = parseFloat(Color.shellValues["bar.islands-outline-opacity"])
+    return isNaN(v) ? 0.25 : Math.max(0, Math.min(1, v))
+  }
+  // Effective opacity: shell.json override wins, otherwise use theme value.
+  property real islandOutlineOpacity: configuredOutlineOpacity >= 0 ? configuredOutlineOpacity : themeOutlineOpacity
   // Reactive: reads bar.background-alpha from shell.toml via Color singleton.
   // Falls back to 0.60 so default matches the previous hardcoded value.
   property real themeBarAlpha: {
@@ -737,7 +746,7 @@ Item {
     var outlineN = Number(islands.outlineWidth)
     islandOutlineWidth = isFinite(outlineN) && outlineN >= 0 ? Math.round(outlineN) : hyprlandBorderSize
     var opacityN = Number(islands.outlineOpacity)
-    islandOutlineOpacity = isFinite(opacityN) && opacityN > 0 ? Math.min(1, opacityN) : islandOutlineOpacity
+    configuredOutlineOpacity = isFinite(opacityN) && opacityN > 0 ? Math.min(1, opacityN) : -1
     var barOpacityN = Number(config.barOpacity !== undefined ? config.barOpacity : config.opacity)
     configuredBarOpacity = isFinite(barOpacityN) && barOpacityN >= 0 ? Math.min(1, barOpacityN) : -1
     var islandOpacityN = Number(islands.opacity)

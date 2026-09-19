@@ -19,7 +19,7 @@ io.github.giodc.omafonts https://github.com/giodc/OmaFonts.git 3f7d977859f599bce
 io.github.guiestrela.weather https://github.com/guiestrela/weather.git 554cb546af42ab40c3072a7e71a9af2f7505c2cb
 io.github.kaiizu.runcat https://github.com/kaiizu/runningcat.git 63146002445fa92ea43c57973d56b21c1347deba
 io.github.matheusmedrado.omadock https://github.com/matheusmedrado/omadock.git e5f417542af8e0adb4e982ba9011bc450160d080
-io.github.mtolhuys.theme-manager https://github.com/mtolhuys/omarchy-theme-manager.git 7239ae8264997b8170a2cc5cf3cfc15cd9670114
+io.github.mtolhuys.theme-manager https://github.com/mtolhuys/omarchy-theme-manager.git 625128bad6118a669f70dde4eaec669731d69aea
 io.github.rawritude.aria2 https://github.com/rawritude/omarchy-aria2.git 3092d6fd87cec48fec3ea0cb9acec379fa9095a7
 io.github.romills.omarkeys https://github.com/romills/OmarKEYs.git 2bea4bd2de6793e63e854066f1e29bb38b66f2d9
 io.github.rui-pedro-silva.cloudflare-warp https://github.com/rpots/omarchy-cloudflare-warp.git b6383956f308e9ea7544b182f5bf863dd2463ada

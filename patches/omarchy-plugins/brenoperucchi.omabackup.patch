@@ -1,3 +1,16 @@
+diff --git c/bin/omabackup w/bin/omabackup
+index 8ad4457..c46cb47 100755
+--- c/bin/omabackup
++++ w/bin/omabackup
+@@ -944,7 +944,7 @@ cmd_collect() {
+                 # it. Anything else -- rsync could not even start, a
+                 # destination it could not write to at all -- is not that
+                 # case, and is refused rather than counted as collected.
+-                rsync -a --exclude '.git/' "${ex[@]}" "$e/" "$dest/"; rc=$?
++                rsync -a --exclude '.git' --exclude '.git/**' "${ex[@]}" "$e/" "$dest/"; rc=$?
+                 (( rc == 0 || rc == 23 || rc == 24 )) \
+                     || die "could not copy $(_tilde "$e") into staging"
+             else
 diff --git c/groups.default.json w/groups.default.json
 index 03d4cc9..973ec16 100644
 --- c/groups.default.json
@@ -13,7 +26,7 @@ index 03d4cc9..973ec16 100644
        "probe": "migrations"
      },
 diff --git c/lib/publish.sh w/lib/publish.sh
-index 13ddd90..d5f3d73 100644
+index 13ddd90..23c4eab 100644
 --- c/lib/publish.sh
 +++ w/lib/publish.sh
 @@ -100,7 +100,7 @@ _publish_file() {  # _publish_file <src> <dst> <repo-root> [<repo-root-rp>]
@@ -25,3 +38,21 @@ index 13ddd90..d5f3d73 100644
      mkdir -p "$(dirname "$dst")" || return 1
      # A symlink is content: copied as a link, never followed. Publishing what it
      # points at would silently turn a link into a fat copy of somebody else's
+@@ -236,7 +236,7 @@ publish_staging() {
+             continue
+         fi
+         rels+=("$rel"); dsts+=("$dst")
+-    done < <(find "$staging" \( -type f -o -type l \) -print0 2>/dev/null)
++    done < <(find "$staging" \( -type f -o -type l \) -not -name ".git" -not -path "*/.git/*" -print0 2>/dev/null)
+     # find's own status, checked BEFORE anything below ever runs -- the
+     # earlier version incremented `failed` here but fell through to the
+     # write pass regardless. A PoC (a stub find that prints one file then
+@@ -422,7 +422,7 @@ publish_staging() {
+                 # whether rsync actually put it there.
+                 printf '%s\0' "${pfiles[@]}" >"$pflist" \
+                     || { rm -f "$pflist"; failed=$((failed + 1)); continue; }
+-                rsync -a --exclude '.git/' --files-from="$pflist" --from0 \
++                rsync -a --exclude '.git' --exclude '.git/**' --files-from="$pflist" --from0 \
+                     "$f" "$repo/configs/omarchy/plugins/$pid/"
+                 local rsync_rc=$?
+                 rm -f "$pflist"

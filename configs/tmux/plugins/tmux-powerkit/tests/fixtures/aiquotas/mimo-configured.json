@@ -1,0 +1,11 @@
+{
+  "billing": {
+    "currency": "USD",
+    "spent": 0
+  },
+  "usage": {
+    "completion": 8,
+    "prompt": 13,
+    "request_id": "example-request-id-anonymised"
+  }
+}

@@ -1,0 +1,13 @@
+diff --git c/omarchy/Panel.qml w/omarchy/Panel.qml
+index 8e7016c..36ac3c8 100644
+--- c/omarchy/Panel.qml
++++ w/omarchy/Panel.qml
+@@ -72,7 +72,7 @@ Panel {
+   // The family's stale mark (nf-fa-pause), appended exactly the way the sibling
+   // CLIs append theirs to the Waybar bar text: the reading keeps its own color
+   // and staleness gets its own glyph, never a tint.
+-  readonly property string staleMark: stale ? "  " : ""
++  readonly property string staleMark: ""
+   readonly property string barText: (current ? barIcon + " " + Math.round(current.temperature) + "°" : barIcon) + staleMark
+ 
+   // Overall min/max across the daily entries, for the per-day range bars.

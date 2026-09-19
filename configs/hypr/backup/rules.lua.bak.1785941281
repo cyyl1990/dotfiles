@@ -1,0 +1,181 @@
+
+-- bash • DP-2 647×561 @ 1055,381 • ws:1
+-- -----------------------------------------------------
+-- bash — Generated from live window
+-- DP-2 647×561 @ 1055,381 • scale 1.0 • transform 0
+-- -----------------------------------------------------
+
+hl.window_rule({
+    name = "kitty",
+    -- enabled = true,                   -- toggle rule activation
+
+    -- 1. IDENTITY & MATCHING (Conditions — all must match)
+    match = {
+        class = "^(kitty)$",
+         title = "^(bash)$",
+        -- initial_class = "^(kitty)$",   -- match on first mapped class (static)
+        -- initial_title = "^(bash)$",   -- static title at first map
+        -- xwayland = true,               -- only XWayland windows
+        -- floating = true,               -- only floating (alias: float)
+        -- fullscreen = false,            -- only non-fullscreen
+        -- pinned = true,                 -- only pinned (alias: pin)
+        -- focus = true,                  -- only focused windows
+        -- tag = "gaming",                -- dynamic tag must exist
+        -- content = "video",             -- content type: none|photo|video|game
+        -- xdg_tag = "dialog",            -- xdg activation token tag
+        -- workspace = "1",               -- match workspace id/name
+        -- monitor = "DP-2",        -- match monitor (also effect)
+    },
+
+    -- 2. PLACEMENT & WORKSPACE (Where it goes)
+    -- workspace = "1",                  -- force to workspace 1
+    -- workspace = "special:magic",      -- open on special scratchpad
+    -- workspace = "name:gaming",        -- named workspace
+    -- workspace = "unset",              -- [B] clear workspace, spawn on active ws
+    -- workspace = "silent:1", -- open without switching
+    -- monitor = "DP-2",           -- force monitor by name/id/direction
+    -- monitor = "DP-1",                 -- example
+
+    -- 3. LAYOUT STATE (What mode)
+    float = true,                        -- float, bypass tiling
+    -- tile = true,                      -- force tiled (overrides float)
+    -- fullscreen = true,                -- fullscreen on launch
+    -- maximize = true,                  -- maximize (not fullscreen)
+    -- fullscreen_state = "0 0",         -- internal client fullscreen state
+    -- fullscreen_state = "0 2",         -- example: fullscreen internal
+
+    -- [BEHAVIORAL MODES — Choose A or B]
+    --
+    -- [OPTION A: STICKY/PINNED DIALOG]
+    -- pin = true,                       -- show on ALL workspaces (requires float)
+    --
+    -- [OPTION B: NATIVE ACTIVE-WS ONLY] (needs initial_workspace_tracking = 2)
+    -- workspace = "unset",              -- spawn on active ws only, don't follow
+    -- focus_on_activate = true,         -- steal focus on spawn
+    -- stay_focused = true,              -- keep focus while visible
+
+    -- 4. GEOMETRY (Bounds & Position)
+    size = {647, 561},   -- absolute px
+    -- size = {"monitor_w * 0.2527", "monitor_h * 0.3896"}, -- relative
+    -- min_size = {200, 100},          -- clamp min
+    -- max_size = {{1920, 1080}},    -- clamp max (static)
+    -- keep_aspect_ratio = true,         -- preserve aspect on resize
+    -- persistent_size = true,           -- remember size across sessions
+    -- no_max_size = true,               -- ignore max_size hints
+    -- scrolling_width = 1.2,            -- content scrolling width factor
+    --
+    move = {1055, 381},               -- local coords relative to monitor
+    -- move = {"monitor_w * 0.4121", "monitor_h * 0.2646"},
+    -- move = {"monitor_w - window_w - 20", "monitor_h - window_h - 20"}, -- bottom-right 20px
+    -- move = {"cursor_x - (window_w * 0.5)", "cursor_y - (window_h * 0.5)"}, -- on cursor
+    -- center = true,                    -- center on monitor (ignores move)
+    -- center = 1,                       -- center respecting reserved (waybar)
+
+    -- 5. FOCUS, GROUPS & LIFECYCLE
+    -- no_initial_focus = true,          -- don't focus on first open
+    -- focus_on_activate = false,        -- prevent focus stealing (PiP)
+    -- stay_focused = true,              -- force focus while visible
+    -- group = "set",                    -- insert into group
+    -- group = "new",                    -- create new group
+    -- group = "lock",                   -- lock group membership
+    -- group = "barred",                 -- hide tab label
+    -- group = "deny",                   -- block grouping entirely
+    -- group = "invade",                 -- invade existing group
+    -- group = "override",               -- override group barriers
+    -- group = "unset",                  -- clear group
+    -- tag = "+gaming",                  -- add dynamic tag (+name / -name)
+    -- content = "game",                 -- set content type
+    -- no_close_for = 500,               -- block close for ms after open
+
+    -- 6. ANIMATION (Transitions — pick ONE)
+    -- animation = "popin",              -- scale zoom from center
+    -- animation = "popin 60%",          -- from 60% size
+    -- animation = "popin 70%",
+    -- animation = "popin 80%",
+    -- animation = "popin 87%",          -- Hyprland default threshold
+    -- animation = "popin 90%",
+    -- animation = "popin 95%",          -- minimal zoom
+    -- animation = "slide",              -- from nearest edge
+    -- animation = "slide top",
+    -- animation = "slide bottom",
+    -- animation = "slide left",
+    -- animation = "slide right",
+    -- animation = "gnomed",             -- scale + opacity fade
+    -- animation = "fade",               -- opacity only
+    -- no_anim = true,                   -- disable all transitions
+
+    -- 7. VISUALS & DECORATION
+    -- opacity = "0.9 override 0.9 override", -- active inactive (override global)
+    -- opacity = "1.0 override 0.85 override",
+    -- opacity = "0.95",                 -- constant for both
+    -- opaque = true,                    -- force opaque (ignore opacity rules)
+    -- rounding = 10,                    -- corner radius px
+    -- rounding = 0,                     -- sharp corners
+    -- rounding_power = 2,               -- 2=circular, higher=squircle
+    -- border_size = 2,                  -- px, override global
+    -- border_size = 0,                  -- no border
+    -- border_color = "rgb(ff0000)",
+    -- border_color = "rgba(33ccffee)",
+    -- border_color = "rgba(33ccffee) rgba(00ff99ee) 45deg", -- gradient
+    -- idle_inhibit = "always",          -- none|always|focus|fullscreen
+    -- content = "photo",                -- hint for compositor
+
+    -- 8. COMPOSITING & EFFECTS
+    -- no_blur = true,                   -- disable blur behind
+    -- xray = true,                      -- blur sees through to wallpaper
+    -- no_shadow = true,                 -- disable drop shadow
+    -- no_dim = true,                    -- disable inactive dim
+    -- dim_around = true,                -- dim others when focused
+    -- no_focus = true,                  -- unfocusable
+
+    -- 9. PERFORMANCE & SUPPRESSION
+    -- immediate = true,                 -- force page-flip, bypass VSync (gaming)
+    -- no_shortcuts_inhibit = true,      -- block app from inhibiting shortcuts
+    -- suppress_event = "maximize",      -- block maximize requests
+    -- suppress_event = "fullscreen",    -- block fullscreen requests
+    -- suppress_event = "activate",      -- block focus requests
+    -- suppress_event = "activatefocus", -- block focus+activate
+    -- suppress_event = "fullscreenoutput", -- block output fullscreen
+})
+
+-- Keybind Manager (dusky_keybinds.py) — float, keep natural size
+hl.window_rule({
+    match = {
+        class = "^(dusky-keybinds)$",
+    },
+    float = true,
+})
+
+-- Window Rules TUI (SUPER+CTRL+ALT+A) — float, keep natural size
+hl.window_rule({
+    match = {
+        class = "^(dusky-winrules)$",
+    },
+    float = true,
+})
+
+-- Animation Picker TUI (SUPER+SHIFT+A) — float, keep natural size
+hl.window_rule({
+    match = {
+        class = "^(dusky-anim)$",
+    },
+    float = true,
+})
+
+-- File Manager (nautilus) — always open on the CURRENT workspace
+hl.window_rule({
+    match = {
+        class = "^(nautilus|org.gnome.Nautilus)$",
+    },
+    workspace = "unset",
+})
+
+-- pyprland scratchpad dropdown (SUPER+SHIFT+Q) — force floating so it drops
+-- in from the top and stays a floating terminal regardless of pyprland's
+-- own float handling on this Hyprland version.
+hl.window_rule({
+    match = {
+        class = "^(dropdown)$",
+    },
+    float = true,
+})

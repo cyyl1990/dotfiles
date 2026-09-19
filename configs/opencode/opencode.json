@@ -1,0 +1,83 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "codebase-memory-mcp": {
+      "command": [
+        "/home/bap/.local/bin/codebase-memory-mcp"
+      ],
+      "enabled": true,
+      "type": "local"
+    },
+    "computer-use": {
+      "command": [
+        "/home/bap/.local/share/mise/shims/open-computer-use",
+        "mcp"
+      ],
+      "enabled": true,
+      "environment": {
+        "DISPLAY": ":0",
+        "WAYLAND_DISPLAY": "wayland-1",
+        "XDG_RUNTIME_DIR": "/run/user/1000"
+      },
+      "type": "local"
+    },
+    "fetch": {
+      "command": [
+        "/home/bap/.local/bin/uvx",
+        "mcp-server-fetch"
+      ],
+      "enabled": true,
+      "type": "local"
+    },
+    "filesystem": {
+      "command": [
+        "/home/bap/.local/share/mise/shims/npx",
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/home/bap"
+      ],
+      "enabled": true,
+      "type": "local"
+    },
+    "git": {
+      "command": [
+        "/home/bap/.local/bin/uvx",
+        "mcp-server-git"
+      ],
+      "enabled": true,
+      "type": "local"
+    },
+    "github-mcp-server": {
+      "command": [
+        "/home/bap/.local/share/mise/shims/npx",
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ],
+      "enabled": true,
+      "environment": {},
+      "type": "local"
+    },
+    "playwright-firefox": {
+      "command": [
+        "/home/bap/.local/share/mise/shims/npx",
+        "-y",
+        "@playwright/mcp@latest",
+        "--browser",
+        "firefox"
+      ],
+      "enabled": true,
+      "type": "local"
+    }
+  },
+  "permission": {
+    "external_directory": {
+      "~/.config/opencode/gsd-core/*": "allow"
+    },
+    "read": {
+      "~/.config/opencode/gsd-core/*": "allow"
+    }
+  },
+  "plugin": [
+    "superpowers@git+https://github.com/obra/superpowers.git"
+  ]
+}

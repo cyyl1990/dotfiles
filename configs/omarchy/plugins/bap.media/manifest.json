@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "bap.media",
+  "name": "Bap Media",
+  "version": "0.1.1-beta.11",
+  "author": "HANCORE",
+  "license": "MIT",
+  "description": "Shibumi media controls over Omarchy's MPRIS service.",
+  "kinds": [
+    "bar-widget",
+    "service"
+  ],
+  "keepLoaded": true,
+  "entryPoints": {
+    "barWidget": "BarWidget.qml",
+    "service": "Service.qml"
+  },
+  "barWidget": {
+    "displayName": "Bap Media",
+    "description": "Now playing, transport controls, sources, and spectrum",
+    "category": "Media",
+    "defaultSection": "right",
+    "allowMultiple": false
+  }
+}

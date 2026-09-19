@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "bap.floating.bar",
+  "name": "bap floating bar",
+  "version": "1.0.0",
+  "author": "Bắp (bap)",
+  "description": "Custom floating bar cho Omarchy, clone của omarchy.bar, với layout widgets tự chọn.",
+  "kinds": [
+    "bar"
+  ],
+  "entryPoints": {
+    "bar": "Bar.qml"
+  },
+  "omarchy": {
+    "clonedFrom": "omarchy.bar"
+  }
+}

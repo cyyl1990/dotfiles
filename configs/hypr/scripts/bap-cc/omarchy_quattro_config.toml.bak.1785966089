@@ -1,0 +1,498 @@
+# Omarchy-Quattro Control Center (BAP) — 9-page trimmed build.
+
+[[pages]]
+id = "home"
+title = "Home"
+icon = "go-home-symbolic"
+
+[[pages.layout]]
+type = "grid_section"
+[pages.layout.properties]
+title = "Home"
+
+[[pages.layout.items]]
+type = "grid_card"
+[pages.layout.items.properties]
+title = "Wi-Fi"
+icon = "network-wireless-symbolic"
+description = "Bật/tắt Wi-Fi"
+[pages.layout.items.on_press]
+type = "exec"
+command = "rfkill list wifi | grep -q 'Soft blocked: no' && echo yes || echo no"
+terminal = false
+
+[[pages.layout.items]]
+type = "grid_card"
+[pages.layout.items.properties]
+title = "Bluetooth"
+icon = "bluetooth-symbolic"
+description = "Bật/tắt Bluetooth"
+[pages.layout.items.on_press]
+type = "exec"
+command = "rfkill list bluetooth | grep -q 'Soft blocked: no' && echo yes || echo no"
+terminal = false
+
+[[pages.layout.items]]
+type = "grid_card"
+[pages.layout.items.properties]
+title = "Dark Mode"
+icon = "display-brightness-symbolic"
+description = "Chuyển chế độ tối/sáng"
+[pages.layout.items.on_press]
+type = "exec"
+command = "$HOME/dusky/user_scripts/theme_matugen/theme_ctl.sh set --mode dark"
+terminal = false
+
+[[pages.layout.items]]
+type = "grid_card"
+[pages.layout.items.properties]
+title = "Power"
+icon = "system-log-out-symbolic"
+description = "Tắt máy"
+[pages.layout.items.on_press]
+type = "exec"
+command = "omarchy system shutdown"
+terminal = false
+
+[[pages.layout.items]]
+type = "grid_card"
+[pages.layout.items.properties]
+title = "Reload Hyprland"
+icon = "view-refresh-symbolic"
+description = "Tải lại cấu hình Hyprland"
+[pages.layout.items.on_press]
+type = "exec"
+command = "hyprctl reload"
+terminal = false
+
+[[pages]]
+id = "appearance"
+title = "Appearance"
+icon = "preferences-desktop-appearance-symbolic"
+
+[[pages.layout]]
+type = "grid_section"
+[pages.layout.properties]
+title = "Appearance"
+
+[[pages.layout.items]]
+type = "grid_card"
+[pages.layout.items.properties]
+title = "Appearance TUI"
+icon = "preferences-desktop-theme-symbolic"
+description = "Chỉnh giao diện Hyprland (Textual)"
+[pages.layout.items.on_press]
+type = "exec"
+command = "kitty --class dusky-appearance -e /home/bap/.config/hypr/scripts/dusky_appearance.sh"
+terminal = false
+
+[[pages.layout.items]]
+type = "grid_card"
+[pages.layout.items.properties]
+title = "Keybind Manager"
+icon = "preferences-desktop-keyboard-symbolic"
+description = "Quản lý phím tắt Hyprland"
+[pages.layout.items.on_press]
+type = "exec"
+command = "kitty --class dusky-keybinds -e python3.14 /home/bap/.config/hypr/scripts/dusky_keybinds.py"
+terminal = false
+
+[[pages.layout.items]]
+type = "grid_card"
+[pages.layout.items.properties]
+title = "Window Rules (edit)"
+icon = "window-symbolic"
+description = "Sửa quy tắc cửa sổ (windows.lua)"
+[pages.layout.items.on_press]
+type = "exec"
+command = "kitty --class dusky-winrules -e PYTHONPATH=$HOME/dusky/user_scripts python3.14 $HOME/dusky/user_scripts/dusky_system/control_center/dusky_text_editor.py /home/bap/.config/hypr/windows.lua"
+terminal = false
+
+[[pages.layout.items]]
+type = "grid_card"
+[pages.layout.items.properties]
+title = "Reset Animations"
+icon = "preferences-desktop-effects-symbolic"
+description = "Khôi phục hiệu ứng mặc định"
+[pages.layout.items.on_press]
+type = "exec"
+command = "$HOME/dusky/user_scripts/arch_setup_scripts/scripts/006_animation_default.sh"
+terminal = false
+
+[[pages]]
+id = "theme"
+title = "Theme"
+icon = "preferences-color-symbolic"
+
+[[pages.layout]]
+type = "grid_section"
+[pages.layout.properties]
+title = "Theme"
+
+[[pages.layout.items]]
+type = "grid_card"
+[pages.layout.items.properties]
+title = "Theme Switcher"
+icon = "preferences-desktop-theme-symbolic"
+description = "Đổi theme Omarchy"
+[pages.layout.items.on_press]
+type = "exec"
+command = "omarchy-theme-switcher"
+terminal = false
+
+[[pages.layout.items]]
+type = "grid_card"
+[pages.layout.items.properties]
+title = "Wallpaper Switcher"
+icon = "image-x-generic-symbolic"
+description = "Đổi hình nền"
+[pages.layout.items.on_press]
+type = "exec"
+command = "omarchy-theme-bg-switcher"
+terminal = false
+
+[[pages]]
+id = "session"
+title = "Session"
+icon = "system-lock-screen-symbolic"
+
+[[pages.layout]]
+type = "grid_section"
+[pages.layout.properties]
+title = "Session"
+
+[[pages.layout.items]]
+type = "grid_card"
+[pages.layout.items.properties]
+title = "Lock Screen"
+icon = "system-lock-screen-symbolic"
+description = "Khóa màn hình"
+[pages.layout.items.on_press]
+type = "exec"
+command = "omarchy-system-lock"
+terminal = false
+
+[[pages.layout.items]]
+type = "grid_card"
+[pages.layout.items.properties]
+title = "Logout / Power"
+icon = "system-shutdown-symbolic"
+description = "Đăng xuất hoặc tắt máy"
+[pages.layout.items.on_press]
+type = "exec"
+command = "omarchy system logout"
+terminal = false
+
+[[pages.layout.items]]
+type = "grid_card"
+[pages.layout.items.properties]
+title = "Power Profile"
+icon = "power-profile-performance-symbolic"
+description = "Chọn chế độ năng lượng"
+[pages.layout.items.on_press]
+type = "exec"
+command = "powerprofilesctl"
+terminal = false
+
+[[pages]]
+id = "network"
+title = "Network"
+icon = "network-workgroup-symbolic"
+
+[[pages.layout]]
+type = "grid_section"
+[pages.layout.properties]
+title = "Network"
+
+[[pages.layout.items]]
+type = "grid_card"
+[pages.layout.items.properties]
+title = "Warp Toggle"
+icon = "network-vpn-symbolic"
+description = "Bật/tắt Cloudflare WARP"
+[pages.layout.items.on_press]
+type = "exec"
+command = "$HOME/dusky/user_scripts/networking/warp_toggle.py --connect"
+terminal = false
+
+[[pages]]
+id = "system"
+title = "System"
+icon = "emblem-system-symbolic"
+
+[[pages.layout]]
+type = "grid_section"
+[pages.layout.properties]
+title = "System"
+
+[[pages.layout.items]]
+type = "grid_card"
+[pages.layout.items.properties]
+title = "Volume"
+icon = "audio-volume-high-symbolic"
+description = "Điều chỉnh âm lượng"
+[pages.layout.items.on_press]
+type = "exec"
+command = "wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print $2 * 100}'"
+terminal = false
+
+[[pages.layout.items]]
+type = "grid_card"
+[pages.layout.items.properties]
+title = "Brightness"
+icon = "display-brightness-symbolic"
+description = "Điều chỉnh độ sáng"
+[pages.layout.items.on_press]
+type = "exec"
+command = "brightnessctl -m | awk -F, '{print $4}' | tr -d %"
+terminal = false
+
+[[pages.layout.items]]
+type = "grid_card"
+[pages.layout.items.properties]
+title = "Screenshot"
+icon = "camera-photo-symbolic"
+description = "Chụp ảnh màn hình"
+[pages.layout.items.on_press]
+type = "exec"
+command = "omarchy capture screenshot"
+terminal = false
+
+[[pages.layout.items]]
+type = "grid_card"
+[pages.layout.items.properties]
+title = "Audio Output Switch"
+icon = "audio-card-symbolic"
+description = "Chuyển thiết bị âm thanh"
+[pages.layout.items.on_press]
+type = "exec"
+command = "$HOME/dusky/user_scripts/audio/dusky_output.sh"
+terminal = false
+
+[[pages.layout.items]]
+type = "grid_card"
+[pages.layout.items.properties]
+title = "Install Package"
+icon = "software-install-symbolic"
+description = "Cài gói (paru -S)"
+[pages.layout.items.on_press]
+type = "exec"
+command = "kitty --class install_pkg --title \"Install Package\" --hold sh -c \"paru -S\""
+terminal = false
+
+[[pages.layout.items]]
+type = "grid_card"
+[pages.layout.items.properties]
+title = "Remove Package"
+icon = "edit-delete-symbolic"
+description = "Gỡ gói (paru -Rns)"
+[pages.layout.items.on_press]
+type = "exec"
+command = "kitty --class remove_pkg --title \"Remove Package\" --hold sh -c \"paru -Rns\""
+terminal = false
+
+[[pages.layout.items]]
+type = "grid_card"
+[pages.layout.items.properties]
+title = "System Update"
+icon = "folder-download-symbolic"
+description = "Cập nhật hệ thống (paru -Syu)"
+[pages.layout.items.on_press]
+type = "exec"
+command = "kitty --class arch_update --title \"Arch Updater\" --hold sh -c \"paru -Syu\""
+terminal = false
+
+[[pages]]
+id = "configure"
+title = "Configure"
+icon = "preferences-system-symbolic"
+
+[[pages.layout]]
+type = "grid_section"
+[pages.layout.properties]
+title = "Configure"
+
+[[pages.layout.items]]
+type = "grid_card"
+[pages.layout.items.properties]
+title = "Input / Keyboard"
+icon = "input-keyboard-symbolic"
+description = "Cấu hình bàn phím"
+[pages.layout.items.on_press]
+type = "exec"
+command = "kitty --class dusky-tui -e PYTHONPATH=$HOME/dusky/user_scripts python3.14 $HOME/dusky/user_scripts/hypr/input/tui_input.py"
+terminal = false
+
+[[pages.layout.items]]
+type = "grid_card"
+[pages.layout.items.properties]
+title = "Trackpad"
+icon = "input-touchpad-symbolic"
+description = "Cấu hình bàn di"
+[pages.layout.items.on_press]
+type = "exec"
+command = "kitty --class dusky-tui -e PYTHONPATH=$HOME/dusky/user_scripts python3.14 $HOME/dusky/user_scripts/hypr/input/tui_trackpad.py"
+terminal = false
+
+[[pages.layout.items]]
+type = "grid_card"
+[pages.layout.items.properties]
+title = "Monitors"
+icon = "video-display-symbolic"
+description = "Cấu hình màn hình"
+[pages.layout.items.on_press]
+type = "exec"
+command = "kitty --class dusky-tui -e PYTHONPATH=$HOME/dusky/user_scripts python3.14 $HOME/dusky/user_scripts/hypr/monitor/tui_monitors.py"
+terminal = false
+
+[[pages.layout.items]]
+type = "grid_card"
+[pages.layout.items.properties]
+title = "Workspace Rules"
+icon = "view-grid-symbolic"
+description = "Quy tắc không gian làm việc"
+[pages.layout.items.on_press]
+type = "exec"
+command = "kitty --class dusky-tui -e PYTHONPATH=$HOME/dusky/user_scripts python3.14 $HOME/dusky/user_scripts/hypr/workspace/tui_workspace_rules.py"
+terminal = false
+
+[[pages.layout.items]]
+type = "grid_card"
+[pages.layout.items.properties]
+title = "Autostart"
+icon = "system-run-symbolic"
+description = "Ứng dụng khởi động cùng hệ thống"
+[pages.layout.items.on_press]
+type = "exec"
+command = "kitty --class dusky-tui -e PYTHONPATH=$HOME/dusky/user_scripts python3.14 $HOME/dusky/user_scripts/hypr/misc/tui_autostart.py"
+terminal = false
+
+[[pages.layout.items]]
+type = "grid_card"
+[pages.layout.items.properties]
+title = "Fonts"
+icon = "font-x-generic-symbolic"
+description = "Quản lý font"
+[pages.layout.items.on_press]
+type = "exec"
+command = "kitty --class dusky-tui -e PYTHONPATH=$HOME/dusky/user_scripts python3.14 $HOME/dusky/user_scripts/fonts/tui_fonts.py"
+terminal = false
+
+[[pages.layout.items]]
+type = "grid_card"
+[pages.layout.items.properties]
+title = "Idle / Hypridle"
+icon = "preferences-desktop-screensaver-symbolic"
+description = "Cấu hình nghỉ/rét màn hình"
+[pages.layout.items.on_press]
+type = "exec"
+command = "kitty --class dusky-tui -e PYTHONPATH=$HOME/dusky/user_scripts python3.14 $HOME/dusky/user_scripts/hypridle/tui_dusky_hypridle.py"
+terminal = false
+
+[[pages.layout.items]]
+type = "grid_card"
+[pages.layout.items.properties]
+title = "Lock Screen Style"
+icon = "system-lock-screen-symbolic"
+description = "Đổi kiểu màn hình khóa"
+[pages.layout.items.on_press]
+type = "exec"
+command = "kitty --class dusky-hyprlock -e bash $HOME/dusky/user_scripts/hyprlock/dusky_hyprlock_switcher.sh"
+terminal = false
+
+[[pages.layout.items]]
+type = "grid_card"
+[pages.layout.items.properties]
+title = "Services"
+icon = "system-service-manager-symbolic"
+description = "Bật/tắt dịch vụ"
+[pages.layout.items.on_press]
+type = "exec"
+command = "kitty --class dusky-tui -e PYTHONPATH=$HOME/dusky/user_scripts python3.14 $HOME/dusky/user_scripts/services/tui_service_toggle.py"
+terminal = false
+
+[[pages]]
+id = "performance"
+title = "Performance"
+icon = "utilities-system-monitor-symbolic"
+
+[[pages.layout]]
+type = "grid_section"
+[pages.layout.properties]
+title = "Performance"
+
+[[pages.layout.items]]
+type = "grid_card"
+[pages.layout.items.properties]
+title = "CPU Core Manager"
+icon = "cpu-symbolic"
+description = "Quản lý nhân CPU"
+[pages.layout.items.on_press]
+type = "exec"
+command = "kitty --class dusky-tui -e PYTHONPATH=$HOME/dusky/user_scripts python3.14 $HOME/dusky/user_scripts/performance/cpu/tui_dusky_core_manager.py"
+terminal = false
+
+[[pages.layout.items]]
+type = "grid_card"
+[pages.layout.items.properties]
+title = "Power Throttle"
+icon = "power-profile-performance-symbolic"
+description = "Giới hạn điện năng"
+[pages.layout.items.on_press]
+type = "exec"
+command = "kitty --class dusky-tui -e PYTHONPATH=$HOME/dusky/user_scripts python3.14 $HOME/dusky/user_scripts/performance/cpu/tui_dusky_power_throttle.py"
+terminal = false
+
+[[pages.layout.items]]
+type = "grid_card"
+[pages.layout.items.properties]
+title = "Screen Time"
+icon = "preferences-system-time-symbolic"
+description = "Thời gian sử dụng máy"
+[pages.layout.items.on_press]
+type = "exec"
+command = "kitty --class dusky-tui -e PYTHONPATH=$HOME/dusky/user_scripts python3.14 $HOME/dusky/user_scripts/screentime/screentime_tui.py"
+terminal = false
+
+[[pages]]
+id = "media"
+title = "Media & Notify"
+icon = "audio-x-generic-symbolic"
+
+[[pages.layout]]
+type = "grid_section"
+[pages.layout.properties]
+title = "Media & Notify"
+
+[[pages.layout.items]]
+type = "grid_card"
+[pages.layout.items.properties]
+title = "Notifications (Mako)"
+icon = "preferences-system-notifications-symbolic"
+description = "Cấu hình thông báo Mako"
+[pages.layout.items.on_press]
+type = "exec"
+command = "kitty --class dusky-tui -e PYTHONPATH=$HOME/dusky/user_scripts python3.14 $HOME/dusky/user_scripts/mako_osd/mako_tui/tui_mako.py"
+terminal = false
+
+[[pages.layout.items]]
+type = "grid_card"
+[pages.layout.items.properties]
+title = "Spotify Toggle"
+icon = "spotify-symbolic"
+description = "Bật/tắt Spotify"
+[pages.layout.items.on_press]
+type = "exec"
+command = "kitty --class spotify-toggle -e $HOME/dusky/user_scripts/spotify/spotify_toggle.sh"
+terminal = false
+
+[[pages.layout.items]]
+type = "grid_card"
+[pages.layout.items.properties]
+title = "DNS"
+icon = "network-wired-symbolic"
+description = "Cấu hình DNS"
+[pages.layout.items.on_press]
+type = "exec"
+command = "kitty --class dusky-tui -e PYTHONPATH=$HOME/dusky/user_scripts python3.14 $HOME/dusky/user_scripts/network_manager/tui_dns.py"
+terminal = false

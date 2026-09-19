@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "bap.pacman-workspaces",
+  "name": "Bap Workspaces",
+  "version": "0.1.1-beta.11",
+  "author": "HANCORE",
+  "license": "MIT",
+  "description": "Shared Hyprland workspace state with the Shibumi workspace presentation.",
+  "kinds": [
+    "bar-widget",
+    "service"
+  ],
+  "keepLoaded": true,
+  "entryPoints": {
+    "barWidget": "BarWidget.qml",
+    "service": "WorkspaceService.qml"
+  },
+  "barWidget": {
+    "displayName": "Bap Workspaces",
+    "description": "Workspace state, switching, styles, and detail panel",
+    "category": "Desktop",
+    "defaultSection": "left",
+    "allowMultiple": false
+  }
+}

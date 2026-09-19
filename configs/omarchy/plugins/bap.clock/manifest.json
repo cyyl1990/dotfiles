@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "bap.clock",
+  "name": "Clock",
+  "version": "1.0.0",
+  "author": "Bắp (bap)",
+  "description": "Date/time label with a calendar popup",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "BarWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "Clock",
+    "description": "Date/time label with a calendar popup",
+    "category": "Time",
+    "allowMultiple": false
+  }
+}

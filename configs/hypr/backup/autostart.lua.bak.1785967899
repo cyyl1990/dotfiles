@@ -1,0 +1,18 @@
+-- Extra autostart processes.
+-- o.launch_on_start("my-service")
+
+-- Fcitx5 is already managed by the systemd user service
+-- `omarchy-fcitx5.service` (enabled), so we do NOT spawn it again here
+-- to avoid a double instance / conflict.
+-- hl.exec_cmd("fcitx5 -d")
+
+-- Allow hyprpm to load plugins without a permission popup on every startup.
+hl.permission("/usr/bin/hyprpm", "plugin", "allow")
+
+-- Reload hyprpm plugins on startup (applies plugin config without restarting Hyprland).
+-- Runs inside hyprland.start so Hyprland is fully up before hyprpm touches it.
+hl.on("hyprland.start", function()
+    hl.exec_cmd("hyprpm reload -n")
+end)
+
+

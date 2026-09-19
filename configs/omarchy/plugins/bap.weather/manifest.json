@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "bap.weather",
+  "name": "bap Weather",
+  "version": "1.0.3",
+  "author": "bap",
+  "license": "MIT",
+  "description": "Fork of just-right-weather by daniellopez12. Current conditions, 48-hour scrollable forecast, rain chance/amount, sunrise/sunset, and three days ahead — rebranded and operated under bap-plugins-omarchy.",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "BarWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "bap Weather",
+    "description": "Current conditions, 48 hourly forecasts, and three days ahead",
+    "category": "Info",
+    "allowMultiple": false,
+    "defaultSection": "center"
+  }
+}

@@ -1,0 +1,264 @@
+#!/usr/bin/env bash
+# =============================================================================
+# Plugin: crypto
+# Description: Display cryptocurrency prices
+# Dependencies: curl, jq (optional)
+# =============================================================================
+
+POWERKIT_ROOT="${POWERKIT_ROOT:-$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)}"
+. "${POWERKIT_ROOT}/src/contract/plugin_contract.sh"
+
+# =============================================================================
+# Plugin Contract: Metadata
+# =============================================================================
+
+plugin_get_metadata() {
+    metadata_set "id" "crypto"
+    metadata_set "name" "Crypto"
+    metadata_set "description" "Display cryptocurrency prices"
+}
+
+# =============================================================================
+# Plugin Contract: Dependencies
+# =============================================================================
+
+plugin_check_dependencies() {
+    require_cmd "curl" || return 1
+    require_cmd "jq" || return 1
+}
+
+# =============================================================================
+# Plugin Contract: Options
+# =============================================================================
+
+plugin_declare_options() {
+    # Display options
+    declare_option "coins" "string" "BTC,ETH" "Crypto symbols (comma-separated)"
+    declare_option "currency" "string" "USD" "Fiat currency"
+    declare_option "format" "string" "full" "Price format (full|short)"
+    declare_option "show_change" "bool" "true" "Show 24h price change percentage"
+    declare_option "separator" "string" " | " "Separator between coin prices"
+
+    # Icons
+    declare_option "icon" "icon" $'\U000F01AC' "Plugin icon (currency-btc)"
+
+    # Cache (prices don't change very frequently)
+    declare_option "cache_ttl" "number" "300" "Cache duration in seconds (5 min)"
+}
+
+# =============================================================================
+# Coin Mappings
+# =============================================================================
+
+# Coin ID mapping for CoinGecko
+declare -A COIN_IDS=(
+    ["BTC"]="bitcoin"
+    ["ETH"]="ethereum"
+    ["SOL"]="solana"
+    ["ADA"]="cardano"
+    ["DOT"]="polkadot"
+    ["DOGE"]="dogecoin"
+    ["XRP"]="ripple"
+    ["LTC"]="litecoin"
+    ["LINK"]="chainlink"
+    ["MATIC"]="matic-network"
+    ["AVAX"]="avalanche-2"
+    ["UNI"]="uniswap"
+    ["ATOM"]="cosmos"
+    ["BNB"]="binancecoin"
+    ["USDT"]="tether"
+)
+
+# Coin symbols for display
+declare -A COIN_SYMBOLS=(
+    ["BTC"]="₿"
+    ["ETH"]="Ξ"
+    ["SOL"]="◎"
+)
+
+# =============================================================================
+# Plugin Contract: Implementation
+# =============================================================================
+
+plugin_get_content_type() { printf 'dynamic'; }
+plugin_get_presence() { printf 'conditional'; }
+
+plugin_get_state() {
+    local prices=$(plugin_data_get "prices")
+    [[ -n "$prices" ]] && printf 'active' || printf 'inactive'
+}
+
+plugin_get_health() { printf 'ok'; }
+
+plugin_get_context() {
+    local prices=$(plugin_data_get "prices")
+    [[ -n "$prices" ]] && printf 'available' || printf 'unavailable'
+}
+
+plugin_get_icon() { get_option "icon"; }
+
+# =============================================================================
+# Helper Functions
+# =============================================================================
+
+# Get coin ID for CoinGecko API
+_get_coin_id() {
+    local symbol="${1^^}"
+    printf '%s' "${COIN_IDS[$symbol]:-${symbol,,}}"
+}
+
+# Get coin display symbol (₿, Ξ, ◎)
+_get_coin_symbol() {
+    local symbol="${1^^}"
+    printf '%s' "${COIN_SYMBOLS[$symbol]:-$symbol}"
+}
+
+# Format price for display
+_format_price() {
+    local price="$1"
+    local format="$2"
+
+    if [[ "$format" == "short" ]]; then
+        # Convert to K, M notation
+        awk -v p="$price" 'BEGIN {
+            if (p >= 1000000) printf "%.1fM", p/1000000
+            else if (p >= 1000) printf "%.1fk", p/1000
+            else printf "%.0f", p
+        }'
+    else
+        # Full format with commas
+        printf "%'.2f" "$price" 2>/dev/null || printf "%.2f" "$price"
+    fi
+}
+
+# Format 24h change (wrapped in parentheses)
+_format_change() {
+    local change="$1"
+    awk -v c="$change" 'BEGIN {
+        if (c > 0) printf "(+%.1f%%)", c
+        else printf "(%.1f%%)", c
+    }'
+}
+
+# Fetch prices from CoinGecko (free, no API key needed)
+_fetch_coingecko() {
+    local coins_list="$1"
+    local currency show_change
+    currency=$(get_option "currency")
+    show_change=$(get_option "show_change")
+    local curr="${currency,,}"
+
+    # Convert comma-separated symbols to CoinGecko IDs
+    local ids=""
+    IFS=',' read -ra COINS <<<"$coins_list"
+    for coin in "${COINS[@]}"; do
+        coin=$(trim "$coin")
+        local coin_id=$(_get_coin_id "$coin")
+        [[ -n "$ids" ]] && ids+=","
+        ids+="$coin_id"
+    done
+
+    local url="https://api.coingecko.com/api/v3/simple/price?ids=${ids}&vs_currencies=${curr}"
+    [[ "$show_change" == "true" ]] && url+="&include_24hr_change=true"
+
+    safe_curl "$url" 10
+}
+
+# =============================================================================
+# Main Logic
+# =============================================================================
+
+plugin_collect() {
+    local coins
+    coins=$(get_option "coins")
+    [[ -z "$coins" ]] && return 0
+
+    local response
+    response=$(_fetch_coingecko "$coins")
+    [[ -z "$response" ]] && return 1
+
+    # Validate JSON before parsing. A 200 with a body that is not JSON
+    # (e.g. HTML error page from a CDN) used to fall through to jq which
+    # then returned empty for every coin, silently succeeding with zero
+    # data and overwriting the prior cache.
+    if ! api_validate_json "$response"; then
+        return 1
+    fi
+
+    local currency currency_lower show_change
+    currency=$(get_option "currency")
+    currency_lower="${currency,,}"
+    show_change=$(get_option "show_change")
+
+    local prices_data=""
+    local attempted=0 parsed=0
+    IFS=',' read -ra coin_list <<<"$coins"
+
+    for coin in "${coin_list[@]}"; do
+        coin=$(trim "$coin")
+        [[ -z "$coin" ]] && continue
+
+        local coin_id=$(_get_coin_id "$coin")
+        local price change=""
+        ((attempted++))
+
+        # Extract price from JSON
+        price=$(echo "$response" | jq -r ".\"$coin_id\".\"$currency_lower\" // empty" 2>/dev/null)
+        if [[ "$show_change" == "true" ]]; then
+            change=$(echo "$response" | jq -r ".\"$coin_id\".\"${currency_lower}_24h_change\" // empty" 2>/dev/null)
+        fi
+
+        [[ -z "$price" || "$price" == "null" ]] && continue
+
+        # Store: SYMBOL:PRICE:CHANGE
+        [[ -n "$prices_data" ]] && prices_data+="|"
+        prices_data+="${coin}:${price}:${change}"
+        ((parsed++))
+    done
+
+    # When no requested coin produced a price, do not write the empty
+    # result. Returning nonzero tells the lifecycle to keep the prior
+    # cache and mark it stale.
+    if ((attempted > 0 && parsed == 0)); then
+        return 1
+    fi
+    [[ -n "$prices_data" ]] && plugin_data_set "prices" "$prices_data"
+
+    # Build formatted render output
+    if [[ -n "$prices_data" ]]; then
+        local format show_change separator
+        format=$(get_option "format")
+        show_change=$(get_option "show_change")
+        separator=$(get_option "separator")
+
+        local output_parts=()
+        IFS='|' read -ra price_list <<<"$prices_data"
+
+        for price_entry in "${price_list[@]}"; do
+            IFS=':' read -r symbol price change <<<"$price_entry"
+            [[ -z "$price" ]] && continue
+
+            local coin_sym=$(_get_coin_symbol "$symbol")
+            local formatted_price=$(_format_price "$price" "$format")
+            local coin_output="${coin_sym}${formatted_price}"
+
+            # Add 24h change if enabled
+            if [[ "$show_change" == "true" && -n "$change" && "$change" != "null" ]]; then
+                coin_output+=" $(_format_change "$change")"
+            fi
+
+            output_parts+=("$coin_output")
+        done
+
+        [[ ${#output_parts[@]} -gt 0 ]] && plugin_data_set "formatted" "$(join_with_separator "$separator" "${output_parts[@]}")"
+    fi
+}
+
+plugin_render() {
+    local prices formatted
+    prices=$(plugin_data_get "prices")
+    [[ -z "$prices" ]] && return 0
+
+    formatted=$(plugin_data_get "formatted")
+    printf '%s' "$formatted"
+}

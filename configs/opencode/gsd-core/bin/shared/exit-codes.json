@@ -1,0 +1,44 @@
+[
+  {
+    "authorizedBy": "ADR-3889",
+    "code": 2,
+    "meaning": "Hook protocol deny — the harness blocks the tool call",
+    "name": "HOOK_DENY",
+    "owner": "hook-adapter"
+  },
+  {
+    "authorizedBy": "ADR-3889",
+    "code": 64,
+    "meaning": "Caller error — bad argv, unknown subcommand, missing argument",
+    "name": "USAGE",
+    "owner": "generic"
+  },
+  {
+    "authorizedBy": "ADR-3889",
+    "code": 66,
+    "meaning": "Ran; zero units were in scope, and that emptiness is known to be genuine",
+    "name": "NO_INPUT",
+    "owner": "generic"
+  },
+  {
+    "authorizedBy": "ADR-3889",
+    "code": 69,
+    "meaning": "Could not run — prerequisite absent, input unreadable, scope unestablished",
+    "name": "UNAVAILABLE",
+    "owner": "generic"
+  },
+  {
+    "authorizedBy": "ADR-3889",
+    "code": 70,
+    "meaning": "Self-failure — crash, timeout, killed subprocess",
+    "name": "INTERNAL",
+    "owner": "generic"
+  },
+  {
+    "authorizedBy": "ADR-3889 + ADR-2980",
+    "code": 80,
+    "meaning": "Ran to completion and is reporting a condition through its result payload rather than as a process failure",
+    "name": "DEGRADED",
+    "owner": "gsd-tools"
+  }
+]

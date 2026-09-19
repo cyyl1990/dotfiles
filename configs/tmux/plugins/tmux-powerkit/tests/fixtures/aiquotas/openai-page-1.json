@@ -1,0 +1,21 @@
+{
+  "data": [
+    {
+      "end_time": 1752249600,
+      "object": "bucket",
+      "result": [
+        {
+          "cached_tokens": 200,
+          "input_tokens": 1500,
+          "num_requests": 8,
+          "object": "organization.usage.completions.result",
+          "output_tokens": 1000
+        }
+      ],
+      "start_time": 1752163200
+    }
+  ],
+  "has_more": true,
+  "next_page": "cursor-2",
+  "object": "page"
+}

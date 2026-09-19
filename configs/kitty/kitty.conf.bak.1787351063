@@ -1,0 +1,149 @@
+# /* ---- 💫 https://github.com/LinuxBeginnings 💫 ---- */  #
+
+# you can choose themes from $HOME/.config/kitty/kitty-themes/
+# ===================================================================
+# 🎨 THEME & COLORS
+# ===================================================================
+include ~/.local/state/omarchy/current/theme/kitty.conf
+
+# ===================================================================
+# 📑 TABS (Powerline Style)
+# ===================================================================
+tab_bar_edge bottom
+tab_bar_margin_width 0.0
+tab_bar_margin_height 0.0 0.0
+tab_bar_style powerline
+tab_bar_align left
+tab_bar_min_tabs 1
+tab_switch_strategy previous
+tab_fade 0.25 0.5 0.75 1
+tab_separator " ┇"
+tab_powerline_style slanted
+tab_activity_symbol ⚡
+tab_title_template          {title}{' :{}:'.format(num_windows) if num_windows > 1 else ''}
+active_tab_title_template none
+active_tab_font_style   bold
+inactive_tab_font_style normal
+
+# ===================================================================
+# 🖥️  FONTS
+# ===================================================================
+font_family      JetBrainsMono Nerd Font
+bold_font        auto
+italic_font      auto
+bold_italic_font auto
+font_size        13
+
+# Fix for "cursor_blink" error:
+# 0 = off, 0.5 = standard blink. Set to 0 if you prefer a static cursor.
+cursor_blink_interval 0.5
+
+# Makes the underline cursor 10 pixels thick (adjust to taste)
+cursor_underline_thickness 4.0
+
+# Stop blinking after 15 seconds to save resources/reduce distraction
+cursor_stop_blinking_after 2.0
+
+# 🚀 CURSOR TRAIL (The "Neovide" effect)
+# 3 là đủ mượt, đỡ tốn GPU hơn 10
+cursor_trail 3
+# Optimized decay for high refresh rate screens (smoother fade)
+cursor_trail_decay 0.15 0.4
+cursor_trail_start_threshold 2
+
+# Nerd Font: render icon đúng (không lệch)
+# giữ số 0 bình thường (không slot)
+font_features JetBrainsMonoNerdFont +zero
+
+# Shell: buộc fish (tránh kitty mở bash)
+shell fish
+
+# Shell integration: bật đầy đủ (cursor, title, mark)
+# 'enabled' = cursor + title + mark + complete (prompt fish đẹp)
+shell_integration enabled
+
+# Đồng bộ màu titlebar với Hyprland
+wayland_titlebar_color background
+
+
+# ===================================================================
+# 🖼️  WINDOW & AESTHETICS (Hyprland Focused)
+# ===================================================================
+# Hide the default title bar (Hyprland handles borders)
+hide_window_decorations yes
+
+# internal padding keeps text away from the border (cleaner look)
+window_padding_width 10
+
+# 🔮 Transparency & Blur
+# Note: 'background_opacity' works best if your generated colors file
+# doesn't force a solid background color code.
+background_opacity 0.90
+background_blur 15
+
+# Do not ask for confirmation when closing a window (as requested)
+confirm_os_window_close 0
+
+# ===================================================================
+# ⚡ PERFORMANCE
+# ===================================================================
+# refresh rate synchronization (prevents tearing)
+sync_to_monitor yes
+
+# Input latency optimization
+input_delay 0
+
+# Enable ligatures (e.g., => turns into an arrow)
+disable_ligatures never
+
+dynamic_background_opacity 1
+
+# Keybindings
+kitty_mod ctrl+shift
+
+# Others
+map kitty_mod+e launch --type=background --cwd=current sh -c 'hyprctl dispatch exec "[float; size 60% 60%; center 1] xdg-open" $(pwd)'
+map kitty_mod+u launch --type=background --cwd=current sh -c 'vscodium $(pwd)'
+map kitty_mod+y launch --type=overlay-main --cwd=current yazi
+
+map kitty_mod+f5 load_config_file
+
+# Allow remote access
+allow_remote_control yes
+listen_on unix:${XDG_RUNTIME_DIR}/omarchy-kitty-{kitty_pid}
+
+# ===================================================================
+# ⚡ OPTIMIZE (thêm bởi Hermes)
+# ===================================================================
+
+# Scrollback lớn (lưu lịch sử dài)
+scrollback_lines 10000
+
+# Tắt tiếng bíp
+enable_audio_bell no
+
+# Terminal type chuẩn cho app tương thích
+term xterm-kitty
+
+# Copy/paste an toàn
+clipboard_control write-primary write-clipboard
+
+# Tăng tốc render (GPU)
+repaint_delay 1
+
+# URL clickable (Ctrl+Shift+Click)
+detect_urls yes
+
+# Bỏ mouse_map triple: kitty 0.48 không hỗ trợ event triple,
+# và triple-click chọn cả dòng đã là mặc định của kitty.
+
+# Tab bar mỏng hơn (dùng màu theme đã include, không mã cứng)
+
+# Hint khi Ctrl+Shift+E (copy path)
+map ctrl+shift+e copy_and_close
+
+# Scrollback pager: dùng less (tìm kiếm dễ hơn mặc định)
+scrollback_pager less --chop-long-lines --ignore-case
+
+# Kitty tự reload khi config đổi (không cần option watch_config_files)
+# clear_on_reload không tồn tại ở 0.48 (kitty mặc định giữ màn hình khi reload)

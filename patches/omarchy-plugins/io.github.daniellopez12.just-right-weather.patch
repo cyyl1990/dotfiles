@@ -1,0 +1,205 @@
+diff --git c/BarWidget.qml w/BarWidget.qml
+index 9462d7b..b78daca 100644
+--- c/BarWidget.qml
++++ w/BarWidget.qml
+@@ -71,7 +71,14 @@ BarWidget {
+     id: button
+     anchors.fill: parent
+     bar: root.bar
+-    text: panelLoader.item && panelLoader.item.label ? panelLoader.item.label : "\ue33d"
++    // Show icon + numeric temperature when data is loaded; fall back to the icon
++    // alone before the first forecast arrives. Panel.qml exposes `reportTempNum`
++    // and `tempUnit` after a successful network round.
++    text: panelLoader.item && panelLoader.item.label
++      ? (panelLoader.item.reportTempNum
++          ? panelLoader.item.label + " " + panelLoader.item.reportTempNum + "°"
++          : panelLoader.item.label)
++      : "\ue33d"
+     slotSize: Style.bar.statusSlot
+     // Tooltip suppressed because the panel is the detail view.
+     tooltipText: ""
+diff --git c/Model.js w/Model.js
+index 8c2b379..9d9afaa 100644
+--- c/Model.js
++++ w/Model.js
+@@ -176,6 +176,130 @@ function dayName(dateString, formatter) {
+   return ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"][d.getDay()]
+ }
+ 
++// Vietnamese day names. Calendar week starts on Monday (Thứ Hai).
++var DAY_NAMES_VI = [
++  "Chủ Nhật",
++  "Thứ Hai",
++  "Thứ Ba",
++  "Thứ Tư",
++  "Thứ Năm",
++  "Thứ Sáu",
++  "Thứ Bảy"
++]
++
++function dayNameVi(dateString) {
++  if (!dateString) return ""
++  var d = new Date(dateString + "T12:00:00")
++  if (isNaN(d.getTime())) return ""
++  return DAY_NAMES_VI[d.getDay()]
++}
++
++// Rewrites common Vietnamese geography strings emitted by wttr.in /
++// Open-Meteo into the local spelling. Source data is ASCII, so we match on
++// English exonyms ("Ho Chi Minh", "Hanoi") plus several Vietnamese-diacritic
++// variants the API may emit depending on locale. Case-insensitive; first match
++// wins; falls back to the original string.
++var LOCATION_REWRITES_VI = [
++  [/\bho\s*chi\s*minh(?:\s+city)?\b/i, "TP. Hồ Chí Minh"],
++  [/\bhanoi\b/i, "Hà Nội"],
++  [/\bha\s*noi\b/i, "Hà Nội"],
++  [/\bsai\s*gon\b/i, "TP. Hồ Chí Minh"],
++  [/\bho\s*chi\s*minh\s+city\b/i, "TP. Hồ Chí Minh"],
++  [/\bhue\b/i, "Huế"],
++  [/\bda\s*nang\b/i, "Đà Nẵng"],
++  [/\bdanang\b/i, "Đà Nẵng"],
++  [/\bhai\s*phong\b/i, "Hải Phòng"],
++  [/\bcan\s*tho\b/i, "Cần Thơ"],
++  [/\bnha\s*trang\b/i, "Nha Trang"],
++  [/\bvung\s*tau\b/i, "Vũng Tàu"],
++  [/\bda\s*lat\b/i, "Đà Lạt"],
++  [/\bdalat\b/i, "Đà Lạt"],
++  [/\bquy\s*nhon\b/i, "Quy Nhơn"],
++  [/\bbien\s*hoa\b/i, "Biên Hòa"]
++]
++
++function vnifyLocation(text) {
++  if (!text) return ""
++  for (var i = 0; i < LOCATION_REWRITES_VI.length; i++) {
++    var entry = LOCATION_REWRITES_VI[i]
++    if (entry[0].test(text)) return text.replace(entry[0], entry[1])
++  }
++  return text
++}
++
++// 24-hour wall-clock label, no AM/PM. Falls back to "now" when the timestamp
++// is malformed — keeps the hourly forecast scrollable when the API returns an
++// unusual shape.
++function hourLabel24(timestamp) {
++  if (typeof timestamp !== "string" || timestamp.length < 16) return ""
++  var h = Number(timestamp.slice(11, 13))
++  var minutes = timestamp.slice(14, 16)
++  if (!isFinite(h) || h < 0 || h > 23) return ""
++  return h.toString() + "h" + minutes
++}
++
++// Vietnamese day names. Calendar week starts on Monday (Thứ Hai).
++var DAY_NAMES_VI = [
++  "Chủ Nhật",
++  "Thứ Hai",
++  "Thứ Ba",
++  "Thứ Tư",
++  "Thứ Năm",
++  "Thứ Sáu",
++  "Thứ Bảy"
++]
++
++function dayNameVi(dateString) {
++  if (!dateString) return ""
++  var d = new Date(dateString + "T12:00:00")
++  if (isNaN(d.getTime())) return ""
++  return DAY_NAMES_VI[d.getDay()]
++}
++
++// Rewrites common Vietnamese geography strings emitted by wttr.in /
++// Open-Meteo into the local spelling. Source data is ASCII, so we match on
++// English exonyms ("Ho Chi Minh", "Hanoi") plus several Vietnamese-diacritic
++// variants the API may emit depending on locale. Case-insensitive; first match
++// wins; falls back to the original string.
++var LOCATION_REWRITES_VI = [
++  [/\bho\s*chi\s*minh(?:\s+city)?\b/i, "TP. Hồ Chí Minh"],
++  [/\bhanoi\b/i, "Hà Nội"],
++  [/\bha\s*noi\b/i, "Hà Nội"],
++  [/\bsai\s*gon\b/i, "TP. Hồ Chí Minh"],
++  [/\bho\s*chi\s*minh\s+city\b/i, "TP. Hồ Chí Minh"],
++  [/\bhue\b/i, "Huế"],
++  [/\bda\s*nang\b/i, "Đà Nẵng"],
++  [/\bdanang\b/i, "Đà Nẵng"],
++  [/\bhai\s*phong\b/i, "Hải Phòng"],
++  [/\bcan\s*tho\b/i, "Cần Thơ"],
++  [/\bnha\s*trang\b/i, "Nha Trang"],
++  [/\bvung\s*tau\b/i, "Vũng Tàu"],
++  [/\bda\s*lat\b/i, "Đà Lạt"],
++  [/\bdalat\b/i, "Đà Lạt"],
++  [/\bquy\s*nhon\b/i, "Quy Nhơn"],
++  [/\bbien\s*hoa\b/i, "Biên Hòa"]
++]
++
++function vnifyLocation(text) {
++  if (!text) return ""
++  for (var i = 0; i < LOCATION_REWRITES_VI.length; i++) {
++    var entry = LOCATION_REWRITES_VI[i]
++    if (entry[0].test(text)) return text.replace(entry[0], entry[1])
++  }
++  return text
++}
++
++// 24-hour wall-clock label, no AM/PM. Falls back to "now" when the timestamp
++// is malformed — keeps the hourly forecast scrollable when the API returns an
++// unusual shape.
++function hourLabel24(timestamp) {
++  if (typeof timestamp !== "string" || timestamp.length < 16) return ""
++  var h = Number(timestamp.slice(11, 13))
++  var minutes = timestamp.slice(14, 16)
++  if (!isFinite(h) || h < 0 || h > 23) return ""
++  return h.toString() + "h" + minutes
++}
++
+ function openMeteoForecastDays(dailyForecastReport, todayString) {
+   var daily = dailyForecastReport && dailyForecastReport.daily ? dailyForecastReport.daily : null
+   if (!daily || !daily.time) return []
+@@ -383,7 +507,7 @@ function hourlyForecast(report, nowMs, hours) {
+       kind: "hour",
+       time: time,
+       date: hourly.time[i].slice(0, 10),
+-      label: hourLabel(hourly.time[i], false),
++      label: Model.hourLabel24(hourly.time[i]),
+       temperature: hourly.temperature_2m[i],
+       probability: typeof probability === "number" && isFinite(probability) && probability >= 0 && probability <= 100
+         ? probability : null,
+@@ -403,7 +527,7 @@ function hourlyForecast(report, nowMs, hours) {
+         kind: kind,
+         time: time,
+         date: times[j].slice(0, 10),
+-        label: hourLabel(times[j], true),
++        label: Model.hourLabel24(times[j]),
+         temperature: null,
+         probability: null,
+         precipitation: null,
+@@ -451,6 +575,9 @@ if (typeof module !== "undefined") {
+     countryUsesImperial: countryUsesImperial,
+     shouldUseImperial: shouldUseImperial,
+     dayName: dayName,
++    dayNameVi: dayNameVi,
++    vnifyLocation: vnifyLocation,
++    hourLabel24: hourLabel24,
+     openMeteoForecastDays: openMeteoForecastDays,
+     openMeteoCurrentCondition: openMeteoCurrentCondition,
+     currentIcon: currentIcon,
+diff --git c/Panel.qml w/Panel.qml
+index e1ac9a5..563d19f 100644
+--- c/Panel.qml
++++ w/Panel.qml
+@@ -263,7 +263,7 @@ Panel {
+   // Auto-refresh interval in minutes; clamped to a sane minimum.
+   readonly property int refreshMinutes: Math.max(1, parseInt(setting("refreshMinutes", 15), 10) || 15)
+ 
+-  readonly property string reportLocation:  configuredLocation || wttrLocation || (areaInfo && areaInfo.areaName && areaInfo.areaName[0] ? areaInfo.areaName[0].value : "")
++  readonly property string reportLocation:  Model.vnifyLocation(configuredLocation || wttrLocation || (areaInfo && areaInfo.areaName && areaInfo.areaName[0] ? areaInfo.areaName[0].value : ""))
+   readonly property string reportTempNum:   current ? String(useImperial ? current.temp_F : current.temp_C) : ""
+   readonly property string tempUnit:        "°" + (useImperial ? "F" : "C")
+   readonly property string reportFeels:     current ? formatTemp(useImperial ? current.FeelsLikeF : current.FeelsLikeC) : ""
+@@ -530,7 +530,7 @@ Panel {
+   }
+ 
+   function dayName(dateString) {
+-    return Model.dayName(dateString, function(date) { return Qt.formatDate(date, "dddd") })
++    return Model.dayNameVi(dateString)
+   }
+ 
+   // Bare degree value (no unit letter), used in the forecast row.

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "bap.update",
+  "name": "Bap Update Sentry",
+  "version": "1.0.0",
+  "author": "Bắp (bap)",
+  "description": "Pending pacman + AUR update count in the bar; popup lists repo updates, AUR updates, and .pacnew files.",
+  "kinds": ["bar-widget", "overlay"],
+  "entryPoints": {
+    "barWidget": "BarWidget.qml",
+    "overlay": "Sentry.qml"
+  },
+  "barWidget": {
+    "displayName": "Bap Update Sentry",
+    "description": "Pending pacman + AUR updates with risky-package and .pacnew alerts",
+    "category": "System",
+    "allowMultiple": false
+  }
+}

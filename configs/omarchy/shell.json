@@ -1,0 +1,270 @@
+{
+  "bar": {
+    "centerAnchor": "mryll.meteobar",
+    "id": "bap.floating.bar",
+    "islands": {
+      "enabled": true,
+      "widths": {}
+    },
+    "layout": {
+      "center": [
+        {
+          "id": "bap.media",
+          "mediaStyle": "spectrum"
+        },
+        {
+          "format": "dddd • HH:mm",
+          "id": "bap.clock"
+        },
+        {
+          "id": "omarchy.system-update"
+        },
+        {
+          "gapAfter": 12,
+          "id": "bap.weather"
+        },
+        {
+          "alwaysShow": false,
+          "gapAfter": 12,
+          "id": "bap.notification"
+        }
+      ],
+      "left": [
+        {
+          "id": "bap.menu"
+        },
+        {
+          "id": "bap.pacman-workspaces"
+        },
+        {
+          "id": "omarchy.active-window"
+        }
+      ],
+      "right": [
+        {
+          "id": "david.macnook",
+          "items": [
+            {
+              "id": "so.den"
+            },
+            {
+              "id": "jo.omacheatsheet"
+            },
+            {
+              "id": "urielcuriel.ratbag"
+            },
+            {
+              "id": "skuthus.shell-font"
+            },
+            {
+              "id": "io.github.giodc.omafonts"
+            },
+            {
+              "id": "yoyo.system-tidy"
+            },
+            {
+              "id": "nkarl.fcitx-active-input-lang",
+              "inputMethods": [
+                {
+                  "id": "keyboard-us",
+                  "label": "EN"
+                },
+                {
+                  "id": "lotus",
+                  "label": "VI"
+                }
+              ]
+            },
+            {
+              "id": "io.github.rawritude.aria2"
+            },
+            {},
+            {
+              "id": "co.klair.wallarchy"
+            },
+            {
+              "id": "io.github.twiking.omasettings"
+            },
+            {
+              "id": "atoslins.dualsense"
+            }
+          ]
+        },
+        {
+          "id": "bap.update"
+        },
+        {
+          "id": "omarchy.spacer",
+          "size": 12
+        },
+        {
+          "id": "io.github.diegopluna.argus",
+          "show": [
+            "cpu",
+            "ram",
+            "disk"
+          ]
+        },
+        {
+          "id": "omarchy.background"
+        },
+        {
+          "id": "omarchy.clipboard"
+        },
+        {
+          "id": "io.github.tcballard.bartranslate"
+        },
+        {
+          "autoCheckIntervalHours": 6,
+          "autoCheckUpdates": true,
+          "id": "omaplug"
+        },
+        {
+          "id": "owaiss.session-menu"
+        },
+        {
+          "id": "omarchy.spacer",
+          "size": 12
+        },
+        {
+          "id": "brenoperucchi.omabackup"
+        }
+      ]
+    },
+    "mode": "islands",
+    "position": "top",
+    "transparent": false
+  },
+  "cloneSourceRestores": [
+    "ssupt.audio-control",
+    "io.github.mtolhuys.theme-manager",
+    "io.github.sirjul1337.lock-explorer"
+  ],
+  "disabledPlugins": [
+    "omarchy.battery",
+    "omarchy.wifiqr",
+    "io.github.tyrichards.tray",
+    "omarchy.disk-speedtest",
+    "omarchy.emojis",
+    "omarchy.nightlight",
+    "omarchy.speedtest",
+    "omarchy.notifications",
+    "njpatel.omapager",
+    "omarchy.image-picker",
+    "omarchy.lock"
+  ],
+  "idle": {
+    "lock": 1200,
+    "screensaver": 1800
+  },
+  "plugins": [
+    {
+      "id": "bap.menu"
+    },
+    {
+      "id": "io.github.ilyazar.plugin-control"
+    },
+    {
+      "id": "io.github.oldjobobo.thpm"
+    },
+    {
+      "id": "jnodavid.omarkey"
+    },
+    {
+      "id": "piyush.omaswitch"
+    },
+    {
+      "id": "qopen.launcher"
+    },
+    {
+      "id": "ssandys.galley"
+    },
+    {
+      "id": "nkarl.en-vi-indicator",
+      "inputMethods": [
+        {
+          "id": "lotus",
+          "label": "VI"
+        },
+        {
+          "id": "keyboard-us",
+          "label": "EN"
+        }
+      ]
+    },
+    {
+      "id": "mirador"
+    },
+    {
+      "id": "jo.omacheatsheet"
+    },
+    {
+      "id": "skuthus.shell-font"
+    },
+    {
+      "id": "io.github.giodc.omafonts"
+    },
+    {
+      "id": "yoyo.system-tidy"
+    },
+    {
+      "id": "io.github.rawritude.aria2"
+    },
+    {
+      "id": "co.klair.wallarchy"
+    },
+    {
+      "id": "urielcuriel.ratbag"
+    },
+    {
+      "id": "atoslins.dualsense"
+    },
+    {
+      "id": "io.github.romills.omarkeys"
+    },
+    {
+      "id": "nkarl.fcitx-active-input-lang",
+      "inputMethods": [
+        {
+          "id": "lotus",
+          "label": "VI"
+        },
+        {
+          "id": "keyboard-us",
+          "label": "EN"
+        }
+      ]
+    },
+    {
+      "id": "losokos.window-gallery"
+    },
+    {
+      "id": "so.den"
+    },
+    {
+      "id": "io.github.mtolhuys.theme-manager"
+    },
+    {
+      "id": "bap.magnify-dock"
+    },
+    {
+      "id": "bap.media"
+    },
+    {
+      "id": "io.github.deunnis.lacquer"
+    },
+    {
+      "id": "io.github.twiking.omasettings"
+    },
+    {
+      "id": "bap.weather"
+    },
+    {
+      "boot": "snapshot:poster",
+      "bootResync": false,
+      "design": "poster",
+      "id": "io.github.sirjul1337.lock-explorer"
+    }
+  ],
+  "version": 1
+}

@@ -1,0 +1,79 @@
+#!/usr/bin/env python3
+"""
+Auto-switch fcitx5 to US keyboard when focusing a terminal.
+
+Problem: when typing Vietnamese (unikey) and you focus a terminal, you keep
+composing Vietnamese diacritics inside the shell, which is annoying.
+
+Solution: poll the active Hyprland window; if its class is a known terminal
+emulator, switch fcitx5 to `keyboard-us` (only if not already us). When you
+leave the terminal we leave the IM as-is (no surprise switch back).
+
+Runs as a systemd --user service so it survives reboots (see
+~/.config/systemd/user/fcitx-auto-us.service).
+"""
+import json
+import subprocess
+import time
+
+TERMINAL_CLASSES = {
+    "kitty", "dropdown", "alacritty", "ghostty",
+    "wezterm", "foot", "st", "urxvt", "hermes",
+}
+
+US_IM = "keyboard-us"
+VI_IM = "unikey"
+POLL_INTERVAL = 0.3
+
+
+def active_class() -> str:
+    try:
+        out = subprocess.check_output(
+            ["hyprctl", "-j", "activewindow"],
+            stderr=subprocess.DEVNULL,
+            timeout=2,
+        ).decode()
+        data = json.loads(out)
+        return (data.get("class") or "").lower()
+    except Exception:
+        return ""
+
+
+def current_im() -> str:
+    try:
+        return subprocess.check_output(
+            ["fcitx5-remote", "-n"],
+            stderr=subprocess.DEVNULL,
+            timeout=2,
+        ).decode().strip()
+    except Exception:
+        return ""
+
+
+def set_im(im: str) -> None:
+    try:
+        subprocess.run(
+            ["fcitx5-remote", "-s", im],
+            stderr=subprocess.DEVNULL,
+            timeout=2,
+        )
+    except Exception:
+        pass
+
+
+def main() -> None:
+    last_class = None
+    while True:
+        cls = active_class()
+        if cls != last_class:
+            last_class = cls
+            if cls in TERMINAL_CLASSES:
+                if current_im() != US_IM:
+                    set_im(US_IM)
+            # Leaving a terminal: do NOT force-switch back to Vietnamese,
+            # to avoid surprising the user in other apps.
+        time.sleep(POLL_INTERVAL)
+
+
+if __name__ == "__main__":
+    main()

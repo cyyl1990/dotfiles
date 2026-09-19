@@ -1,0 +1,7 @@
+{
+  "error": {
+    "message": "forbidden",
+    "type": "permission_error"
+  },
+  "type": "error"
+}

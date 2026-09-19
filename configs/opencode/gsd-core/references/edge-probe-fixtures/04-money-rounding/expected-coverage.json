@@ -1,0 +1,31 @@
+{
+  "coverage": {
+    "applicable": 2,
+    "byVerification": {
+      "backstop": 0,
+      "explicit": 0
+    },
+    "resolved": 0,
+    "unresolved": 2
+  },
+  "items": [
+    {
+      "category": "boundary",
+      "probe": "What happens exactly at each min/max/threshold — and one step either side?",
+      "reason": null,
+      "requirement_id": "R1",
+      "resolution": null,
+      "status": "unresolved",
+      "verification": null
+    },
+    {
+      "category": "precision",
+      "probe": "Where can precision loss, overflow, or rounding/tie-breaking occur — and what is the exact contract (e.g. half-up vs half-to-even, ceil/floor/truncate)?",
+      "reason": null,
+      "requirement_id": "R1",
+      "resolution": null,
+      "status": "unresolved",
+      "verification": null
+    }
+  ]
+}

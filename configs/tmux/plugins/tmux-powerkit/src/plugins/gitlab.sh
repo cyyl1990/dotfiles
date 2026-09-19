@@ -1,0 +1,404 @@
+#!/usr/bin/env bash
+# =============================================================================
+# Plugin: gitlab
+# Description: Monitor GitLab repositories for issues and merge requests
+# Dependencies: curl, jq (optional), glab CLI (optional)
+# =============================================================================
+
+POWERKIT_ROOT="${POWERKIT_ROOT:-$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)}"
+. "${POWERKIT_ROOT}/src/contract/plugin_contract.sh"
+
+# =============================================================================
+# Plugin Contract: Metadata
+# =============================================================================
+
+plugin_get_metadata() {
+    metadata_set "id" "gitlab"
+    metadata_set "name" "GitLab"
+    metadata_set "description" "Monitor GitLab repos for issues and MRs"
+}
+
+# =============================================================================
+# Plugin Contract: Dependencies
+# =============================================================================
+
+plugin_check_dependencies() {
+    require_cmd "curl" || return 1
+    require_cmd "jq" 1 # Optional but recommended
+    return 0
+}
+
+# =============================================================================
+# Plugin Contract: Options
+# =============================================================================
+
+plugin_declare_options() {
+    # GitLab configuration
+    declare_option "url" "string" "https://gitlab.com" "GitLab instance URL (self-hosted support)"
+    declare_option "repos" "string" "" "Comma-separated list of owner/repo or group/project"
+    declare_option "token" "string" "" "GitLab personal access token"
+
+    # Display options
+    declare_option "show_issues" "bool" "true" "Show open issues count"
+    declare_option "show_mrs" "bool" "true" "Show open MRs count"
+    declare_option "separator" "string" " | " "Separator between metrics"
+
+    # Icons
+    declare_option "icon" "icon" $'\U000F0BA0' "Plugin icon"
+    declare_option "icon_issue" "icon" $'\U0000F41B' "Issues icon"
+    declare_option "icon_mr" "icon" $'\U0000F407' "MR icon"
+
+    # Thresholds
+    declare_option "warning_threshold_issues" "number" "10" "Warning when issues exceed threshold"
+    declare_option "warning_threshold_mrs" "number" "5" "Warning when MRs exceed threshold"
+
+    # Cache
+    declare_option "cache_ttl" "number" "300" "Cache duration in seconds"
+}
+
+# =============================================================================
+# Plugin Contract: Implementation
+# =============================================================================
+
+plugin_get_content_type() { printf 'dynamic'; }
+plugin_get_presence() { printf 'conditional'; }
+
+_is_authenticated() {
+    # Check glab CLI authentication
+    if has_cmd "glab"; then
+        glab auth status &>/dev/null && return 0
+    fi
+    # Check for token option or env vars
+    printf -v token '%s' "$(get_option "token")"
+    [[ -n "$token" ]] && return 0
+    [[ -n "${GITLAB_TOKEN:-}" || -n "${GITLAB_PRIVATE_TOKEN:-}" ]] && return 0
+    return 1
+}
+
+_has_repos_configured() {
+    printf -v repos '%s' "$(get_option "repos")"
+    [[ -n "$repos" ]] && return 0
+    # glab CLI can work without explicit repos
+    has_cmd "glab" && return 0
+    return 1
+}
+
+_get_token() {
+    printf -v token '%s' "$(get_option "token")"
+    [[ -n "$token" ]] && {
+        printf '%s' "$token"
+        return 0
+    }
+    [[ -n "${GITLAB_TOKEN:-}" ]] && {
+        printf '%s' "$GITLAB_TOKEN"
+        return 0
+    }
+    [[ -n "${GITLAB_PRIVATE_TOKEN:-}" ]] && {
+        printf '%s' "$GITLAB_PRIVATE_TOKEN"
+        return 0
+    }
+    return 1
+}
+
+plugin_get_state() {
+    if [[ "$(plugin_data_get "authenticated")" != "1" ]]; then
+        printf 'failed'
+        return
+    fi
+    if ! _has_repos_configured; then
+        printf 'degraded'
+        return
+    fi
+    printf -v total '%s' "$(plugin_data_get "total")"
+    printf -v api_error '%s' "$(plugin_data_get "api_error")"
+    if [[ "$api_error" == "1" ]]; then
+        printf 'degraded'
+    elif [[ "${total:-0}" -gt 0 ]]; then
+        printf 'active'
+    else
+        printf 'inactive'
+    fi
+}
+
+plugin_get_health() {
+    if [[ "$(plugin_data_get "authenticated")" != "1" ]]; then
+        printf 'error'
+        return
+    fi
+
+    printf -v api_error '%s' "$(plugin_data_get "api_error")"
+    [[ "$api_error" == "1" ]] && {
+        printf 'error'
+        return
+    }
+
+    printf -v issues '%s' "$(plugin_data_get "issues")"
+    printf -v mrs '%s' "$(plugin_data_get "mrs")"
+    printf -v warning_threshold_issues '%s' "$(get_option "warning_threshold_issues")"
+    printf -v warning_threshold_mrs '%s' "$(get_option "warning_threshold_mrs")"
+    if [[ "${issues:-0}" -ge "$warning_threshold_issues" || "${mrs:-0}" -ge "$warning_threshold_mrs" ]]; then
+        printf 'warning'
+    else
+        printf 'ok'
+    fi
+}
+
+plugin_get_context() {
+    if [[ "$(plugin_data_get "authenticated")" != "1" ]]; then
+        printf 'unauthenticated'
+        return
+    fi
+
+    printf -v api_error '%s' "$(plugin_data_get "api_error")"
+    [[ "$api_error" == "1" ]] && {
+        printf 'api_error'
+        return
+    }
+
+    printf -v total '%s' "$(plugin_data_get "total")"
+    printf -v issues '%s' "$(plugin_data_get "issues")"
+    printf -v mrs '%s' "$(plugin_data_get "mrs")"
+    total="${total:-0}"
+    issues="${issues:-0}"
+    mrs="${mrs:-0}"
+
+    if ((total == 0)); then
+        printf 'clear'
+    elif ((issues > 0 && mrs > 0)); then
+        printf 'issues_and_mrs'
+    elif ((issues > 0)); then
+        printf 'issues_only'
+    elif ((mrs > 0)); then
+        printf 'mrs_only'
+    else
+        printf 'activity'
+    fi
+}
+
+plugin_get_icon() { get_option "icon"; }
+
+# =============================================================================
+# URL Encoding (for project paths like group/subgroup/project)
+# =============================================================================
+
+_url_encode() {
+    local string="$1"
+    local strlen=${#string}
+    local encoded=""
+    local pos c o
+
+    for ((pos = 0; pos < strlen; pos++)); do
+        c="${string:$pos:1}"
+        case "$c" in
+        [-_.~a-zA-Z0-9]) o="$c" ;;
+        *) printf -v o '%%%02x' "'$c" ;;
+        esac
+        encoded+="$o"
+    done
+    printf '%s' "$encoded"
+}
+
+# =============================================================================
+# API Functions
+# =============================================================================
+
+_make_gitlab_api_call() {
+    local url="$1"
+    printf -v token '%s' "$(_get_token)"
+    # PRIVATE-TOKEN is passed via curl --config (stdin) so it never
+    # appears in process argv. The body returned here is the same
+    # JSON shape as make_api_call would have given.
+    api_fetch_with_token_header "$url" "PRIVATE-TOKEN" "$token" 5
+}
+
+_make_gitlab_head_call() {
+    local url="$1"
+    printf -v token '%s' "$(_get_token)"
+    # Same credential-safe transport for HEAD requests. The header is
+    # forwarded via stdin; only the URL is in argv.
+    printf 'header = "PRIVATE-TOKEN: %s"\nhead = true\n' "$token" |
+        curl -sf --config - --connect-timeout 5 --max-time 10 "$url" 2>/dev/null
+}
+
+_count_issues() {
+    local project_encoded="$1"
+    printf -v gitlab_url '%s' "$(get_option "url")"
+    # Use issues_statistics endpoint - more efficient than listing
+    local url="${gitlab_url}/api/v4/projects/${project_encoded}/issues_statistics?scope=all"
+    printf -v response '%s' "$(_make_gitlab_api_call "$url")"
+    [[ -z "$response" ]] && return 1
+
+    local count
+    if has_cmd jq; then
+        count=$(echo "$response" | jq -r '.statistics.counts.opened // 0' 2>/dev/null)
+    else
+        count=$(echo "$response" | grep -o '"opened":[0-9]*' | grep -o '[0-9]*' | head -1)
+    fi
+
+    [[ -z "$count" ]] && return 1
+    echo "$count"
+}
+
+_count_mrs() {
+    local project_encoded="$1"
+    printf -v gitlab_url '%s' "$(get_option "url")"
+    local url="${gitlab_url}/api/v4/projects/${project_encoded}/merge_requests?state=opened&per_page=1"
+    printf -v response '%s' "$(_make_gitlab_head_call "$url")"
+    [[ -z "$response" ]] && return 1
+
+    local count=$(echo "$response" | grep -i '^x-total:' | awk '{print $2}' | tr -d '\r\n')
+
+    [[ -z "$count" ]] && return 1
+    echo "$count"
+}
+
+# Use glab CLI if available and no repos configured
+_fetch_via_glab_cli() {
+    printf -v show_issues '%s' "$(get_option "show_issues")"
+    printf -v show_mrs '%s' "$(get_option "show_mrs")"
+    local issues=0 mrs=0
+
+    if [[ "$show_mrs" == "true" ]]; then
+        mrs=$(glab mr list --assignee @me --state opened 2>/dev/null | grep -c '^[!#]' || true)
+    fi
+
+    if [[ "$show_issues" == "true" ]]; then
+        issues=$(glab issue list --assignee @me --state opened 2>/dev/null | grep -c '^#' || true)
+    fi
+
+    echo "$issues $mrs"
+}
+
+# =============================================================================
+# Main Logic
+# =============================================================================
+
+_format_status() {
+    local issues="$1"
+    local mrs="$2"
+
+    printf -v show_issues '%s' "$(get_option "show_issues")"
+    printf -v show_mrs '%s' "$(get_option "show_mrs")"
+    printf -v separator '%s' "$(get_option "separator")"
+    printf -v icon_issue '%s' "$(get_option "icon_issue")"
+    printf -v icon_mr '%s' "$(get_option "icon_mr")"
+    local parts=()
+
+    if [[ "$show_issues" == "true" && "$issues" -gt 0 ]]; then
+        if [[ -n "$icon_issue" ]]; then
+            parts+=("${icon_issue} ${issues}")
+        else
+            parts+=("${issues}i")
+        fi
+    fi
+
+    if [[ "$show_mrs" == "true" && "$mrs" -gt 0 ]]; then
+        if [[ -n "$icon_mr" ]]; then
+            parts+=("${icon_mr} ${mrs}")
+        else
+            parts+=("${mrs}mr")
+        fi
+    fi
+
+    [[ ${#parts[@]} -gt 0 ]] && join_with_separator "$separator" "${parts[@]}"
+}
+
+_get_gitlab_info() {
+    printf -v repos_csv '%s' "$(get_option "repos")"
+    printf -v show_issues '%s' "$(get_option "show_issues")"
+    printf -v show_mrs '%s' "$(get_option "show_mrs")"
+    # If no repos configured, try glab CLI
+    if [[ -z "$repos_csv" ]] && has_cmd glab; then
+        printf -v result '%s' "$(_fetch_via_glab_cli)"
+        echo "$result 0" # issues mrs api_error
+        return 0
+    fi
+
+    [[ -z "$repos_csv" ]] && {
+        echo "0 0 1"
+        return 1
+    }
+
+    IFS=',' read -ra repos <<<"$repos_csv"
+
+    local total_issues=0 total_mrs=0
+    local api_error=0
+
+    for repo_spec in "${repos[@]}"; do
+        repo_spec=$(trim "$repo_spec")
+        [[ -z "$repo_spec" || "$repo_spec" != *"/"* ]] && continue
+
+        printf -v project_encoded '%s' "$(_url_encode "$repo_spec")"
+        local issues=0 mrs=0
+
+        if [[ "$show_issues" == "true" ]]; then
+            if ! issues=$(_count_issues "$project_encoded"); then
+                api_error=1
+                issues=0
+            fi
+        fi
+
+        if [[ "$show_mrs" == "true" ]]; then
+            if ! mrs=$(_count_mrs "$project_encoded"); then
+                api_error=1
+                mrs=0
+            fi
+        fi
+
+        total_issues=$((total_issues + issues))
+        total_mrs=$((total_mrs + mrs))
+    done
+
+    echo "$total_issues $total_mrs $api_error"
+}
+
+plugin_collect() {
+    if _is_authenticated; then
+        plugin_data_set "authenticated" "1"
+    else
+        plugin_data_set "authenticated" "0"
+        plugin_data_set "issues" "0"
+        plugin_data_set "mrs" "0"
+        plugin_data_set "total" "0"
+        plugin_data_set "api_error" "0"
+        return 0
+    fi
+
+    printf -v result '%s' "$(_get_gitlab_info)"
+    local issues mrs api_error
+    read -r issues mrs api_error <<<"$result"
+
+    issues="${issues:-0}"
+    mrs="${mrs:-0}"
+    api_error="${api_error:-0}"
+
+    local total=$((issues + mrs))
+
+    plugin_data_set "issues" "$issues"
+    plugin_data_set "mrs" "$mrs"
+    plugin_data_set "total" "$total"
+    plugin_data_set "api_error" "$api_error"
+}
+
+plugin_render() {
+    if [[ "$(plugin_data_get "authenticated")" != "1" ]]; then
+        printf 'unauthenticated'
+        return 0
+    fi
+
+    if ! _has_repos_configured; then
+        printf 'no repos'
+        return 0
+    fi
+
+    printf -v issues '%s' "$(plugin_data_get "issues")"
+    printf -v mrs '%s' "$(plugin_data_get "mrs")"
+    printf -v total '%s' "$(plugin_data_get "total")"
+    issues="${issues:-0}"
+    mrs="${mrs:-0}"
+    total="${total:-0}"
+
+    [[ "$total" -eq 0 ]] && return 0
+
+    _format_status "$issues" "$mrs"
+}

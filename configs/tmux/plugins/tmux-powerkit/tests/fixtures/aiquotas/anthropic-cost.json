@@ -1,0 +1,16 @@
+{
+  "data": [
+    {
+      "ending_at": "2026-07-13T00:00:00Z",
+      "results": [
+        {
+          "amount": "1234",
+          "currency": "USD",
+          "model": "claude-sonnet-4-5"
+        }
+      ],
+      "starting_at": "2026-07-12T00:00:00Z"
+    }
+  ],
+  "has_more": false
+}

@@ -1,0 +1,449 @@
+#!/usr/bin/env bash
+# =============================================================================
+# PowerKit Entity: Windows
+# Description: Renders the window list and configures window formats
+# =============================================================================
+# This entity handles:
+# - Window list rendering (#{W:...} format)
+# - window-status-format configuration
+# - window-status-current-format configuration
+# - Internal separators (between windows)
+#
+# External separators (to/from other entities) are handled by the compositor.
+# =============================================================================
+
+# Source guard
+POWERKIT_ROOT="${POWERKIT_ROOT:-$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)}"
+. "${POWERKIT_ROOT}/src/core/guard.sh"
+source_guard "entity_windows" && return 0
+
+. "${POWERKIT_ROOT}/src/core/defaults.sh"
+. "${POWERKIT_ROOT}/src/core/options.sh"
+. "${POWERKIT_ROOT}/src/renderer/color_resolver.sh"
+. "${POWERKIT_ROOT}/src/renderer/separator.sh"
+. "${POWERKIT_ROOT}/src/contract/window_contract.sh"
+. "${POWERKIT_ROOT}/src/contract/pane_contract.sh"
+
+# =============================================================================
+# Window Icon Resolution
+# =============================================================================
+
+# Resolve window icon based on window state
+# Usage: resolve_window_icon "active|inactive" "is_zoomed"
+# Returns: Icon character for window
+resolve_window_icon() {
+    local state="$1"
+    local is_zoomed="${2:-false}"
+
+    if [[ "$is_zoomed" == "true" || "$is_zoomed" == "1" ]]; then
+        get_tmux_option "@powerkit_zoomed_window_icon" "${POWERKIT_DEFAULT_ZOOMED_WINDOW_ICON}"
+        return
+    fi
+
+    if [[ "$state" == "active" ]]; then
+        get_tmux_option "@powerkit_active_window_icon" "${POWERKIT_DEFAULT_ACTIVE_WINDOW_ICON}"
+    else
+        get_tmux_option "@powerkit_inactive_window_icon" "${POWERKIT_DEFAULT_INACTIVE_WINDOW_ICON}"
+    fi
+}
+
+# =============================================================================
+# Private Helper Functions
+# =============================================================================
+
+# Get window colors using base + variants system
+# Usage: _windows_get_colors "active|inactive"
+# Returns: "index_bg index_fg content_bg content_fg style"
+_windows_get_colors() {
+    local state="$1"
+    local base_color index_bg index_fg content_bg content_fg style
+
+    if [[ "$state" == "active" ]]; then
+        base_color="window-active-base"
+    else
+        base_color="window-inactive-base"
+    fi
+
+    local variant
+    variant=$(get_contrast_variant "$base_color")
+    index_fg=$(resolve_color "${base_color}-${variant}")
+
+    local custom_fg
+    if [[ "$state" == "active" ]]; then
+        custom_fg=$(get_tmux_option "@powerkit_active_window_fg" "")
+    else
+        custom_fg=$(get_tmux_option "@powerkit_inactive_window_fg" "")
+    fi
+
+    if [[ -n "$custom_fg" ]]; then
+        content_fg=$(resolve_color "$custom_fg")
+        index_fg=$(resolve_color "$custom_fg")
+    else
+        content_fg=$(resolve_color "${base_color}-${variant}")
+    fi
+
+    index_bg=$(resolve_color "${base_color}-lighter")
+    content_bg=$(resolve_color "$base_color")
+    style=$(get_window_style "$state")
+
+    printf '%s %s %s %s %s' "$index_bg" "$index_fg" "$content_bg" "$content_fg" "$style"
+}
+
+# Get common window format settings
+# Usage: _windows_get_common_settings "side"
+# Sets: _W_TRANSPARENT, _W_SPACING_BG, _W_SPACING_FG, _W_STATUS_BG, _W_SEP_CHAR, _W_EDGE_SEP_CHAR, _W_ROUND_ALL_EDGES
+# Note: "center" behaves like "left" for separator direction (right-pointing ▶)
+_windows_get_common_settings() {
+    local side="$1"
+
+    _W_TRANSPARENT=$(get_tmux_option "@powerkit_transparent" "${POWERKIT_DEFAULT_TRANSPARENT}")
+    _W_ROUND_ALL_EDGES=$(should_apply_all_edges && echo "true" || echo "false")
+
+    # Always get the actual statusbar-bg color for use in fg
+    # (because fg=default gives terminal's default TEXT color, not background)
+    local statusbar_bg_color
+    statusbar_bg_color=$(get_color "statusbar-bg")
+
+    if [[ "$_W_TRANSPARENT" == "true" ]]; then
+        _W_SPACING_BG="default"             # bg=default works (terminal background)
+        _W_SPACING_FG="$statusbar_bg_color" # fg needs actual color (not "default")
+        _W_STATUS_BG="default"
+    else
+        _W_SPACING_BG="$statusbar_bg_color"
+        _W_SPACING_FG="$statusbar_bg_color"
+        _W_STATUS_BG="$statusbar_bg_color"
+    fi
+
+    # "center" uses same separator direction as "left" (right-pointing ▶)
+    if [[ "$side" == "left" || "$side" == "center" ]]; then
+        _W_SEP_CHAR=$(get_right_separator)
+        _W_EDGE_SEP_CHAR=$(get_edge_right_separator)
+    else
+        _W_SEP_CHAR=$(get_left_separator)
+        _W_EDGE_SEP_CHAR=$(get_edge_left_separator)
+    fi
+}
+
+# Build window-to-window separator
+# Usage: _windows_build_separator "side" "index_bg" "previous_bg"
+# Note: "center" behaves like "left" for separator direction
+# Note: Edge separators are handled by the compositor, except for first window with spacing
+# Note: When :all suffix is enabled, first window uses edge-style separator
+_windows_build_separator() {
+    local side="$1" index_bg="$2" previous_bg="$3"
+
+    if has_window_spacing; then
+        # With spacing: transition FROM spacing gap TO window
+        # Use statusbar-bg for spacing foreground (works in both transparent and normal modes)
+        local spacing_fg
+        spacing_fg=$(get_color "statusbar-bg")
+        local spacing_sep_char
+        spacing_sep_char=$(_windows_get_spacing_sep_char)
+
+        if [[ "$side" == "left" ]]; then
+            # Left side ▶: gap → window
+            # ▶: fg=gap (left), bg=window (right)
+            # When :all suffix is enabled, first window uses edge separator
+            if [[ "$_W_ROUND_ALL_EDGES" == "true" ]]; then
+                # First window: edge separator, others: normal separator
+                printf '#{?window_start_flag,#[fg=%s#,bg=%s]%s,#[fg=%s#,bg=%s]%s}' \
+                    "$spacing_fg" "$index_bg" "$_W_EDGE_SEP_CHAR" \
+                    "$spacing_fg" "$index_bg" "$spacing_sep_char"
+            else
+                printf '#[fg=%s#,bg=%s]%s' "$spacing_fg" "$index_bg" "$spacing_sep_char"
+            fi
+        elif [[ "$side" == "center" ]]; then
+            # Center side ▶: gap → window
+            # ▶: fg=gap (left), bg=window (right)
+            # Skip first window - compositor handles edge separator
+            printf '#{?window_start_flag,,#[fg=%s#,bg=%s]%s}' "$spacing_fg" "$index_bg" "$spacing_sep_char"
+        elif [[ "$side" == "right" ]]; then
+            # Right side ◀: gap → window
+            # ◀: fg=window (right), bg=gap (left)
+            # Skip first window - compositor handles edge separator
+            printf '#{?window_start_flag,,#[fg=%s#,bg=%s]%s}' "$index_bg" "$spacing_fg" "$spacing_sep_char"
+        fi
+    else
+        # For all sides, first window doesn't need edge separator (handled by compositor)
+        # Only add inter-window separators (window 2+)
+        if [[ "$side" == "left" || "$side" == "center" ]]; then
+            printf '#[fg=%s,bg=%s]#{?window_start_flag,,%s}' "$previous_bg" "$index_bg" "$_W_SEP_CHAR"
+        else
+            # Right side: separator points left (◀)
+            printf '#[fg=%s,bg=%s]#{?window_start_flag,,%s}' "$index_bg" "$previous_bg" "$_W_SEP_CHAR"
+        fi
+    fi
+}
+
+# Build index-to-content separator
+# Usage: _windows_build_index_sep "side" "index_bg" "content_bg"
+# Note: "center" behaves like "left" for separator direction
+_windows_build_index_sep() {
+    local side="$1" index_bg="$2" content_bg="$3"
+
+    if [[ "$side" == "left" || "$side" == "center" ]]; then
+        printf '#[fg=%s,bg=%s]%s' "$index_bg" "$content_bg" "$_W_SEP_CHAR"
+    else
+        printf '#[fg=%s,bg=%s]%s' "$content_bg" "$index_bg" "$_W_SEP_CHAR"
+    fi
+}
+
+# Get separator glyph for spacing transitions.
+# Falls back to a plain space when separator_style is "none".
+_windows_get_spacing_sep_char() {
+    if [[ -n "$_W_SEP_CHAR" ]]; then
+        printf '%s' "$_W_SEP_CHAR"
+    else
+        printf ' '
+    fi
+}
+
+# Build window index text with padding appropriate to separator style.
+# Glyph separators provide a visual right edge, but separator_style=none needs
+# an explicit trailing cell before the index-to-content transition.
+#
+# Padding convention:
+# - Trailing pad (after the index) is always applied when the option
+#   @powerkit_window_index_padding is "true" (default).
+# - Leading pad (before the index) is suppressed for the FIRST window
+#   only — windows 2+ get the full padding because the inter-window
+#   separator gives a clean transition point. The first window has the
+#   compositor's edge separator already adding visual breathing room.
+_windows_build_index_text() {
+    local side="$1" index_fg="$2" index_bg="$3" style_attr="$4"
+
+    local pad=""
+    if [[ "$(get_tmux_option "@powerkit_window_index_padding" "true")" == "true" ]]; then
+        pad=" "
+    fi
+
+    # Leading pad uses a tmux conditional: empty for the first window
+    # (where #{window_index} equals #{base-index}), space otherwise.
+    # This is data-driven and requires no new user-facing option.
+    local leading='#{?#{==:#{window_index},#{base-index}},,'"$pad"'}'
+
+    if [[ "$side" == "left" && -n "$_W_SEP_CHAR" ]]; then
+        printf '#[fg=%s,bg=%s%s]%s%s%s' "$index_fg" "$index_bg" "$style_attr" "$leading" "$(window_get_index_display)" "$pad"
+    else
+        printf '#[fg=%s,bg=%s%s]%s%s%s' "$index_fg" "$index_bg" "$style_attr" "$leading" "$(window_get_index_display)" "$pad"
+    fi
+}
+
+# Build spacing separator (if enabled)
+# Usage: _windows_build_spacing "side" "content_bg"
+# Note: "center" behaves like "left" for separator direction
+# Note: Only handles inter-window exit separators
+#       Edge separators are handled by the compositor
+_windows_build_spacing() {
+    local side="$1" content_bg="$2"
+
+    has_window_spacing || return
+
+    # Use statusbar-bg for spacing foreground (works in both transparent and normal modes)
+    local spacing_fg
+    spacing_fg=$(get_color "statusbar-bg")
+    local spacing_sep_char
+    spacing_sep_char=$(_windows_get_spacing_sep_char)
+
+    if [[ "$side" == "left" || "$side" == "center" ]]; then
+        # Left side ▶: window → gap
+        # ▶: fg=window (left), bg=gap (right)
+        printf '#{?window_end_flag,,#[fg=%s#,bg=%s]%s}' \
+            "$content_bg" "$spacing_fg" "$spacing_sep_char"
+    else
+        # Right side ◀: window → gap
+        # ◀: fg=gap (right), bg=window (left)
+        printf '#{?window_end_flag,,#[fg=%s#,bg=%s]%s}' \
+            "$spacing_fg" "$content_bg" "$spacing_sep_char"
+    fi
+}
+
+# Build window format for inactive windows
+# Usage: _windows_build_format "side"
+_windows_build_format() {
+    local side="${1:-left}"
+
+    local index_bg index_fg content_bg content_fg style
+    read -r index_bg index_fg content_bg content_fg style <<<"$(_windows_get_colors "inactive")"
+
+    local style_attr=""
+    [[ -n "$style" && "$style" != "none" ]] && style_attr=",${style}"
+
+    _windows_get_common_settings "$side"
+
+    # Previous window background for transitions
+    local active_content_bg previous_bg
+    active_content_bg=$(resolve_color "window-active-base")
+    
+    # Use nested W formats to check if the window immediately preceding this one is active.
+    # This correctly handles non-contiguous window indices.
+    local prev_is_active='#{m:*=1|#{window_index}=*,#{W:|#{window_index}=0,|#{window_index}=1}}'
+    previous_bg="#{?${prev_is_active},${active_content_bg},${content_bg}}"
+
+    # Window content assembled by contract helper (icon + title)
+    local window_content
+    window_content=$(window_get_inactive_format)
+
+    # Check if index should be shown for inactive windows
+    local show_index
+    show_index=$(get_tmux_option "@powerkit_inactive_window_show_index" "true")
+
+    # Determine the first segment background (index if shown, otherwise content)
+    local first_segment_bg
+    if [[ "$show_index" == "true" ]]; then
+        first_segment_bg="$index_bg"
+    else
+        first_segment_bg="$content_bg"
+    fi
+
+    local format=""
+    format+="#[range=window|#{window_id}]"
+    format+=$(_windows_build_separator "$side" "$first_segment_bg" "$previous_bg")
+    # Show index section only if enabled
+    if [[ "$show_index" == "true" ]]; then
+        format+=$(_windows_build_index_text "$side" "$index_fg" "$index_bg" "$style_attr")
+        format+=$(_windows_build_index_sep "$side" "$index_bg" "$content_bg")
+    fi
+    # Add left padding only when rendering from left side
+    if [[ "$side" == "left" ]]; then
+        format+="#[fg=${content_fg},bg=${content_bg}${style_attr}] ${window_content} "
+    else
+        format+="#[fg=${content_fg},bg=${content_bg}${style_attr}]${window_content} "
+    fi
+    format+=$(_windows_build_spacing "$side" "$content_bg")
+    format+="#[norange]"
+
+    printf '%s' "$format"
+}
+
+# Build window format for active window
+# Usage: _windows_build_current_format "side"
+_windows_build_current_format() {
+    local side="${1:-left}"
+
+    local index_bg index_fg content_bg content_fg style
+    read -r index_bg index_fg content_bg content_fg style <<<"$(_windows_get_colors "active")"
+
+    local style_attr=",bold"
+    [[ -n "$style" && "$style" != "none" ]] && style_attr=",${style}"
+
+    _windows_get_common_settings "$side"
+
+    # Previous window is always inactive for active window
+    local previous_bg
+    previous_bg=$(resolve_color "window-inactive-base")
+
+    # Window content assembled by contract helper (icon + title)
+    local window_content
+    window_content=$(window_get_active_format)
+
+    # Check if index should be shown for active windows
+    local show_index
+    show_index=$(get_tmux_option "@powerkit_active_window_show_index" "true")
+
+    # Determine the first segment background (index if shown, otherwise content)
+    local first_segment_bg
+    if [[ "$show_index" == "true" ]]; then
+        first_segment_bg="$index_bg"
+    else
+        first_segment_bg="$content_bg"
+    fi
+
+    local format=""
+    format+="#[range=window|#{window_id}]"
+    format+=$(_windows_build_separator "$side" "$first_segment_bg" "$previous_bg")
+    # Show index section only if enabled
+    if [[ "$show_index" == "true" ]]; then
+        format+=$(_windows_build_index_text "$side" "$index_fg" "$index_bg" "$style_attr")
+        format+=$(_windows_build_index_sep "$side" "$index_bg" "$content_bg")
+    fi
+    # Add left padding only when rendering from left side
+    if [[ "$side" == "left" ]]; then
+        format+="#[fg=${content_fg},bg=${content_bg}${style_attr}] ${window_content} $(pane_sync_format)"
+    else
+        format+="#[fg=${content_fg},bg=${content_bg}${style_attr}]${window_content} $(pane_sync_format)"
+    fi
+    format+=$(_windows_build_spacing "$side" "$content_bg")
+    format+="#[norange]"
+
+    printf '%s' "$format"
+}
+
+# =============================================================================
+# Entity Interface (Required)
+# =============================================================================
+
+# Render the windows list
+# Usage: windows_render [side]
+# Returns: #{W:...} format string for window list
+windows_render() {
+    local side="${1:-left}"
+
+    # The window list is rendered using tmux's #{W:} which iterates windows
+    # and applies window-status-format or window-status-current-format
+    # #[list=on] enables click handling
+    printf '#[list=on]#{W:#{T:window-status-format},#{T:window-status-current-format}}#[nolist]'
+}
+
+# Get the background color of windows (generic)
+# Returns: statusbar-bg as fallback
+windows_get_bg() {
+    resolve_color "statusbar-bg"
+}
+
+# =============================================================================
+# Entity Interface (Optional)
+# =============================================================================
+
+# Get the background color of the first window (for incoming separator)
+# Returns: tmux conditional for first window's index background
+windows_get_first_bg() {
+    local active_index_bg inactive_index_bg
+    active_index_bg=$(resolve_color "window-active-base-lighter")
+    inactive_index_bg=$(resolve_color "window-inactive-base-lighter")
+
+    # Use W format to reliably get the first window's state regardless of non-contiguous indices
+    printf '#{W:#{?window_start_flag,%s,},#{?window_start_flag,%s,}}' "$inactive_index_bg" "$active_index_bg"
+}
+
+# Get the background color of the last window (for outgoing separator)
+# Returns: tmux conditional for last window's content background
+windows_get_last_bg() {
+    local active_content_bg inactive_content_bg
+    active_content_bg=$(resolve_color "window-active-base")
+    inactive_content_bg=$(resolve_color "window-inactive-base")
+
+    # Use W format to reliably get the last window's state regardless of non-contiguous indices
+    printf '#{W:#{?window_end_flag,%s,},#{?window_end_flag,%s,}}' "$inactive_content_bg" "$active_content_bg"
+}
+
+# Configure window formats in tmux
+# This sets window-status-format and window-status-current-format
+# Usage: windows_configure [side]
+windows_configure() {
+    local side="${1:-left}"
+
+    # Build and set window formats
+    local window_format current_format
+    window_format=$(_windows_build_format "$side")
+    current_format=$(_windows_build_current_format "$side")
+
+    tmux set-option -g window-status-format "$window_format"
+    tmux set-option -g window-status-current-format "$current_format"
+
+    # Window separator is empty - transitions handled in formats
+    tmux set-option -g window-status-separator ""
+
+    # Window status styles
+    tmux set-option -g window-status-style "default"
+    tmux set-option -g window-status-current-style "default"
+
+    # Activity/bell styles
+    local activity_style bell_style
+    activity_style=$(resolve_color "window-activity-style")
+    bell_style=$(resolve_color "window-bell-style")
+    [[ -z "$activity_style" || "$activity_style" == "default" || "$activity_style" == "none" ]] && activity_style="italics"
+    [[ -z "$bell_style" || "$bell_style" == "default" || "$bell_style" == "none" ]] && bell_style="bold"
+    tmux set-window-option -g window-status-activity-style "$activity_style"
+    tmux set-window-option -g window-status-bell-style "$bell_style"
+}

@@ -1,0 +1,208 @@
+{
+  "actions": [
+    {
+      "classification": "user-owned",
+      "currentHash": null,
+      "migrationChecksum": "sha256:4ec58d35b30dbf39cc56e3972146086d8d31861ecd800cf0b37a7aa94fe74c2a",
+      "migrationId": "2026-05-11-first-time-baseline-scan",
+      "originalHash": null,
+      "reason": "known user-owned artifact preserved by first-time migration baseline",
+      "relPath": "agents/codebase-memory-auditor.md",
+      "status": "preserved",
+      "type": "baseline-preserve-user"
+    },
+    {
+      "classification": "user-owned",
+      "currentHash": null,
+      "migrationChecksum": "sha256:4ec58d35b30dbf39cc56e3972146086d8d31861ecd800cf0b37a7aa94fe74c2a",
+      "migrationId": "2026-05-11-first-time-baseline-scan",
+      "originalHash": null,
+      "reason": "known user-owned artifact preserved by first-time migration baseline",
+      "relPath": "agents/codebase-memory-scout.md",
+      "status": "preserved",
+      "type": "baseline-preserve-user"
+    },
+    {
+      "classification": "user-owned",
+      "currentHash": null,
+      "migrationChecksum": "sha256:4ec58d35b30dbf39cc56e3972146086d8d31861ecd800cf0b37a7aa94fe74c2a",
+      "migrationId": "2026-05-11-first-time-baseline-scan",
+      "originalHash": null,
+      "reason": "known user-owned artifact preserved by first-time migration baseline",
+      "relPath": "agents/codebase-memory.md",
+      "status": "preserved",
+      "type": "baseline-preserve-user"
+    },
+    {
+      "classification": "user-owned",
+      "currentHash": null,
+      "migrationChecksum": "sha256:4ec58d35b30dbf39cc56e3972146086d8d31861ecd800cf0b37a7aa94fe74c2a",
+      "migrationId": "2026-05-11-first-time-baseline-scan",
+      "originalHash": null,
+      "reason": "known user-owned artifact preserved by first-time migration baseline",
+      "relPath": "skills/agent-reach/references/career.md",
+      "status": "preserved",
+      "type": "baseline-preserve-user"
+    },
+    {
+      "classification": "user-owned",
+      "currentHash": null,
+      "migrationChecksum": "sha256:4ec58d35b30dbf39cc56e3972146086d8d31861ecd800cf0b37a7aa94fe74c2a",
+      "migrationId": "2026-05-11-first-time-baseline-scan",
+      "originalHash": null,
+      "reason": "known user-owned artifact preserved by first-time migration baseline",
+      "relPath": "skills/agent-reach/references/dev.md",
+      "status": "preserved",
+      "type": "baseline-preserve-user"
+    },
+    {
+      "classification": "user-owned",
+      "currentHash": null,
+      "migrationChecksum": "sha256:4ec58d35b30dbf39cc56e3972146086d8d31861ecd800cf0b37a7aa94fe74c2a",
+      "migrationId": "2026-05-11-first-time-baseline-scan",
+      "originalHash": null,
+      "reason": "known user-owned artifact preserved by first-time migration baseline",
+      "relPath": "skills/agent-reach/references/finance.md",
+      "status": "preserved",
+      "type": "baseline-preserve-user"
+    },
+    {
+      "classification": "user-owned",
+      "currentHash": null,
+      "migrationChecksum": "sha256:4ec58d35b30dbf39cc56e3972146086d8d31861ecd800cf0b37a7aa94fe74c2a",
+      "migrationId": "2026-05-11-first-time-baseline-scan",
+      "originalHash": null,
+      "reason": "known user-owned artifact preserved by first-time migration baseline",
+      "relPath": "skills/agent-reach/references/search.md",
+      "status": "preserved",
+      "type": "baseline-preserve-user"
+    },
+    {
+      "classification": "user-owned",
+      "currentHash": null,
+      "migrationChecksum": "sha256:4ec58d35b30dbf39cc56e3972146086d8d31861ecd800cf0b37a7aa94fe74c2a",
+      "migrationId": "2026-05-11-first-time-baseline-scan",
+      "originalHash": null,
+      "reason": "known user-owned artifact preserved by first-time migration baseline",
+      "relPath": "skills/agent-reach/references/social.md",
+      "status": "preserved",
+      "type": "baseline-preserve-user"
+    },
+    {
+      "classification": "user-owned",
+      "currentHash": null,
+      "migrationChecksum": "sha256:4ec58d35b30dbf39cc56e3972146086d8d31861ecd800cf0b37a7aa94fe74c2a",
+      "migrationId": "2026-05-11-first-time-baseline-scan",
+      "originalHash": null,
+      "reason": "known user-owned artifact preserved by first-time migration baseline",
+      "relPath": "skills/agent-reach/references/video.md",
+      "status": "preserved",
+      "type": "baseline-preserve-user"
+    },
+    {
+      "classification": "user-owned",
+      "currentHash": null,
+      "migrationChecksum": "sha256:4ec58d35b30dbf39cc56e3972146086d8d31861ecd800cf0b37a7aa94fe74c2a",
+      "migrationId": "2026-05-11-first-time-baseline-scan",
+      "originalHash": null,
+      "reason": "known user-owned artifact preserved by first-time migration baseline",
+      "relPath": "skills/agent-reach/references/web.md",
+      "status": "preserved",
+      "type": "baseline-preserve-user"
+    },
+    {
+      "classification": "user-owned",
+      "currentHash": null,
+      "migrationChecksum": "sha256:4ec58d35b30dbf39cc56e3972146086d8d31861ecd800cf0b37a7aa94fe74c2a",
+      "migrationId": "2026-05-11-first-time-baseline-scan",
+      "originalHash": null,
+      "reason": "known user-owned artifact preserved by first-time migration baseline",
+      "relPath": "skills/agent-reach/SKILL.md",
+      "status": "preserved",
+      "type": "baseline-preserve-user"
+    },
+    {
+      "classification": "user-owned",
+      "currentHash": null,
+      "migrationChecksum": "sha256:4ec58d35b30dbf39cc56e3972146086d8d31861ecd800cf0b37a7aa94fe74c2a",
+      "migrationId": "2026-05-11-first-time-baseline-scan",
+      "originalHash": null,
+      "reason": "known user-owned artifact preserved by first-time migration baseline",
+      "relPath": "skills/codebase-memory/SKILL.md",
+      "status": "preserved",
+      "type": "baseline-preserve-user"
+    },
+    {
+      "classification": "unknown",
+      "currentHash": "346e10c8e3576298da5ed6f547dfc4a65ec68613d0ccfa1219686fecbaccb483",
+      "migrationChecksum": "sha256:0f6080b5f9b75fb5adbe9664a71152e23a5336813453b0a77e4df6fd483ad38e",
+      "migrationId": "2026-07-17-opencode-baseline-commands-dir",
+      "originalHash": null,
+      "reason": "unknown OpenCode commands/ file preserved by first-time migration baseline",
+      "relPath": "commands/cli-anything-list.md",
+      "status": "preserved",
+      "type": "baseline-preserve-user"
+    },
+    {
+      "classification": "unknown",
+      "currentHash": "9a6a98767c45332526a6e9e167a5d075a7641c988129fe4432a54736adda550e",
+      "migrationChecksum": "sha256:0f6080b5f9b75fb5adbe9664a71152e23a5336813453b0a77e4df6fd483ad38e",
+      "migrationId": "2026-07-17-opencode-baseline-commands-dir",
+      "originalHash": null,
+      "reason": "unknown OpenCode commands/ file preserved by first-time migration baseline",
+      "relPath": "commands/cli-anything-refine.md",
+      "status": "preserved",
+      "type": "baseline-preserve-user"
+    },
+    {
+      "classification": "unknown",
+      "currentHash": "b798657021b5179310ed22370b3b467e3a797675124e440f6807b5519450926d",
+      "migrationChecksum": "sha256:0f6080b5f9b75fb5adbe9664a71152e23a5336813453b0a77e4df6fd483ad38e",
+      "migrationId": "2026-07-17-opencode-baseline-commands-dir",
+      "originalHash": null,
+      "reason": "unknown OpenCode commands/ file preserved by first-time migration baseline",
+      "relPath": "commands/cli-anything-test.md",
+      "status": "preserved",
+      "type": "baseline-preserve-user"
+    },
+    {
+      "classification": "unknown",
+      "currentHash": "25d6319d7d0ac150654f0d2e0ff464c8bbad8bfa97977f9659faaf7561854ae0",
+      "migrationChecksum": "sha256:0f6080b5f9b75fb5adbe9664a71152e23a5336813453b0a77e4df6fd483ad38e",
+      "migrationId": "2026-07-17-opencode-baseline-commands-dir",
+      "originalHash": null,
+      "reason": "unknown OpenCode commands/ file preserved by first-time migration baseline",
+      "relPath": "commands/cli-anything-validate.md",
+      "status": "preserved",
+      "type": "baseline-preserve-user"
+    },
+    {
+      "classification": "unknown",
+      "currentHash": "05c6ebe1529acdc1e6265a40a86a5518d1b4f1e8654440ce3a115d5904db03ae",
+      "migrationChecksum": "sha256:0f6080b5f9b75fb5adbe9664a71152e23a5336813453b0a77e4df6fd483ad38e",
+      "migrationId": "2026-07-17-opencode-baseline-commands-dir",
+      "originalHash": null,
+      "reason": "unknown OpenCode commands/ file preserved by first-time migration baseline",
+      "relPath": "commands/cli-anything.md",
+      "status": "preserved",
+      "type": "baseline-preserve-user"
+    },
+    {
+      "classification": "unknown",
+      "currentHash": "498f728a90ac6702febeae0b15390bb444ad31f1f43e05bdb1caadac434ff711",
+      "migrationChecksum": "sha256:0f6080b5f9b75fb5adbe9664a71152e23a5336813453b0a77e4df6fd483ad38e",
+      "migrationId": "2026-07-17-opencode-baseline-commands-dir",
+      "originalHash": null,
+      "reason": "unknown OpenCode commands/ file preserved by first-time migration baseline",
+      "relPath": "commands/HARNESS.md",
+      "status": "preserved",
+      "type": "baseline-preserve-user"
+    }
+  ],
+  "appliedAt": "2026-09-18T11:52:27.022Z",
+  "appliedMigrationIds": [
+    "2026-05-11-first-time-baseline-scan",
+    "2026-07-17-opencode-baseline-commands-dir"
+  ],
+  "schemaVersion": 1
+}

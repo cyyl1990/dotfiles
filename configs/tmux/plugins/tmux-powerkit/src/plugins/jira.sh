@@ -1,0 +1,344 @@
+#!/usr/bin/env bash
+# =============================================================================
+# Plugin: jira
+# Description: Display Jira issues breakdown (in progress, backlog, blocked)
+# Dependencies: curl, jq
+# =============================================================================
+
+POWERKIT_ROOT="${POWERKIT_ROOT:-$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)}"
+. "${POWERKIT_ROOT}/src/contract/plugin_contract.sh"
+
+# =============================================================================
+# Plugin Contract: Metadata
+# =============================================================================
+
+plugin_get_metadata() {
+    metadata_set "id" "jira"
+    metadata_set "name" "Jira"
+    metadata_set "description" "Display Jira issues breakdown by status"
+}
+
+# =============================================================================
+# Plugin Contract: Dependencies
+# =============================================================================
+
+plugin_check_dependencies() {
+    require_cmd "curl" || return 1
+    require_cmd "jq" || return 1
+    return 0
+}
+
+# =============================================================================
+# Plugin Contract: Options
+# =============================================================================
+
+plugin_declare_options() {
+    # API options
+    declare_option "domain" "string" "" "Jira domain (e.g., company.atlassian.net)"
+    declare_option "email" "string" "" "Jira email"
+    declare_option "token" "string" "" "Jira API token"
+    declare_option "project" "string" "" "Filter by project key"
+    declare_option "jql" "string" "" "Custom JQL query (overrides default)"
+
+    # Display options
+    declare_option "format" "string" "breakdown" "Display format: count, breakdown"
+    declare_option "separator" "string" " | " "Separator between metrics"
+
+    # Icons
+    declare_option "icon" "icon" $'\U000F0303' "Plugin icon"
+    declare_option "icon_progress" "icon" $'\U000F0995' "Icon for in-progress issues (progress-check)"
+    declare_option "icon_todo" "icon" $'\U000F10D5' "Icon for backlog issues (clipboard-list-outline)"
+    declare_option "icon_flagged" "icon" $'\U000F023B' "Icon for blocked issues (flag)"
+
+    # Thresholds
+    declare_option "warning_threshold_progress" "number" "3" "Warning when in-progress issues exceed threshold"
+    declare_option "warning_threshold_backlog" "number" "10" "Warning when backlog issues exceed threshold"
+
+    # Keybindings
+    declare_option "keybinding_issues" "string" "" "Keybinding for issue selector"
+    declare_option "popup_width" "string" "60%" "Popup width"
+    declare_option "popup_height" "string" "80%" "Popup height"
+
+    # Cache
+    declare_option "cache_ttl" "number" "120" "Cache duration in seconds"
+}
+
+# =============================================================================
+# Plugin Contract: Implementation
+# =============================================================================
+
+plugin_get_content_type() { printf 'dynamic'; }
+plugin_get_presence() { printf 'conditional'; }
+
+_is_configured() {
+    local domain email token
+    domain=$(get_option "domain")
+    email=$(get_option "email")
+    token=$(get_option "token")
+
+    [[ -n "$domain" && -n "$email" && -n "$token" ]] && return 0
+    return 1
+}
+
+plugin_get_state() {
+    if ! _is_configured; then
+        printf 'failed'
+        return
+    fi
+    local in_progress todo flagged
+    in_progress=$(plugin_data_get "in_progress")
+    todo=$(plugin_data_get "todo")
+    flagged=$(plugin_data_get "flagged")
+    local total=$((${in_progress:-0} + ${todo:-0} + ${flagged:-0}))
+    [[ "$total" -gt 0 ]] && printf 'active' || printf 'inactive'
+}
+
+plugin_get_health() {
+    if ! _is_configured; then
+        printf 'error'
+        return
+    fi
+
+    local flagged in_progress todo
+    flagged=$(plugin_data_get "flagged")
+    in_progress=$(plugin_data_get "in_progress")
+    todo=$(plugin_data_get "todo")
+
+    # Blocked issues are always error
+    [[ "${flagged:-0}" -gt 0 ]] && {
+        printf 'error'
+        return
+    }
+
+    local threshold_progress threshold_backlog
+    threshold_progress=$(get_option "warning_threshold_progress")
+    threshold_backlog=$(get_option "warning_threshold_backlog")
+
+    # Check thresholds
+    [[ "${in_progress:-0}" -ge "$threshold_progress" ]] && {
+        printf 'warning'
+        return
+    }
+    [[ "${todo:-0}" -ge "$threshold_backlog" ]] && {
+        printf 'warning'
+        return
+    }
+
+    printf 'ok'
+}
+
+plugin_get_context() {
+    if ! _is_configured; then
+        printf 'unconfigured'
+        return
+    fi
+
+    local flagged in_progress
+    flagged=$(plugin_data_get "flagged")
+    in_progress=$(plugin_data_get "in_progress")
+
+    [[ "${flagged:-0}" -gt 0 ]] && {
+        printf 'blocked'
+        return
+    }
+    [[ "${in_progress:-0}" -gt 0 ]] && {
+        printf 'working'
+        return
+    }
+    printf 'idle'
+}
+
+plugin_get_icon() { get_option "icon"; }
+
+# =============================================================================
+# Main Logic
+# =============================================================================
+
+# Build JQL query
+_build_jql() {
+    local jql project
+    jql=$(get_option "jql")
+    project=$(get_option "project")
+
+    if [[ -n "$jql" ]]; then
+        printf '%s' "$jql"
+        return
+    fi
+
+    # Default: assigned to me, not done
+    local query="assignee = currentUser() AND resolution = Unresolved"
+    [[ -n "$project" ]] && query+=" AND project = ${project}"
+    query+=" ORDER BY priority DESC, updated DESC"
+
+    printf '%s' "$query"
+}
+
+# Check if issue is blocked by status name
+_is_blocked_by_status() {
+    local status_name="$1"
+    local lower_status="${status_name,,}"
+
+    [[ "$lower_status" == *blocked* ]] && return 0
+    [[ "$lower_status" == *impediment* ]] && return 0
+    [[ "$lower_status" == *waiting* ]] && return 0
+    [[ "$lower_status" == *"on hold"* ]] && return 0
+    [[ "$lower_status" == *paused* ]] && return 0
+    return 1
+}
+
+# Fetch and categorize issues
+_fetch_jira_breakdown() {
+    local domain email token jql
+    domain=$(get_option "domain")
+    email=$(get_option "email")
+    token=$(get_option "token")
+    jql=$(_build_jql)
+
+    [[ -z "$domain" || -z "$email" || -z "$token" ]] && return 1
+
+    local in_progress=0
+    local todo=0
+    local flagged=0
+    local next_token=""
+
+    # Avoid exposing email+token in process argv. The credential pair
+    # is written to a mode-600 temp curl config and removed via a RETURN
+    # trap; the URL stays in argv, not the secret.
+    local jira_creds
+    jira_creds=$(mktemp "${TMPDIR:-/tmp}/powerkit-jira.XXXXXX") || return 1
+    chmod 600 "$jira_creds"
+    printf -- '-u %s:%s\n' "$email" "$token" >"$jira_creds"
+    trap 'rm -f "${jira_creds:-}" 2>/dev/null; trap - RETURN' RETURN
+
+    # Paginate through results
+    local in_progress=0 todo=0 flagged=0
+    local next_token=""
+    local page_count=0
+    local max_pages=10
+
+    while true; do
+        ((page_count++ > max_pages)) && break
+        # Build curl args; the credential pair is in $jira_creds (not argv)
+        local curl_args=(
+            -sf --connect-timeout 10 --max-time 20
+            --config "$jira_creds"
+            -H "Content-Type: application/json"
+            -H "Accept: application/json"
+            --get
+            --data-urlencode "jql=${jql}"
+            --data-urlencode "maxResults=100"
+            --data-urlencode "fields=status,customfield_10177,customfield_10178"
+        )
+        [[ -n "$next_token" ]] && curl_args+=(--data-urlencode "nextPageToken=$next_token")
+
+        local response
+        response=$(curl "${curl_args[@]}" "https://${domain}/rest/api/3/search/jql" 2>/dev/null)
+
+        [[ -z "$response" ]] && return 1
+
+        # Validate JSON shape before iterating. A malformed body must
+        # NOT silently yield zero counts; that would replace the prior
+        # cache with bogus data instead of leaving it stale.
+        if ! api_validate_json "$response"; then
+            return 1
+        fi
+
+        # Check for Jira's structured error field (must be non-empty)
+        if echo "$response" | jq -e '(.errorMessages // []) | length > 0' &>/dev/null; then
+            return 1
+        fi
+
+        # Count issues by status category
+        # customfield_10177 = Início Impedimento (not null = has impediment start)
+        # customfield_10178 = Fim Impedimento (null = impediment not ended)
+        while IFS='|' read -r status_name status_category is_flagged; do
+            [[ -z "$status_name" ]] && continue
+
+            # Check if flagged (by impediment fields OR by status name)
+            if [[ "$is_flagged" == "true" ]] || _is_blocked_by_status "$status_name"; then
+                ((flagged++))
+            elif [[ "$status_category" == "In Progress" ]]; then
+                ((in_progress++))
+            elif [[ "$status_category" == "To Do" ]]; then
+                ((todo++))
+            fi
+        done < <(echo "$response" | jq -r '.issues[]? | "\(.fields.status.name // "Unknown")|\(.fields.status.statusCategory.name // "Unknown")|\(if (.fields.customfield_10177 != null and .fields.customfield_10178 == null) then "true" else "false" end)"' 2>/dev/null)
+
+        # Check if last page
+        local is_last
+        is_last=$(echo "$response" | jq -r '.isLast // true' 2>/dev/null)
+        [[ "$is_last" == "true" ]] && break
+
+        # Get next page token
+        next_token=$(echo "$response" | jq -r '.nextPageToken // empty' 2>/dev/null)
+        [[ -z "$next_token" ]] && break
+    done
+
+    # Return as pipe-separated values
+    printf '%d|%d|%d' "$in_progress" "$todo" "$flagged"
+}
+
+plugin_collect() {
+    local result
+    result=$(_fetch_jira_breakdown) || return 1
+
+    local in_progress todo flagged
+    IFS='|' read -r in_progress todo flagged <<<"$result"
+    plugin_data_set "in_progress" "${in_progress:-0}"
+    plugin_data_set "todo" "${todo:-0}"
+    plugin_data_set "flagged" "${flagged:-0}"
+}
+
+plugin_render() {
+    if ! _is_configured; then
+        return 0
+    fi
+
+    local format separator
+    format=$(get_option "format")
+    separator=$(get_option "separator")
+
+    local in_progress todo flagged
+    in_progress=$(plugin_data_get "in_progress")
+    todo=$(plugin_data_get "todo")
+    flagged=$(plugin_data_get "flagged")
+
+    in_progress="${in_progress:-0}"
+    todo="${todo:-0}"
+    flagged="${flagged:-0}"
+
+    local total=$((in_progress + todo + flagged))
+    [[ "$total" -eq 0 ]] && return 0
+
+    if [[ "$format" == "count" ]]; then
+        printf '%s' "$total"
+        return
+    fi
+
+    # Breakdown format with icons
+    local icon_progress icon_todo icon_flagged
+    icon_progress=$(get_option "icon_progress")
+    icon_todo=$(get_option "icon_todo")
+    icon_flagged=$(get_option "icon_flagged")
+
+    local output=""
+    [[ "$in_progress" -gt 0 ]] && output+="${icon_progress}${in_progress}"
+    [[ "$todo" -gt 0 ]] && output+="${output:+${separator}}${icon_todo}${todo}"
+    [[ "$flagged" -gt 0 ]] && output+="${output:+${separator}}${icon_flagged}${flagged}"
+
+    printf '%s' "$output"
+}
+
+# =============================================================================
+# Keybindings
+# =============================================================================
+
+plugin_setup_keybindings() {
+    local issues_key width height helper_script
+    issues_key=$(get_option "keybinding_issues")
+    width=$(get_option "popup_width")
+    height=$(get_option "popup_height")
+    helper_script="${POWERKIT_ROOT}/src/helpers/jira_issue_selector.sh"
+
+    [[ -n "$issues_key" ]] && pk_bind_popup "$issues_key" "bash '$helper_script'" "$width" "$height" "jira:issues"
+}

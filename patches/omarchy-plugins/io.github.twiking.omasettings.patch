@@ -1,0 +1,88 @@
+diff --git c/Panel.qml w/Panel.qml
+index 97bbacd..f68991e 100644
+--- c/Panel.qml
++++ w/Panel.qml
+@@ -1,4 +1,6 @@
+ import QtQuick
++import Quickshell
++import Quickshell.Io
+ import qs.Commons
+ import qs.Ui
+ 
+@@ -8,24 +10,67 @@ import qs.Ui
+ // service's (Service.qml), which runs whenever the plugin is enabled, with or
+ // without a bar entry — so removing the gear from the bar costs you the gear
+ // and nothing else.
++//
++// 4.0.3 note: bars are no longer handed the host ShellRoot, so
++// bar.shell.serviceFor() is gone for third-party bars. The service stays
++// reachable through omarchy-shell, so the widget drives it over IPC and probes
++// the layer surface for its open state instead.
+ BarWidget {
+   id: root
+   moduleName: "io.github.twiking.omasettings"
+ 
+-  readonly property var service: bar && bar.shell && typeof bar.shell.serviceFor === "function"
+-    ? bar.shell.serviceFor(moduleName) : null
++  function omarchyShell() {
++    return ["omarchy-shell", "omasettings"]
++  }
++
++  function show() { root.forwardIpc(["show"]) }
++  function showPage(page) { root.forwardIpc(["showPage", page]) }
++  function hide() { root.forwardIpc(["hide"]) }
++  function open() { root.show() }
++  function close() { root.hide() }
++  function toggle() { root.forwardIpc(["toggle"]) }
+ 
+   // Shape contract for shell.summon/hide/toggle routing: Bar.findPanelWidget
+   // requires open/close/opened on the bar-widget root, so the widget stands in
+   // for the window it does not own.
+-  readonly property bool opened: service ? service.opened : false
++  property bool opened: false
+ 
+-  function show() { if (service) service.show() }
+-  function showPage(page) { if (service) service.showPage(page) }
+-  function hide() { if (service) service.hide() }
+-  function open() { show() }
+-  function close() { hide() }
+-  function toggle() { if (service) service.toggle() }
++  function forwardIpc(args) {
++    if (!root.ipcProcess.running) {
++      root.ipcProcess.command = root.omarchyShell().concat(args)
++      root.ipcProcess.running = true
++    }
++  }
++
++  function probeLayerState() {
++    if (root.layerProbe.running) return
++    root.layerProbe.command = ["hyprctl", "layers"]
++    root.layerProbe.running = true
++  }
++
++  property Process ipcProcess: Process {
++    onExited: function(exitCode) {
++      if (root.opened) Qt.callLater(root.probeLayerState)
++    }
++  }
++
++  property Process layerProbe: Process {
++    stdout: StdioCollector {
++      id: layerProbeOutput
++      waitForEnd: true
++    }
++    onExited: function(exitCode) {
++      root.opened = String(layerProbeOutput.text || "").indexOf("namespace: omasettings") !== -1
++    }
++  }
++
++  Timer {
++    id: layerPoll
++    interval: 1000
++    repeat: true
++    running: true
++    onTriggered: root.probeLayerState()
++  }
+ 
+   implicitWidth: button.implicitWidth
+   implicitHeight: button.implicitHeight

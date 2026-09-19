@@ -1,0 +1,80 @@
+diff --git c/Widget.qml w/Widget.qml
+index f59725c..155fe4f 100644
+--- c/Widget.qml
++++ w/Widget.qml
+@@ -58,7 +58,7 @@ BarWidget {
+   // The icon appearing at all is the one moment the bar's centre still shifts,
+   // because a widget that was not there is now taking a slot; holding the slot
+   // open costs a permanently dim bell and buys a clock that never moves.
+-  readonly property bool alwaysShow: setting("alwaysShow", false) === true
++  readonly property bool alwaysShow: setting("alwaysShow", true) !== false
+   readonly property bool revealed: hasState || sharingOfferPending || opened || alwaysShow
+     || (bar && bar.centerSectionRevealHeld === true && bar.centerHoverRevealSuppressed !== true)
+ 
+@@ -170,7 +170,7 @@ BarWidget {
+     service.clipboardTimeout = [30, 60, 90].indexOf(lifetime) >= 0 ? lifetime : 60
+     var hours = Number(setting("historyHours", 24))
+     service.setHistoryHours([0, 1, 24, 168].indexOf(hours) >= 0 ? hours : 24)
+-    service.hideSettingsAction = setting("hideSettingsAction", true) !== false
++    service.hideSettingsAction = setting("hideSettingsAction", false) === true
+     // Only when it has actually been configured. An explicit setting is an
+     // instruction; the default is not one - and the panel's own key toggle is
+     // persisted, so applying the default on every reload would quietly undo it.
+diff --git c/manifest.json w/manifest.json
+index 82c3346..707a502 100644
+--- c/manifest.json
++++ w/manifest.json
+@@ -31,7 +31,7 @@
+     "defaults": {
+       "stacking": "source",
+       "actionsAlign": "right",
+-      "hideSettingsAction": true,
++      "hideSettingsAction": false,
+       "snoozeDurations": [
+         "30",
+         "60",
+@@ -42,7 +42,7 @@
+       "sourceLimit": 8,
+       "heldPerSource": 10,
+       "recentCount": 5,
+-      "alwaysShow": false,
++      "alwaysShow": true,
+       "codesBypassQuiet": true,
+       "timeFormat": "system",
+       "smartRaise": true,
+@@ -86,7 +86,7 @@
+         "type": "boolean",
+         "label": "Show countdown animation",
+         "description": "Animate the time remaining along the bottom of notifications. Notifications still expire normally when this is off.",
+-        "defaultValue": false
++        "defaultValue": true
+       },
+       {
+         "key": "fontScale",
+@@ -102,7 +102,7 @@
+         "key": "hideSettingsAction",
+         "type": "boolean",
+         "label": "Hide the browser's Settings button",
+-        "defaultValue": true,
++        "defaultValue": false,
+         "description": "Hide the repeated Settings action on browser notifications."
+       },
+       {
+@@ -194,7 +194,7 @@
+         "type": "boolean",
+         "label": "Always show indicator",
+         "description": "Keep the bar indicator visible when no notifications are held.",
+-        "defaultValue": false
++        "defaultValue": true
+       },
+       {
+         "key": "codesBypassQuiet",
+@@ -245,7 +245,7 @@
+         "key": "offerSnoozeWhenSharing",
+         "type": "boolean",
+         "label": "Suggest snooze during screen sharing",
+-        "defaultValue": true,
++        "defaultValue": false,
+         "description": "Offer a timed snooze when screen sharing starts. Notifications are not muted automatically."
+       },
+       {

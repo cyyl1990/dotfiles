@@ -1,0 +1,46 @@
+{
+  "areas_completed": [
+    "Area 1",
+    "Area 2"
+  ],
+  "areas_remaining": [
+    "Area 3",
+    "Area 4"
+  ],
+  "canonical_refs": [
+    "..."
+  ],
+  "decisions": {
+    "Area 1": [
+      {
+        "answer": "...",
+        "options_presented": [
+          "..."
+        ],
+        "question": "..."
+      },
+      {
+        "answer": "...",
+        "options_presented": [
+          "..."
+        ],
+        "question": "..."
+      }
+    ],
+    "Area 2": [
+      {
+        "answer": "...",
+        "options_presented": [
+          "..."
+        ],
+        "question": "..."
+      }
+    ]
+  },
+  "deferred_ideas": [
+    "..."
+  ],
+  "phase": "{PHASE_NUM}",
+  "phase_name": "{phase_name}",
+  "timestamp": "{ISO timestamp}"
+}

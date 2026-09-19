@@ -1,0 +1,17 @@
+[
+  {
+    "category": "adjacency",
+    "reason": null,
+    "requirement_id": "R1",
+    "resolution": "AC#6: touching intervals merge",
+    "status": "resolved",
+    "verification": "explicit"
+  },
+  {
+    "category": "ordering",
+    "reason": "output is canonically sorted; no tie possible",
+    "requirement_id": "R1",
+    "resolution": null,
+    "status": "dismissed"
+  }
+]

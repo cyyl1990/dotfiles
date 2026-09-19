@@ -1,0 +1,44 @@
+# --------------------------------------------------- #
+#         CONFIG TMUX OMarchy - ĐÃ SỬA LỖI          #
+# --------------------------------------------------- #
+
+# Đặt prefix là Ctrl+a
+set -g prefix C-a
+unbind C-b
+bind C-a send-prefix
+
+# Hỗ trợ chuột
+set -g mouse on
+
+# Bắt đầu đánh số cửa sổ và pane từ 1
+set -g base-index 1
+setw -g pane-base-index 1
+set -g renumber-windows on
+
+# Hỗ trợ màu sắc đầy đủ
+set -g default-terminal "tmux-256color"
+set -ag terminal-overrides ",xterm-256color:RGB"
+
+# --- CẤU HÌNH GIAO DIỆN (GHI ĐÈ TRỰC TIẾP) ---
+# Chuyển status bar xuống dưới
+set -g status-position bottom
+
+# Chọn theme Kanagawa cho PowerKit
+set -g @powerkit_theme "vantablack"
+set -g @powerkit_theme_variant "default"
+
+# Ra lệnh cho PowerKit đặt thanh trạng thái ở dưới
+set -g @powerkit_status_position "bottom"
+
+# --------------------------------------------------- #
+#                   DANH SÁCH PLUGIN (TPM)            #
+# --------------------------------------------------- #
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'fabioluciano/tmux-powerkit'
+set -g @plugin 'christoomey/vim-tmux-navigator'
+set -g @plugin 'joshmedeski/tmux-fzf-url'
+
+# --------------------------------------------------- #
+#                    KHỞI ĐỘNG TPM                    #
+# --------------------------------------------------- #
+run '~/.config/tmux/plugins/tpm/tpm'

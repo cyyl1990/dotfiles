@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "bap.menu",
+  "name": "Bap Menu",
+  "version": "1.0.0",
+  "author": "Bắp (bap)",
+  "description": "Omarchy command menu launched from a custom BAP (bob3) wordmark icon.",
+  "kinds": [
+    "menu",
+    "bar-widget"
+  ],
+  "keepLoaded": true,
+  "entryPoints": {
+    "menu": "Menu.qml",
+    "barWidget": "BarWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "Bap Menu",
+    "description": "Launches the Omarchy menu with a custom BAP icon",
+    "category": "Compositor",
+    "allowMultiple": false
+  }
+}

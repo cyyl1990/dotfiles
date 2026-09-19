@@ -1,0 +1,28 @@
+diff --git c/Panel.qml w/Panel.qml
+index 119ff84..11d98f0 100644
+--- c/Panel.qml
++++ w/Panel.qml
+@@ -17,6 +17,7 @@ Panel {
+   readonly property var barIdentity: hostWidget || root
+ 
+   readonly property string backendPath: String(Qt.resolvedUrl("scripts/backend.sh")).replace(/^file:\/\//, "")
++  Component.onCompleted: console.log("YOYO SYSTEM TIDY BACKEND PATH: " + backendPath)
+ 
+   property string activeTab: "packages"
+   property string packagesFilter: "extra"
+@@ -367,6 +368,7 @@ Panel {
+   }
+ 
+   onOpenedChanged: {
++    console.log("SYSTEM TIDY opened changed: " + opened)
+     if (opened) {
+       root.cursorActive = false
+       root.focusSection = "rows"
+@@ -805,6 +807,7 @@ Panel {
+     stdout: StdioCollector {
+       waitForEnd: true
+       onStreamFinished: {
++        console.log("SYSTEM TIDY GOT DATA: " + text.length + " bytes")
+         root.packages = Model.parsePackages(text)
+         root.packagesLoading = false
+         root.requestPackagesLastUsed(root.packages)

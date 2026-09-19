@@ -1,0 +1,40 @@
+{
+  "coverage": {
+    "applicable": 3,
+    "byVerification": {
+      "backstop": 0,
+      "explicit": 0
+    },
+    "resolved": 0,
+    "unresolved": 3
+  },
+  "items": [
+    {
+      "category": "adjacency",
+      "probe": "When two things are exactly equal or just touch, do they merge, collide, or separate?",
+      "reason": null,
+      "requirement_id": "R1",
+      "resolution": null,
+      "status": "unresolved",
+      "verification": null
+    },
+    {
+      "category": "empty",
+      "probe": "What is the result for empty, single-element, or null input?",
+      "reason": null,
+      "requirement_id": "R1",
+      "resolution": null,
+      "status": "unresolved",
+      "verification": null
+    },
+    {
+      "category": "ordering",
+      "probe": "When elements compare equal, is output order specified and stable?",
+      "reason": null,
+      "requirement_id": "R1",
+      "resolution": null,
+      "status": "unresolved",
+      "verification": null
+    }
+  ]
+}

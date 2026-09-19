@@ -1,0 +1,38 @@
+{
+  "authentication": {
+    "method": "METHOD_API_KEY",
+    "scope": "FEATURE_CODING"
+  },
+  "domain": "DOMAIN_NEXUS",
+  "limits": [
+    {
+      "detail": {
+        "limit": "100",
+        "remaining": "100",
+        "resetTime": "2026-08-02T09:47:32.544564Z"
+      },
+      "window": {
+        "duration": 300,
+        "timeUnit": "TIME_UNIT_MINUTE"
+      }
+    }
+  ],
+  "parallel": {
+    "limit": "10"
+  },
+  "subType": "TYPE_PURCHASE",
+  "usage": {
+    "limit": "100",
+    "remaining": "39",
+    "resetTime": "2026-08-06T14:47:32.544564Z",
+    "used": "61"
+  },
+  "user": {
+    "businessId": "",
+    "membership": {
+      "level": "LEVEL_BASIC"
+    },
+    "region": "REGION_OVERSEA",
+    "userId": "d897cqhsfuv3hslqcnl0"
+  }
+}

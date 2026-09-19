@@ -1,0 +1,31 @@
+-- Extra autostart processes.
+-- o.launch_on_start("my-service")
+
+-- Fcitx5 is already managed by the systemd user service
+-- `omarchy-fcitx5.service` (enabled), so we do NOT spawn it again here
+-- to avoid a double instance / conflict.
+-- hl.exec_cmd("fcitx5 -d")
+
+-- Allow hyprpm to load plugins without a permission popup on every startup.
+hl.permission("/usr/bin/hyprpm", "plugin", "allow")
+
+-- Reload hyprpm plugins on startup (applies plugin config without restarting Hyprland).
+-- Runs inside hyprland.start so Hyprland is fully up before hyprpm touches it.
+hl.on("hyprland.start", function()
+    hl.exec_cmd("hyprpm reload -n")
+end)
+
+-- Random wallpaper rotator (runs detached, cycles every 299s via omarchy theme bg set).
+hl.exec_cmd("bash /home/bap/.local/bin/rand-wallpaper.sh >/tmp/rand-wallpaper.log 2>&1 &")
+
+-- ML4W Quickshell (ported to Omarchy): sidebar, dock, power, wallpaper.
+-- Launched in hyprland.start so it inherits the full Wayland/D-Bus session.
+-- Guard with pgrep so a relogin (or this file being sourced twice) never
+-- spawns a second instance on top of one already running.
+hl.on("hyprland.start", function()
+    hl.exec_cmd("pgrep -f 'quickshell -p /home/bap/.config/quickshell/shell.qml' >/dev/null || quickshell -p /home/bap/.config/quickshell/shell.qml >/tmp/ml4w-qs.log 2>&1")
+end)
+
+
+
+

@@ -1,0 +1,51 @@
+{
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
+  "changelog-sections": [
+    {
+      "section": "Added",
+      "type": "feat"
+    },
+    {
+      "section": "Changed",
+      "type": "change"
+    },
+    {
+      "section": "Fixed",
+      "type": "fix"
+    },
+    {
+      "section": "Deprecated",
+      "type": "deprecate"
+    },
+    {
+      "section": "Removed",
+      "type": "remove"
+    },
+    {
+      "section": "Performance Improvements",
+      "type": "perf"
+    },
+    {
+      "section": "Reverts",
+      "type": "revert"
+    },
+    {
+      "section": "Documentation",
+      "type": "docs"
+    }
+  ],
+  "last-release-sha": "408c02ccf44d0a59a7a63ce2b65c5c29982c5c0e",
+  "packages": {
+    ".": {
+      "bump-minor-pre-major": true,
+      "bump-patch-for-minor-pre-major": false,
+      "changelog-path": "CHANGELOG.md",
+      "draft": false,
+      "extra-files": [
+        "README.md",
+        "docs/tutorials/01-getting-started.md"
+      ],
+      "release-type": "simple"
+    }
+  }
+}

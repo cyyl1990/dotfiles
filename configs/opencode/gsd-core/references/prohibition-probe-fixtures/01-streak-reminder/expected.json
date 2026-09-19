@@ -1,0 +1,22 @@
+{
+  "coverage": {
+    "applicable": 1,
+    "byVerification": {
+      "judgment": 1,
+      "test": 0
+    },
+    "resolved": 1,
+    "unresolved": 0
+  },
+  "items": [
+    {
+      "category": "values",
+      "reason": null,
+      "requirement_id": "R1",
+      "resolution": null,
+      "statement": "MUST NOT use shaming, guilt, or loss-aversion streak framing (e.g. \"Don't lose your streak!\") — the reminder must encourage without penalty framing",
+      "status": "resolved",
+      "verification": "judgment"
+    }
+  ]
+}

@@ -8,7 +8,6 @@ david.macnook https://github.com/Skeptomenos/macnook.git 7d5038078c85029dcab4b96
 dizziee.system-updates https://github.com/JJDizz1L/dizziee.system-updates.git 6d5c98e063a3a2f246c398e2ce73e1cedf341194
 ericvrp.background-low-memory https://github.com/ericvrp/omarchy-background-low-memory.git d0256255f068b4e8ab879d936c1c554627241049
 io.github.0x1ocean.omatrix https://github.com/0x1ocean/omarchy-omatrix.git fe605379a3d5584d91b2dc6d4559af58350824dd
-io.github.calebhat.themebook https://github.com/calebhat/omarchy-themebook cfc7c24e88b22ed34f0be8de98d35f298ee86c44
 io.github.claudsondouglas.arcdock https://github.com/claudsondouglas/arc.dock dd919eb6257cc7ae1264d77821f7273ad0cf7050
 io.github.daniellopez12.just-right-weather https://github.com/daniellopez12/just-right-weather.git c9d3e9f23c37a459c5a63fd73b7bfdf191e96874
 io.github.deunnis.lacquer https://github.com/Deunnis/omarchy-lacquer.git 79237c53e5d554f4640b29d7376e574875b18055

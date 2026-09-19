@@ -129,3 +129,9 @@ require("hypr.omasettings")
 
 -- wmfeht.border-fx (Omarchy plugin control plane; pcall if the file is missing)
 pcall(require, "hypr.border-fx")
+
+-- Qutebrowser window rules: match terminal 0.90 transparency
+o.window("([oO]rg\\.[qQ]utebrowser\\.[qQ]utebrowser|[qQ]utebrowser)", {
+  tag = "-default-opacity",
+  opacity = "0.90 0.85",
+})

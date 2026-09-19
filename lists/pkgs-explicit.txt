@@ -383,6 +383,7 @@ qt6-imageformats
 qt6-wayland
 qt6ct
 quickshell
+qutebrowser
 rclone
 rebuild-detector
 reflector

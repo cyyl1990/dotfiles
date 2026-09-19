@@ -101,11 +101,11 @@ hl.window_rule({
         class = "^(net\\.davidotek\\.pupgui2)$",
     },
     float = true,
-    center = true,
     size = { 1089, 714 },
 })
 
 -- ─────────────────────────────────────────────────────────────────────────────
+    center = true,
 -- DUSKY CONTROL CENTER — TUI module windows (float + center, like animation/rule)
 -- ─────────────────────────────────────────────────────────────────────────────
 
@@ -128,7 +128,6 @@ hl.window_rule({
     center = true,
     size = { 1034, 700 },
 })
-
 -- Monitors TUI
 hl.window_rule({
     match = {
@@ -138,6 +137,7 @@ hl.window_rule({
     center = true,
     size = { 1307, 680 },
 })
+
 
 -- Workspace Rules TUI
 hl.window_rule({
@@ -376,4 +376,11 @@ hl.window_rule({
     size = {1265, 1379},
     -- size = {"monitor_w * 0.4941", "monitor_h * 0.9576"},
     center = true,
+})
+
+-- ~ · qutebrowser - qutebrowser • DP-2 2544×1379 @ 8,53 • ws:3
+-- Qutebrowser window rules: match terminal 0.90 transparency
+o.window("([oO]rg\\.[qQ]utebrowser\\.[qQ]utebrowser|[qQ]utebrowser)", {
+  tag = "-default-opacity",
+  opacity = "0.90 0.85",
 })

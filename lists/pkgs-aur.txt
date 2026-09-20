@@ -15,6 +15,7 @@ fcitx5-lotus-openrc-bin
 fcitx5-lotus-runit-bin
 firefox-extension-refined-github-bin
 fish-bash2env
+fzf-tab
 gtk-engine-murrine
 inotify-info
 irmpc

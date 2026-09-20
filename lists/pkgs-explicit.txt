@@ -150,6 +150,7 @@ fsarchiver
 fuzzel
 fwupd
 fzf
+fzf-tab
 gamemode
 gendesk
 ghostscript

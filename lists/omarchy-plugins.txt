@@ -8,6 +8,7 @@ david.macnook https://github.com/Skeptomenos/macnook.git 7d5038078c85029dcab4b96
 dizziee.system-updates https://github.com/JJDizz1L/dizziee.system-updates.git 6d5c98e063a3a2f246c398e2ce73e1cedf341194
 dorneles.omabot https://github.com/jvlianodorneles/omabot.git 51d8e989dd702cc33678219c6f4b5df8521eb3fd
 ericvrp.background-low-memory https://github.com/ericvrp/omarchy-background-low-memory.git d0256255f068b4e8ab879d936c1c554627241049
+glorics.grok-bots https://github.com/glorics/omarchy-grok-bots.git e2ede4186907f51d354a190a81a12dc1d4781279
 godofjoper.translate https://github.com/GodofJoper/omarchy-google-translate.git d73c090a8250fc452bb73c6987e515807b655633
 io.github.0x1ocean.omatrix https://github.com/0x1ocean/omarchy-omatrix.git fe605379a3d5584d91b2dc6d4559af58350824dd
 io.github.calebhat.themebook https://github.com/calebhat/omarchy-themebook.git cfc7c24e88b22ed34f0be8de98d35f298ee86c44

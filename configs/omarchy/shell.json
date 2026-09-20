@@ -29,9 +29,11 @@
           "id": "bap.notification"
         },
         {
-          "barMetric": "avatars",
-          "id": "njpatel.omabot",
-          "ordering": "attention"
+          "iconStyle": "terminal",
+          "id": "dorneles.omabot"
+        },
+        {
+          "id": "glorics.grok-bots"
         }
       ],
       "left": [

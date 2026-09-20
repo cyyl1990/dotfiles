@@ -20,6 +20,7 @@ inotify-info
 irmpc
 jobo-themes
 libcava
+lssecret-git
 ludusavi-bin
 matugen-bin
 meteobar

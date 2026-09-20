@@ -47,4 +47,5 @@ so.den https://github.com/SaifOmar/so.den.git 1e6691e90fd33ad2eafb4a347645862a79
 ssupt.audio-control https://github.com/ssupt/omarchy-audio-control.git 71c0b6a695b6aa10c66d550e462c79919eebdf2d
 szalikdev.plugin-updates https://github.com/szalikdev/omarchy-plugin-updates.git 89e1210c525349104cfe6c640ed40b72a46c538f
 urielcuriel.ratbag https://github.com/UrielCuriel/omarchy-ratbag.git 1d5a5d75796cec4e47db8c6f13a5d4e90ca70e74
+widget.torrents https://github.com/Xfedis/omarchy-torrents.git 1d9f56b789ee6af7bbd34fdbfeee27ce7fdff986
 yoyo.system-tidy https://github.com/Loafer19/omarchy-system-tidy b8d45c67153ed646c6c58717309c6fa715341bee

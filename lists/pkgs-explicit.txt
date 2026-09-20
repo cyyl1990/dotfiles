@@ -255,6 +255,7 @@ logrotate
 lprint
 lsb-release
 lsscsi
+lssecret-git
 lua-luv
 lua51
 luarocks

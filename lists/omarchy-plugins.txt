@@ -48,7 +48,6 @@ shavanced.notification-center https://github.com/Shavanced/omarchy-notification-
 skuthus.shell-font https://github.com/skuthus/omarchy-shell-font 99db2c67ee320d7f24084419116c2673f5d73de4
 slcode777.omaconv https://github.com/SLcode777/omaconv.git 1cca7b85b8f91b7d1e3c0efb236e903a1ef156f2
 so.den https://github.com/SaifOmar/so.den.git 1e6691e90fd33ad2eafb4a347645862a79ad50cd
-sol.buddy https://github.com/Guts444/omarchy-buddy.git 0c7787fbd2cd2605dcd0c404782347cc835aee56
 ssupt.audio-control https://github.com/ssupt/omarchy-audio-control.git 71c0b6a695b6aa10c66d550e462c79919eebdf2d
 szalikdev.plugin-updates https://github.com/szalikdev/omarchy-plugin-updates.git 89e1210c525349104cfe6c640ed40b72a46c538f
 urielcuriel.ratbag https://github.com/UrielCuriel/omarchy-ratbag.git 1d5a5d75796cec4e47db8c6f13a5d4e90ca70e74

@@ -1,9 +1,9 @@
 asdfsnlr.omantigravity https://github.com/asdfsnlr/omantigravity.git 877ffcce7aa2dc2ca9928835d70a2bccd72a07eb
 atoslins.dualsense https://github.com/atoslins/omarchy-plugin-dualsense.git cff565986035fe1aa1adf6e39af30bfec0c8b9a5
 bap.magnify-dock git@github.com:cyyl1990/bap-magnify-dock.git e396cb6ffebb000dc41797ab4cddf3ecd8298174
-brenoperucchi.omabackup https://github.com/brenoperucchi/omabackup 56785dc9791ea18c12195a8cf41907b92e4d0228
+brenoperucchi.omabackup https://github.com/brenoperucchi/omabackup 51bca0b0415f02983e60d000a9b17cde5f687679
 co.klair.wallarchy https://github.com/perminder-klair/wallarchy.git 80ca91b248eb1907241f8a7461bf2cbe9595c8e0
-davedes.omcontrol https://github.com/Davedes83/OmaControl.git 29996b6d87f1de9d8b4f7b1f5e59c8714e0d8191
+davedes.omcontrol https://github.com/Davedes83/OmaControl.git 1af8f48be90efc4604633068b47da0592e0c3822
 david.macnook https://github.com/Skeptomenos/macnook.git 7d5038078c85029dcab4b96f5f3dc754f23d5105
 dizziee.system-updates https://github.com/JJDizz1L/dizziee.system-updates.git 6d5c98e063a3a2f246c398e2ce73e1cedf341194
 ericvrp.background-low-memory https://github.com/ericvrp/omarchy-background-low-memory.git d0256255f068b4e8ab879d936c1c554627241049

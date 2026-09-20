@@ -104,7 +104,13 @@
           "id": "omarchy.clipboard"
         },
         {
-          "id": "io.github.diegopluna.argus"
+          "id": "io.github.diegopluna.argus",
+          "show": [
+            "cpu",
+            "ram",
+            "cputemp",
+            "net"
+          ]
         },
         {
           "autoCheckIntervalHours": 6,

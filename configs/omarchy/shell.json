@@ -29,7 +29,9 @@
           "id": "bap.notification"
         },
         {
-          "id": "njpatel.omabot"
+          "barMetric": "avatars",
+          "id": "njpatel.omabot",
+          "ordering": "attention"
         }
       ],
       "left": [
@@ -111,8 +113,7 @@
           "show": [
             "cpu",
             "ram",
-            "cputemp",
-            "net"
+            "disk"
           ]
         },
         {

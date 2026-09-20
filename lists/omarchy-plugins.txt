@@ -10,6 +10,7 @@ ericvrp.background-low-memory https://github.com/ericvrp/omarchy-background-low-
 godofjoper.translate https://github.com/GodofJoper/omarchy-google-translate.git 5778577c17921eaf65770c615113970993b93b81
 io.github.0x1ocean.omatrix https://github.com/0x1ocean/omarchy-omatrix.git fe605379a3d5584d91b2dc6d4559af58350824dd
 io.github.claudsondouglas.arcdock https://github.com/claudsondouglas/arc.dock dd919eb6257cc7ae1264d77821f7273ad0cf7050
+io.github.cylon58.omarchy-knowledge https://github.com/cylon58/omarchy-community-knowledge-plugin.git d2f2c324652ca6dd7105850539841f135d0df1e6
 io.github.daniellopez12.just-right-weather https://github.com/daniellopez12/just-right-weather.git c9d3e9f23c37a459c5a63fd73b7bfdf191e96874
 io.github.deunnis.lacquer https://github.com/Deunnis/omarchy-lacquer.git 79237c53e5d554f4640b29d7376e574875b18055
 io.github.diegopluna.argus https://github.com/diegopluna/omarchy-argus.git cf610169b33314f2530b8ecf46e567f408c64715

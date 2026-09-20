@@ -164,6 +164,7 @@ gnome-keyring
 gnome-sudoku
 gnome-text-editor
 gnome-themes-extra
+go
 gpu-screen-recorder
 gradia
 grim

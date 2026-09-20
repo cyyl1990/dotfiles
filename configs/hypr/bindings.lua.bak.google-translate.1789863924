@@ -406,4 +406,3 @@ o.bind("SUPER + ALT + SHIFT + F", "File manager (cwd)",
 
 -- OmarKEYS
 dofile((os.getenv("HOME") or "") .. "/.config/omarchy/plugins/io.github.romills.omarkeys/hyprland.lua")
-o.bind("SUPER + ALT + T", "Google Translate", "/home/bap/.config/omarchy/plugins/godofjoper.translate/capture.sh")

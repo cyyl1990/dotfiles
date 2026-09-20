@@ -27,9 +27,6 @@
           "alwaysShow": false,
           "gapAfter": 12,
           "id": "bap.notification"
-        },
-        {
-          "id": "onelegdave.omachat"
         }
       ],
       "left": [
@@ -267,6 +264,12 @@
       "bootResync": false,
       "design": "poster",
       "id": "io.github.sirjul1337.lock-explorer"
+    },
+    {
+      "id": "io.github.smoothpixels.cursor-accent"
+    },
+    {
+      "id": "godofjoper.translate"
     }
   ],
   "version": 1

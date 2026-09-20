@@ -7,6 +7,7 @@ davedes.omcontrol https://github.com/Davedes83/OmaControl.git 29996b6d87f1de9d8b
 david.macnook https://github.com/Skeptomenos/macnook.git 7d5038078c85029dcab4b96f5f3dc754f23d5105
 dizziee.system-updates https://github.com/JJDizz1L/dizziee.system-updates.git 6d5c98e063a3a2f246c398e2ce73e1cedf341194
 ericvrp.background-low-memory https://github.com/ericvrp/omarchy-background-low-memory.git d0256255f068b4e8ab879d936c1c554627241049
+godofjoper.translate https://github.com/GodofJoper/omarchy-google-translate.git 5778577c17921eaf65770c615113970993b93b81
 io.github.0x1ocean.omatrix https://github.com/0x1ocean/omarchy-omatrix.git fe605379a3d5584d91b2dc6d4559af58350824dd
 io.github.claudsondouglas.arcdock https://github.com/claudsondouglas/arc.dock dd919eb6257cc7ae1264d77821f7273ad0cf7050
 io.github.daniellopez12.just-right-weather https://github.com/daniellopez12/just-right-weather.git c9d3e9f23c37a459c5a63fd73b7bfdf191e96874
@@ -23,6 +24,7 @@ io.github.rawritude.aria2 https://github.com/rawritude/omarchy-aria2.git 3092d6f
 io.github.romills.omarkeys https://github.com/romills/OmarKEYs.git 2bea4bd2de6793e63e854066f1e29bb38b66f2d9
 io.github.rui-pedro-silva.cloudflare-warp https://github.com/rpots/omarchy-cloudflare-warp.git b6383956f308e9ea7544b182f5bf863dd2463ada
 io.github.sirjul1337.lock-explorer https://github.com/SirJul1337/omarchy-lock-explorer.git d2f586b2907c871f153da1da5866c1b2a0d5a3b2
+io.github.smoothpixels.cursor-accent https://github.com/SmoothPixels/cursor-accent.git 04037743631c752a517054e64d483cc196233155
 io.github.tcballard.bartranslate https://github.com/tcballard/omarchy-plugin-translate.git 3c44dba4226ba05fcbbc146be3c38b49ab60bfe7
 io.github.twiking.omasettings https://github.com/twiking/omasettings.git 72cfe1640aaece2fef39e4dd155289510f07b2a8
 jnodavid.omarkey https://github.com/0d4vid/omarkey.git 5ca95854fb0b033b34b714c86e53cbd6eb76ed9b
@@ -36,7 +38,6 @@ njpatel.omapager https://github.com/njpatel/omapager.git 59591749f42d7059c146604
 nkarl.fcitx-active-input-lang https://github.com/nkarl/fcitx-active-input-lang.git dc3c68985939c259f2f1265454674975c15346e6
 omadock https://github.com/thepathless/omadock.git d2d355c58d229ab82d9e9bcf116a620a3c736617
 omaplug https://github.com/fross100/omaplug 2a21fe42969b9bd57f825c00827d2d2b11d01ab7
-onelegdave.omachat https://github.com/onelegdave/omachat.git dd77f2ca16e7c701851450578fd9ec51b7eba1a2
 owaiss.session-menu https://github.com/Owaisshaikh11/omarchy-session-menu.git 4d1c6fed0dcf143e7c03b0ecb88a495c5249cb68
 piyush.omaswitch https://github.com/piyush97/omaswitch.git 0afaa7fe83a93db16df5dcee1dd0ca8015a37d6b
 raavail.islands-bar https://github.com/raavail-lasso/Omarchy-Islands-Bar.git a106ffd495c8901c62402881d90f25968b691082

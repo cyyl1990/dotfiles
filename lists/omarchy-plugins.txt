@@ -41,6 +41,7 @@ nkarl.fcitx-active-input-lang https://github.com/nkarl/fcitx-active-input-lang.g
 omadock https://github.com/thepathless/omadock.git d2d355c58d229ab82d9e9bcf116a620a3c736617
 omaplug https://github.com/fross100/omaplug 2a21fe42969b9bd57f825c00827d2d2b11d01ab7
 owaiss.session-menu https://github.com/Owaisshaikh11/omarchy-session-menu.git 4d1c6fed0dcf143e7c03b0ecb88a495c5249cb68
+ozz1ee.rakabot https://github.com/ozz1ee-dev/omarchy-rakabot.git cd9aff89ade51e52e0a661f96c9bbaf2cdfdd177
 piyush.omaswitch https://github.com/piyush97/omaswitch.git 0afaa7fe83a93db16df5dcee1dd0ca8015a37d6b
 raavail.islands-bar https://github.com/raavail-lasso/Omarchy-Islands-Bar.git a106ffd495c8901c62402881d90f25968b691082
 shavanced.notification-center https://github.com/Shavanced/omarchy-notification-center-plugin.git 8fa2c0c3610df67eb245c73ef42b81ada073b244

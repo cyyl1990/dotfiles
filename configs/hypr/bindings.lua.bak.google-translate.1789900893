@@ -308,14 +308,14 @@ hl.layer_rule({
 
 -- >>> losokos.window-gallery keybind (managed)
 -- Remove with: omarchy-window-gallery-keybind remove
---pcall(hl.unbind, "ALT + TAB")
---pcall(hl.unbind, "ALT + TAB")
---pcall(hl.unbind, "ALT + SHIFT + TAB")
---pcall(hl.unbind, "ALT + SHIFT + TAB")
+pcall(hl.unbind, "ALT + TAB")
+pcall(hl.unbind, "ALT + TAB")
+pcall(hl.unbind, "ALT + SHIFT + TAB")
+pcall(hl.unbind, "ALT + SHIFT + TAB")
 
 
---o.bind("ALT + TAB", "Better Alt-Tab", "omarchy-shell shell call losokos.window-gallery step next")
---o.bind("ALT + SHIFT + TAB", "Better Alt-Tab (back)", "omarchy-shell shell call losokos.window-gallery step prev")
+o.bind("ALT + TAB", "Better Alt-Tab", "omarchy-shell shell call losokos.window-gallery step next")
+o.bind("ALT + SHIFT + TAB", "Better Alt-Tab (back)", "omarchy-shell shell call losokos.window-gallery step prev")
 -- <<< losokos.window-gallery keybind
 
 

@@ -6,6 +6,7 @@ co.klair.wallarchy https://github.com/perminder-klair/wallarchy.git 80ca91b248eb
 davedes.omcontrol https://github.com/Davedes83/OmaControl.git 1af8f48be90efc4604633068b47da0592e0c3822
 david.macnook https://github.com/Skeptomenos/macnook.git 7d5038078c85029dcab4b96f5f3dc754f23d5105
 dizziee.system-updates https://github.com/JJDizz1L/dizziee.system-updates.git 6d5c98e063a3a2f246c398e2ce73e1cedf341194
+dorneles.omabot https://github.com/jvlianodorneles/omabot.git 51d8e989dd702cc33678219c6f4b5df8521eb3fd
 ericvrp.background-low-memory https://github.com/ericvrp/omarchy-background-low-memory.git d0256255f068b4e8ab879d936c1c554627241049
 godofjoper.translate https://github.com/GodofJoper/omarchy-google-translate.git d73c090a8250fc452bb73c6987e515807b655633
 io.github.0x1ocean.omatrix https://github.com/0x1ocean/omarchy-omatrix.git fe605379a3d5584d91b2dc6d4559af58350824dd

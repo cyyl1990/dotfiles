@@ -410,3 +410,4 @@ dofile((os.getenv("HOME") or "") .. "/.config/omarchy/plugins/io.github.romills.
 -- Omaconv
 hl.unbind("SUPER + SHIFT + H")
 o.bind("SUPER + SHIFT + H", "Omaconv", "omarchy-shell shell toggle slcode777.omaconv")
+o.bind("SUPER + ALT + T", "Google Translate", "/home/bap/.config/omarchy/plugins/godofjoper.translate/capture.sh")

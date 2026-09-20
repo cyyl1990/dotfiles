@@ -27,6 +27,9 @@
           "alwaysShow": false,
           "gapAfter": 12,
           "id": "bap.notification"
+        },
+        {
+          "id": "ozz1ee.rakabot"
         }
       ],
       "left": [

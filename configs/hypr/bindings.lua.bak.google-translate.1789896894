@@ -1,0 +1,413 @@
+-- Keep only your personal keybinding overrides here. Add new bindings or
+-- unbind defaults before replacing them.
+
+-- See current bindings and descriptions:
+--   omarchy menu keybindings --print
+
+-- To disable every Omarchy default binding, set this in
+-- ~/.config/hypr/hyprland.lua before require("default.hypr.omarchy"), then add
+-- only the bindings you want below:
+--   omarchy_default_bindings = false
+
+-- To disable all preinstalled app/webapp bindings, set:
+--   omarchy_preinstalled_bindings = false
+
+-- Add a new binding.
+-- o.bind("SUPER + SHIFT + R", "SSH", "alacritty -e ssh your-server")
+
+-- Change an existing binding by unbinding it first, then binding the key again.
+-- This example changes SUPER+SPACE from the launcher to the Omarchy root menu.
+-- hl.unbind("SUPER + SPACE")
+-- [auto] unbind Omarchy default before override
+--shl.unbind("SUPER + SPACE")
+--o.bind("SUPER + SPACE", "Omarchy menu", "omarchy-menu toggle root")
+--hl.unbind("SUPER + CTRL + P")
+-- o.bind("SUPER + CTRL + P", "System menu", "omarchy-menu toggle system")
+-- Power / System menu: restore defaults (omarchy-menu works; unbind had removed the key)
+ hl.unbind("SUPER + ESCAPE")
+o.bind("SUPER + ESCAPE", "Session Menu",
+    "bash -c 'grep -q \"owaiss.session-menu\" ~/.config/omarchy/shell.json 2>/dev/null && exec omarchy-shell shell toggle owaiss.session-menu || exec omarchy-menu toggle system'")
+-- hl.unbind("XF86PowerOff")
+-- hl.unbind("XF86PowerOff", "Power menu", "omarchy-menu toggle system")
+
+-- Remove Apps menu (SUPER+ALT+SPACE): user says it should not exist; killing it
+-- leaves the System/Power menu (SUPER+ESCAPE / XF86PowerOff) as the sole menu.
+-- hl.unbind("SUPER + ALT + SPACE")
+
+-- Disable a default binding without replacing it.
+-- hl.unbind("SUPER + SHIFT + B")
+
+-- Logitech MX Keys examples:
+-- [auto] unbind Omarchy default before override
+hl.unbind("SUPER + SHIFT + S")
+-- o.bind("SUPER + SHIFT + S", nil, "omarchy-capture-screenshot")
+-- o.bind("SUPER + H", nil, "voxtype record toggle")
+-- o.bind("SUPER + PERIOD", nil, "omarchy-shell shell toggle omarchy.emojis")
+
+-- omarchy-window-switcher
+--hl.unbind("CTRL + TAB")
+--o.bind("SUPER + TAB", "Window switcher", "omarchy shell shell summon community.window-switcher '{\"direction\":1}'")
+
+-- ══════════════════════════════════════════════════════════════════════
+-- Personal keybinding overrides (Lua form — do not convert from .conf).
+-- ══════════════════════════════════════════════════════════════════════
+
+-- ── Application bindings ──────────────────────────────────────────────
+
+-- Terminal
+-- NOTE: overrides omarchy default SUPER+RETURN (Terminal)
+o.bind("SUPER + Q", "Terminal", "uwsm-app -- xdg-terminal-exec --dir=\"$(omarchy-cmd-terminal-cwd)\"")
+o.bind("SUPER + SHIFT + Q", "Terminal Float", "pypr-client toggle kitty")
+-- NOTE: overrides omarchy default SUPER+ALT+RETURN (Tmux)
+o.bind("SUPER + ALT + Q", "Tmux", "uwsm-app -- xdg-terminal-exec --dir=\"$(omarchy-cmd-terminal-cwd)\" tmux new")
+
+-- Sidepad (Omarchy) — disabled: Sidepad unused, slot reclaimed for ML4W sidebar.
+-- Unbind all Sidepad bindings so SUPER+RETURN is free for the Quickshell sidebar.
+hl.unbind("SUPER + RETURN")
+hl.unbind("SUPER + SHIFT + RETURN")
+hl.unbind("SUPER + Z")
+o.bind("SUPER + RETURN", "Toggle Sidebar", "qs ipc call sidebar toggle")
+
+
+-- Spotube
+-- NOTE: overrides omarchy default (no SUPER+M by default)
+hl.unbind("SUPER + M")
+o.bind("SUPER + M", "Spotube", "spotube")
+
+-- Lock Screen explorer --
+o.bind("SUPER + SHIFT + L", "Lock screen explorer", "omarchy-shell lock explore")
+-- hypr-dock
+-- hypr-dock is NOT installed on this system. Keep binding commented out to avoid silent errors.
+-- o.bind("SUPER + ALT", "Hypr Dock", "hypr-dock")
+
+-- NOTE: Wallpaper picker is already bound at SUPER+CTRL+SPACE
+-- (omarchy-theme-bg-switcher). SUPER+SHIFT+W below is reserved for Waybar Theme.
+-- (Removed two dead binds that referenced a non-existent `omarchy-we` command.)
+
+-- Browser / File manager
+o.bind("SUPER + B", "Browser", "omarchy-launch-browser")
+o.bind("SUPER + E", "File manager", "uwsm-app -- nautilus --new-window")
+-- [auto] unbind Omarchy default before override
+hl.unbind("SUPER + ALT + SHIFT + F")
+o.bind("SUPER + ALT + SHIFT + F", "File manager (cwd)", "uwsm-app -- nautilus --new-window \"$(omarchy-cmd-terminal-cwd)\"")
+-- NOTE: SUPER+SHIFT+B, SUPER+SHIFT+ALT+B duplicate omarchy defaults (uses omarchy-launch-browser instead of omarchy = "browser")
+-- [auto] unbind Omarchy default before override
+hl.unbind("SUPER + SHIFT + B")
+o.bind("SUPER + SHIFT + B", "Browser", "omarchy-launch-browser")
+-- [auto] unbind Omarchy default before override
+hl.unbind("SUPER + SHIFT + ALT + B")
+o.bind("SUPER + SHIFT + ALT + B", "Browser (private)", "omarchy-launch-browser --private")
+-- NOTE: SUPER+SHIFT+M overrides omarchy default (uses spotify-launcher instead of omarchy = "spotify")
+-- [auto] unbind Omarchy default before override
+-- [auto] unbind Omarchy default before override
+hl.unbind("SUPER + SHIFT + ALT + M")
+o.bind("SUPER + SHIFT + ALT + M", "Music TUI", "omarchy-launch-or-focus-tui cliamp")
+-- [auto] unbind Omarchy default before override
+hl.unbind("SUPER + SHIFT + N")
+o.bind("SUPER + SHIFT + N", "Toggle Warp", "/home/bap/.local/bin/warp_toggle.sh")
+-- [auto] unbind Omarchy default before override
+hl.unbind("SUPER + SHIFT + D")
+o.bind("SUPER + SHIFT + D", "Docker", "omarchy-launch-tui lazydocker")
+-- Signal (uses omarchy default mechanism)
+-- [auto] unbind Omarchy default before override
+hl.unbind("SUPER + SHIFT + G")
+o.bind("SUPER + SHIFT + G", "Signal", { omarchy = "signal" })
+-- Obsidian (uses omarchy default mechanism)
+-- [auto] unbind Omarchy default before override
+hl.unbind("SUPER + SHIFT + O")
+o.bind("SUPER + SHIFT + O", "Obsidian", { launch = "obsidian", focus = "^obsidian$" })
+-- [auto] unbind Omarchy default before override
+hl.unbind("SUPER + SHIFT + W")
+o.bind("SUPER + SHIFT + W", "Waybar Theme", "kitty --title waybar-theme -e /home/bap/.local/bin/wayflipper --browse-once")
+o.bind("SUPER + SHIFT + T", "Translate", "omarchy-shell shell toggle godofjoper.translate capture")
+-- AI Coding Agent (SUPER+A: Launch or Focus Antigravity App)
+o.bind("SUPER + A", "Antigravity", { launch = "/home/bap/.local/bin/antigravity", focus = "^antigravity$" })
+-- NOTE: SUPER+SHIFT+SLASH overrides omarchy default (uses omarchy-launch-1password so it self-installs when missing)
+-- [auto] unbind Omarchy default before override
+hl.unbind("SUPER + SHIFT + SLASH")
+o.bind("SUPER + SHIFT + SLASH", "Passwords", "omarchy-launch-1password")
+
+-- Toggle floating/tiling
+-- NOTE: overrides omarchy default SUPER+T (uses hl.dsp.window.float API)
+o.bind("SUPER + D", "Toggle window floating/tiling", hl.dsp.window.float({ action = "toggle" }))
+
+-- Web apps
+-- NOTE: SUPER+SHIFT+A, SUPER+SHIFT+ALT+A, SUPER+SHIFT+C, SUPER+SHIFT+E, SUPER+SHIFT+Y,
+-- SUPER+SHIFT+ALT+G, SUPER+SHIFT+CTRL+G, SUPER+SHIFT+P, SUPER+SHIFT+X, SUPER+SHIFT+ALT+X
+-- all override omarchy defaults (uses omarchy-launch-webapp instead of { webapp = ... })
+o.bind("SUPER + CTRL + ALT + A", "Window Rules", "kitty --class dusky-winrules -e /usr/bin/python3 /home/bap/.config/hypr/scripts/window_rules_generator_new_incomplete.py")
+-- [auto] unbind Omarchy default before override
+hl.unbind("SUPER + SHIFT + A")
+o.bind("SUPER + SHIFT + A", "Animation Picker", "kitty --class dusky-anim -e bash -c '/home/bap/.config/hypr/scripts/hypr_anim.sh --menu'")
+-- [auto] unbind Omarchy default before override
+hl.unbind("SUPER + SHIFT + ALT + A")
+o.bind("SUPER + SHIFT + ALT + A", "Grok", "omarchy-launch-webapp \"https://grok.com\"")
+-- [auto] unbind Omarchy default before override
+hl.unbind("SUPER + SHIFT + C")
+o.bind("SUPER + SHIFT + C", "Calendar", "omarchy-launch-webapp \"https://app.hey.com/calendar/weeks/\"")
+-- [auto] unbind Omarchy default before override
+hl.unbind("SUPER + SHIFT + E")
+o.bind("SUPER + SHIFT + E", "Email", "omarchy-launch-webapp \"https://app.hey.com\"")
+-- [auto] unbind Omarchy default before override
+hl.unbind("SUPER + SHIFT + Y")
+o.bind("SUPER + SHIFT + Y", "YouTube", "omarchy-launch-webapp \"https://youtube.com/\"")
+-- [auto] unbind Omarchy default before override
+hl.unbind("SUPER + SHIFT + ALT + G")
+o.bind("SUPER + SHIFT + ALT + G", "WhatsApp", "omarchy-launch-or-focus-webapp WhatsApp \"https://web.whatsapp.com/\"")
+-- [auto] unbind Omarchy default before override
+hl.unbind("SUPER + SHIFT + CTRL + G")
+o.bind("SUPER + SHIFT + CTRL + G", "Google Messages", "omarchy-launch-or-focus-webapp \"Google Messages\" \"https://messages.google.com/web/conversations\"")
+-- [auto] unbind Omarchy default before override
+hl.unbind("SUPER + SHIFT + P")
+o.bind("SUPER + SHIFT + P", "Google Photos", "omarchy-launch-or-focus-webapp \"Google Photos\" \"https://photos.google.com/\"")
+-- [auto] unbind Omarchy default before override
+hl.unbind("SUPER + SHIFT + X")
+o.bind("SUPER + SHIFT + X", "X", "omarchy-launch-webapp \"https://x.com/\"")
+-- [auto] unbind Omarchy default before override
+hl.unbind("SUPER + SHIFT + ALT + X")
+o.bind("SUPER + SHIFT + ALT + X", "X Post", "omarchy-launch-webapp \"https://x.com/compose/post\"")
+
+-- ── Smart Clipboard (macOS Style) ──────────────────────────────
+-- Uses Hyprland's send_key_state API (same as omarchy defaults)
+-- to properly handle terminal vs non-terminal windows.
+local terminal_classes = {
+  alacritty = true,
+  ["com.mitchellh.ghostty"] = true,
+  foot = true,
+  kitty = true,
+  wezterm = true,
+}
+
+local function active_window_is_terminal()
+  local window = hl.get_active_window()
+  if not window or not window.class then
+    return false
+  end
+  return terminal_classes[window.class:lower()] == true
+end
+
+local function send_key(mod, key)
+  hl.dispatch(hl.dsp.send_key_state({ mods = mod, key = key, state = "down" }))
+  hl.timer(function()
+    hl.dispatch(hl.dsp.send_key_state({ mods = mod, key = key, state = "up" }))
+  end, { timeout = 50, type = "oneshot" })
+end
+
+local function smart_copy()
+  if active_window_is_terminal() then
+    send_key("CTRL+SHIFT", "C")
+  else
+    send_key("CTRL", "C")
+  end
+end
+
+local function smart_paste()
+  if active_window_is_terminal() then
+    send_key("CTRL+SHIFT", "V")
+  else
+    send_key("CTRL", "V")
+  end
+end
+
+local function smart_cut()
+  send_key("CTRL", "X")
+end
+
+hl.unbind("SUPER + C")
+hl.unbind("SUPER + V")
+hl.unbind("SUPER + X")
+o.bind("SUPER + C", "Copy", smart_copy)
+o.bind("SUPER + V", "Paste", smart_paste)
+o.bind("SUPER + X", "Cut", smart_cut)
+
+-- ── Extra bindings ─────────────────────────────────────────────────────
+
+-- Gaming mode toggle
+o.bind("SUPER + F12", "Gaming mode", "/usr/local/bin/switch-to-gaming")
+
+-- Live Wallpaper Toggle
+o.bind("SUPER + ALT + W", "Toggle Live Wallpaper", "~/.local/bin/live-wallpaper-toggle.sh")
+
+-- ══════════════════════════════════════════════════════════════════════
+-- Quickshell bindings (commented out — enable if you use quickshell)
+-- ══════════════════════════════════════════════════════════════════════
+
+--[[
+-- unbind = SUPER, SPACE
+-- unbind = SUPER ALT, SPACE
+-- unbind = SUPER SHIFT CTRL, SPACE
+-- unbind = ALT, PRINT
+-- unbind = SUPER, K
+-- unbind = SUPER, ESCAPE
+-- unbind = SUPER CTRL, V
+-- unbind = SUPER CTRL, SPACE
+-- unbind = , XF86AudioRaiseVolume,
+-- unbind = , XF86AudioLowerVolume,
+-- unbind = , XF86AudioMute, Mute,
+-- unbind = , XF86AudioMicMute, Mute
+-- unbind = , XF86MonBrightnessUp,
+-- unbind = , XF86MonBrightnessDown,
+-- unbind = , XF86KbdBrightnessUp,
+-- unbind = , XF86KbdBrightnessDown,
+-- unbind = , XF86KbdLightOnOff,
+-- unbind = , XF86AudioNext,
+-- unbind = , XF86AudioPause,
+-- unbind = , XF86AudioPlay,
+-- unbind = , XF86AudioPrev,
+-- unbind = SUPER CTRL, comma
+
+-- bindd = SUPER, A, Quickshell, exec, ./.local/bin/qs.sh
+-- bind = SUPER ALT, Space, exec, quickshell ipc call appLauncher openMenu
+-- bind = SUPER, Space, exec, quickshell ipc call appLauncher openApps
+-- bind = SUPER CTRL SHIFT, SPACE, exec, quickshell ipc call openThemePicker handle
+-- bind = ALT, PRINT, exec, quickshell ipc call openScreenrecord handle
+-- bind = SUPER, K, exec, quickshell ipc call openKeybindings handle
+-- bind = SUPER, ESCAPE, exec, quickshell ipc call openSystem handle
+-- bind = SUPER CTRL, V, exec, quickshell ipc call openClipboard handle
+-- bind = SUPER CTRL, SPACE, exec, quickshell ipc call openBackgroundPicker handle
+-- bind = SUPER CTRL, comma, exec, quickshell ipc call toggleDnd handle
+-- bind = SUPER CTRl ALT, SPACE, exec, quickshell ipc call openSettings handle
+
+-- bindel = , XF86AudioRaiseVolume,   exec, quickshell ipc call osdVolumeUp handle
+-- bindel = , XF86AudioLowerVolume,   exec, quickshell ipc call osdVolumeDown handle
+-- bindl  = , XF86AudioMute,          exec, quickshell ipc call osdVolumeMute handle
+-- bindel = , XF86MonBrightnessUp,    exec, quickshell ipc call osdBrightnessUp handle
+-- bindel = , XF86MonBrightnessDown,  exec, quickshell ipc call osdBrightnessDown handle
+-- bindl  = , XF86AudioMicMute,       exec, quickshell ipc call osdMic handle
+-- bindl  = , XF86AudioPlay,          exec, quickshell ipc call osdMediaPlayPause handle
+-- bindl  = , XF86AudioNext,          exec, quickshell ipc call osdMediaNext handle
+-- bindl  = , XF86AudioPrev,          exec, quickshell ipc call osdMediaPrev handle
+]]
+
+
+-- Keybind manager (TUI): view / create / edit / delete Hyprland keybinds
+o.bind("SUPER + SHIFT + K", "Keybind Manager", "kitty --class dusky-keybinds -e /usr/bin/python3 /home/bap/.config/hypr/scripts/dusky_keybinds.py")
+
+-- ── BAP Control Center (trimmed Dusky Control Center) ──────────────────
+-- GTK4 settings hub: Home, Appearance, Theme, Session, Network, System,
+-- Configure, Performance, Media & Notify.
+-- Launched directly (no terminal wrapper) — GTK window only.
+o.bind("SUPER + ALT + C", "BAP Control Center", "/home/bap/.config/hypr/scripts/bap-cc/quattro_cc.sh")
+
+-- ── Dusky Appearance TUI (Hyprland look'n'feel editor) ──────────────────
+-- Launches the Dusky appearance configurator (Textual TUI) inside kitty.
+-- The wrapper picks the correct Python (3.12+/textual); it patches
+-- ~/.config/hypr/looknfeel.lua on save.
+o.bind("SUPER + ALT + A", "App drawer", "omarchy-shell bap.magnify-dock drawer")
+
+-- Bap Magnify Dock lives in the WlrLayer namespace "omarchy-dock" (the dock
+-- panel, the app drawer, the settings window and the context menu).
+hl.layer_rule({
+  name = "magnify-dock-blur",
+  match = { namespace = "^omarchy-dock" },
+  blur = true,
+  ignore_alpha = 0.1,
+})
+
+
+
+-- >>> losokos.window-gallery keybind (managed)
+-- Remove with: omarchy-window-gallery-keybind remove
+pcall(hl.unbind, "ALT + TAB")
+pcall(hl.unbind, "ALT + TAB")
+pcall(hl.unbind, "ALT + SHIFT + TAB")
+pcall(hl.unbind, "ALT + SHIFT + TAB")
+
+
+o.bind("ALT + TAB", "Better Alt-Tab", "omarchy-shell shell call losokos.window-gallery step next")
+o.bind("ALT + SHIFT + TAB", "Better Alt-Tab (back)", "omarchy-shell shell call losokos.window-gallery step prev")
+-- <<< losokos.window-gallery keybind
+
+
+-- [2026-08-06 22:27] CUST
+hl.unbind("SUPER + SHIFT + M")
+o.bind("SUPER + SHIFT + M", "Music", "omarchy-launch-or-focus spotify")
+
+-- ── Quickshell Overview (ML4W-port window overview) ─────────────────────
+-- Kept OUTSIDE the gloview guard (above) so it works even with the gloview
+-- hyprpm plugin disabled. Requires the overview quickshell instance to be
+-- running — started by ml4w-quickshell-overview-autostart.sh (autostart.lua).
+
+-- workspaces overview --
+hl.unbind("SUPER + TAB")
+o.bind(
+  "SUPER + TAB",
+  "Workspace overview",
+  "omarchy-shell shell toggle mirador '{}'"
+)
+
+-- Keybindings --
+hl.unbind("SUPER + SHIFT + K")
+-- o.bind(
+--    "SUPER + SHIFT + K",
+--     "Edit Keybindings",
+--     "omarchy-shell shell summon meviusisback.keybinds '{}'"
+-- )
+
+o.bind("SUPER + SHIFT + K", "Hotkey viewer", { launch = "hotkeyviewer --toggle" })
+
+-- screenshot
+hl.unbind("PRINT")
+o.bind("SUPER + F11", "Screenshot", "omarchy-capture-screenshot")
+
+-- Spotlight --
+o.bind("ALT + SPACE", "Spotlight launcher", "omarchy-shell shell summon mihai.spotlight '{}'")
+
+
+-- hyprland-alttab — bindings to inject into the Hyprland Lua config
+-- (~/.config/hypr/customisation.lua or bindings.lua), Hyprland ≥ 0.56.
+
+-- The "Alt-Tab switcher" description acts as a sentinel: the plugin checks
+-- for it in `hyprctl binds` to detect that the binding is installed.
+hl.unbind("SUPER + TAB")
+o.bind(
+  "SUPER + TAB",
+  "Workspace overview",
+  "omarchy-shell shell toggle mirador '{}'"
+)
+hl.config({
+  decoration = {
+    blur = {
+      enabled = true,
+    },
+  },
+})
+
+hl.layer_rule({
+  name = "mirador-blur",
+  match = { namespace = "^omarchy-workspace-overview$" },
+  blur = true,
+  ignore_alpha = 0.1,
+})
+
+-- Plugin Control --
+o.bind(
+  "CTRL + P",
+  "Plugin Control",
+  "omarchy-shell shell toggle io.github.ilyazar.plugin-control '{}'"
+)
+
+-- Use Strata instead of Nautilus for Omarchy's file-manager shortcuts.
+hl.unbind("SUPER + E")
+hl.unbind("SUPER + SHIFT + F")
+hl.unbind("SUPER + ALT + SHIFT + F")
+o.bind("SUPER + E", "File manager", { launch = "strata" })
+o.bind("SUPER + SHIFT + F", "File manager", { launch = "strata" })
+o.bind("SUPER + ALT + SHIFT + F", "File manager (cwd)",
+  "uwsm-app -- strata \"$(omarchy-cmd-terminal-cwd)\"")
+
+-- strata-installer: file-manager start
+hl.unbind("SUPER + SHIFT + F")
+hl.unbind("SUPER + ALT + SHIFT + F")
+o.bind("SUPER + SHIFT + F", "File manager", { launch = "/home/bap/.local/bin/strata" })
+o.bind("SUPER + ALT + SHIFT + F", "File manager (cwd)",
+  "uwsm-app -- /home/bap/.local/bin/strata \"$(omarchy-cmd-terminal-cwd)\"")
+-- strata-installer: file-manager end
+
+-- OmarKEYS
+dofile((os.getenv("HOME") or "") .. "/.config/omarchy/plugins/io.github.romills.omarkeys/hyprland.lua")
+
+-- Omaconv
+hl.unbind("SUPER + SHIFT + H")
+o.bind("SUPER + SHIFT + H", "Omaconv", "omarchy-shell shell toggle slcode777.omaconv")
+o.bind("SUPER + ALT + T", "Google Translate", "/home/bap/.config/omarchy/plugins/godofjoper.translate/capture.sh")

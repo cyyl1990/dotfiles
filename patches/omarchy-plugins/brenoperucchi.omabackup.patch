@@ -56,3 +56,65 @@ index 13ddd90..23c4eab 100644
                      "$f" "$repo/configs/omarchy/plugins/$pid/"
                  local rsync_rc=$?
                  rm -f "$pflist"
+diff --git c/secrets.deny.json w/secrets.deny.json
+index 23386a4..6452290 100644
+--- c/secrets.deny.json
++++ w/secrets.deny.json
+@@ -1,7 +1,7 @@
+ {
+   "schemaVersion": 1,
+   "_comment": [
+-    "A deny-list scanned over what is about to leave the machine (docs/DESIGN.md §6).",
++    "A deny-list scanned over what is about to leave the machine (docs/DESIGN.md \u00a76).",
+     "A hit BLOCKS the push -- it does not warn. A leak is irreversible, and a",
+     "warning nobody reads is lesson #1 of this whole project.",
+     "",
+@@ -47,8 +47,8 @@
+     },
+     {
+       "id": "pgp-private-block",
+-      "regex": "-----BEGIN PGP PRIVATE KEY BLOCK-----",
+-      "reason": "PGP secret key material."
++      "regex": "-----BEGIN PGP PRIVATE KEY BLO[C]K-----",
++      "reason": "PGP secret key material. Character class [C] keeps the rule equivalent while the deny-list file itself does not contain the contiguous header literal (so backing up this plugin no longer false-positives)."
+     },
+     {
+       "id": "putty-private-key",
+@@ -62,5 +62,36 @@
+       "reason": "A long literal assigned to something named like a credential. Quoted, 16+ chars, and not starting with $ or a backtick -- so a variable reference or command substitution reads as indirection, not as the secret itself."
+     }
+   ],
+-  "exceptions": []
++  "exceptions": [
++    {
++      "id": "tmux-powerkit-sk-ant",
++      "match": "sk-ant-oat11-dummy-fixture-only-000000000000",
++      "reason": "Dummy strings in tmux-powerkit bats fixtures (configs/tmux/plugins/tmux-powerkit/tests/aiquotas.bats); labeled dummy-fixture-only, not real API keys."
++    },
++    {
++      "id": "tmux-powerkit-sk-oai-admin",
++      "match": "sk-oai-admin-dummy-fixture-only-000000000000",
++      "reason": "Dummy strings in tmux-powerkit bats fixtures (configs/tmux/plugins/tmux-powerkit/tests/aiquotas.bats); labeled dummy-fixture-only, not real API keys."
++    },
++    {
++      "id": "tmux-powerkit-sk-openai",
++      "match": "sk-openai-dummy-fixture-only-00000000",
++      "reason": "Dummy strings in tmux-powerkit bats fixtures (configs/tmux/plugins/tmux-powerkit/tests/aiquotas.bats); labeled dummy-fixture-only, not real API keys."
++    },
++    {
++      "id": "tmux-powerkit-sk-ds",
++      "match": "sk-ds-dummy-fixture-only-0000000000000000",
++      "reason": "Dummy strings in tmux-powerkit bats fixtures (configs/tmux/plugins/tmux-powerkit/tests/aiquotas.bats); labeled dummy-fixture-only, not real API keys."
++    },
++    {
++      "id": "tmux-powerkit-sk-zai",
++      "match": "sk-zai-dummy-fixture-only-0000000000000000",
++      "reason": "Dummy strings in tmux-powerkit bats fixtures (configs/tmux/plugins/tmux-powerkit/tests/aiquotas.bats); labeled dummy-fixture-only, not real API keys."
++    },
++    {
++      "id": "tmux-powerkit-sk-kimi",
++      "match": "sk-kimi-dummy-fixture-only-0000000000000000",
++      "reason": "Dummy strings in tmux-powerkit bats fixtures (configs/tmux/plugins/tmux-powerkit/tests/aiquotas.bats); labeled dummy-fixture-only, not real API keys."
++    }
++  ]
+ }

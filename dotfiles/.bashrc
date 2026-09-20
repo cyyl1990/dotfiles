@@ -17,3 +17,10 @@ source "$OMARCHY_PATH/default/bash/rc"
 if [[ -t 1 ]] && command -v pokedex-greeting >/dev/null 2>&1; then
   pokedex-greeting
 fi
+
+# Trợ lý AI mặc định (Google Antigravity CLI)
+export AI_AGENT="agy"
+export DEFAULT_AI="agy"
+alias ai="agy"
+alias antigravity-cli="agy"
+alias agy-danger="agy --dangerously-skip-permissions"

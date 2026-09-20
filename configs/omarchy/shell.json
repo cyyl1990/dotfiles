@@ -112,9 +112,6 @@
           "id": "omarchy.clipboard"
         },
         {
-          "id": "io.github.tcballard.bartranslate"
-        },
-        {
           "autoCheckIntervalHours": 6,
           "autoCheckUpdates": true,
           "id": "omaplug"

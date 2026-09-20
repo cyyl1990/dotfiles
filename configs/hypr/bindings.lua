@@ -119,7 +119,7 @@ o.bind("SUPER + SHIFT + O", "Obsidian", { launch = "obsidian", focus = "^obsidia
 -- [auto] unbind Omarchy default before override
 hl.unbind("SUPER + SHIFT + W")
 o.bind("SUPER + SHIFT + W", "Waybar Theme", "kitty --title waybar-theme -e /home/bap/.local/bin/wayflipper --browse-once")
-o.bind("SUPER + SHIFT + T", "Themes List", "kitty -e /home/bap/.local/bin/theme-manager")
+o.bind("SUPER + SHIFT + T", "Translate", "omarchy-shell shell toggle godofjoper.translate capture")
 -- AI Coding Agent (SUPER+A: Launch or Focus Antigravity App)
 o.bind("SUPER + A", "Antigravity", { launch = "/home/bap/.local/bin/antigravity", focus = "^antigravity$" })
 -- NOTE: SUPER+SHIFT+SLASH overrides omarchy default (uses omarchy-launch-1password so it self-installs when missing)

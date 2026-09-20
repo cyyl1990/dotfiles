@@ -98,18 +98,16 @@
           "size": 12
         },
         {
-          "id": "io.github.diegopluna.argus",
-          "show": [
-            "cpu",
-            "ram",
-            "disk"
-          ]
-        },
-        {
           "id": "omarchy.background"
         },
         {
           "id": "omarchy.clipboard"
+        },
+        {
+          "id": "sol.buddy"
+        },
+        {
+          "id": "io.github.diegopluna.argus"
         },
         {
           "autoCheckIntervalHours": 6,
@@ -276,6 +274,9 @@
     },
     {
       "id": "juangalt.fast-plugin-tui-omarchy"
+    },
+    {
+      "id": "slcode777.omaconv"
     }
   ],
   "version": 1

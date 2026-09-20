@@ -38,7 +38,6 @@ pacsea-git
 protonhax
 pyprland
 python312
-qutebrowser-git
 rmpc-auto-theme-git
 scls
 snapd

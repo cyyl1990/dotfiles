@@ -30,6 +30,7 @@ io.github.twiking.omasettings https://github.com/twiking/omasettings.git 72cfe16
 jnodavid.omarkey https://github.com/0d4vid/omarkey.git 5ca95854fb0b033b34b714c86e53cbd6eb76ed9b
 jo.omacheatsheet https://github.com/jayosays/omacheatsheet.git 5a8e5977d8e137fc1b05da4670ee7abff7eafd7a
 jrmmhm.pocket https://github.com/jrmmhm/omarchy-pocket.git ec3f769ce16b446ca38191d1d480a7a7ac2a1533
+juangalt.fast-plugin-tui-omarchy https://github.com/juangalt/fast-plugin-tui-omarchy 63fed367498b30f2ca99ec13e37f428150b362c1
 losokos.window-gallery https://github.com/LosokosG/omarchy-window-gallery.git c297b085c827797ee20970c96ac4d3950d69a981
 marcho78.taskbar https://github.com/marcho78/omarchy-taskbar.git a0d255b6434561c9aae1e91c219d8ae4178393e8
 mirador https://github.com/sanjyay/Mirador.git 55bfa595177184e671c3c2b85eb40b4c05e8b2f7

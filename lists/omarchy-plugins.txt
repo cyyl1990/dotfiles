@@ -36,6 +36,7 @@ njpatel.omapager https://github.com/njpatel/omapager.git 59591749f42d7059c146604
 nkarl.fcitx-active-input-lang https://github.com/nkarl/fcitx-active-input-lang.git dc3c68985939c259f2f1265454674975c15346e6
 omadock https://github.com/thepathless/omadock.git d2d355c58d229ab82d9e9bcf116a620a3c736617
 omaplug https://github.com/fross100/omaplug 2a21fe42969b9bd57f825c00827d2d2b11d01ab7
+onelegdave.omachat https://github.com/onelegdave/omachat.git dd77f2ca16e7c701851450578fd9ec51b7eba1a2
 owaiss.session-menu https://github.com/Owaisshaikh11/omarchy-session-menu.git 4d1c6fed0dcf143e7c03b0ecb88a495c5249cb68
 piyush.omaswitch https://github.com/piyush97/omaswitch.git 0afaa7fe83a93db16df5dcee1dd0ca8015a37d6b
 raavail.islands-bar https://github.com/raavail-lasso/Omarchy-Islands-Bar.git a106ffd495c8901c62402881d90f25968b691082

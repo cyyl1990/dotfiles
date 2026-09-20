@@ -313,8 +313,8 @@ pcall(hl.unbind, "ALT + TAB")
 pcall(hl.unbind, "ALT + SHIFT + TAB")
 pcall(hl.unbind, "ALT + SHIFT + TAB")
 
-o.bind("ALT + TAB", "Window overview", "omarchy-shell shell toggle rei")
---o.bind("ALT + TAB", "Better Alt-Tab", "omarchy-shell shell call losokos.window-gallery step next")
+
+o.bind("ALT + TAB", "Better Alt-Tab", "omarchy-shell shell call losokos.window-gallery step next")
 o.bind("ALT + SHIFT + TAB", "Better Alt-Tab (back)", "omarchy-shell shell call losokos.window-gallery step prev")
 -- <<< losokos.window-gallery keybind
 

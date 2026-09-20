@@ -27,6 +27,9 @@
           "alwaysShow": false,
           "gapAfter": 12,
           "id": "bap.notification"
+        },
+        {
+          "id": "onelegdave.omachat"
         }
       ],
       "left": [

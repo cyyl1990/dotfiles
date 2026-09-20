@@ -46,7 +46,6 @@ piyush.omaswitch https://github.com/piyush97/omaswitch.git 0afaa7fe83a93db16df5d
 raavail.islands-bar https://github.com/raavail-lasso/Omarchy-Islands-Bar.git a106ffd495c8901c62402881d90f25968b691082
 shavanced.notification-center https://github.com/Shavanced/omarchy-notification-center-plugin.git 8fa2c0c3610df67eb245c73ef42b81ada073b244
 skuthus.shell-font https://github.com/skuthus/omarchy-shell-font 99db2c67ee320d7f24084419116c2673f5d73de4
-slcode777.omagotchi https://github.com/SLcode777/omagotchi c04d94aa4b0d17fe9ea906928325c4eaa5166bbb
 so.den https://github.com/SaifOmar/so.den.git 1e6691e90fd33ad2eafb4a347645862a79ad50cd
 ssupt.audio-control https://github.com/ssupt/omarchy-audio-control.git 71c0b6a695b6aa10c66d550e462c79919eebdf2d
 szalikdev.plugin-updates https://github.com/szalikdev/omarchy-plugin-updates.git 89e1210c525349104cfe6c640ed40b72a46c538f

@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "agents-manager": {
+      "args": [],
+      "command": "/home/bap/.agents/skills/mcp-servers/agents-manager/dist/index.js",
+      "env": {}
+    }
+  }
+}

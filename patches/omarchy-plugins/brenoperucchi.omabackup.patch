@@ -26,19 +26,22 @@ index 03d4cc9..973ec16 100644
        "probe": "migrations"
      },
 diff --git c/lib/publish.sh w/lib/publish.sh
-index 13ddd90..23c4eab 100644
+index 13ddd90..d8df67e 100644
 --- c/lib/publish.sh
 +++ w/lib/publish.sh
-@@ -100,7 +100,7 @@ _publish_file() {  # _publish_file <src> <dst> <repo-root> [<repo-root-rp>]
+@@ -100,7 +100,10 @@ _publish_file() {  # _publish_file <src> <dst> <repo-root> [<repo-root-rp>]
      # structural corruption of the repo rather than the intended overwrite.
      # Refused, not guessed at: this function does not know whether that
      # directory is meant to be there.
 -    [[ ! -d "$dst" ]] || return 1
 +    [[ -L "$dst" || ! -d "$dst" ]] || return 1
++    if [[ -L "$(dirname "$dst")" ]]; then
++        rm -f "$(dirname "$dst")" || return 1
++    fi
      mkdir -p "$(dirname "$dst")" || return 1
      # A symlink is content: copied as a link, never followed. Publishing what it
      # points at would silently turn a link into a fat copy of somebody else's
-@@ -236,7 +236,7 @@ publish_staging() {
+@@ -236,7 +239,7 @@ publish_staging() {
              continue
          fi
          rels+=("$rel"); dsts+=("$dst")
@@ -47,7 +50,7 @@ index 13ddd90..23c4eab 100644
      # find's own status, checked BEFORE anything below ever runs -- the
      # earlier version incremented `failed` here but fell through to the
      # write pass regardless. A PoC (a stub find that prints one file then
-@@ -422,7 +422,7 @@ publish_staging() {
+@@ -422,7 +425,7 @@ publish_staging() {
                  # whether rsync actually put it there.
                  printf '%s\0' "${pfiles[@]}" >"$pflist" \
                      || { rm -f "$pflist"; failed=$((failed + 1)); continue; }

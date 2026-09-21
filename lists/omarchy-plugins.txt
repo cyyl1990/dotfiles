@@ -1,7 +1,7 @@
 asdfsnlr.omantigravity https://github.com/asdfsnlr/omantigravity.git 877ffcce7aa2dc2ca9928835d70a2bccd72a07eb
 atoslins.dualsense https://github.com/atoslins/omarchy-plugin-dualsense.git cff565986035fe1aa1adf6e39af30bfec0c8b9a5
 bap.magnify-dock git@github.com:cyyl1990/bap-magnify-dock.git e396cb6ffebb000dc41797ab4cddf3ecd8298174
-brenoperucchi.omabackup https://github.com/brenoperucchi/omabackup 51bca0b0415f02983e60d000a9b17cde5f687679
+brenoperucchi.omabackup https://github.com/brenoperucchi/omabackup ba59b3fdc8d0a59ff5c33dbecc0a89ee6532d101
 co.klair.wallarchy https://github.com/perminder-klair/wallarchy.git 80ca91b248eb1907241f8a7461bf2cbe9595c8e0
 davedes.omcontrol https://github.com/Davedes83/OmaControl.git 1af8f48be90efc4604633068b47da0592e0c3822
 david.macnook https://github.com/Skeptomenos/macnook.git 7d5038078c85029dcab4b96f5f3dc754f23d5105
@@ -23,7 +23,7 @@ io.github.giodc.omafonts https://github.com/giodc/OmaFonts.git 3f7d977859f599bce
 io.github.guiestrela.weather https://github.com/guiestrela/weather.git 554cb546af42ab40c3072a7e71a9af2f7505c2cb
 io.github.kaiizu.runcat https://github.com/kaiizu/runningcat.git 63146002445fa92ea43c57973d56b21c1347deba
 io.github.matheusmedrado.omadock https://github.com/matheusmedrado/omadock.git e5f417542af8e0adb4e982ba9011bc450160d080
-io.github.mtolhuys.theme-manager https://github.com/mtolhuys/omarchy-theme-manager.git 625128bad6118a669f70dde4eaec669731d69aea
+io.github.mtolhuys.theme-manager https://github.com/mtolhuys/omarchy-theme-manager.git 8fd4184724fe597a0a67238db9e2a64a2119e288
 io.github.rawritude.aria2 https://github.com/rawritude/omarchy-aria2.git 3092d6fd87cec48fec3ea0cb9acec379fa9095a7
 io.github.romills.omarkeys https://github.com/romills/OmarKEYs.git 2bea4bd2de6793e63e854066f1e29bb38b66f2d9
 io.github.rui-pedro-silva.cloudflare-warp https://github.com/rpots/omarchy-cloudflare-warp.git b6383956f308e9ea7544b182f5bf863dd2463ada

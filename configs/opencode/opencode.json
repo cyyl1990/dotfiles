@@ -57,6 +57,17 @@
       "environment": {},
       "type": "local"
     },
+    "gsd": {
+      "command": [
+        "npx",
+        "-y",
+        "-p",
+        "@opengsd/gsd-core",
+        "gsd-mcp-server"
+      ],
+      "enabled": true,
+      "type": "local"
+    },
     "playwright-firefox": {
       "command": [
         "/home/bap/.local/share/mise/shims/npx",

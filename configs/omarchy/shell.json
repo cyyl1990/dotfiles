@@ -27,13 +27,6 @@
           "alwaysShow": false,
           "gapAfter": 12,
           "id": "bap.notification"
-        },
-        {
-          "iconStyle": "robot",
-          "id": "dorneles.omabot"
-        },
-        {
-          "id": "glorics.grok-bots"
         }
       ],
       "left": [
@@ -88,6 +81,10 @@
             {},
             {
               "id": "co.klair.wallarchy"
+            },
+            {
+              "iconStyle": "robot",
+              "id": "dorneles.omabot"
             },
             {
               "id": "io.github.twiking.omasettings"
@@ -289,6 +286,9 @@
     },
     {
       "id": "io.github.calebhat.themebook"
+    },
+    {
+      "id": "dorneles.omabot"
     }
   ],
   "version": 1

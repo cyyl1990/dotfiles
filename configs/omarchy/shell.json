@@ -116,6 +116,9 @@
           ]
         },
         {
+          "id": "brenoperucchi.omabackup"
+        },
+        {
           "autoCheckIntervalHours": 6,
           "autoCheckUpdates": true,
           "id": "omaplug"
@@ -127,14 +130,11 @@
           "id": "widget.torrents"
         },
         {
-          "id": "owaiss.session-menu"
-        },
-        {
           "id": "omarchy.spacer",
           "size": 12
         },
         {
-          "id": "brenoperucchi.omabackup"
+          "id": "owaiss.session-menu"
         }
       ]
     },

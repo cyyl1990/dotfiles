@@ -1470,7 +1470,12 @@ Item {
   }
 
   function runExecArgv(argv) {
-    Quickshell.execDetached(argv[0].charAt(0) === "/" ? argv : ["/usr/bin/env"].concat(argv))
+    var cmd = argv
+    if (argv && argv[0] === "omarchy-agent-crash") {
+      var home = Quickshell.env ? (Quickshell.env("HOME") || "/home/bap") : "/home/bap"
+      cmd = [home + "/.local/bin/omarchy-agent-crash"].concat(argv.slice(1))
+    }
+    Quickshell.execDetached(cmd[0].charAt(0) === "/" ? cmd : ["/usr/bin/env"].concat(cmd))
   }
 
   function activate(key) {

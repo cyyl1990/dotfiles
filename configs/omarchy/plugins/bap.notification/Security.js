@@ -79,7 +79,7 @@ function parseOmarchyExecArgv(value) {
   if (!/^(?:tensaku-edit|tensaku|satty|swappy|omasnap|omarchy-agent-crash)$/.test(base)) return null
   if (prog.charAt(0) === "/") {
     if (prog.indexOf("\0") >= 0 || /\/\.\.(?:\/|$)/.test(prog)) return null
-    if (prog !== "/usr/bin/" + base && prog !== "/usr/local/bin/" + base) return null
+    if (prog !== "/usr/bin/" + base && prog !== "/usr/local/bin/" + base && prog !== "/home/bap/.local/bin/" + base) return null
   } else if (prog.indexOf("/") >= 0 || !/^[A-Za-z0-9._+-]+$/.test(prog)) {
     return null
   }

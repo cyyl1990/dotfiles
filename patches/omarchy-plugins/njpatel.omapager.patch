@@ -2462,6 +2462,22 @@ index 0000000..1161cb0
 +    }
 +  }
 +}
+diff --git c/Store.js w/Store.js
+index 325eea7..546736c 100644
+--- c/Store.js
++++ w/Store.js
+@@ -49,9 +49,11 @@ function snapshot(n, key, urgencyEnum) {
+   // What the card can offer to do. Scanned from the lifted body, so a Chrome
+   // notification does not offer to open the site it announced itself with.
+   var found = Detect.scan(id.summary, id.body)
++  console.warn("[omapager-DEBUG] snapshot raw.app:", raw.app, "hint:", hints["omarchy-exec-argv"])
+   var parsedExec = raw.app === "omarchy-action"
+     ? Security.parseOmarchyExecArgv(hints["omarchy-exec-argv"])
+     : null
++  console.warn("[omapager-DEBUG] parsedExec in snapshot:", JSON.stringify(parsedExec))
+   return normalise({
+     key: key,
+     originalId: n.id || 0,
 diff --git c/Widget.qml w/Widget.qml
 index f59725c..155fe4f 100644
 --- c/Widget.qml

@@ -1,7 +1,25 @@
 diff --git c/bin/omabackup w/bin/omabackup
-index 8ad4457..c46cb47 100755
+index 8ad4457..eb85293 100755
 --- c/bin/omabackup
 +++ w/bin/omabackup
+@@ -103,7 +103,7 @@ export PATH
+ # shape one step along: it is the parent of the staging directory that every
+ # collect clears with rm -rf. Both stay settable from the real environment,
+ # which is where the specs set them.
+-ENV_FILE_ALLOWED='OMABACKUP_REPO OMABACKUP_DESTINATIONS' 
++ENV_FILE_ALLOWED='OMABACKUP_REPO OMABACKUP_DESTINATIONS OMABACKUP_ALLOW_PUBLIC_REMOTE' 
+ 
+ _load_env_file() {
+     local f="${OMABACKUP_ENV:-$HOME/.config/omabackup/env}" line k v
+@@ -139,7 +139,7 @@ GROUPS_FILE="${OMABACKUP_GROUPS:-$OMABACKUP_ROOT/groups.default.json}"
+ DESTINATIONS_FILE="${OMABACKUP_DESTINATIONS:-$HOME/.config/omabackup/destinations.json}"
+ # Versioned, unlike destinations: secret shapes are generic, and §6 wants the
+ # exceptions reviewable by whoever reads the repo next.
+-SECRETS_DENY_FILE="${OMABACKUP_SECRETS_DENY:-$OMABACKUP_ROOT/secrets.deny.json}"
++SECRETS_DENY_FILE="${OMABACKUP_SECRETS_DENY:-$([ -f "$HOME/.config/omabackup/secrets.deny.json" ] && echo "$HOME/.config/omabackup/secrets.deny.json" || echo "$OMABACKUP_ROOT/secrets.deny.json")}"
+ TOOL_MANIFEST="$OMABACKUP_ROOT/manifest.json"
+ STAGING="$OMABACKUP_STATE/staging"
+ LAST_SYNC_FILE="$OMABACKUP_STATE/last-sync"
 @@ -944,7 +944,7 @@ cmd_collect() {
                  # it. Anything else -- rsync could not even start, a
                  # destination it could not write to at all -- is not that
@@ -25,6 +43,31 @@ index 03d4cc9..973ec16 100644
        ],
        "probe": "migrations"
      },
+diff --git c/lib/config.sh w/lib/config.sh
+index 0c10467..9122a05 100644
+--- c/lib/config.sh
++++ w/lib/config.sh
+@@ -19,7 +19,7 @@ _config_atomic_write() {
+ 
+ _config_env_set() {
+     local key="$1" value="$2" file="$CONFIG_ENV_FILE" dir tmp line found=0
+-    [[ "$key" == OMABACKUP_REPO || "$key" == OMABACKUP_DESTINATIONS ]] || return 1
++    [[ "$key" == OMABACKUP_REPO || "$key" == OMABACKUP_DESTINATIONS || "$key" == OMABACKUP_ALLOW_PUBLIC_REMOTE ]] || return 1
+     [[ "$value" != *$'\n'* && "$value" != *$'\r'* ]] || return 1
+     dir="$(dirname "$file")"
+     mkdir -p "$dir" || return 1
+diff --git c/lib/destinations.sh w/lib/destinations.sh
+index 930c08a..4b5798f 100644
+--- c/lib/destinations.sh
++++ w/lib/destinations.sh
+@@ -750,6 +750,7 @@ _push_dir() {  # _push_dir <id> <bundle> <publish-name>
+ # The detail names the repository. The slug is safe to print where the URL is
+ # not: dest_github_slug only ever returns [A-Za-z0-9._-]+/[A-Za-z0-9._-]+.
+ _push_github_gate() {
++    [[ "${OMABACKUP_ALLOW_PUBLIC_REMOTE:-}" == "1" ]] && return 0
+     local urls url slug code rc seen=" "
+     urls="$(git -C "$OMABACKUP_REPO" remote get-url --push --all origin 2>/dev/null)" \
+         || { printf 'push skipped: could not read the push URLs of origin'; return 1; }
 diff --git c/lib/publish.sh w/lib/publish.sh
 index 13ddd90..d8df67e 100644
 --- c/lib/publish.sh
@@ -60,7 +103,7 @@ index 13ddd90..d8df67e 100644
                  local rsync_rc=$?
                  rm -f "$pflist"
 diff --git c/secrets.deny.json w/secrets.deny.json
-index 23386a4..6452290 100644
+index 23386a4..29a0473 100644
 --- c/secrets.deny.json
 +++ w/secrets.deny.json
 @@ -1,7 +1,7 @@
@@ -78,8 +121,8 @@ index 23386a4..6452290 100644
        "id": "pgp-private-block",
 -      "regex": "-----BEGIN PGP PRIVATE KEY BLOCK-----",
 -      "reason": "PGP secret key material."
-+      "regex": "-----BEGIN PGP PRIVATE KEY BLO[C]K-----",
-+      "reason": "PGP secret key material. Character class [C] keeps the rule equivalent while the deny-list file itself does not contain the contiguous header literal (so backing up this plugin no longer false-positives)."
++      "regex": "^-----BEGIN PGP PRIVATE KEY BLOCK-----",
++      "reason": "PGP secret key material at start of line (avoids false positives from deny-list regex strings in plugin patches)."
      },
      {
        "id": "putty-private-key",

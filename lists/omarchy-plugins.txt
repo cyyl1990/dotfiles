@@ -35,7 +35,7 @@ jrmmhm.pocket https://github.com/jrmmhm/omarchy-pocket.git ec3f769ce16b446ca3819
 juangalt.fast-plugin-tui-omarchy https://github.com/juangalt/fast-plugin-tui-omarchy 63fed367498b30f2ca99ec13e37f428150b362c1
 losokos.window-gallery https://github.com/LosokosG/omarchy-window-gallery.git c297b085c827797ee20970c96ac4d3950d69a981
 marcho78.taskbar https://github.com/marcho78/omarchy-taskbar.git a0d255b6434561c9aae1e91c219d8ae4178393e8
-meviusisback.keybinds https://github.com/meviusisback/keybinds-plugin.git 32ebe241091e551cb47c14646c613427ea535179
+meviusisback.keybinds https://github.com/meviusisback/keybinds-plugin.git 91eb048c9f01b522c2438e90c985e078dfd9cc49
 mirador https://github.com/sanjyay/Mirador.git 55bfa595177184e671c3c2b85eb40b4c05e8b2f7
 mryll.meteobar https://github.com/mryll/meteobar.git dd18463d80a0c1f54fc16b6609af64e498f8f69e
 njpatel.omabot https://github.com/njpatel/omabot.git 85cee8c3eef21f2d5458e8a57c1f109b09d78556

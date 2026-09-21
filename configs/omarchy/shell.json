@@ -80,6 +80,9 @@
             },
             {},
             {
+              "id": "io.github.cylon58.omarchy-knowledge"
+            },
+            {
               "id": "co.klair.wallarchy"
             },
             {
@@ -125,9 +128,6 @@
         },
         {
           "id": "io.github.ctl0v0.outfit"
-        },
-        {
-          "id": "io.github.cylon58.omarchy-knowledge"
         },
         {
           "id": "widget.torrents"
@@ -289,6 +289,9 @@
     },
     {
       "id": "meviusisback.keybinds"
+    },
+    {
+      "id": "io.github.cylon58.omarchy-knowledge"
     }
   ],
   "version": 1

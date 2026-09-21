@@ -124,6 +124,9 @@
           "id": "omaplug"
         },
         {
+          "id": "io.github.ctl0v0.outfit"
+        },
+        {
           "id": "io.github.cylon58.omarchy-knowledge"
         },
         {
@@ -175,9 +178,6 @@
       "id": "io.github.oldjobobo.thpm"
     },
     {
-      "id": "jnodavid.omarkey"
-    },
-    {
       "id": "piyush.omaswitch"
     },
     {
@@ -225,9 +225,6 @@
     },
     {
       "id": "atoslins.dualsense"
-    },
-    {
-      "id": "io.github.romills.omarkeys"
     },
     {
       "id": "nkarl.fcitx-active-input-lang",
@@ -289,6 +286,9 @@
     },
     {
       "id": "dorneles.omabot"
+    },
+    {
+      "id": "meviusisback.keybinds"
     }
   ],
   "version": 1

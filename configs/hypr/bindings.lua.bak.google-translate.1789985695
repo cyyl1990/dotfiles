@@ -338,12 +338,13 @@ o.bind(
 
 -- Keybindings --
 hl.unbind("SUPER + SHIFT + K")
-o.bind(
-  "SUPER + SHIFT + K",
-  "Edit Keybindings",
-  "omarchy-shell shell summon meviusisback.keybinds '{}'"
-)
+-- o.bind(
+--    "SUPER + SHIFT + K",
+--     "Edit Keybindings",
+--     "omarchy-shell shell summon meviusisback.keybinds '{}'"
+-- )
 
+o.bind("SUPER + SHIFT + K", "Hotkey viewer", { launch = "hotkeyviewer --toggle" })
 
 -- screenshot
 hl.unbind("PRINT")
@@ -403,6 +404,10 @@ o.bind("SUPER + ALT + SHIFT + F", "File manager (cwd)",
   "uwsm-app -- /home/bap/.local/bin/strata \"$(omarchy-cmd-terminal-cwd)\"")
 -- strata-installer: file-manager end
 
+-- OmarKEYS
+dofile((os.getenv("HOME") or "") .. "/.config/omarchy/plugins/io.github.romills.omarkeys/hyprland.lua")
+
 -- Omaconv
 hl.unbind("SUPER + SHIFT + H")
 o.bind("SUPER + SHIFT + H", "Omaconv", "omarchy-shell shell toggle slcode777.omaconv")
+o.bind("SUPER + ALT + T", "Google Translate", "/home/bap/.config/omarchy/plugins/godofjoper.translate/capture.sh")

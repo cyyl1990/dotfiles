@@ -13,6 +13,7 @@ godofjoper.translate https://github.com/GodofJoper/omarchy-google-translate.git 
 io.github.0x1ocean.omatrix https://github.com/0x1ocean/omarchy-omatrix.git fe605379a3d5584d91b2dc6d4559af58350824dd
 io.github.calebhat.themebook https://github.com/calebhat/omarchy-themebook.git cfc7c24e88b22ed34f0be8de98d35f298ee86c44
 io.github.claudsondouglas.arcdock https://github.com/claudsondouglas/arc.dock dd919eb6257cc7ae1264d77821f7273ad0cf7050
+io.github.ctl0v0.outfit https://github.com/ctl0v0/outfit.git 56191148011e0dcbb11f9449361b200dc0545e2e
 io.github.cylon58.omarchy-knowledge https://github.com/cylon58/omarchy-community-knowledge-plugin.git d2f2c324652ca6dd7105850539841f135d0df1e6
 io.github.daniellopez12.just-right-weather https://github.com/daniellopez12/just-right-weather.git c9d3e9f23c37a459c5a63fd73b7bfdf191e96874
 io.github.deunnis.lacquer https://github.com/Deunnis/omarchy-lacquer.git 79237c53e5d554f4640b29d7376e574875b18055
@@ -25,18 +26,16 @@ io.github.kaiizu.runcat https://github.com/kaiizu/runningcat.git 63146002445fa92
 io.github.matheusmedrado.omadock https://github.com/matheusmedrado/omadock.git e5f417542af8e0adb4e982ba9011bc450160d080
 io.github.mtolhuys.theme-manager https://github.com/mtolhuys/omarchy-theme-manager.git 8fd4184724fe597a0a67238db9e2a64a2119e288
 io.github.rawritude.aria2 https://github.com/rawritude/omarchy-aria2.git 3092d6fd87cec48fec3ea0cb9acec379fa9095a7
-io.github.romills.omarkeys https://github.com/romills/OmarKEYs.git 2bea4bd2de6793e63e854066f1e29bb38b66f2d9
 io.github.rui-pedro-silva.cloudflare-warp https://github.com/rpots/omarchy-cloudflare-warp.git b6383956f308e9ea7544b182f5bf863dd2463ada
 io.github.sirjul1337.lock-explorer https://github.com/SirJul1337/omarchy-lock-explorer.git d2f586b2907c871f153da1da5866c1b2a0d5a3b2
 io.github.smoothpixels.cursor-accent https://github.com/SmoothPixels/cursor-accent.git 3222ffdb75d7be2f82e0eec15e20f6c9a51a1596
-io.github.tcballard.bartranslate https://github.com/tcballard/omarchy-plugin-translate.git 3c44dba4226ba05fcbbc146be3c38b49ab60bfe7
 io.github.twiking.omasettings https://github.com/twiking/omasettings.git 72cfe1640aaece2fef39e4dd155289510f07b2a8
-jnodavid.omarkey https://github.com/0d4vid/omarkey.git 5ca95854fb0b033b34b714c86e53cbd6eb76ed9b
 jo.omacheatsheet https://github.com/jayosays/omacheatsheet.git 5a8e5977d8e137fc1b05da4670ee7abff7eafd7a
 jrmmhm.pocket https://github.com/jrmmhm/omarchy-pocket.git ec3f769ce16b446ca38191d1d480a7a7ac2a1533
 juangalt.fast-plugin-tui-omarchy https://github.com/juangalt/fast-plugin-tui-omarchy 63fed367498b30f2ca99ec13e37f428150b362c1
 losokos.window-gallery https://github.com/LosokosG/omarchy-window-gallery.git c297b085c827797ee20970c96ac4d3950d69a981
 marcho78.taskbar https://github.com/marcho78/omarchy-taskbar.git a0d255b6434561c9aae1e91c219d8ae4178393e8
+meviusisback.keybinds https://github.com/meviusisback/keybinds-plugin.git 32ebe241091e551cb47c14646c613427ea535179
 mirador https://github.com/sanjyay/Mirador.git 55bfa595177184e671c3c2b85eb40b4c05e8b2f7
 mryll.meteobar https://github.com/mryll/meteobar.git dd18463d80a0c1f54fc16b6609af64e498f8f69e
 njpatel.omabot https://github.com/njpatel/omabot.git 85cee8c3eef21f2d5458e8a57c1f109b09d78556

@@ -338,12 +338,13 @@ o.bind(
 
 -- Keybindings --
 hl.unbind("SUPER + SHIFT + K")
-o.bind(
-  "SUPER + SHIFT + K",
-  "Edit Keybindings",
-  "omarchy-shell shell summon meviusisback.keybinds '{}'"
-)
+-- o.bind(
+--    "SUPER + SHIFT + K",
+--     "Edit Keybindings",
+--     "omarchy-shell shell summon meviusisback.keybinds '{}'"
+-- )
 
+o.bind("SUPER + SHIFT + K", "Hotkey viewer", { launch = "hotkeyviewer --toggle" })
 
 -- screenshot
 hl.unbind("PRINT")

@@ -31,13 +31,13 @@ PLUGINS_DIR = Path(os.environ.get("HOME", str(Path.home()))) / ".config/omarchy/
 
 # How often to actually `git fetch` the cloned themes. Remote checks are cheap
 # but GitHub will rate-limit 65 repos hammered every 30 minutes, and theme
-# updates are rare — 6h is plenty.
-THEME_CHECK_INTERVAL = 6 * 3600
+# updates are rare — 30min is plenty; stale data after user update is handled
+# by cache-invalidation in the overlay shortcuts.
+THEME_CHECK_INTERVAL = 30 * 60
 THEME_TIMEOUT = 5
 
-# Same throttle as themes: git fetch every 6h, cached result otherwise. Plugin
-# repos are mostly personal; rate-limit risk is real if user has dozens.
-PLUGIN_CHECK_INTERVAL = 6 * 3600
+# Same throttle as themes: git fetch every 30min, cached result otherwise.
+PLUGIN_CHECK_INTERVAL = 30 * 60
 PLUGIN_TIMEOUT = 5
 
 # Packages where a botched update can leave the system unbootable or the
@@ -371,6 +371,17 @@ def mark_seen():
     return state
 
 
+def invalidate():
+    """Clear theme and plugin caches to force fresh re-fetch on next check."""
+    for path in (THEME_CACHE, PLUGIN_CACHE):
+        try:
+            if path.is_file():
+                path.unlink()
+        except Exception:
+            pass
+    return load_state() or {}
+
+
 def main():
     mode = sys.argv[1] if len(sys.argv) > 1 else "full"
     if mode == "cached":
@@ -381,6 +392,8 @@ def main():
             state = build()
     elif mode == "mark-seen":
         state = mark_seen()
+    elif mode == "invalidate":
+        state = invalidate()
     else:
         state = build()
     print(json.dumps(state))

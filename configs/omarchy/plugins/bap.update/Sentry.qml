@@ -224,11 +224,19 @@ Item {
             event.accepted = true
           } else if (event.key === Qt.Key_T) {
             root.dismiss()
-            Quickshell.execDetached(["omarchy-launch-floating-terminal-with-presentation", "omarchy-theme-update"])
+            // Invalidate theme cache, then launch updater — bar will re-fetch
+            // fresh data after cache is cleared and user completes the update.
+            Quickshell.execDetached(["bash", "-c",
+              "python3 '" + root.helperPath + "' invalidate && " +
+              "omarchy-launch-floating-terminal-with-presentation omarchy-theme-update"])
             event.accepted = true
           } else if (event.key === Qt.Key_P) {
             root.dismiss()
-            Quickshell.execDetached(["omarchy-launch-floating-terminal-with-presentation", "omarchy-plugin-update", "--yes"])
+            // Invalidate plugin cache, then launch updater — bar will re-fetch
+            // fresh data after cache is cleared and user completes the update.
+            Quickshell.execDetached(["bash", "-c",
+              "python3 '" + root.helperPath + "' invalidate && " +
+              "omarchy-launch-floating-terminal-with-presentation omarchy-plugin-update --yes"])
             event.accepted = true
           }
         }

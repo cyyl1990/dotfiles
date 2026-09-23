@@ -333,6 +333,7 @@ python-defusedxml
 python-gobject
 python-packaging
 python-pipx
+python-plyvel
 python-poetry-core
 python-requests
 qbittorrent

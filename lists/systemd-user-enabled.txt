@@ -2,6 +2,7 @@ aria2.service
 auto-sort-downloads.service
 bt-agent.service
 gamemoded.service
+hyprchromad.service
 mpd.service
 omarchy-crash-watch.service
 omarchy-fcitx5.service

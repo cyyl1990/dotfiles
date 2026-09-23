@@ -185,6 +185,7 @@ hdparm
 htop
 hwdetect
 hwinfo
+hyprchroma
 hyprcursor
 hyprgraphics
 hyprland
@@ -373,6 +374,7 @@ python-defusedxml
 python-gobject
 python-packaging
 python-pipx
+python-plyvel
 python-poetry-core
 python-requests
 python312

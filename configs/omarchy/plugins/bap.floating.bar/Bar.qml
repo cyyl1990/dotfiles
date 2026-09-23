@@ -121,10 +121,14 @@ Item {
     function serviceFor(pluginId) {
       var id = String(pluginId || "")
       if (id === "omarchy.media" || id === "omarchy.notifications"
-          || id === "omarchy.idle" || id === "omarchy.nightlight"
-          || id === "bap.notification") {
+          || id === "omarchy.idle" || id === "omarchy.nightlight") {
+        // First-party services owned by the Omarchy shell host.
         return firstPartyServiceFor(id)
       }
+      // bap.notification stays out of the whitelist on purpose: the fork's
+      // Service.qml owns the icon cache + pumpIcons pipeline, and forcing it
+      // through firstPartyServiceFor here was starving that pipeline and
+      // leaving every notification icon stuck on the leading-letter fallback.
       // Prefer the instance this bar hosted itself: it is created
       // synchronously from a Ready component, so it always carries the full
       // service API. The shell's plugin-scoped instance is created on demand;
@@ -275,8 +279,7 @@ Item {
   property real configuredFloatGap: -1
   property real autoDetectedGap: 8
   readonly property real floatGap: configuredFloatGap >= 0 ? configuredFloatGap : autoDetectedGap
-  property string gapsOutProbeBuffer: ""
-  property string borderSizeProbeBuffer: ""
+  property string hyprlandGeomProbeBuffer: ""
   property int islandPadH: 12
   // Mirror Hyprland's general:border_size so window-edge thickness matches
   // the bar outline. Probed once on startup and on each refresh trigger
@@ -668,58 +671,48 @@ Item {
     return BarModel.pinTrayToInner(entries, section)
   }
 
-  // Read Hyprland's outer gap (general:gaps_out) so the bar's floating margin
-  // matches the system gap. Re-probed on every Hyprland config reload.
-  function refreshGapsOut() {
-    if (gapsOutProbe.running) return
-    gapsOutProbeBuffer = ""
-    gapsOutProbe.running = true
+  // Single probe that fetches both Hyprland general:gaps_out and
+  // general:border_size in one shell invocation. Each reload of hyprland's
+  // config fires once; saves one fork per refresh vs. running them separately.
+  function refreshHyprlandGeom() {
+    if (hyprlandGeomProbe.running) return
+    hyprlandGeomProbeBuffer = ""
+    hyprlandGeomProbe.running = true
   }
 
   Connections {
     target: Hyprland
     function onRawEvent(event) {
       if (event && event.name === "configreloaded") {
-        root.refreshGapsOut()
-        root.refreshBorderSize()
+        root.refreshHyprlandGeom()
       }
     }
   }
 
   Process {
-    id: gapsOutProbe
-    command: ["hyprctl", "-j", "getoption", "general:gaps_out"]
-    stdout: SplitParser { onRead: function(line) { root.gapsOutProbeBuffer += line } }
+    id: hyprlandGeomProbe
+    command: ["bash", "-c",
+      "hyprctl -j getoption general:gaps_out; " +
+      "hyprctl -j getoption general:border_size"]
+    stdout: SplitParser { onRead: function(line) { root.hyprlandGeomProbeBuffer += line + "\n" } }
     onExited: {
       try {
-        var parsed = JSON.parse(root.gapsOutProbeBuffer)
-        var firstValue = parseFloat(String(parsed.css || "").trim().split(/\s+/)[0])
+        // The two JSON objects are concatenated; split at the closing brace.
+        var raw = root.hyprlandGeomProbeBuffer
+        var idx = raw.indexOf("}{")
+        if (idx < 0) return
+        var gapsJson = raw.substring(0, idx + 1)
+        var borderJson = raw.substring(idx + 1)
+        var gaps = JSON.parse(gapsJson)
+        var firstValue = parseFloat(String(gaps.css || "").trim().split(/\s+/)[0])
         if (!isNaN(firstValue)) root.autoDetectedGap = firstValue
-      } catch (e) {
-      }
-    }
-    Component.onCompleted: root.refreshGapsOut()
-  }
-
-  function refreshBorderSize() {
-    if (borderSizeProbe.running) return
-    borderSizeProbeBuffer = ""
-    borderSizeProbe.running = true
-  }
-
-  Process {
-    id: borderSizeProbe
-    command: ["hyprctl", "-j", "getoption", "general:border_size"]
-    stdout: SplitParser { onRead: function(line) { root.borderSizeProbeBuffer += line } }
-    onExited: {
-      try {
-        var parsed = JSON.parse(root.borderSizeProbeBuffer)
-        var n = parseInt(parsed.int, 10)
+        var border = JSON.parse(borderJson)
+        var n = parseInt(border.int, 10)
         if (!isNaN(n) && n >= 0) root.hyprlandBorderSize = Math.max(0, Math.min(20, n))
       } catch (e) {
       }
     }
-    Component.onCompleted: root.refreshBorderSize()
+    Component.onCompleted: root.refreshHyprlandGeom()
   }
 
   function applyBarConfig() {
@@ -959,7 +952,26 @@ Item {
     return source ? Util.fileUrl(source) : ""
   }
 
-  Component.onCompleted: applyBarConfig()
+  Component.onCompleted: {
+    // Eagerly host bap.notification before any widget resolves its service.
+    // The fork's Service.qml owns the icon cache + pumpIcons pipeline; if a
+    // widget binds `bar.shell.serviceFor("bap.notification")` before this
+    // runs, it caches `null` (the property is readonly) and stays broken
+    // until the next shell reload. Hosting it here guarantees the cached
+    // instance is in place by the time widgets evaluate their bindings.
+    if (typeof serviceFor === "function") serviceFor("bap.notification")
+    applyBarConfig()
+  }
+
+  Component.onDestruction: {
+    // Clean up hosted services to prevent leaks on plugin reload.
+    // Clear the shared cache so serviceFor returns fresh instances next load.
+    for (var id in Shared.services) {
+      var svc = Shared.services[id]
+      if (svc && typeof svc.destroy === "function") svc.destroy()
+    }
+    Shared.services = {}
+  }
 
   function run(command) {
     if (!command) return
@@ -2210,71 +2222,6 @@ Item {
         mouse.accepted = true
       }
     }
-
-    IslandResizeHandle {
-      region: frame.region
-      atEndEdge: false
-    }
-
-    IslandResizeHandle {
-      region: frame.region
-      atEndEdge: true
-    }
   }
 
-  // A 10px grab strip on one island edge. Drag outward to widen, inward to
-  // shrink down to the content-fit floor. The live value rides islandWidthLive;
-  // it is committed to shell.json on release so an aborted drag leaves no trace.
-  component IslandResizeHandle: MouseArea {
-    id: handle
-
-    required property string region
-    // True = sits at the far end of the island's length axis (right edge on
-    // horizontal strips, bottom edge on vertical ones).
-    required property bool atEndEdge
-    readonly property bool lengthVertical: root.vertical
-
-    property real startSceneAxis: 0
-
-    width: lengthVertical ? parent.width : 10
-    height: lengthVertical ? 10 : parent.height
-    x: lengthVertical ? 0 : (atEndEdge ? parent.width - width : 0)
-    y: lengthVertical ? (atEndEdge ? parent.height - height : 0) : 0
-    z: 40
-    acceptedButtons: Qt.LeftButton
-    cursorShape: lengthVertical ? Qt.SizeVerCursor : Qt.SizeHorCursor
-    hoverEnabled: true
-
-    onPressed: function(mouse) {
-      var scene = mapToItem(null, mouse.x, mouse.y)
-      handle.startSceneAxis = lengthVertical ? scene.y : scene.x
-    }
-
-    onPositionChanged: function(mouse) {
-      if (!(mouse.buttons & Qt.LeftButton)) return
-      var scene = mapToItem(null, mouse.x, mouse.y)
-      var axis = lengthVertical ? scene.y : scene.x
-      var delta = axis - handle.startSceneAxis
-      var contribution = atEndEdge ? delta : -delta
-      var base = Number(root.islandWidths[region])
-      if (!isFinite(base) || base < 0) base = 0
-      root.setIslandWidthLive(region, base + contribution)
-    }
-
-    onReleased: root.commitIslandWidth(region)
-    onCanceled: root.clearIslandWidthLive()
-
-    Rectangle {
-      anchors.horizontalCenter: parent.horizontalCenter
-      anchors.verticalCenter: parent.verticalCenter
-      width: handle.lengthVertical ? 2 : parent.width
-      height: handle.lengthVertical ? parent.height : 2
-      radius: 1
-      color: Color.accent
-      opacity: handle.pressed || handle.containsMouse ? 0.85 : 0
-      visible: opacity > 0
-
-      Behavior on opacity { NumberAnimation { duration: 120 } }
-    }
-  }
 }

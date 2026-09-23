@@ -2337,4 +2337,20 @@ Item {
       }
     }
   }
+
+  // Clean up long-running processes and save state before this service instance
+  // is destroyed (e.g. shell reload, bar rebuild). Quickshell cleans up children
+  // automatically, but stopping Process objects here ensures the shell's stdin
+  // pipe is flushed and the store is persisted before teardown.
+  Component.onDestruction: {
+    if (iconProc && iconProc.running) {
+      iconProc.cancelled = true
+      iconProc.running = false
+    }
+    if (storeProc && storeProc.running) storeProc.running = false
+    if (heldProc && heldProc.running) heldProc.running = false
+    if (replayProc && replayProc.running) replayProc.running = false
+    if (guardProc && guardProc.running) guardProc.running = false
+    saveQuiet()
+  }
 }

@@ -303,21 +303,8 @@ o.window({ class = "^(org\\.quickshell)$", title = "^(Keybindings)$" }, {
 })
 
 -- Yoosee Camera (Wine-Staging)
--- Fix: Only float by default. Do NOT force size or center for all windows,
--- as Wine will crash when Hyprland tries to resize and center small tooltips/menus!
-hl.window_rule({
-    match = {
-        class = "^(yoosee\\.exe|Yoosee\\.exe|steam_proton)$",
-    },
-    float = true,
-})
-
-hl.window_rule({
-    match = {
-        title = "^(Yoosee.*)$",
-    },
-    float = true,
-})
+-- Removed: Yoosee now tiles normally like other windows.
+-- If you need it float for specific reasons, add rules back here.
 
 
 -- Matches on title, because the Wayland backend leaves the app_id empty.

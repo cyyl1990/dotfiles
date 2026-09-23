@@ -7,12 +7,9 @@
   "license": "Apache-2.0",
   "description": "Fork của njpatel/omapager: notification daemon cho Omarchy với giao diện widget trên thanh bar. Toggle DND qua command.",
   "kinds": [
-    "service",
     "bar-widget"
   ],
-  "keepLoaded": true,
   "entryPoints": {
-    "service": "Service.qml",
     "barWidget": "Widget.qml"
   },
   "barWidget": {

@@ -157,8 +157,12 @@ Item {
   function startCava() {
     if (!spectrumWanted || intentionalStop || cavaProcess.running
         || failureCount >= maximumRetries) return
-    state = "starting"
+    // Reset stdin pipe before each spawn so a previous run's leftover
+    // buffering doesn't cause the new process to consume its own config
+    // silently. The Process element keeps `stdinEnabled` sticky once
+    // switched off, so rearming here is required for the multi-revive path.
     cavaProcess.stdinEnabled = true
+    state = "starting"
     cavaProcess.running = true
   }
 

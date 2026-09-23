@@ -17,6 +17,7 @@ firefox-extension-refined-github-bin
 fish-bash2env
 fzf-tab
 gtk-engine-murrine
+hyprchroma
 inotify-info
 irmpc
 jobo-themes

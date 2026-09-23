@@ -25,7 +25,12 @@ BarWidget {
 
   // The daemon, if it is up. Everything that reads it degrades to empty rather
   // than breaking the bar.
-  readonly property var service: bar && bar.shell ? bar.shell.serviceFor("bap.notification") : null
+  readonly property var service: {
+    // Timing guard: serviceFor may not exist until bar.shell is ready
+    if (!bar || !bar.shell) return null
+    if (typeof bar.shell.serviceFor !== 'function') return null
+    return bar.shell.serviceFor("bap.notification")
+  }
   readonly property bool silenced: service ? service.doNotDisturb : false
   readonly property bool sharingActive: service ? service.sharingActive : false
   readonly property bool sharingOfferPending: service ? service.sharingOfferPending : false

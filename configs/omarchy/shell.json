@@ -98,6 +98,13 @@
           "id": "omarchy.clipboard"
         },
         {
+          "alertsOn": [
+            "cpu",
+            "ram",
+            "cputemp",
+            "gputemp",
+            "drivetemp"
+          ],
           "id": "io.github.diegopluna.argus",
           "show": [
             "cpu",

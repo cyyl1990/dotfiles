@@ -716,4 +716,28 @@ Ui.Panel {
   }
 
   Loader { id: panelLoader }
+
+  IpcHandler {
+    target: "bap.pacman-workspaces"
+
+    function probe(): string {
+      var ws = root.workspaceService
+      return JSON.stringify({
+        focused: root.focusedWorkspaceId,
+        workspaceCount: ws && ws.visibleWorkspaceIds ? ws.visibleWorkspaceIds.length : 0,
+        displayedCount: root.displayedWorkspaceIds.length,
+        traveling: root.pacmanTraveling,
+        target: root.pacmanTargetWorkspaceId,
+        style: root.renderStyle,
+        vertical: root.vertical,
+        panelLoaded: root.panelLoaded
+      })
+    }
+    function refresh(): void { root.broadcast("refresh") }
+    function togglePanel(): void {
+      if (root.panelLoader && root.panelLoader.item) {
+        if (typeof root.panelLoader.item.toggle === "function") root.panelLoader.item.toggle()
+      }
+    }
+  }
 }

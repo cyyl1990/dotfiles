@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "bap.netmon",
+  "name": "bap Netmon",
+  "version": "1.0.0",
+  "author": "Bắp (bap)",
+  "description": "Network bandwidth monitor for the bar — shows upload/download speed from /proc/net/dev. Minimal, no external deps.",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "BarWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "bap Netmon",
+    "description": "Upload/download bandwidth speed on the bar",
+    "category": "Info",
+    "allowMultiple": false
+  }
+}

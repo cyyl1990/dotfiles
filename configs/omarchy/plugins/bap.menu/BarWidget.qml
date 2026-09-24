@@ -1,5 +1,6 @@
 import QtQuick
 import Quickshell
+import Quickshell.Io
 import qs.Commons as Commons
 import qs.Ui
 import Qt5Compat.GraphicalEffects
@@ -29,6 +30,36 @@ BarWidget {
     else {
       root.menuOpen = !root.menuOpen
       root.bar.run("omarchy-shell shell toggle bap.menu '{\"menu\":\"root\"}'")
+    }
+  }
+
+  IpcHandler {
+    target: "bap.menu"
+
+    // NOTE: bar.run() là fire-and-forget; không có async result.
+    // local menuOpen được toggle cùng lúc với lệnh. Nếu lệnh fail
+    // (vd bar chưa ready), state sẽ drift. Đây là hạn chế chung
+    // của IPC pattern hiện tại — không có cách await command result.
+    function toggle(): void {
+      root.menuOpen = !root.menuOpen
+      if (root.bar) root.bar.run("omarchy-shell shell toggle bap.menu '{\"menu\":\"root\"}'")
+    }
+    function open(): void {
+      if (!root.menuOpen) {
+        root.menuOpen = true
+        if (root.bar) root.bar.run("omarchy-shell shell show bap.menu '{\"menu\":\"root\"}'")
+      }
+    }
+    function close(): void {
+      if (root.menuOpen) {
+        root.menuOpen = false
+        if (root.bar) root.bar.run("omarchy-shell shell hide bap.menu")
+      }
+    }
+    function probe(): string {
+      return JSON.stringify({
+        open: root.menuOpen
+      })
     }
   }
 

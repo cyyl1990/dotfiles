@@ -11,20 +11,19 @@ var WEEKDAY_NAMES = ["chủ nhật", "thứ hai", "thứ ba", "thứ tư", "th�
 //      writes the result back to shell.json, so the label the bar shows and
 //      the format the config stores are always the same thing.
 //
-// The locale-shaped time presets are each followed by their 12-hour twin, so
-// the walk from a 24-hour label to the same label in AM/PM is a single right
-// click rather than a lap of the ring. The ISO preset is deliberately left
-// without one: ISO 8601 writes time on a 24-hour clock, so an AM/PM variant
-// would contradict the only thing that format is for.
+// Qt.formatDateTime always outputs English day/month names (C locale), so
+// BarWidget.formatted() replaces them via regex maps. This means the preset
+// skeletons just need the right Qt tokens; the Vietnamese replacements are
+// handled by the map lookups.
 var CLOCK_FORMATS = [
   "dddd • HH:mm",
   "dddd • h:mm AP",
   "HH:mm",
   "h:mm AP",
-  "ddd, d MMM • HH:mm",
-  "ddd, d MMM • h:mm AP",
-  "d MMMM 'W'ww yyyy",
-  "yyyy-MM-dd • HH:mm"
+  "dddd, ngày d MMM • HH:mm",
+  "dddd, ngày d MMM • h:mm AP",
+  "Ngày d MMMM 'W'ww năm yyyy",
+  "dd-MM-yyyy • HH:mm"
 ]
 
 // Vertical bars have room for a few stacked lines and nothing else, so the

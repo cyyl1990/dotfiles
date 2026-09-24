@@ -38,9 +38,6 @@
         },
         {
           "id": "omarchy.active-window"
-        },
-        {
-          "id": "bap.netmon"
         }
       ],
       "right": [
@@ -277,7 +274,10 @@
       "id": "io.github.rawritude.aria2"
     },
     {
-      "id": "bap.netmon"
+      "id": "bap.clock"
+    },
+    {
+      "id": "bap.system.monitor"
     }
   ],
   "version": 1

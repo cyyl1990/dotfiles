@@ -36,7 +36,6 @@ mryll.meteobar https://github.com/mryll/meteobar.git dd18463d80a0c1f54fc16b6609a
 njpatel.omabot https://github.com/njpatel/omabot.git 85cee8c3eef21f2d5458e8a57c1f109b09d78556
 njpatel.omapager https://github.com/njpatel/omapager.git 59591749f42d7059c146604f55925fdb436daba6
 nkarl.fcitx-active-input-lang https://github.com/nkarl/fcitx-active-input-lang.git dc3c68985939c259f2f1265454674975c15346e6
-olauncher https://github.com/hisnameismarco/OLauncher f06224714fa0580cd73b322953f005b397b0fa5b
 omadock https://github.com/thepathless/omadock.git ddcffae71accd907f8c78aec2da62de9c343f40d
 omaplug https://github.com/fross100/omaplug 9da73fc13fc2027be5b44915b4ab89440beb74ab
 owaiss.session-menu https://github.com/Owaisshaikh11/omarchy-session-menu.git 4d1c6fed0dcf143e7c03b0ecb88a495c5249cb68

@@ -99,12 +99,12 @@
           "id": "nkarl.fcitx-active-input-lang",
           "inputMethods": [
             {
-              "id": "lotus",
-              "label": "VI"
-            },
-            {
               "id": "keyboard-us",
               "label": "EN"
+            },
+            {
+              "id": "lotus",
+              "label": "VI"
             }
           ]
         },
@@ -227,9 +227,6 @@
     },
     {
       "id": "meviusisback.keybinds"
-    },
-    {
-      "id": "olauncher"
     },
     {
       "id": "bap.magnify-dock"

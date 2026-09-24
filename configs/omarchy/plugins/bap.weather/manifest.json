@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "id": "bap.weather",
-  "name": "bap Weather",
+  "name": "bap Thời tiết",
   "version": "1.0.3",
   "author": "bap",
   "license": "MIT",
-  "description": "Fork of just-right-weather by daniellopez12. Current conditions, 48-hour scrollable forecast, rain chance/amount, sunrise/sunset, and three days ahead — rebranded and operated under bap-plugins-omarchy.",
+  "description": "Fork của just-right-weather của daniellopez12. Thời tiết hiện tại, dự báo 48 giờ cuộn được, xác suất/lượng mưa, bình minh/hoàng hôn, và ba ngày tới — đổi tên và vận hành dưới bap-plugins-omarchy.",
   "kinds": [
     "bar-widget"
   ],
@@ -13,8 +13,8 @@
     "barWidget": "BarWidget.qml"
   },
   "barWidget": {
-    "displayName": "bap Weather",
-    "description": "Current conditions, 48 hourly forecasts, and three days ahead",
+    "displayName": "bap Thời tiết",
+    "description": "Thời tiết hiện tại, dự báo 48 giờ, và ba ngày tới",
     "category": "Info",
     "allowMultiple": false,
     "defaultSection": "center"

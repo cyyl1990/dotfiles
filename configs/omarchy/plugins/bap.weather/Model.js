@@ -80,7 +80,7 @@ function coordinateLocation(text) {
   var latitude = Number(match[1])
   var longitude = Number(match[2])
   if (!validCoordinates(latitude, longitude)) return null
-  return { name: "Pinned location", description: latitude + ", " + longitude,
+  return { name: "Vị trí đã ghim", description: latitude + ", " + longitude,
     latitude: latitude, longitude: longitude }
 }
 
@@ -102,7 +102,7 @@ function parseLocationSearch(raw, query) {
     if (!validCoordinates(latitude, longitude)) throw new Error("ZIP lookup returned invalid coordinates")
     return {
       name: place["place name"] + ", " + place["state abbreviation"] + " " + data["post code"],
-      description: "ZIP area center (approximate), " + place.state,
+      description: "Trung tâm vùng mã ZIP (xấp xỉ), " + place.state,
       latitude: latitude,
       longitude: longitude
     }
@@ -162,6 +162,10 @@ function shouldUseImperial(unitOverride, localeName, countryName) {
   if (unit === "imperial") return true
   if (unit === "metric") return false
 
+  // Vietnamese locale → metric (°C, km/h, mm) regardless of country heuristic.
+  var name = String(localeName || "").replace(".", "_")
+  if (/^vi($|[_.-])/.test(name)) return false
+
   var countryPreference = countryUsesImperial(countryName)
   if (countryPreference !== null) return countryPreference
 
@@ -174,68 +178,6 @@ function dayName(dateString, formatter) {
   if (isNaN(d.getTime())) return ""
   if (formatter) return formatter(d)
   return ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"][d.getDay()]
-}
-
-// Vietnamese day names. Calendar week starts on Monday (Thứ Hai).
-var DAY_NAMES_VI = [
-  "Chủ Nhật",
-  "Thứ Hai",
-  "Thứ Ba",
-  "Thứ Tư",
-  "Thứ Năm",
-  "Thứ Sáu",
-  "Thứ Bảy"
-]
-
-function dayNameVi(dateString) {
-  if (!dateString) return ""
-  var d = new Date(dateString + "T12:00:00")
-  if (isNaN(d.getTime())) return ""
-  return DAY_NAMES_VI[d.getDay()]
-}
-
-// Rewrites common Vietnamese geography strings emitted by wttr.in /
-// Open-Meteo into the local spelling. Source data is ASCII, so we match on
-// English exonyms ("Ho Chi Minh", "Hanoi") plus several Vietnamese-diacritic
-// variants the API may emit depending on locale. Case-insensitive; first match
-// wins; falls back to the original string.
-var LOCATION_REWRITES_VI = [
-  [/\bho\s*chi\s*minh(?:\s+city)?\b/i, "TP. Hồ Chí Minh"],
-  [/\bhanoi\b/i, "Hà Nội"],
-  [/\bha\s*noi\b/i, "Hà Nội"],
-  [/\bsai\s*gon\b/i, "TP. Hồ Chí Minh"],
-  [/\bho\s*chi\s*minh\s+city\b/i, "TP. Hồ Chí Minh"],
-  [/\bhue\b/i, "Huế"],
-  [/\bda\s*nang\b/i, "Đà Nẵng"],
-  [/\bdanang\b/i, "Đà Nẵng"],
-  [/\bhai\s*phong\b/i, "Hải Phòng"],
-  [/\bcan\s*tho\b/i, "Cần Thơ"],
-  [/\bnha\s*trang\b/i, "Nha Trang"],
-  [/\bvung\s*tau\b/i, "Vũng Tàu"],
-  [/\bda\s*lat\b/i, "Đà Lạt"],
-  [/\bdalat\b/i, "Đà Lạt"],
-  [/\bquy\s*nhon\b/i, "Quy Nhơn"],
-  [/\bbien\s*hoa\b/i, "Biên Hòa"]
-]
-
-function vnifyLocation(text) {
-  if (!text) return ""
-  for (var i = 0; i < LOCATION_REWRITES_VI.length; i++) {
-    var entry = LOCATION_REWRITES_VI[i]
-    if (entry[0].test(text)) return text.replace(entry[0], entry[1])
-  }
-  return text
-}
-
-// 24-hour wall-clock label, no AM/PM. Falls back to "now" when the timestamp
-// is malformed — keeps the hourly forecast scrollable when the API returns an
-// unusual shape.
-function hourLabel24(timestamp) {
-  if (typeof timestamp !== "string" || timestamp.length < 16) return ""
-  var h = Number(timestamp.slice(11, 13))
-  var minutes = timestamp.slice(14, 16)
-  if (!isFinite(h) || h < 0 || h > 23) return ""
-  return h.toString() + "h" + minutes
 }
 
 // Vietnamese day names. Calendar week starts on Monday (Thứ Hai).

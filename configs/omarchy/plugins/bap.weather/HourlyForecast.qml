@@ -29,7 +29,7 @@ Column {
 
     Text {
       width: parent.width - navigation.width - parent.spacing
-      text: "HOURLY \u00b7 NEXT 48 HOURS"
+      text: "THEO GIỜ \u00b7 48 GIỜ TỚI"
       color: root.foreground
       font.family: root.fontFamily
       font.pixelSize: Style.font.bodySmall
@@ -118,7 +118,7 @@ Column {
           Text {
             anchors.horizontalCenter: parent.horizontalCenter
             y: Style.space(82)
-            text: parent.solar ? (modelData.kind === "sunset" ? "Sunset" : "Sunrise")
+            text: parent.solar ? (modelData.kind === "sunset" ? "Hoàng hôn" : "Bình minh")
               : Model.hourlyTemperature(modelData.temperature, root.useImperial)
             color: root.foreground
             font.family: root.fontFamily
@@ -197,7 +197,7 @@ Column {
 
   Text {
     width: parent.width
-    text: root.status || "Precipitation chance / amount \u00b7 Drag or use arrows"
+    text: root.status || "Xác suất / lượng mưa · Kéo hoặc dùng mũi tên"
     color: root.foreground
     opacity: 0.6
     font.family: root.fontFamily

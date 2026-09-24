@@ -85,10 +85,10 @@ Panel {
   readonly property var hourlyEntries: hourlyLocationQuery === locationQuery
     ? Model.hourlyForecast(dailyForecastReport, forecastClock, 48) : []
   readonly property string hourlyStatus: hourlyFetchFailed && hourlyEntries.length > 0
-    ? "Update failed \u00b7 Showing last forecast"
+    ? "Cập nhật thất bại \u00b7 Đang hiển thị dự báo cũ"
     : ((hourlyUpdatedAt > 0 && forecastClock - hourlyUpdatedAt > root.refreshMinutes * 120000)
       || (currentUpdatedAt > 0 && forecastClock - currentUpdatedAt > root.refreshMinutes * 120000)
-      ? "Forecast may be outdated \u00b7 Middle-click weather to retry" : "")
+      ? "Dự báo có thể đã cũ \u00b7 Middle-click vào weather để thử lại" : "")
   property string wttrLocation: ""
   property bool locationReady: false
   property bool cacheReady: false
@@ -365,7 +365,7 @@ Panel {
       return
     }
     if (geocodeProc.running || geocodeDebounce.running || query !== geocodeResultsQuery || !locationSuggestions.length) {
-      locationError = "Choose a matching location below before saving."
+      locationError = "Hãy chọn một địa điểm khớp bên dưới trước khi lưu."
       return
     }
     pickSuggestion(locationSuggestions[suggestionIndex])
@@ -380,7 +380,7 @@ Panel {
   function pickSuggestion(suggestion) {
     if (!suggestion) return
     if (!Model.validCoordinates(suggestion.latitude, suggestion.longitude)) {
-      locationError = "This location has invalid coordinates."
+      locationError = "Địa điểm này có toạ độ không hợp lệ."
       return
     }
     geocodeDebounce.stop()
@@ -447,7 +447,7 @@ Panel {
       geocodeResultsQuery = query
       locationSuggestions = [{
         name: configuredLocation,
-        description: "Saved pin: " + configuredLocationState.latitude + ", " + configuredLocationState.longitude,
+        description: "Đã ghim: " + configuredLocationState.latitude + ", " + configuredLocationState.longitude,
         latitude: configuredLocationState.latitude,
         longitude: configuredLocationState.longitude
       }]
@@ -457,7 +457,7 @@ Panel {
       locationSuggestions = [coordinate]
     } else if (/^[+\-\d.\s]+,[+\-\d.\s]+$/.test(query)) {
       geocodeDebounce.stop()
-      locationError = "Latitude must be -90 to 90; longitude must be -180 to 180."
+      locationError = "Vĩ độ phải từ -90 đến 90; kinh độ phải từ -180 đến 180."
     } else {
       geocodeDebounce.restart()
     }
@@ -482,7 +482,7 @@ Panel {
     onStatusChanged: {
       if (status === Loader.Error) {
         root.locatingDevice = false
-        root.locationError = "Device location support unavailable. Use ZIP or coordinates."
+        root.locationError = "Không hỗ trợ định vị thiết bị. Hãy dùng mã ZIP hoặc toạ độ."
       }
     }
   }
@@ -681,14 +681,14 @@ Panel {
             exitStatus, Network.responseLimits.geocode)
           root.locationSuggestions = Model.parseLocationSearch(raw, root.geocodeActiveQuery)
           root.geocodeResultsQuery = root.geocodeActiveQuery
-          root.locationError = root.locationSuggestions.length ? "" : "No locations found. Try a ZIP or a shorter city name."
+          root.locationError = root.locationSuggestions.length ? "" : "Không tìm thấy địa điểm. Hãy thử mã ZIP hoặc tên thành phố ngắn hơn."
           root.suggestionIndex = 0
         } catch (e) {
           root.locationSuggestions = []
           root.geocodeResultsQuery = ""
           root.locationError = exitCode !== 0 || exitStatus !== 0
-            ? "Location lookup failed or ZIP not found. Try again."
-            : "Could not read location results. Try again."
+            ? "Tra cứu địa điểm thất bại hoặc không tìm thấy mã ZIP. Hãy thử lại."
+            : "Không đọc được kết quả tra cứu. Hãy thử lại."
           console.warn("Weather location lookup failed: " + e)
         }
       }
@@ -708,7 +708,7 @@ Panel {
     onExited: function(exitCode) {
       if (exitCode !== 0) {
         root.savingLocation = false
-        root.locationError = "Could not save the location. Please try again."
+        root.locationError = "Không lưu được địa điểm. Hãy thử lại."
         return
       }
       if (!root.savingLocation) return
@@ -903,7 +903,7 @@ Panel {
               id: locationField
               width: heroRight.width - Style.space(28)
               enabled: !root.savingLocation
-              placeholderText: "City, US ZIP, or lat, lon"
+              placeholderText: "Thành phố, mã ZIP, hoặc vĩ độ, kinh độ"
               foreground: root.foreground
               font.family: root.fontFamily
 
@@ -971,12 +971,12 @@ Panel {
             Column {
               spacing: Style.space(5)
               Text {
-                text: "FEELS"
-                color: root.foreground
-                opacity: 0.7
-                font.family: root.fontFamily
-                font.pixelSize: Style.font.bodySmall
-                font.letterSpacing: 1
+            text: "CẢM GIÁC NHƯ"
+            color: root.foreground
+            opacity: 0.7
+            font.family: root.fontFamily
+            font.pixelSize: Style.font.bodySmall
+            font.letterSpacing: 1
               }
               Text {
                 textFormat: Text.PlainText
@@ -990,12 +990,12 @@ Panel {
             Column {
               spacing: Style.space(5)
               Text {
-                text: "WIND"
-                color: root.foreground
-                opacity: 0.7
-                font.family: root.fontFamily
-                font.pixelSize: Style.font.bodySmall
-                font.letterSpacing: 1
+            text: "GIÓ"
+            color: root.foreground
+            opacity: 0.7
+            font.family: root.fontFamily
+            font.pixelSize: Style.font.bodySmall
+            font.letterSpacing: 1
               }
               Text {
                 textFormat: Text.PlainText
@@ -1009,12 +1009,12 @@ Panel {
             Column {
               spacing: Style.space(5)
               Text {
-                text: "HUMID"
-                color: root.foreground
-                opacity: 0.7
-                font.family: root.fontFamily
-                font.pixelSize: Style.font.bodySmall
-                font.letterSpacing: 1
+            text: "ĐỘ ẨM"
+            color: root.foreground
+            opacity: 0.7
+            font.family: root.fontFamily
+            font.pixelSize: Style.font.bodySmall
+            font.letterSpacing: 1
               }
               Text {
                 textFormat: Text.PlainText
@@ -1037,13 +1037,13 @@ Panel {
           width: parent.width
           spacing: Style.space(8)
           Button {
-            text: root.locatingDevice ? "Locating..." : "Use device location"
+            text: root.locatingDevice ? "Đang định vị..." : "Dùng vị trí thiết bị"
             foreground: root.foreground
             enabled: !root.savingLocation && !root.locatingDevice
             onClicked: root.locateDevice()
           }
           Button {
-            text: "View saved pin on map"
+            text: "Xem vị trí đã ghim trên bản đồ"
             foreground: root.foreground
             enabled: root.hasConfiguredCoordinates
             onClicked: Qt.openUrlExternally(Model.locationMapUrl(root.configuredLocationState.latitude, root.configuredLocationState.longitude))
@@ -1052,9 +1052,9 @@ Panel {
 
         Text {
           width: parent.width
-          text: root.locationError || (root.locatingDevice ? "Requesting device position (up to 20 seconds)..."
-            : geocodeProc.running ? "Searching..."
-            : "Search for a city or US ZIP. Select a result to save.\nZIP pins are approximate. For an exact pin, paste latitude, longitude.\nDevice coordinates are sent to the weather providers only after you select them.\nSaving or clearing also changes the built-in Omarchy weather location.")
+          text: root.locationError || (root.locatingDevice ? "Đang yêu cầu vị trí thiết bị (tối đa 20 giây)..."
+            : geocodeProc.running ? "Đang tìm..."
+            : "Tìm thành phố hoặc mã ZIP. Chọn một kết quả để lưu.\nMã ZIP chỉ là vị trí xấp xỉ. Để ghim chính xác, hãy dán vĩ độ, kinh độ.\nToạ độ thiết bị chỉ được gửi đến nhà cung cấp thời tiết sau khi bạn chọn.\nLưu hoặc xoá cũng đổi luôn vị trí thời tiết mặc định của Omarchy.")
           wrapMode: Text.Wrap
           color: root.foreground
           opacity: 0.7
@@ -1066,7 +1066,7 @@ Panel {
           textFormat: Text.PlainText
           visible: root.hasConfiguredCoordinates
           width: parent.width
-          text: "Saved: " + root.configuredLocation + "\n"
+          text: "Đã lưu: " + root.configuredLocation + "\n"
             + root.configuredLocationState.latitude + ", " + root.configuredLocationState.longitude
           wrapMode: Text.Wrap
           color: root.foreground
@@ -1135,7 +1135,7 @@ Panel {
 
       Text {
         visible: !root.current
-        text: "Fetching forecast…"
+        text: "Đang tải dự báo…"
         color: root.foreground
         opacity: 0.7
         font.family: root.fontFamily
@@ -1163,8 +1163,8 @@ Panel {
         visible: root.hourlyEntries.length === 0
         width: parent.width
         wrapMode: Text.Wrap
-        text: root.hourlyStatus || (root.hourlyFetchFailed ? "Hourly forecast unavailable \u00b7 Middle-click weather to retry"
-          : (dailyForecastProc.running || forecastProc.running ? "Fetching hourly forecast\u2026" : "Hourly forecast unavailable"))
+        text: root.hourlyStatus || (root.hourlyFetchFailed ? "Dự báo theo giờ chưa có \u00b7 Middle-click vào weather để thử lại"
+          : (dailyForecastProc.running || forecastProc.running ? "Đang tải dự báo theo giờ\u2026" : "Dự báo theo giờ chưa có"))
         color: root.foreground
         opacity: 0.7
         font.family: root.fontFamily

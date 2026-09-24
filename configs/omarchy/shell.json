@@ -51,6 +51,9 @@
               "id": "urielcuriel.ratbag"
             },
             {
+              "id": "io.github.giodc.omafonts"
+            },
+            {
               "id": "skuthus.shell-font"
             },
             {
@@ -59,10 +62,20 @@
             {
               "id": "yoyo.system-tidy"
             },
-            {
-              "id": "io.github.giodc.omafonts"
-            },
             {},
+            {
+              "id": "nkarl.fcitx-active-input-lang",
+              "inputMethods": [
+                {
+                  "id": "keyboard-us",
+                  "label": "EN"
+                },
+                {
+                  "id": "lotus",
+                  "label": "VI"
+                }
+              ]
+            },
             {
               "id": "io.github.rawritude.aria2"
             },
@@ -96,19 +109,6 @@
           "id": "brenoperucchi.omabackup"
         },
         {
-          "id": "nkarl.fcitx-active-input-lang",
-          "inputMethods": [
-            {
-              "id": "keyboard-us",
-              "label": "EN"
-            },
-            {
-              "id": "lotus",
-              "label": "VI"
-            }
-          ]
-        },
-        {
           "autoCheckIntervalHours": 6,
           "autoCheckUpdates": true,
           "id": "omaplug"
@@ -130,7 +130,7 @@
     },
     "mode": "islands",
     "position": "top",
-    "transparent": false
+    "transparent": true
   },
   "cloneSourceRestores": [
     "ssupt.audio-control",

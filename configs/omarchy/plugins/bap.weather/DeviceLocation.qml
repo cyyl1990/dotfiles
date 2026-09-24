@@ -9,7 +9,7 @@ Item {
 
   function request() {
     if (!source.valid) {
-      failed("No device location source. Use a ZIP code or paste latitude, longitude.")
+      failed("Không có nguồn vị trí thiết bị. Hãy dùng mã ZIP hoặc dán vĩ độ, kinh độ.")
       return
     }
     requesting = true
@@ -30,11 +30,11 @@ Item {
       if (!root.requesting || !position.latitudeValid || !position.longitudeValid) return
       var coordinate = position.coordinate
       var accuracy = position.horizontalAccuracyValid
-        ? "Accuracy: about " + Math.round(position.horizontalAccuracy) + " m" : "Accuracy not reported"
+        ? "Độ chính xác: khoảng " + Math.round(position.horizontalAccuracy) + " m" : "Không báo độ chính xác"
       root.cancel()
       root.located({
-        name: "Device location",
-        description: accuracy + " (may be network-based, not GPS)",
+        name: "Vị trí thiết bị",
+        description: accuracy + " (có thể dựa trên mạng, không phải GPS)",
         latitude: coordinate.latitude,
         longitude: coordinate.longitude
       })
@@ -42,7 +42,7 @@ Item {
     onSourceErrorChanged: {
       if (!root.requesting || sourceError === PositionSource.NoError) return
       root.cancel()
-      root.failed("Device location unavailable or permission denied. Use ZIP or coordinates instead.")
+      root.failed("Vị trí thiết bị không khả dụng hoặc bị từ chối quyền. Hãy dùng mã ZIP hoặc toạ độ.")
     }
   }
 
@@ -51,7 +51,7 @@ Item {
     interval: 21000
     onTriggered: {
       root.cancel()
-      root.failed("Device location timed out. Use ZIP or coordinates instead.")
+      root.failed("Lấy vị trí thiết bị quá thời gian. Hãy dùng mã ZIP hoặc toạ độ.")
     }
   }
 }
